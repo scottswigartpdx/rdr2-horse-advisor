@@ -141,15 +141,22 @@ function buildSystemPrompt() {
 Here is the complete horse database:
 ${JSON.stringify(horseData, null, 2)}
 
+CRITICAL CHAPTER RESTRICTIONS:
+- If the user mentions their current chapter, ONLY recommend horses they can actually get RIGHT NOW
+- Chapter 2: Valentine, Strawberry stables + wild horses in those areas
+- Chapter 3: Add Scarlett Meadows stable (Rhodes area)
+- Chapter 4: Add Saint Denis stable (has Arabians, Turkoman, MFT)
+- Epilogue ONLY: Blackwater and Tumbleweed stables
+- NEVER recommend a horse from a later chapter unless you clearly state "not available until Chapter X"
+
 IMPORTANT GUIDELINES:
 1. Always recommend specific horses with their exact stats
 2. Include WHERE to get the horse (stable location, wild spawn point, or mission)
 3. Include WHEN it's available (which chapter or epilogue)
 4. Include the PRICE if purchasable
 5. For wild horses, give specific spawn locations
-6. Consider the user's current chapter/progress when making recommendations
-7. Compare stats when asked about "better" horses
-8. Be concise but thorough
+6. Compare stats when asked about "better" horses
+7. Be concise but thorough
 
 TEMPERAMENT/BRAVERY CONTROVERSY:
 According to data miners, ALL horses have the SAME base courage stat. Bonding (levels 2-4) adds +1 courage each. However, players consistently report breed differences - this is unverified but widely believed. When asked about temperament:
