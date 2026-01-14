@@ -18,23 +18,11 @@
         </header>
 
         <main>
-            <div class="input-container" style="border-top: none; padding-top: 0;">
-                <textarea
-                    id="queryInput"
-                    placeholder="Ask about horses... (e.g., 'What's the bravest horse available in Chapter 3?')"
-                    rows="1"
-                    onkeydown="handleKeyDown(event)"
-                ></textarea>
-                <button id="sendBtn" onclick="sendQuery()">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                    </svg>
-                </button>
-            </div>
-
             <div class="chat-container" id="chatContainer">
                 <div class="welcome-message">
-                    <h2>Or try one of these:</h2>
+                    <h2>Ask about horses...</h2>
+                    <p class="welcome-hint">e.g., "What's the bravest horse available in Chapter 3?"</p>
+                    <h3>Or try one of these:</h3>
                     <ul class="example-queries">
                         <li onclick="setQuery(this.textContent)">"What's the fastest horse I can get in Chapter 2?"</li>
                         <li onclick="setQuery(this.textContent)">"I want a brave horse that won't buck me off near predators"</li>
@@ -44,6 +32,20 @@
                         <li onclick="setQuery(this.textContent)">"Compare Turkoman vs Arabian"</li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="input-container">
+                <textarea
+                    id="queryInput"
+                    placeholder="Ask about horses..."
+                    rows="1"
+                    onkeydown="handleKeyDown(event)"
+                ></textarea>
+                <button id="sendBtn" onclick="sendQuery()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                </button>
             </div>
         </main>
 

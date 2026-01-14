@@ -95,17 +95,36 @@ function getHorseImagePath(breed, coat) {
     return `images/horses/${normalizedBreed}_${normalizedCoat}.webp`;
 }
 
+// Create horse link URL
+function getHorseLink(breed, coat) {
+    return `horse.html?breed=${encodeURIComponent(breed.trim())}&coat=${encodeURIComponent(coat.trim())}`;
+}
+
 // Format response with basic markdown
 function formatResponse(text) {
-    // First, convert horse image tags [IMG:Breed - Coat] to actual images
+    // First, convert horse image tags [IMG:Breed - Coat] to clickable images
     let html = text.replace(/\[IMG:([^\]]+)\]/g, (match, horseInfo) => {
         const parts = horseInfo.split(' - ');
         if (parts.length === 2) {
             const [breed, coat] = parts;
             const imagePath = getHorseImagePath(breed.trim(), coat.trim());
-            return `<img src="${imagePath}" alt="${breed} ${coat}" class="horse-image" onerror="this.style.display='none'">`;
+            const horseLink = getHorseLink(breed, coat);
+            return `<a href="${horseLink}" class="horse-image-link"><img src="${imagePath}" alt="${breed} ${coat}" class="horse-image" onerror="this.style.display='none'"></a>`;
         }
         return '';
+    });
+
+    // Convert bold horse names (e.g., **Arabian - White**) to clickable links
+    html = html.replace(/\*\*([^*]+) - ([^*]+)\*\*/g, (match, breed, coat) => {
+        // Check if this looks like a horse name (exists in our data)
+        const isHorse = horseData && horseData.horses && horseData.horses.some(h =>
+            h.breed.toLowerCase() === breed.trim().toLowerCase()
+        );
+        if (isHorse) {
+            const horseLink = getHorseLink(breed, coat);
+            return `<a href="${horseLink}" class="horse-name-link"><strong>${breed} - ${coat}</strong></a>`;
+        }
+        return `<strong>${breed} - ${coat}</strong>`;
     });
 
     // Convert markdown-style formatting
@@ -113,7 +132,7 @@ function formatResponse(text) {
         // Headers
         .replace(/^### (.*$)/gm, '<h4>$1</h4>')
         .replace(/^## (.*$)/gm, '<h3>$1</h3>')
-        // Bold
+        // Bold (remaining)
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         // Italic
         .replace(/\*(.*?)\*/g, '<em>$1</em>')

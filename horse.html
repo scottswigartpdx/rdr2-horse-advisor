@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Details - RDR2 Horse Advisor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .horse-detail-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--rust);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            color: var(--red-primary);
+            text-decoration: underline;
+        }
+
+        .horse-hero {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .horse-hero-image {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--border-medium);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            flex-shrink: 0;
+        }
+
+        .horse-hero-info {
+            flex: 1;
+        }
+
+        .horse-hero-info h1 {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .horse-coat {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .horse-category {
+            display: inline-block;
+            background: var(--bg-elevated);
+            color: var(--rust);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: 'Rye', cursive;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .horse-handling {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .horse-handling strong {
+            color: var(--text-cream);
+        }
+
+        .stats-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .stats-section h2 {
+            font-family: 'Rye', cursive;
+            color: var(--rust);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: var(--bg-dark);
+            border-radius: 6px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .stat-box .stat-name {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .stat-box .stat-values {
+            font-family: 'Rye', cursive;
+        }
+
+        .stat-box .stat-base {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .stat-box .stat-arrow {
+            color: var(--text-muted);
+            margin: 0 5px;
+        }
+
+        .stat-box .stat-max {
+            color: var(--red-primary);
+            font-size: 1.3rem;
+        }
+
+        .stat-bar-container {
+            margin-top: 10px;
+            height: 6px;
+            background: var(--bg-elevated);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--red-dark), var(--red-primary));
+            border-radius: 3px;
+        }
+
+        .info-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .info-section h2 {
+            font-family: 'Rye', cursive;
+            color: var(--rust);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            color: var(--text-cream);
+            font-size: 1.05rem;
+        }
+
+        .community-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .community-section h2 {
+            font-family: 'Rye', cursive;
+            color: var(--rust);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .community-note {
+            background: var(--bg-dark);
+            padding: 18px 22px;
+            border-radius: 6px;
+            border-left: 4px solid var(--rust);
+            font-style: italic;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .not-found {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .not-found h2 {
+            font-family: 'Rye', cursive;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .horse-hero {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .horse-hero-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container horse-detail-container">
+        <header>
+            <a href="index.html" class="back-link">← Back to Horse Advisor</a>
+        </header>
+
+        <main id="horseContent">
+            <div class="loading">
+                <div class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>Loading horse data...</span>
+            </div>
+        </main>
+
+        <footer>
+            <p>Data sourced from the RDR2 community. Not affiliated with Rockstar Games.</p>
+        </footer>
+    </div>
+
+    <script>
+        async function loadHorse() {
+            const params = new URLSearchParams(window.location.search);
+            const breed = (params.get('breed') || '').trim();
+            const coat = (params.get('coat') || '').trim();
+
+            console.log('Looking for horse:', { breed, coat });
+
+            if (!breed || !coat) {
+                showNotFound();
+                return;
+            }
+
+            try {
+                const response = await fetch('horses.json');
+                const data = await response.json();
+
+                console.log('Available horses:', data.horses.map(h => `${h.breed} - ${h.coat}`));
+
+                const horse = data.horses.find(h =>
+                    h.breed.toLowerCase() === breed.toLowerCase() &&
+                    h.coat.toLowerCase() === coat.toLowerCase()
+                );
+
+                console.log('Found horse:', horse);
+
+                if (horse) {
+                    renderHorse(horse);
+                    document.title = `${horse.breed} (${horse.coat}) - RDR2 Horse Advisor`;
+                } else {
+                    showNotFound();
+                }
+            } catch (error) {
+                console.error('Error loading horse:', error);
+                showNotFound();
+            }
+        }
+
+        function renderHorse(horse) {
+            const container = document.getElementById('horseContent');
+
+            container.innerHTML = `
+                <div class="horse-hero">
+                    ${horse.image ? `<img src="${horse.image}" alt="${horse.breed} ${horse.coat}" class="horse-hero-image" onerror="this.style.display='none'">` : ''}
+                    <div class="horse-hero-info">
+                        <h1>${horse.breed}</h1>
+                        <div class="horse-coat">${horse.coat}</div>
+                        <div class="horse-category">${horse.category}</div>
+                        <div class="horse-handling"><strong>Handling:</strong> ${horse.handling}</div>
+                        <div class="horse-handling"><strong>Price:</strong> ${horse.price ? '$' + horse.price.toLocaleString() : 'Free (Wild)'}</div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h2>Stats</h2>
+                    <div class="stats-row">
+                        ${renderStat('Health', horse.baseStats.health, horse.maxStats.health)}
+                        ${renderStat('Stamina', horse.baseStats.stamina, horse.maxStats.stamina)}
+                        ${renderStat('Speed', horse.baseStats.speed, horse.maxStats.speed)}
+                        ${renderStat('Acceleration', horse.baseStats.acceleration, horse.maxStats.acceleration)}
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
+                        Max stats achieved through full bonding (+1 HP/Stamina) and best saddle/stirrups (+2 Speed/Accel).
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <h2>How to Get</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Method</span>
+                            <span class="info-value">${horse.acquisition.method === 'wild' ? 'Wild (Free)' : 'Stable Purchase'}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location</span>
+                            <span class="info-value">${horse.acquisition.location}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Available</span>
+                            <span class="info-value">${horse.acquisition.chapter}</span>
+                        </div>
+                        ${horse.acquisition.notes ? `
+                        <div class="info-item" style="grid-column: span 2;">
+                            <span class="info-label">Notes</span>
+                            <span class="info-value">${horse.acquisition.notes}</span>
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+
+                <div class="community-section">
+                    <h2>Community Notes</h2>
+                    <div class="community-note">${horse.communityNotes}</div>
+                </div>
+            `;
+        }
+
+        function renderStat(name, base, max) {
+            const percentage = (max / 10) * 100;
+            return `
+                <div class="stat-box">
+                    <div class="stat-name">${name}</div>
+                    <div class="stat-values">
+                        <span class="stat-base">${base}</span>
+                        <span class="stat-arrow">→</span>
+                        <span class="stat-max">${max}</span>
+                    </div>
+                    <div class="stat-bar-container">
+                        <div class="stat-bar-fill" style="width: ${percentage}%"></div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showNotFound() {
+            const container = document.getElementById('horseContent');
+            container.innerHTML = `
+                <div class="not-found">
+                    <h2>Horse Not Found</h2>
+                    <p>We couldn't find that horse in our database.</p>
+                    <a href="index.html" class="back-link" style="margin-top: 20px;">← Back to Horse Advisor</a>
+                </div>
+            `;
+        }
+
+        loadHorse();
+    </script>
+</body>
+</html>

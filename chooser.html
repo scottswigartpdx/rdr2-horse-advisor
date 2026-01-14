@@ -564,29 +564,29 @@
         }
 
         async function getAIRecommendations() {
-            const prompt = `You are an expert Red Dead Redemption 2 horse advisor. A player has answered these questions about what horse they want:
+            const prompt = `You are an RDR2 horse expert. Recommend 3 horses based on the player's preferences.
 
-**Story Progress:** ${answers.progress || 'Not specified'}
-**Budget:** ${answers.budget || 'Not specified'}
-**Stat Priorities:** ${answers.stats || 'Not specified'}
-**Main Use:** ${answers.use || 'Not specified'}
-**Temperament Preference:** ${answers.temperament || 'Not specified'}
-**Vibe/Other:** ${answers.vibe || 'Not specified'}
+Player's answers:
+- Story Progress: ${answers.progress || 'Not specified'}
+- Budget: ${answers.budget || 'Not specified'}
+- Stat Priorities: ${answers.stats || 'Not specified'}
+- Main Use: ${answers.use || 'Not specified'}
+- Temperament: ${answers.temperament || 'Not specified'}
+- Vibe: ${answers.vibe || 'Not specified'}
 
-Here is the complete horse database:
+Horse database:
 ${JSON.stringify(horseData.horses, null, 2)}
 
-CRITICAL - CHAPTER RESTRICTIONS (MUST FOLLOW):
-- ONLY recommend horses the player can get RIGHT NOW based on their Story Progress
-- Chapter 2: Valentine stable, Strawberry stable, and wild horses in those regions ONLY
-- Chapter 3: Add Scarlett Meadows stable (Rhodes area)
-- Chapter 4: Add Saint Denis stable (Arabians, Turkoman, Missouri Fox Trotter)
-- Epilogue ONLY: Blackwater and Tumbleweed stables
-- If player says "Chapter 2", do NOT recommend Saint Denis horses, Blackwater horses, etc.
-- Wild horses (White Arabian at Lake Isabella, Mustangs, etc.) are available anytime if player can reach them
-- Temperament/bravery differences between breeds are UNCONFIRMED by game data - mention this if relevant.
+CRITICAL: Each horse has an "acquisition.chapter" field (e.g., "Chapter 2+", "Chapter 4+", "Epilogue 1+").
+- "Chapter 2+" means available from Chapter 2 onward
+- "Chapter 4+" means NOT available until Chapter 4
+- "Epilogue 1+" means Epilogue only (Blackwater/Tumbleweed - New Austin is blocked until then)
 
-Based on their answers, recommend exactly 3 horses. For EACH horse, explain WHY it matches what they're looking for.
+If the player says they're in Chapter 2, ONLY recommend horses with "Chapter 2+" availability.
+If in Chapter 3, recommend "Chapter 2+" or "Chapter 3+" horses.
+If in Chapter 4+, they can get most horses except Epilogue-only ones.
+
+FILTER BY THE CHAPTER FIELD. Do not recommend a "Chapter 4+" horse to a Chapter 2 player.
 
 Return your response as JSON in this exact format:
 {
@@ -680,14 +680,16 @@ Only return the JSON, no other text.`;
                     `;
                 }
 
+                const horseLink = `horse.html?breed=${encodeURIComponent(horse.breed)}&coat=${encodeURIComponent(horse.coat)}`;
+
                 return `
                     <div class="result-card ${i === 0 ? 'rank-1' : ''}">
                         <div class="result-header">
-                            ${horse.image ? `<img src="${horse.image}" alt="${horse.breed} ${horse.coat}" class="horse-image-large" onerror="this.style.display='none'">` : ''}
+                            ${horse.image ? `<a href="${horseLink}" class="horse-image-link"><img src="${horse.image}" alt="${horse.breed} ${horse.coat}" class="horse-image-large" onerror="this.style.display='none'"></a>` : ''}
                             <div style="flex: 1;">
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <div>
-                                        <div class="horse-name">${horse.breed}</div>
+                                        <a href="${horseLink}" class="horse-name-link"><div class="horse-name">${horse.breed}</div></a>
                                         <div class="horse-coat">${horse.coat} • ${horse.category}</div>
                                     </div>
                                     <div class="rank-badge rank-${i + 1}">#${i + 1}</div>

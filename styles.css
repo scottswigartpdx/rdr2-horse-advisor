@@ -190,10 +190,24 @@ main {
 
 .welcome-message h2 {
     font-family: 'Rye', cursive;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    color: var(--text-cream);
+    margin-bottom: 8px;
+    font-size: 1.4rem;
     font-weight: normal;
+}
+
+.welcome-message h3 {
+    font-family: 'Rye', cursive;
+    color: var(--text-muted);
+    margin: 25px 0 15px;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.welcome-hint {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 1rem;
 }
 
 .example-queries {
@@ -471,6 +485,37 @@ footer {
     background: var(--bg-dark);
 }
 
+/* ========== HORSE LINKS ========== */
+.horse-name-link {
+    color: var(--rust);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.horse-name-link:hover {
+    color: var(--red-primary);
+    text-decoration: underline;
+}
+
+.horse-name-link strong {
+    color: inherit;
+}
+
+.horse-image-link {
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.horse-image-link:hover {
+    transform: scale(1.03);
+}
+
+.horse-image-link:hover .horse-image,
+.horse-image-link:hover .horse-image-large {
+    border-color: var(--red-primary);
+    box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4);
+}
+
 /* ========== HORSE IMAGES ========== */
 .horse-image {
     width: 150px;
@@ -480,6 +525,7 @@ footer {
     border: 2px solid var(--border-medium);
     background: var(--bg-dark);
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .horse-image-large {
@@ -489,6 +535,7 @@ footer {
     border-radius: 4px;
     border: 2px solid var(--border-medium);
     box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .horse-card-with-image {
