@@ -1,0 +1,985 @@
+{
+  "horses": [
+    {
+      "breed": "Arabian",
+      "coat": "White",
+      "image": "images/horses/arabian_white.webp",
+      "baseStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 6 },
+      "maxStats": { "health": 6, "stamina": 6, "speed": 8, "acceleration": 8 },
+      "handling": "Elite",
+      "category": "Superior",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "Northwest shore of Lake Isabella",
+        "chapter": "Chapter 2+",
+        "notes": "Rare spawn in snowy area. Save/reload if not present."
+      },
+      "communityNotes": "Best free horse early game. Many players report it's skittish around predators, but others say bonding fixes this."
+    },
+    {
+      "breed": "Arabian",
+      "coat": "Black",
+      "image": "images/horses/arabian_black.webp",
+      "baseStats": { "health": 6, "stamina": 6, "speed": 6, "acceleration": 6 },
+      "maxStats": { "health": 7, "stamina": 7, "speed": 8, "acceleration": 8 },
+      "handling": "Elite",
+      "category": "Superior",
+      "price": 1050,
+      "acquisition": {
+        "method": "stable",
+        "location": "Saint Denis Stable",
+        "chapter": "Chapter 4+",
+        "notes": "Best balanced stats of purchasable Arabians"
+      },
+      "communityNotes": "Popular for its balanced stats. Some players find Arabians too jumpy for combat."
+    },
+    {
+      "breed": "Arabian",
+      "coat": "Rose Grey Bay",
+      "image": "images/horses/arabian_rose_grey_bay.webp",
+      "baseStats": { "health": 7, "stamina": 7, "speed": 6, "acceleration": 6 },
+      "maxStats": { "health": 8, "stamina": 8, "speed": 8, "acceleration": 8 },
+      "handling": "Elite",
+      "category": "Superior",
+      "price": 1250,
+      "acquisition": {
+        "method": "stable",
+        "location": "Blackwater Stable",
+        "chapter": "Epilogue 1+",
+        "notes": "Best overall base stats in the game"
+      },
+      "communityNotes": "Highest total stats. Many consider it the 'best' horse purely by numbers."
+    },
+    {
+      "breed": "Arabian",
+      "coat": "Warped Brindle",
+      "image": "images/horses/arabian_warped_brindle.webp",
+      "baseStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 6 },
+      "maxStats": { "health": 6, "stamina": 6, "speed": 8, "acceleration": 8 },
+      "handling": "Elite",
+      "category": "Superior",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "Mountains above Wapiti Indian Reservation",
+        "chapter": "Chapter 2+",
+        "notes": "Rare spawn. Look above the reservation name on the map."
+      },
+      "communityNotes": "Unique coat pattern. Same stats as White Arabian but harder to find."
+    },
+    {
+      "breed": "Arabian",
+      "coat": "Red Chestnut",
+      "image": "images/horses/arabian_red_chestnut.webp",
+      "baseStats": { "health": 4, "stamina": 4, "speed": 6, "acceleration": 6 },
+      "maxStats": { "health": 5, "stamina": 5, "speed": 8, "acceleration": 8 },
+      "handling": "Elite",
+      "category": "Superior",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "West of Owanjila, near Pagan Ritual site",
+        "chapter": "Chapter 2+",
+        "notes": "Rare spawn with limited spawn conditions"
+      },
+      "communityNotes": "Weakest Arabian but still has Elite handling. Good early option if you can find it."
+    },
+    {
+      "breed": "Turkoman",
+      "coat": "Gold",
+      "image": "images/horses/turkoman_gold.webp",
+      "baseStats": { "health": 7, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "maxStats": { "health": 8, "stamina": 6, "speed": 8, "acceleration": 7 },
+      "handling": "Standard",
+      "category": "Multi/War",
+      "price": 950,
+      "acquisition": {
+        "method": "stable",
+        "location": "Saint Denis Stable",
+        "chapter": "Chapter 4+",
+        "notes": "War horse with high health"
+      },
+      "communityNotes": "Fan favorite. Players often report it handles combat and predators better than Arabians. Larger size may contribute to feeling more stable."
+    },
+    {
+      "breed": "Turkoman",
+      "coat": "Dark Bay",
+      "image": "images/horses/turkoman_dark_bay.webp",
+      "baseStats": { "health": 7, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "maxStats": { "health": 8, "stamina": 6, "speed": 8, "acceleration": 7 },
+      "handling": "Standard",
+      "category": "Multi/War",
+      "price": 925,
+      "acquisition": {
+        "method": "stable",
+        "location": "Blackwater Stable",
+        "chapter": "Epilogue 1+",
+        "notes": "War horse variant available in epilogue"
+      },
+      "communityNotes": "Same stats as Gold, slightly cheaper. Good epilogue pickup."
+    },
+    {
+      "breed": "Turkoman",
+      "coat": "Silver",
+      "image": "images/horses/turkoman_silver.webp",
+      "baseStats": { "health": 7, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "maxStats": { "health": 8, "stamina": 6, "speed": 8, "acceleration": 7 },
+      "handling": "Standard",
+      "category": "Multi/War",
+      "price": 950,
+      "acquisition": {
+        "method": "stable",
+        "location": "Tumbleweed Stable",
+        "chapter": "Epilogue 1+",
+        "notes": "War horse variant in New Austin"
+      },
+      "communityNotes": "Rarest coat color for Turkoman. Worth the trip to Tumbleweed for collectors."
+    },
+    {
+      "breed": "Missouri Fox Trotter",
+      "coat": "Amber Champagne",
+      "image": "images/horses/missouri_fox_trotter_amber_champagne.webp",
+      "baseStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 5 },
+      "maxStats": { "health": 6, "stamina": 7, "speed": 9, "acceleration": 7 },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": 950,
+      "acquisition": {
+        "method": "stable",
+        "location": "Scarlett Meadows Stable",
+        "chapter": "Chapter 4+",
+        "notes": "Fastest multi-purpose horse"
+      },
+      "communityNotes": "Many players consider this the best all-around horse. High speed with decent health. Often recommended over Arabians for general use."
+    },
+    {
+      "breed": "Missouri Fox Trotter",
+      "coat": "Silver Dapple Pinto",
+      "image": "images/horses/missouri_fox_trotter_silver_dapple_pinto.webp",
+      "baseStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 5 },
+      "maxStats": { "health": 6, "stamina": 7, "speed": 9, "acceleration": 7 },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": 950,
+      "acquisition": {
+        "method": "stable",
+        "location": "Blackwater Stable",
+        "chapter": "Epilogue 1+",
+        "notes": "One of the fastest horses in the game"
+      },
+      "communityNotes": "Beautiful coat. Speed 9 when maxed ties for fastest in game."
+    },
+    {
+      "breed": "Thoroughbred",
+      "coat": "Brindle",
+      "image": "images/horses/thoroughbred_brindle.webp",
+      "baseStats": { "health": 3, "stamina": 3, "speed": 7, "acceleration": 5 },
+      "maxStats": { "health": 4, "stamina": 4, "speed": 9, "acceleration": 7 },
+      "handling": "Race",
+      "category": "Race",
+      "price": 450,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 3+",
+        "notes": "Fast racing horse"
+      },
+      "communityNotes": "Glass cannon - very fast but dies easily. Not recommended for combat or predator areas."
+    },
+    {
+      "breed": "Thoroughbred",
+      "coat": "Blood Bay",
+      "image": "images/horses/thoroughbred_blood_bay.webp",
+      "baseStats": { "health": 3, "stamina": 3, "speed": 7, "acceleration": 5 },
+      "maxStats": { "health": 4, "stamina": 4, "speed": 9, "acceleration": 7 },
+      "handling": "Race",
+      "category": "Race",
+      "price": 450,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 3+",
+        "notes": "Racing variant at Valentine"
+      },
+      "communityNotes": "Same stats as Brindle. Pick based on coat preference."
+    },
+    {
+      "breed": "Thoroughbred",
+      "coat": "Dappled Black",
+      "image": "images/horses/thoroughbred_dappled_black.webp",
+      "baseStats": { "health": 3, "stamina": 3, "speed": 7, "acceleration": 5 },
+      "maxStats": { "health": 4, "stamina": 4, "speed": 9, "acceleration": 7 },
+      "handling": "Race",
+      "category": "Race",
+      "price": null,
+      "acquisition": {
+        "method": "bonus",
+        "location": "Valentine Stable after 'Exit Pursued by a Bruised Ego'",
+        "chapter": "Chapter 2+",
+        "notes": "Pre-order/Ultimate Edition bonus horse"
+      },
+      "communityNotes": "Free if you have the bonus. Good early speed horse but fragile."
+    },
+    {
+      "breed": "Nokota",
+      "coat": "Reverse Dapple Roan",
+      "image": "images/horses/nokota_reverse_dapple_roan.webp",
+      "baseStats": { "health": 3, "stamina": 3, "speed": 7, "acceleration": 5 },
+      "maxStats": { "health": 4, "stamina": 4, "speed": 9, "acceleration": 7 },
+      "handling": "Race",
+      "category": "Race",
+      "price": 450,
+      "acquisition": {
+        "method": "stable",
+        "location": "Saint Denis Stable",
+        "chapter": "Chapter 4+",
+        "notes": "Top speed racing horse"
+      },
+      "communityNotes": "Matches Thoroughbred speed. Beautiful unique coat pattern."
+    },
+    {
+      "breed": "Nokota",
+      "coat": "Blue Roan",
+      "image": "images/horses/nokota_blue_roan.webp",
+      "baseStats": { "health": 3, "stamina": 3, "speed": 6, "acceleration": 5 },
+      "maxStats": { "health": 4, "stamina": 4, "speed": 8, "acceleration": 7 },
+      "handling": "Race",
+      "category": "Race",
+      "price": 130,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Budget racing option"
+      },
+      "communityNotes": "Good value for early game speed. Only $130."
+    },
+    {
+      "breed": "Nokota",
+      "coat": "Wild",
+      "image": "images/horses/nokota_blue_roan.webp",
+      "baseStats": { "health": 3, "stamina": 3, "speed": 6, "acceleration": 5 },
+      "maxStats": { "health": 4, "stamina": 4, "speed": 8, "acceleration": 7 },
+      "handling": "Race",
+      "category": "Race",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "South of Armadillo, New Austin",
+        "chapter": "Epilogue 1+",
+        "notes": "Wild racing horse in late game"
+      },
+      "communityNotes": "Free racing horse if you're in the epilogue."
+    },
+    {
+      "breed": "Andalusian",
+      "coat": "Perlino",
+      "image": "images/horses/andalusian_perlino.webp",
+      "baseStats": { "health": 7, "stamina": 5, "speed": 4, "acceleration": 4 },
+      "maxStats": { "health": 8, "stamina": 6, "speed": 6, "acceleration": 6 },
+      "handling": "Standard",
+      "category": "War",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "North of Annesburg, near Brandywine Drop waterfall",
+        "chapter": "Chapter 2+",
+        "notes": "Free war horse spawn"
+      },
+      "communityNotes": "HIGHLY praised by community for temperament. Many players swear this is the calmest horse around predators and in combat. Slower than Arabians but players report it feels more reliable."
+    },
+    {
+      "breed": "Andalusian",
+      "coat": "Dark Bay",
+      "image": "images/horses/andalusian_dark_bay.webp",
+      "baseStats": { "health": 7, "stamina": 5, "speed": 4, "acceleration": 4 },
+      "maxStats": { "health": 8, "stamina": 6, "speed": 6, "acceleration": 6 },
+      "handling": "Standard",
+      "category": "War",
+      "price": 440,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Purchasable war horse"
+      },
+      "communityNotes": "Same glowing reviews as Perlino. Community favorite for swamp/predator areas."
+    },
+    {
+      "breed": "Andalusian",
+      "coat": "Rose Grey",
+      "image": "images/horses/andalusian_rose_grey.webp",
+      "baseStats": { "health": 7, "stamina": 5, "speed": 4, "acceleration": 4 },
+      "maxStats": { "health": 8, "stamina": 6, "speed": 6, "acceleration": 6 },
+      "handling": "Standard",
+      "category": "War",
+      "price": 440,
+      "acquisition": {
+        "method": "stable",
+        "location": "Van Horn Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Early-available war horse"
+      },
+      "communityNotes": "Players love this for early game combat-focused playstyle."
+    },
+    {
+      "breed": "Ardennes",
+      "coat": "Bay Roan",
+      "image": "images/horses/ardennes_bay_roan.webp",
+      "baseStats": { "health": 8, "stamina": 4, "speed": 3, "acceleration": 3 },
+      "maxStats": { "health": 9, "stamina": 5, "speed": 5, "acceleration": 5 },
+      "handling": "Heavy",
+      "category": "War",
+      "price": 450,
+      "acquisition": {
+        "method": "stable",
+        "location": "Scarlett Meadows Stable",
+        "chapter": "Chapter 3+",
+        "notes": "Highest base health in the game"
+      },
+      "communityNotes": "Tank build. Very slow but takes a lot of damage. Heavy handling makes tight turns difficult. Some players report it's actually more skittish than Andalusian despite being a 'war' horse."
+    },
+    {
+      "breed": "Ardennes",
+      "coat": "Strawberry Roan",
+      "image": "images/horses/ardennes_strawberry_roan.webp",
+      "baseStats": { "health": 8, "stamina": 4, "speed": 3, "acceleration": 3 },
+      "maxStats": { "health": 9, "stamina": 5, "speed": 5, "acceleration": 5 },
+      "handling": "Heavy",
+      "category": "War",
+      "price": 450,
+      "acquisition": {
+        "method": "stable",
+        "location": "Van Horn Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Tank-like war horse"
+      },
+      "communityNotes": "Same as Bay Roan. Pick based on coat preference."
+    },
+    {
+      "breed": "Ardennes",
+      "coat": "Iron Grey",
+      "image": "images/horses/ardennes_iron_grey.webp",
+      "baseStats": { "health": 8, "stamina": 4, "speed": 3, "acceleration": 3 },
+      "maxStats": { "health": 9, "stamina": 5, "speed": 5, "acceleration": 5 },
+      "handling": "Heavy",
+      "category": "War",
+      "price": null,
+      "acquisition": {
+        "method": "bonus",
+        "location": "Valentine Stable after 'Exit Pursued by a Bruised Ego'",
+        "chapter": "Chapter 2+",
+        "notes": "Pre-order/Ultimate Edition bonus war horse"
+      },
+      "communityNotes": "Free if you have the bonus. Good for soaking damage early game."
+    },
+    {
+      "breed": "Dutch Warmblood",
+      "coat": "Chocolate Roan",
+      "image": "images/horses/dutch_warmblood_chocolate_roan.webp",
+      "baseStats": { "health": 5, "stamina": 6, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 6, "stamina": 7, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Work",
+      "price": 450,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 3+",
+        "notes": "Solid work horse with good stamina"
+      },
+      "communityNotes": "Reliable workhorse. Nothing flashy but gets the job done."
+    },
+    {
+      "breed": "Dutch Warmblood",
+      "coat": "Seal Brown",
+      "image": "images/horses/dutch_warmblood_seal_brown.webp",
+      "baseStats": { "health": 5, "stamina": 6, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 6, "stamina": 7, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Work",
+      "price": 450,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 3+",
+        "notes": "Work horse option at Strawberry"
+      },
+      "communityNotes": "Same as Chocolate Roan stats."
+    },
+    {
+      "breed": "Dutch Warmblood",
+      "coat": "Sooty Buckskin",
+      "image": "images/horses/dutch_warmblood_sooty_buckskin.webp",
+      "baseStats": { "health": 4, "stamina": 5, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 5, "stamina": 6, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Work",
+      "price": 150,
+      "acquisition": {
+        "method": "stable",
+        "location": "Scarlett Meadows Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Budget work horse"
+      },
+      "communityNotes": "Good value at $150. Slightly weaker than other Warmbloods."
+    },
+    {
+      "breed": "Dutch Warmblood",
+      "coat": "Cremello Gold (Buell)",
+      "image": "images/horses/dutch_warmblood_buell.webp",
+      "baseStats": { "health": 6, "stamina": 6, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 7, "stamina": 7, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Work",
+      "price": null,
+      "acquisition": {
+        "method": "mission",
+        "location": "O'Creagh's Run - 'The Veteran' stranger mission",
+        "chapter": "Chapter 6+ (best to wait until Epilogue)",
+        "notes": "Unique horse from Hamish Sinclair. Complete all 4 'Veteran' stranger missions."
+      },
+      "communityNotes": "IMPORTANT: If you get Buell as Arthur in Chapter 6, you LOSE him. Wait until Epilogue and do the missions as John to keep him permanently. Beloved by the community for the story behind him."
+    },
+    {
+      "breed": "Hungarian Halfbred",
+      "coat": "Dapple Dark Grey",
+      "image": "images/horses/hungarian_halfbred_dapple_dark_grey.webp",
+      "baseStats": { "health": 5, "stamina": 5, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 6, "stamina": 6, "speed": 6, "acceleration": 5 },
+      "handling": "Heavy",
+      "category": "Work",
+      "price": 150,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Early available work horse"
+      },
+      "communityNotes": "Decent early horse. Heavy handling can be annoying in forests."
+    },
+    {
+      "breed": "Hungarian Halfbred",
+      "coat": "Piebald Tobiano",
+      "image": "images/horses/hungarian_halfbred_piebald_tobiano.webp",
+      "baseStats": { "health": 5, "stamina": 5, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 6, "stamina": 6, "speed": 6, "acceleration": 5 },
+      "handling": "Heavy",
+      "category": "Work",
+      "price": 130,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Budget work horse at Strawberry"
+      },
+      "communityNotes": "Nice spotted coat pattern. Slightly cheaper than Dapple."
+    },
+    {
+      "breed": "Hungarian Halfbred",
+      "coat": "Wild",
+      "image": "images/horses/hungarian_halfbred_dapple_dark_grey.webp",
+      "baseStats": { "health": 5, "stamina": 5, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 6, "stamina": 6, "speed": 6, "acceleration": 5 },
+      "handling": "Heavy",
+      "category": "Work",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "Southeast of Fort Riggs, near Blackwater",
+        "chapter": "Epilogue 1+",
+        "notes": "Wild work horse in late game area"
+      },
+      "communityNotes": "Free if you're in the epilogue, but by then you likely have better horses."
+    },
+    {
+      "breed": "Mustang",
+      "coat": "Grullo Dun",
+      "image": "images/horses/mustang_grullo_dun.webp",
+      "baseStats": { "health": 4, "stamina": 4, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "The Heartlands, near the dinosaur bones lady location",
+        "chapter": "Chapter 2+",
+        "notes": "Free wild horse"
+      },
+      "communityNotes": "Community reports Mustangs are calm and reliable. Good free early game option. Many players say they handle predators well."
+    },
+    {
+      "breed": "Mustang",
+      "coat": "Wild Bay",
+      "image": "images/horses/mustang_wild_bay.webp",
+      "baseStats": { "health": 4, "stamina": 4, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": 130,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Affordable multi-purpose horse"
+      },
+      "communityNotes": "Budget-friendly and reportedly steady temperament."
+    },
+    {
+      "breed": "Mustang",
+      "coat": "Tiger Striped Bay",
+      "image": "images/horses/mustang_tiger_striped_bay.webp",
+      "baseStats": { "health": 4, "stamina": 4, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "West of Rio del Lobo Rock, New Austin",
+        "chapter": "Epilogue 1+",
+        "notes": "RARE unique coat. One-of-a-kind spawn."
+      },
+      "communityNotes": "Collectors love this unique coat. Same stats as other Mustangs but the rarest coat in the game."
+    },
+    {
+      "breed": "Appaloosa",
+      "coat": "Blanket",
+      "image": "images/horses/appaloosa_blanket.webp",
+      "baseStats": { "health": 4, "stamina": 4, "speed": 5, "acceleration": 3 },
+      "maxStats": { "health": 5, "stamina": 5, "speed": 7, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": 130,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Decent all-rounder"
+      },
+      "communityNotes": "Good value. Slightly faster than Mustang. Nothing special but reliable."
+    },
+    {
+      "breed": "Appaloosa",
+      "coat": "Brown Leopard",
+      "image": "images/horses/appaloosa_brown_leopard.webp",
+      "baseStats": { "health": 4, "stamina": 4, "speed": 5, "acceleration": 3 },
+      "maxStats": { "health": 5, "stamina": 5, "speed": 7, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": 430,
+      "acquisition": {
+        "method": "stable",
+        "location": "Saint Denis Stable",
+        "chapter": "Chapter 4+",
+        "notes": "Spotted coat variant"
+      },
+      "communityNotes": "Overpriced for stats. Get the Blanket coat at Strawberry for $130 instead."
+    },
+    {
+      "breed": "Appaloosa",
+      "coat": "Few-Spotted",
+      "image": "images/horses/appaloosa_few_spotted.webp",
+      "baseStats": { "health": 4, "stamina": 4, "speed": 5, "acceleration": 3 },
+      "maxStats": { "health": 5, "stamina": 5, "speed": 7, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "Multiple locations: Cholla Springs, Grizzlies West, New Hanover",
+        "chapter": "Chapter 2+",
+        "notes": "Rare wild spawn with unique spotted pattern"
+      },
+      "communityNotes": "Hard to find but free. Same stats as purchasable Appaloosas."
+    },
+    {
+      "breed": "American Standardbred",
+      "coat": "Palomino Dapple",
+      "image": "images/horses/american_standardbred_palomino_dapple.webp",
+      "baseStats": { "health": 4, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "maxStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 6 },
+      "handling": "Standard",
+      "category": "Race",
+      "price": 150,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Budget racing option"
+      },
+      "communityNotes": "Good early game racer. Better stamina than Thoroughbred for only $150."
+    },
+    {
+      "breed": "American Standardbred",
+      "coat": "Black",
+      "image": "images/horses/american_standardbred_black.webp",
+      "baseStats": { "health": 4, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "maxStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 6 },
+      "handling": "Standard",
+      "category": "Race",
+      "price": 150,
+      "acquisition": {
+        "method": "stable",
+        "location": "Tumbleweed Stable",
+        "chapter": "Epilogue 1+",
+        "notes": "Racing horse in New Austin"
+      },
+      "communityNotes": "Same as Palomino. By epilogue you probably have better options."
+    },
+    {
+      "breed": "American Standardbred",
+      "coat": "Wild",
+      "image": "images/horses/american_standardbred_palomino_dapple.webp",
+      "baseStats": { "health": 4, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "maxStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 6 },
+      "handling": "Standard",
+      "category": "Race",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "North of Valley View, by the river",
+        "chapter": "Chapter 2+",
+        "notes": "Free racing horse in the wild"
+      },
+      "communityNotes": "Free decent racer early game. Worth grabbing in Chapter 2."
+    },
+    {
+      "breed": "American Paint",
+      "coat": "Grey Overo",
+      "image": "images/horses/american_paint_grey_overo.webp",
+      "baseStats": { "health": 3, "stamina": 4, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 4, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Standard",
+      "price": 130,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Budget standard horse"
+      },
+      "communityNotes": "Below average stats. Better options available for similar price."
+    },
+    {
+      "breed": "American Paint",
+      "coat": "Splashed White",
+      "image": "images/horses/american_paint_splashed_white.webp",
+      "baseStats": { "health": 3, "stamina": 4, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 4, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Standard",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "Random hostile campsites throughout the world",
+        "chapter": "Chapter 2+",
+        "notes": "RARE. Only spawns at hostile NPC camps. Random chance."
+      },
+      "communityNotes": "Very rare spawn. Collectors hunt this for the unique coat, not the stats."
+    },
+    {
+      "breed": "American Paint",
+      "coat": "Wild",
+      "image": "images/horses/american_paint_grey_overo.webp",
+      "baseStats": { "health": 3, "stamina": 4, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 4, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Standard",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "South of Tumbleweed, New Austin",
+        "chapter": "Epilogue 1+",
+        "notes": "Wild paint horse in late game"
+      },
+      "communityNotes": "Free but weak. Not worth the trip to New Austin."
+    },
+    {
+      "breed": "Kentucky Saddler",
+      "coat": "Grey",
+      "image": "images/horses/kentucky_saddler_grey.webp",
+      "baseStats": { "health": 3, "stamina": 3, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 4, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": 50,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Cheap starter horse"
+      },
+      "communityNotes": "Starter-tier horse. Fine for early game if you're broke."
+    },
+    {
+      "breed": "Kentucky Saddler",
+      "coat": "Black",
+      "image": "images/horses/kentucky_saddler_black.webp",
+      "baseStats": { "health": 3, "stamina": 3, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 4, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": 50,
+      "acquisition": {
+        "method": "stable",
+        "location": "Scarlett Meadows Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Basic riding horse"
+      },
+      "communityNotes": "Same as Grey. Pick based on coat."
+    },
+    {
+      "breed": "Kentucky Saddler",
+      "coat": "Wild",
+      "image": "images/horses/kentucky_saddler_grey.webp",
+      "baseStats": { "health": 3, "stamina": 3, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 4, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "East of Manzanita Post",
+        "chapter": "Epilogue 1+",
+        "notes": "Wild riding horse"
+      },
+      "communityNotes": "Free but not worth seeking out in epilogue."
+    },
+    {
+      "breed": "Morgan",
+      "coat": "Bay",
+      "image": "images/horses/morgan_bay.webp",
+      "baseStats": { "health": 2, "stamina": 2, "speed": 3, "acceleration": 3 },
+      "maxStats": { "health": 3, "stamina": 3, "speed": 5, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": 15,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Cheapest horse in the game"
+      },
+      "communityNotes": "Bottom tier. Only buy if you literally have $15."
+    },
+    {
+      "breed": "Morgan",
+      "coat": "Palomino",
+      "image": "images/horses/morgan_palomino.webp",
+      "baseStats": { "health": 2, "stamina": 2, "speed": 3, "acceleration": 3 },
+      "maxStats": { "health": 3, "stamina": 3, "speed": 5, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": 55,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Budget Morgan variant"
+      },
+      "communityNotes": "Overpriced for a Morgan. Get the Bay for $15 if you need one."
+    },
+    {
+      "breed": "Morgan",
+      "coat": "Wild",
+      "image": "images/horses/morgan_bay.webp",
+      "baseStats": { "health": 2, "stamina": 2, "speed": 3, "acceleration": 3 },
+      "maxStats": { "health": 3, "stamina": 3, "speed": 5, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "North of Valley View, near river",
+        "chapter": "Chapter 2+",
+        "notes": "Common wild horse"
+      },
+      "communityNotes": "Free is the right price. Upgrade ASAP."
+    },
+    {
+      "breed": "Tennessee Walker",
+      "coat": "Dapple Bay",
+      "image": "images/horses/tennessee_walker_dapple_bay.webp",
+      "baseStats": { "health": 2, "stamina": 3, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 3, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": 60,
+      "acquisition": {
+        "method": "stable",
+        "location": "Scarlett Meadows Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Budget horse"
+      },
+      "communityNotes": "Community reports this breed is extremely skittish. Bucks frequently near predators and gunfire. Not recommended despite okay speed stats."
+    },
+    {
+      "breed": "Tennessee Walker",
+      "coat": "Wild",
+      "image": "images/horses/tennessee_walker_dapple_bay.webp",
+      "baseStats": { "health": 2, "stamina": 3, "speed": 4, "acceleration": 3 },
+      "maxStats": { "health": 3, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": {
+        "method": "wild",
+        "location": "The Heartlands, east of Oil Derrick",
+        "chapter": "Chapter 2+",
+        "notes": "Common wild horse"
+      },
+      "communityNotes": "Free but widely considered the worst temperament in the game."
+    },
+    {
+      "breed": "Shire",
+      "coat": "Raven Black",
+      "image": "images/horses/shire_raven_black.webp",
+      "baseStats": { "health": 5, "stamina": 4, "speed": 3, "acceleration": 2 },
+      "maxStats": { "health": 6, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "handling": "Heavy",
+      "category": "Draft",
+      "price": 120,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Large draft horse"
+      },
+      "communityNotes": "Big and slow. Heavy handling is clunky. Some players like the imposing size."
+    },
+    {
+      "breed": "Shire",
+      "coat": "Dark Bay",
+      "image": "images/horses/shire_dark_bay.webp",
+      "baseStats": { "health": 5, "stamina": 4, "speed": 3, "acceleration": 2 },
+      "maxStats": { "health": 6, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "handling": "Heavy",
+      "category": "Draft",
+      "price": 120,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Draft horse variant"
+      },
+      "communityNotes": "Same as Raven Black."
+    },
+    {
+      "breed": "Suffolk Punch",
+      "coat": "Sorrel",
+      "image": "images/horses/suffolk_punch_sorrel.webp",
+      "baseStats": { "health": 5, "stamina": 4, "speed": 3, "acceleration": 2 },
+      "maxStats": { "health": 6, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "handling": "Heavy",
+      "category": "Draft",
+      "price": 120,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Draft horse option"
+      },
+      "communityNotes": "Same stats as Shire. Pick based on coat preference."
+    },
+    {
+      "breed": "Belgian Draft",
+      "coat": "Blonde Chestnut",
+      "image": "images/horses/belgian_draft_blonde_chestnut.webp",
+      "baseStats": { "health": 6, "stamina": 4, "speed": 3, "acceleration": 2 },
+      "maxStats": { "health": 7, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "handling": "Heavy",
+      "category": "Draft",
+      "price": 120,
+      "acquisition": {
+        "method": "stable",
+        "location": "Valentine Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Draft horse with extra health"
+      },
+      "communityNotes": "Best draft horse stats-wise (+1 health over others). Still slow and clunky."
+    },
+    {
+      "breed": "Belgian Draft",
+      "coat": "Mealy Chestnut",
+      "image": "images/horses/belgian_draft_mealy_chestnut.webp",
+      "baseStats": { "health": 6, "stamina": 4, "speed": 3, "acceleration": 2 },
+      "maxStats": { "health": 7, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "handling": "Heavy",
+      "category": "Draft",
+      "price": 120,
+      "acquisition": {
+        "method": "stable",
+        "location": "Strawberry Stable",
+        "chapter": "Chapter 2+",
+        "notes": "Alternate draft coat"
+      },
+      "communityNotes": "Same as Blonde Chestnut."
+    }
+  ],
+  "statBonuses": {
+    "bonding": {
+      "level4": { "health": 1, "stamina": 1 },
+      "notes": "Max bonding (Level 4) adds +1 Health and +1 Stamina"
+    },
+    "equipment": {
+      "bestSaddleStirups": { "speed": 2, "acceleration": 2 },
+      "notes": "Best saddle (Panther Trail or Beaver) + best stirrups add approx +2 Speed, +2 Acceleration"
+    },
+    "trinkets": {
+      "snowyEgret": "-10% stamina drain rate",
+      "boarTusk": "-10% stamina drain rate"
+    },
+    "raceWin": "+1 Speed from winning the second racing random encounter"
+  },
+  "stables": {
+    "Valentine": {
+      "unlocks": "Chapter 2 (after 'Exit Pursued by a Bruised Ego' mission with Hosea)",
+      "specialties": "Budget horses, Draft horses, early-game options"
+    },
+    "Strawberry": {
+      "unlocks": "Chapter 2",
+      "specialties": "Mixed selection, Thoroughbred (Ch.3+), Andalusian, Mustang"
+    },
+    "Scarlett Meadows": {
+      "unlocks": "Chapter 2",
+      "specialties": "Missouri Fox Trotter (Ch.4+), Ardennes (Ch.3+), budget options"
+    },
+    "Van Horn": {
+      "unlocks": "Chapter 2",
+      "specialties": "Ardennes, Andalusian war horses"
+    },
+    "Saint Denis": {
+      "unlocks": "Chapter 2 (accessible), best horses available Chapter 4+",
+      "specialties": "Black Arabian (Ch.4+), Gold Turkoman (Ch.4+), Nokota - top tier"
+    },
+    "Blackwater": {
+      "unlocks": "Epilogue 1 only (bounty prevents earlier access)",
+      "specialties": "Rose Grey Bay Arabian, Missouri Fox Trotter, Turkoman - BEST horses"
+    },
+    "Tumbleweed": {
+      "unlocks": "Epilogue 1 only",
+      "specialties": "Silver Turkoman, American Standardbred"
+    }
+  },
+  "temperamentControversy": {
+    "officialMechanics": "According to game data miners and the wiki, ALL horses share the same base 'courage' stat. Bonding level 2-4 each add +1 courage, reducing bucking chance.",
+    "communityExperience": "Despite official data, players consistently report breed differences. Andalusians, Mustangs, and Turkomans are widely praised as calm. Arabians and Tennessee Walkers are frequently called skittish.",
+    "possibleExplanations": [
+      "Hidden per-horse RNG that varies each spawn",
+      "Undocumented breed modifiers not found in data mining",
+      "Confirmation bias - players expect certain breeds to behave certain ways",
+      "Horse size affecting player perception of stability",
+      "Different animation timing making some horses 'feel' calmer"
+    ],
+    "recommendation": "Focus on bonding level (biggest confirmed factor). Community reports can guide breed selection, but individual results may vary."
+  },
+  "handlingTypes": {
+    "Heavy": "Slowest turning radius. Large horses (Shire, Ardennes, Hungarian Halfbred). Can feel clunky in forests.",
+    "Standard": "Moderate turning. Most common handling type. Good all-around.",
+    "Race": "Quick turning. Racing horses (Thoroughbred, Nokota). Responsive but fragile.",
+    "Elite": "Fastest turning. Premium horses (Arabians only). Best maneuverability."
+  }
+}

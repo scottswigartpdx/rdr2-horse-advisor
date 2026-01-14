@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDR2 Horse Chooser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chooser-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .question-card {
+            padding: 30px;
+        }
+
+        .question-card h2 {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .question-hint {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .question-number {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .freeform-textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 15px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-medium);
+            border-radius: 4px;
+            color: var(--text-cream);
+            font-size: 1rem;
+            font-family: 'Crimson Text', Georgia, serif;
+            resize: vertical;
+        }
+
+        .freeform-textarea:focus {
+            outline: none;
+            border-color: var(--red-primary);
+        }
+
+        .freeform-textarea::placeholder {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .example-chips {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .example-chip {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .example-chip:hover {
+            border-color: var(--red-primary);
+            color: var(--text-cream);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        .nav-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-medium);
+            color: var(--text-cream);
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Crimson Text', Georgia, serif;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            border-color: var(--red-primary);
+        }
+
+        .nav-btn.primary {
+            background: var(--red-primary);
+            color: var(--text-cream);
+            border: none;
+            font-weight: 600;
+            font-family: 'Rye', cursive;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn.primary:hover {
+            background: #d42945;
+            box-shadow: 0 0 20px var(--red-glow);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-bar {
+            background: var(--bg-dark);
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            background: var(--red-primary);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .skip-link {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .skip-link:hover {
+            color: var(--rust);
+        }
+
+        /* Results */
+        .results-container {
+            display: none;
+        }
+
+        .results-container.show {
+            display: block;
+        }
+
+        .ai-thinking {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .ai-thinking .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-subtle);
+            border-top-color: var(--red-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .ai-thinking p {
+            color: var(--text-muted);
+            max-width: 300px;
+            font-style: italic;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .your-answers h3 {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .answer-item {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .answer-label {
+            color: var(--text-muted);
+            min-width: 100px;
+        }
+
+        .answer-value {
+            color: var(--text-cream);
+            font-style: italic;
+        }
+
+        .horse-name {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .horse-coat {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .stat-values {
+            font-size: 0.9rem;
+        }
+
+        .stat-base {
+            color: var(--text-muted);
+        }
+
+        .stat-max {
+            color: var(--red-primary);
+            font-weight: bold;
+            font-family: 'Rye', cursive;
+        }
+
+        .horse-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .detail-item {
+            display: flex;
+            gap: 8px;
+        }
+
+        .detail-label {
+            color: var(--text-muted);
+        }
+
+        .detail-value {
+            color: var(--text-cream);
+        }
+
+        .ai-reason {
+            background: var(--bg-dark);
+            padding: 14px 18px;
+            border-radius: 4px;
+            border-left: 3px solid var(--rust);
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .ai-reason strong {
+            color: var(--rust);
+            font-style: normal;
+        }
+
+        .community-note {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 12px;
+            background: var(--bg-dark);
+            border-radius: 4px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .community-note strong {
+            color: var(--rust);
+        }
+
+        .restart-btn {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-medium);
+            color: var(--text-cream);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Crimson Text', Georgia, serif;
+        }
+
+        .restart-btn:hover {
+            border-color: var(--red-primary);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--rust);
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+            color: var(--red-primary);
+        }
+
+        .error-message {
+            background: var(--red-dark);
+            color: var(--text-cream);
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid var(--red-primary);
+        }
+
+        /* Responsive for result cards with images */
+        @media (max-width: 600px) {
+            .result-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .result-header .horse-image-large {
+                width: 150px;
+                height: 150px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .horse-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container chooser-container">
+        <header>
+            <a href="index.html" class="back-link">← Back to Horse Advisor</a>
+            <h1>RDR2 Horse Chooser</h1>
+            <p class="subtitle">Tell us what you're looking for in your own words</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+
+        <main id="questionContainer">
+            <!-- Questions will be injected here -->
+        </main>
+
+        <div class="results-container" id="resultsContainer">
+            <div id="resultsContent"></div>
+            <button class="restart-btn" onclick="restart()">Start Over</button>
+        </div>
+    </div>
+
+    <script>
+        let horseData = null;
+        let currentQuestion = 0;
+        let answers = {};
+
+        const questions = [
+            {
+                id: 'progress',
+                question: 'Where are you in the story?',
+                hint: 'This helps us know which horses are available to you.',
+                placeholder: 'e.g., "Just started Chapter 2" or "Almost done with the main story"',
+                examples: [
+                    'Early Chapter 2',
+                    'Chapter 3, just got to Rhodes',
+                    'Chapter 4 in Saint Denis',
+                    'Finished the epilogue'
+                ]
+            },
+            {
+                id: 'budget',
+                question: 'What\'s your budget situation?',
+                hint: 'Are you flush with cash or pinching pennies?',
+                placeholder: 'e.g., "I\'ve got about $500" or "Looking for something free"',
+                examples: [
+                    'Broke, need something free',
+                    'Got about $200 to spend',
+                    'Money\'s not an issue',
+                    'Under $500 ideally'
+                ]
+            },
+            {
+                id: 'stats',
+                question: 'How should I prioritize Speed, Stamina, Health, and Acceleration?',
+                hint: 'What matters most to you in a horse?',
+                placeholder: 'e.g., "Speed is most important, then health" or "I want a balanced horse"',
+                examples: [
+                    'Speed above all else',
+                    'Health first, I hate when my horse dies',
+                    'Balanced, good at everything',
+                    'Stamina for long rides'
+                ]
+            },
+            {
+                id: 'use',
+                question: 'What will you mainly use this horse for?',
+                hint: 'Combat? Exploration? Racing? Running from the law?',
+                placeholder: 'e.g., "Lots of combat and hunting" or "Just exploring the world"',
+                examples: [
+                    'Combat and bounty hunting',
+                    'Exploring and hunting',
+                    'Outrunning lawmen',
+                    'A bit of everything'
+                ]
+            },
+            {
+                id: 'temperament',
+                question: 'How important is temperament to you?',
+                hint: 'Some players hate getting bucked off near predators. Note: Temperament differences between breeds are debated.',
+                placeholder: 'e.g., "I need a horse that won\'t throw me off near wolves"',
+                examples: [
+                    'Don\'t care, just want good stats',
+                    'Very important, hate getting bucked',
+                    'Would prefer a calmer horse',
+                    'I\'ll bond with whatever I get'
+                ]
+            },
+            {
+                id: 'vibe',
+                question: 'Anything else? What\'s the vibe you\'re going for?',
+                hint: 'Describe your ideal horse in your own words. Looks, personality, feeling...',
+                placeholder: 'e.g., "A majestic white horse fit for a hero" or "Something rugged and tough"',
+                examples: [
+                    'Badass outlaw energy',
+                    'Majestic and beautiful',
+                    'Rugged and reliable partner',
+                    'Fast and nimble escape artist',
+                    'Big intimidating war horse'
+                ],
+                optional: true
+            }
+        ];
+
+        // Load horse data
+        async function loadData() {
+            const response = await fetch('horses.json');
+            horseData = await response.json();
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const container = document.getElementById('questionContainer');
+            const q = questions[currentQuestion];
+            const progress = ((currentQuestion) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = `${progress}%`;
+
+            container.innerHTML = `
+                <div class="question-card">
+                    <div class="question-number">Question ${currentQuestion + 1} of ${questions.length}</div>
+                    <h2>${q.question}</h2>
+                    <p class="question-hint">${q.hint}</p>
+                    <textarea
+                        class="freeform-textarea"
+                        id="answerInput"
+                        placeholder="${q.placeholder}"
+                        onkeyup="updateAnswer()"
+                    >${answers[q.id] || ''}</textarea>
+                    <div class="example-chips">
+                        ${q.examples.map(ex => `
+                            <span class="example-chip" onclick="setExample('${ex.replace(/'/g, "\\'")}')">${ex}</span>
+                        `).join('')}
+                    </div>
+                    <div class="nav-buttons">
+                        <button class="nav-btn" onclick="prevQuestion()" ${currentQuestion === 0 ? 'disabled' : ''}>
+                            ← Back
+                        </button>
+                        <button class="nav-btn primary" onclick="nextQuestion()" id="nextBtn">
+                            ${currentQuestion === questions.length - 1 ? 'Find My Horse →' : 'Next →'}
+                        </button>
+                    </div>
+                    ${q.optional ? '<span class="skip-link" onclick="skipAndFinish()">Skip and find my horse</span>' : ''}
+                </div>
+            `;
+        }
+
+        function setExample(text) {
+            document.getElementById('answerInput').value = text;
+            answers[questions[currentQuestion].id] = text;
+        }
+
+        function updateAnswer() {
+            answers[questions[currentQuestion].id] = document.getElementById('answerInput').value;
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            updateAnswer();
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function skipAndFinish() {
+            showResults();
+        }
+
+        async function showResults() {
+            document.getElementById('questionContainer').style.display = 'none';
+            document.getElementById('resultsContainer').classList.add('show');
+            document.getElementById('progressFill').style.width = '100%';
+
+            document.getElementById('resultsContent').innerHTML = `
+                <div class="ai-thinking">
+                    <div class="spinner"></div>
+                    <p>Analyzing your preferences and finding the perfect horses for you...</p>
+                </div>
+            `;
+
+            try {
+                const result = await getAIRecommendations();
+                renderResults(result);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('resultsContent').innerHTML = `
+                    <div class="error-message">
+                        <p>Sorry, there was an error getting recommendations. Please try again.</p>
+                        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function getAIRecommendations() {
+            const prompt = `You are an expert Red Dead Redemption 2 horse advisor. A player has answered these questions about what horse they want:
+
+**Story Progress:** ${answers.progress || 'Not specified'}
+**Budget:** ${answers.budget || 'Not specified'}
+**Stat Priorities:** ${answers.stats || 'Not specified'}
+**Main Use:** ${answers.use || 'Not specified'}
+**Temperament Preference:** ${answers.temperament || 'Not specified'}
+**Vibe/Other:** ${answers.vibe || 'Not specified'}
+
+Here is the complete horse database:
+${JSON.stringify(horseData.horses, null, 2)}
+
+IMPORTANT CONTEXT:
+- Chapter availability matters! Don't recommend horses they can't get yet.
+- Blackwater and Tumbleweed stables are ONLY accessible in Epilogue.
+- Saint Denis best horses (Arabian, Turkoman) unlock in Chapter 4.
+- Wild horses can be caught for free at their spawn locations.
+- Temperament/bravery differences between breeds are UNCONFIRMED by game data - mention this if relevant.
+
+Based on their answers, recommend exactly 3 horses. For EACH horse, explain WHY it matches what they're looking for.
+
+Return your response as JSON in this exact format:
+{
+    "recommendations": [
+        {
+            "breed": "Horse Breed",
+            "coat": "Coat Color",
+            "reason": "2-3 sentences explaining why this horse matches their specific preferences"
+        }
+    ]
+}
+
+Only return the JSON, no other text.`;
+
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    model: 'claude-3-5-haiku-20241022',
+                    max_tokens: 1000,
+                    messages: [{ role: 'user', content: prompt }]
+                })
+            });
+
+            if (!response.ok) {
+                const err = await response.json();
+                throw new Error(err.error?.message || 'API request failed');
+            }
+
+            const data = await response.json();
+            const aiText = data.content[0].text.trim();
+
+            // Parse JSON from response
+            let parsed;
+            try {
+                parsed = JSON.parse(aiText);
+            } catch (e) {
+                const match = aiText.match(/\{[\s\S]*\}/);
+                if (match) {
+                    parsed = JSON.parse(match[0]);
+                } else {
+                    throw new Error('Could not parse AI response');
+                }
+            }
+
+            return parsed;
+        }
+
+        function renderResults(result) {
+            const container = document.getElementById('resultsContent');
+
+            if (!result.recommendations || result.recommendations.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h3>No horses match your criteria</h3>
+                        <p>Try adjusting your requirements.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Build answers summary
+            const answersHtml = `
+                <div class="your-answers">
+                    <h3>Your Preferences</h3>
+                    ${answers.progress ? `<div class="answer-item"><span class="answer-label">Progress:</span><span class="answer-value">${answers.progress}</span></div>` : ''}
+                    ${answers.budget ? `<div class="answer-item"><span class="answer-label">Budget:</span><span class="answer-value">${answers.budget}</span></div>` : ''}
+                    ${answers.stats ? `<div class="answer-item"><span class="answer-label">Stats:</span><span class="answer-value">${answers.stats}</span></div>` : ''}
+                    ${answers.use ? `<div class="answer-item"><span class="answer-label">Use:</span><span class="answer-value">${answers.use}</span></div>` : ''}
+                    ${answers.temperament ? `<div class="answer-item"><span class="answer-label">Temperament:</span><span class="answer-value">${answers.temperament}</span></div>` : ''}
+                    ${answers.vibe ? `<div class="answer-item"><span class="answer-label">Vibe:</span><span class="answer-value">${answers.vibe}</span></div>` : ''}
+                </div>
+            `;
+
+            // Build horse cards
+            const horsesHtml = result.recommendations.map((rec, i) => {
+                // Find horse data
+                const horse = horseData.horses.find(h =>
+                    h.breed.toLowerCase() === rec.breed.toLowerCase() &&
+                    h.coat.toLowerCase() === rec.coat.toLowerCase()
+                );
+
+                if (!horse) {
+                    return `
+                        <div class="result-card">
+                            <div class="horse-name">${rec.breed} - ${rec.coat}</div>
+                            <div class="ai-reason"><strong>Why:</strong> ${rec.reason}</div>
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="result-card ${i === 0 ? 'rank-1' : ''}">
+                        <div class="result-header">
+                            ${horse.image ? `<img src="${horse.image}" alt="${horse.breed} ${horse.coat}" class="horse-image-large" onerror="this.style.display='none'">` : ''}
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <div class="horse-name">${horse.breed}</div>
+                                        <div class="horse-coat">${horse.coat} • ${horse.category}</div>
+                                    </div>
+                                    <div class="rank-badge rank-${i + 1}">#${i + 1}</div>
+                                </div>
+                                <div class="ai-reason" style="margin-top: 10px;">
+                                    <strong>Why this horse:</strong> ${rec.reason}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-label">Health</div>
+                                <div class="stat-values">
+                                    <span class="stat-base">${horse.baseStats.health}</span> →
+                                    <span class="stat-max">${horse.maxStats.health}</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Stamina</div>
+                                <div class="stat-values">
+                                    <span class="stat-base">${horse.baseStats.stamina}</span> →
+                                    <span class="stat-max">${horse.maxStats.stamina}</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Speed</div>
+                                <div class="stat-values">
+                                    <span class="stat-base">${horse.baseStats.speed}</span> →
+                                    <span class="stat-max">${horse.maxStats.speed}</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Accel</div>
+                                <div class="stat-values">
+                                    <span class="stat-base">${horse.baseStats.acceleration}</span> →
+                                    <span class="stat-max">${horse.maxStats.acceleration}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="horse-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Handling:</span>
+                                <span class="detail-value">${horse.handling}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Price:</span>
+                                <span class="detail-value">${horse.price ? '$' + horse.price : 'Free'}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">${horse.acquisition.location}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Available:</span>
+                                <span class="detail-value">${horse.acquisition.chapter}</span>
+                            </div>
+                        </div>
+
+                        ${horse.acquisition.notes ? `<p style="color: var(--text-secondary); font-size: 0.85rem;"><strong>Note:</strong> ${horse.acquisition.notes}</p>` : ''}
+
+                        <div class="community-note">
+                            <strong>Community says:</strong> ${horse.communityNotes}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            container.innerHTML = `
+                <h2 style="color: var(--accent); text-align: center; margin-bottom: 25px;">Your Top 3 Recommendations</h2>
+                ${answersHtml}
+                ${horsesHtml}
+            `;
+        }
+
+        function restart() {
+            currentQuestion = 0;
+            answers = {};
+            document.getElementById('questionContainer').style.display = 'block';
+            document.getElementById('resultsContainer').classList.remove('show');
+            renderQuestion();
+        }
+
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>
