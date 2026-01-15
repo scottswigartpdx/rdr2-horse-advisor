@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Gear - RDR2 Horse Advisor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .table-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--rust);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            color: var(--red-primary);
+            text-decoration: underline;
+        }
+
+        .page-title {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            color: var(--text-muted);
+            font-family: 'Rye', cursive;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--bg-card);
+            color: var(--rust);
+            border-color: var(--rust);
+        }
+
+        .tab-btn.active {
+            background: var(--red-primary);
+            color: var(--text-cream);
+            border-color: var(--red-primary);
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            color: var(--text-cream);
+            font-family: 'Crimson Text', serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--rust);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .results-count {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .gear-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .gear-table th {
+            background: var(--bg-elevated);
+            color: var(--rust);
+            font-family: 'Rye', cursive;
+            font-size: 0.85rem;
+            padding: 12px 10px;
+            text-align: left;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            border-bottom: 2px solid var(--border-medium);
+        }
+
+        .gear-table th:hover {
+            background: var(--bg-dark);
+            color: var(--red-primary);
+        }
+
+        .gear-table th.sorted-asc::after {
+            content: ' ▲';
+            font-size: 0.7rem;
+        }
+
+        .gear-table th.sorted-desc::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+        }
+
+        .gear-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-cream);
+            font-size: 0.95rem;
+        }
+
+        .gear-table tr:hover {
+            background: var(--bg-elevated);
+        }
+
+        .gear-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .stat-cell {
+            text-align: center;
+            font-family: 'Rye', cursive;
+        }
+
+        .stat-positive {
+            color: #4ade80;
+        }
+
+        .stat-negative {
+            color: var(--red-primary);
+        }
+
+        .stat-neutral {
+            color: var(--text-muted);
+        }
+
+        .variant-badge {
+            display: inline-block;
+            background: var(--bg-dark);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .variant-badge.special {
+            background: var(--red-dark);
+            color: var(--text-cream);
+        }
+
+        .price-cell {
+            color: var(--text-cream);
+        }
+
+        .price-free {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .cost-cell {
+            font-size: 0.85rem;
+            color: var(--rust);
+        }
+
+        .availability-cell {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .notes-cell {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            max-width: 200px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .info-box strong {
+            color: var(--rust);
+        }
+
+        @media (max-width: 900px) {
+            .gear-table {
+                font-size: 0.85rem;
+            }
+
+            .gear-table th,
+            .gear-table td {
+                padding: 8px 6px;
+            }
+
+            .hide-mobile {
+                display: none;
+            }
+
+            .tabs {
+                gap: 6px;
+            }
+
+            .tab-btn {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+    <div class="container table-container">
+        <header>
+            <a href="index.html" class="back-link">← Back to Horse Advisor</a>
+            <h1 class="page-title">Horse Gear</h1>
+        </header>
+
+        <main>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="saddles">Saddles</button>
+                <button class="tab-btn" data-tab="stirrups">Stirrups</button>
+                <button class="tab-btn" data-tab="saddlebags">Saddlebags</button>
+                <button class="tab-btn" data-tab="other">Blankets & More</button>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search gear..." autofocus>
+            </div>
+
+            <div id="infoBox" class="info-box"></div>
+
+            <div id="resultsCount" class="results-count"></div>
+
+            <table class="gear-table" id="gearTable">
+                <thead id="tableHead">
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td colspan="10" class="no-results">Loading gear...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+        <footer>
+            <p>Data sourced from the RDR2 community. Not affiliated with Rockstar Games.</p>
+        </footer>
+    </div>
+
+    <script>
+        let gearData = null;
+        let currentTab = 'saddles';
+        let currentSort = { column: 'name', direction: 'asc' };
+
+        async function loadGear() {
+            try {
+                const response = await fetch('gear.json');
+                gearData = await response.json();
+                renderTab(currentTab);
+            } catch (error) {
+                console.error('Failed to load gear:', error);
+                document.getElementById('tableBody').innerHTML =
+                    '<tr><td colspan="10" class="no-results">Failed to load gear data</td></tr>';
+            }
+        }
+
+        function getTabInfo(tab) {
+            const info = {
+                saddles: {
+                    text: '<strong>Tip:</strong> Trapper saddles have built-in speed/acceleration bonuses and cannot be customized. Stable saddles can be upgraded with stirrups for better stats. The <strong>Panther Trail</strong> saddle from the Trapper is considered the best overall.',
+                    columns: ['Name', 'Type', 'Stam Core', 'HP Core', 'Stam Regen', 'Stam Drain', 'Speed', 'Accel', 'Price', 'Availability']
+                },
+                stirrups: {
+                    text: '<strong>Tip:</strong> Stirrups add speed and acceleration bonuses to your horse. The <strong>Hooded</strong> stirrups provide the best stats (+2 Speed/Accel, -50% Stamina Drain). In Story Mode, you only buy stirrups once and can use them on any saddle.',
+                    columns: ['Name', 'Speed Bonus', 'Accel Bonus', 'Stamina Drain', 'Price', 'Availability']
+                },
+                saddlebags: {
+                    text: '<strong>Tip:</strong> Upgraded saddlebags let you store more outfits and provisions. Essential for long trips away from camp.',
+                    columns: ['Name', 'Capacity', 'Outfit Slots', 'Price', 'Availability', 'Notes']
+                },
+                other: {
+                    text: '<strong>Note:</strong> Blankets, bedrolls, and horns are primarily cosmetic and don\'t affect horse stats.',
+                    columns: ['Type', 'Name', 'Details', 'Price', 'Availability']
+                }
+            };
+            return info[tab];
+        }
+
+        function getSaddleData() {
+            const allSaddles = [];
+
+            // Stable saddles
+            gearData.saddles.stable.forEach(s => {
+                allSaddles.push({
+                    ...s,
+                    type: s.variant,
+                    fullName: `${s.name} (${s.variant})`
+                });
+            });
+
+            // Trapper saddles
+            gearData.saddles.trapper.forEach(s => {
+                allSaddles.push({
+                    ...s,
+                    type: 'Trapper',
+                    fullName: s.name
+                });
+            });
+
+            // Special saddles
+            gearData.saddles.special.forEach(s => {
+                allSaddles.push({
+                    ...s,
+                    type: 'Special',
+                    fullName: s.name
+                });
+            });
+
+            return allSaddles;
+        }
+
+        function renderTab(tab) {
+            const info = getTabInfo(tab);
+            document.getElementById('infoBox').innerHTML = info.text;
+
+            // Render headers
+            const thead = document.getElementById('tableHead');
+            thead.innerHTML = `<tr>${info.columns.map((col, i) => {
+                const sortKey = col.toLowerCase().replace(/\s+/g, '');
+                return `<th data-sort="${sortKey}" class="${i > 2 ? 'hide-mobile' : ''}">${col}</th>`;
+            }).join('')}</tr>`;
+
+            // Re-attach sort listeners
+            attachSortListeners();
+
+            // Render data
+            updateTable();
+        }
+
+        function renderSaddlesTable(saddles) {
+            if (saddles.length === 0) {
+                return '<tr><td colspan="10" class="no-results">No saddles match your search</td></tr>';
+            }
+
+            return saddles.map(s => `
+                <tr>
+                    <td><strong>${s.name}</strong></td>
+                    <td><span class="variant-badge ${s.type === 'Trapper' || s.type === 'Special' ? 'special' : ''}">${s.type}</span></td>
+                    <td class="stat-cell stat-positive">${s.staminaCoreDrain}%</td>
+                    <td class="stat-cell stat-positive hide-mobile">${s.healthCoreDrain}%</td>
+                    <td class="stat-cell stat-positive hide-mobile">+${s.staminaRegen}%</td>
+                    <td class="stat-cell hide-mobile">${s.staminaDrain ? `${s.staminaDrain}%` : '-'}</td>
+                    <td class="stat-cell hide-mobile">${s.speedBonus ? `+${s.speedBonus}` : '-'}</td>
+                    <td class="stat-cell hide-mobile">${s.accelBonus ? `+${s.accelBonus}` : '-'}</td>
+                    <td class="price-cell">${s.price ? '$' + s.price.toFixed(2) : `<span class="cost-cell">${s.cost || 'Free'}</span>`}</td>
+                    <td class="availability-cell hide-mobile">${s.availability}</td>
+                </tr>
+            `).join('');
+        }
+
+        function renderStirrupsTable(stirrups) {
+            if (stirrups.length === 0) {
+                return '<tr><td colspan="6" class="no-results">No stirrups match your search</td></tr>';
+            }
+
+            return stirrups.map(s => `
+                <tr>
+                    <td><strong>${s.name}</strong>${s.notes ? ' ⭐' : ''}</td>
+                    <td class="stat-cell">${s.speedBonus ? `<span class="stat-positive">+${s.speedBonus}</span>` : '<span class="stat-neutral">-</span>'}</td>
+                    <td class="stat-cell">${s.accelBonus ? `<span class="stat-positive">+${s.accelBonus}</span>` : '<span class="stat-neutral">-</span>'}</td>
+                    <td class="stat-cell hide-mobile">${s.staminaDrain ? `<span class="stat-positive">${s.staminaDrain}%</span>` : '<span class="stat-neutral">-</span>'}</td>
+                    <td class="price-cell">$${s.price.toFixed(2)}</td>
+                    <td class="availability-cell hide-mobile">${s.availability}</td>
+                </tr>
+            `).join('');
+        }
+
+        function renderSaddlebagsTable(bags) {
+            if (bags.length === 0) {
+                return '<tr><td colspan="6" class="no-results">No saddlebags match your search</td></tr>';
+            }
+
+            return bags.map(b => `
+                <tr>
+                    <td><strong>${b.name}</strong></td>
+                    <td>${b.capacity}</td>
+                    <td class="stat-cell">${b.outfitSlots}</td>
+                    <td class="price-cell hide-mobile">${b.price ? '$' + b.price.toFixed(2) : '<span class="price-free">Edition Bonus</span>'}</td>
+                    <td class="availability-cell hide-mobile">${b.availability}</td>
+                    <td class="notes-cell hide-mobile">${b.notes || '-'}</td>
+                </tr>
+            `).join('');
+        }
+
+        function renderOtherTable() {
+            const items = [];
+
+            // Blankets
+            gearData.blankets.forEach(b => {
+                items.push({
+                    type: 'Blanket',
+                    name: b.name,
+                    details: Array.isArray(b.colors) ? b.colors.join(', ') : b.colors,
+                    price: b.price,
+                    availability: b.availability
+                });
+            });
+
+            // Bedrolls
+            gearData.bedrolls.forEach(b => {
+                items.push({
+                    type: 'Bedroll',
+                    name: b.name,
+                    details: b.cost || '-',
+                    price: b.price,
+                    availability: b.availability
+                });
+            });
+
+            // Horns
+            gearData.horns.forEach(h => {
+                items.push({
+                    type: 'Horn',
+                    name: h.name,
+                    details: Array.isArray(h.variants) ? h.variants.join(', ') : (h.variants || '-'),
+                    price: h.priceRange || h.price,
+                    availability: h.availability
+                });
+            });
+
+            if (items.length === 0) {
+                return '<tr><td colspan="5" class="no-results">No items match your search</td></tr>';
+            }
+
+            return items.map(item => `
+                <tr>
+                    <td><span class="variant-badge">${item.type}</span></td>
+                    <td><strong>${item.name}</strong></td>
+                    <td class="hide-mobile">${item.details}</td>
+                    <td class="price-cell hide-mobile">${item.price ? (typeof item.price === 'number' ? '$' + item.price.toFixed(2) : item.price) : '<span class="price-free">Craft</span>'}</td>
+                    <td class="availability-cell hide-mobile">${item.availability}</td>
+                </tr>
+            `).join('');
+        }
+
+        function filterData(data, query) {
+            if (!query) return data;
+            const lowerQuery = query.toLowerCase();
+
+            return data.filter(item => {
+                const searchableFields = [
+                    item.name,
+                    item.fullName,
+                    item.type,
+                    item.variant,
+                    item.availability,
+                    item.notes,
+                    item.cost
+                ].filter(Boolean);
+
+                return searchableFields.some(field =>
+                    field.toLowerCase().includes(lowerQuery)
+                );
+            });
+        }
+
+        function sortData(data, column, direction) {
+            return [...data].sort((a, b) => {
+                let valA, valB;
+
+                // Map column names to data properties
+                const columnMap = {
+                    'name': 'name',
+                    'type': 'type',
+                    'stamcore': 'staminaCoreDrain',
+                    'hpcore': 'healthCoreDrain',
+                    'stamregen': 'staminaRegen',
+                    'stamdrain': 'staminaDrain',
+                    'speed': 'speedBonus',
+                    'speedbonus': 'speedBonus',
+                    'accel': 'accelBonus',
+                    'accelbonus': 'accelBonus',
+                    'price': 'price',
+                    'availability': 'availability',
+                    'staminadrain': 'staminaDrain',
+                    'capacity': 'capacity',
+                    'outfitslots': 'outfitSlots'
+                };
+
+                const prop = columnMap[column] || column;
+                valA = a[prop];
+                valB = b[prop];
+
+                // Handle nulls
+                if (valA == null) valA = direction === 'asc' ? Infinity : -Infinity;
+                if (valB == null) valB = direction === 'asc' ? Infinity : -Infinity;
+
+                // Handle strings
+                if (typeof valA === 'string') valA = valA.toLowerCase();
+                if (typeof valB === 'string') valB = valB.toLowerCase();
+
+                if (valA < valB) return direction === 'asc' ? -1 : 1;
+                if (valA > valB) return direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+        }
+
+        function updateTable() {
+            const query = document.getElementById('searchInput').value;
+            const tbody = document.getElementById('tableBody');
+
+            let data, html;
+
+            switch (currentTab) {
+                case 'saddles':
+                    data = getSaddleData();
+                    data = filterData(data, query);
+                    data = sortData(data, currentSort.column, currentSort.direction);
+                    html = renderSaddlesTable(data);
+                    break;
+                case 'stirrups':
+                    data = [...gearData.stirrups];
+                    data = filterData(data, query);
+                    data = sortData(data, currentSort.column, currentSort.direction);
+                    html = renderStirrupsTable(data);
+                    break;
+                case 'saddlebags':
+                    data = [...gearData.saddlebags];
+                    data = filterData(data, query);
+                    data = sortData(data, currentSort.column, currentSort.direction);
+                    html = renderSaddlebagsTable(data);
+                    break;
+                case 'other':
+                    html = renderOtherTable();
+                    data = []; // For count
+                    break;
+            }
+
+            tbody.innerHTML = html;
+            updateResultsCount(tbody.querySelectorAll('tr:not(.no-results)').length);
+        }
+
+        function updateResultsCount(count) {
+            document.getElementById('resultsCount').textContent =
+                `Showing ${count} item${count !== 1 ? 's' : ''}`;
+        }
+
+        function updateSortIndicators() {
+            document.querySelectorAll('.gear-table th').forEach(th => {
+                th.classList.remove('sorted-asc', 'sorted-desc');
+                if (th.dataset.sort === currentSort.column) {
+                    th.classList.add(currentSort.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
+                }
+            });
+        }
+
+        function attachSortListeners() {
+            document.querySelectorAll('.gear-table th[data-sort]').forEach(th => {
+                th.addEventListener('click', () => {
+                    const column = th.dataset.sort;
+                    if (currentSort.column === column) {
+                        // Toggle direction on second click
+                        currentSort.direction = currentSort.direction === 'desc' ? 'asc' : 'desc';
+                    } else {
+                        currentSort.column = column;
+                        // Determine "best first" direction for each column type
+                        // Drain stats (negative values): ascending puts most negative first (best)
+                        // Positive stats (regen, speed, accel): descending puts highest first (best)
+                        // Price: ascending (cheaper first)
+                        // Text columns: ascending (alphabetical)
+                        const ascFirstColumns = [
+                            'price', 'name', 'type', 'availability', 'capacity', 'notes', 'details',
+                            'stamcore', 'hpcore', 'stamdrain', 'staminadrain'  // drain stats: more negative is better
+                        ];
+                        currentSort.direction = ascFirstColumns.includes(column) ? 'asc' : 'desc';
+                    }
+                    updateSortIndicators();
+                    updateTable();
+                });
+            });
+        }
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentTab = btn.dataset.tab;
+                currentSort = { column: 'name', direction: 'asc' };
+                document.getElementById('searchInput').value = '';
+                renderTab(currentTab);
+            });
+        });
+
+        // Search
+        document.getElementById('searchInput').addEventListener('input', updateTable);
+
+        // Initialize
+        loadGear();
+    </script>
+</body>
+</html>

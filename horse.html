@@ -216,6 +216,18 @@
             line-height: 1.8;
         }
 
+        .acquisition-divider {
+            text-align: center;
+            color: var(--rust);
+            font-size: 0.9rem;
+            margin: 20px 0 15px;
+            font-style: italic;
+        }
+
+        .acquisition-alt {
+            padding-top: 5px;
+        }
+
         .not-found {
             text-align: center;
             padding: 60px 20px;
@@ -248,6 +260,8 @@
             }
         }
     </style>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
     <div class="container horse-detail-container">
@@ -339,26 +353,7 @@
 
                 <div class="info-section">
                     <h2>How to Get</h2>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="info-label">Method</span>
-                            <span class="info-value">${horse.acquisition.method === 'wild' ? 'Wild (Free)' : 'Stable Purchase'}</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Location</span>
-                            <span class="info-value">${horse.acquisition.location}</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Available</span>
-                            <span class="info-value">${horse.acquisition.chapter}</span>
-                        </div>
-                        ${horse.acquisition.notes ? `
-                        <div class="info-item" style="grid-column: span 2;">
-                            <span class="info-label">Notes</span>
-                            <span class="info-value">${horse.acquisition.notes}</span>
-                        </div>
-                        ` : ''}
-                    </div>
+                    ${renderAcquisitions(horse.acquisition)}
                 </div>
 
                 <div class="community-section">
@@ -366,6 +361,44 @@
                     <div class="community-note">${horse.communityNotes}</div>
                 </div>
             `;
+        }
+
+        function renderAcquisitions(acquisition) {
+            // Handle both array and legacy object format
+            const acqs = Array.isArray(acquisition) ? acquisition : [acquisition];
+
+            return acqs.map((acq, index) => {
+                const methodLabel = acq.method === 'wild' ? 'Wild (Free)' :
+                                   acq.method === 'stable' ? 'Stable Purchase' :
+                                   acq.method === 'mission' ? 'Mission Reward' :
+                                   acq.method === 'bonus' ? 'Bonus Content' : acq.method;
+
+                return `
+                    <div class="acquisition-block ${index > 0 ? 'acquisition-alt' : ''}">
+                        ${index > 0 ? '<div class="acquisition-divider">— OR —</div>' : ''}
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Method</span>
+                                <span class="info-value">${methodLabel}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">${acq.location}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Available</span>
+                                <span class="info-value">${acq.chapter}</span>
+                            </div>
+                            ${acq.notes ? `
+                            <div class="info-item" style="grid-column: span 2;">
+                                <span class="info-label">Notes</span>
+                                <span class="info-value">${acq.notes}</span>
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
         function renderStat(name, base, max) {

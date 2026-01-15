@@ -1,11 +1,105 @@
 // Vercel Serverless Function - OpenAI Responses API Proxy
 // Keeps API key secure on server side
 
+const SUPABASE_URL = 'https://vejhtrzmesjpxlonwhig.supabase.co';
+const DAILY_QUERY_LIMIT = 20;
+
+// Verify Supabase auth token
+async function verifySupabaseToken(token) {
+    if (!token) return null;
+
+    try {
+        const response = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'apikey': process.env.SUPABASE_ANON_KEY
+            }
+        });
+
+        if (response.ok) {
+            return await response.json();
+        }
+        return null;
+    } catch (error) {
+        console.error('Token verification error:', error);
+        return null;
+    }
+}
+
+// Check and increment rate limit for user
+async function checkRateLimit(userId) {
+    const serviceKey = process.env.SUPABASE_SERVICE_KEY;
+    if (!serviceKey) {
+        console.warn('SUPABASE_SERVICE_KEY not set - rate limiting disabled');
+        return { allowed: true, current: 0, limit: DAILY_QUERY_LIMIT };
+    }
+
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_usage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': serviceKey,
+                'Authorization': `Bearer ${serviceKey}`
+            },
+            body: JSON.stringify({
+                p_user_id: userId,
+                p_daily_limit: DAILY_QUERY_LIMIT
+            })
+        });
+
+        if (!response.ok) {
+            const error = await response.text();
+            console.error('Rate limit check failed:', error);
+            return { allowed: true, current: 0, limit: DAILY_QUERY_LIMIT };
+        }
+
+        const result = await response.json();
+        if (result && result.length > 0) {
+            return {
+                allowed: result[0].allowed,
+                current: result[0].current_count,
+                limit: result[0].daily_limit
+            };
+        }
+
+        return { allowed: true, current: 0, limit: DAILY_QUERY_LIMIT };
+    } catch (error) {
+        console.error('Rate limit error:', error);
+        return { allowed: true, current: 0, limit: DAILY_QUERY_LIMIT };
+    }
+}
+
 export default async function handler(req, res) {
     // Only allow POST
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
+
+    // Verify auth token
+    const authHeader = req.headers['authorization'];
+    const token = authHeader?.replace('Bearer ', '');
+
+    const user = await verifySupabaseToken(token);
+    if (!user) {
+        return res.status(401).json({ error: 'Unauthorized - please sign in' });
+    }
+
+    console.log('Authenticated user:', user.email);
+
+    // Check rate limit
+    const rateLimit = await checkRateLimit(user.id);
+    if (!rateLimit.allowed) {
+        console.log(`Rate limit exceeded for ${user.email}: ${rateLimit.current}/${rateLimit.limit}`);
+        return res.status(429).json({
+            error: 'Daily limit reached',
+            message: `You've used all ${rateLimit.limit} queries for today. Your limit resets at midnight UTC.`,
+            current: rateLimit.current,
+            limit: rateLimit.limit
+        });
+    }
+
+    console.log(`Query ${rateLimit.current}/${rateLimit.limit} for ${user.email}`);
 
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {

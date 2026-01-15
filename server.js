@@ -8,6 +8,84 @@ require('dotenv').config();
 
 const PORT = 3000;
 
+// Supabase config for token verification and rate limiting
+const SUPABASE_URL = 'https://vejhtrzmesjpxlonwhig.supabase.co';
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || 'sb_publishable_QYHw3yzSd61GgQj3Izb3ng_zkfT_IZv';
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY; // Required for rate limiting
+
+// Daily query limit per user
+const DAILY_QUERY_LIMIT = 20;
+
+// Simple JWT verification (checks with Supabase)
+async function verifySupabaseToken(token) {
+    if (!token) return null;
+
+    try {
+        // Verify token with Supabase
+        const response = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'apikey': SUPABASE_ANON_KEY
+            }
+        });
+
+        if (response.ok) {
+            return await response.json();
+        }
+        return null;
+    } catch (error) {
+        console.error('Token verification error:', error);
+        return null;
+    }
+}
+
+// Check and increment rate limit for user
+// Returns { allowed: boolean, current: number, limit: number } or null on error
+async function checkRateLimit(userId) {
+    if (!SUPABASE_SERVICE_KEY) {
+        console.warn('SUPABASE_SERVICE_KEY not set - rate limiting disabled');
+        return { allowed: true, current: 0, limit: DAILY_QUERY_LIMIT };
+    }
+
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_usage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': SUPABASE_SERVICE_KEY,
+                'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`
+            },
+            body: JSON.stringify({
+                p_user_id: userId,
+                p_daily_limit: DAILY_QUERY_LIMIT
+            })
+        });
+
+        if (!response.ok) {
+            const error = await response.text();
+            console.error('Rate limit check failed:', error);
+            // Fail open - allow the request if rate limiting fails
+            return { allowed: true, current: 0, limit: DAILY_QUERY_LIMIT };
+        }
+
+        const result = await response.json();
+        // Result is an array with one row
+        if (result && result.length > 0) {
+            return {
+                allowed: result[0].allowed,
+                current: result[0].current_count,
+                limit: result[0].daily_limit
+            };
+        }
+
+        return { allowed: true, current: 0, limit: DAILY_QUERY_LIMIT };
+    } catch (error) {
+        console.error('Rate limit error:', error);
+        // Fail open
+        return { allowed: true, current: 0, limit: DAILY_QUERY_LIMIT };
+    }
+}
+
 const MIME_TYPES = {
     '.html': 'text/html',
     '.css': 'text/css',
@@ -25,6 +103,35 @@ const server = http.createServer(async (req, res) => {
         req.on('data', chunk => body += chunk);
         req.on('end', async () => {
             try {
+                // Verify auth token
+                const authHeader = req.headers['authorization'];
+                const token = authHeader?.replace('Bearer ', '');
+
+                const user = await verifySupabaseToken(token);
+                if (!user) {
+                    res.writeHead(401, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'Unauthorized - please sign in' }));
+                    return;
+                }
+
+                console.log('Authenticated user:', user.email);
+
+                // Check rate limit
+                const rateLimit = await checkRateLimit(user.id);
+                if (!rateLimit.allowed) {
+                    console.log(`Rate limit exceeded for ${user.email}: ${rateLimit.current}/${rateLimit.limit}`);
+                    res.writeHead(429, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({
+                        error: 'Daily limit reached',
+                        message: `You've used all ${rateLimit.limit} queries for today. Your limit resets at midnight UTC.`,
+                        current: rateLimit.current,
+                        limit: rateLimit.limit
+                    }));
+                    return;
+                }
+
+                console.log(`Query ${rateLimit.current}/${rateLimit.limit} for ${user.email}`);
+
                 const { system, messages } = JSON.parse(body);
 
                 // Build input array for OpenAI Responses API

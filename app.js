@@ -1,16 +1,239 @@
 // RDR2 Horse Advisor - Main Application
 
+// ========== PENDING ACTION SYSTEM ==========
+// General system for resuming user actions after OAuth redirect
+// Uses sessionStorage with a unique prefix to avoid conflicts with Supabase
+
+const PENDING_ACTION_KEY = 'rdr2_pending_action';
+
+const PendingAction = {
+    // Save an action to resume after login
+    save(type, data) {
+        const action = {
+            type,
+            data,
+            timestamp: Date.now(),
+            page: window.location.pathname
+        };
+        sessionStorage.setItem(PENDING_ACTION_KEY, JSON.stringify(action));
+        console.log('[PendingAction] Saved:', action);
+    },
+
+    // Get and clear the pending action (call early, before Supabase can clear storage)
+    retrieve() {
+        const stored = sessionStorage.getItem(PENDING_ACTION_KEY);
+        if (stored) {
+            sessionStorage.removeItem(PENDING_ACTION_KEY);
+            try {
+                const action = JSON.parse(stored);
+                // Expire actions older than 10 minutes
+                if (Date.now() - action.timestamp > 10 * 60 * 1000) {
+                    console.log('[PendingAction] Expired, ignoring');
+                    return null;
+                }
+                console.log('[PendingAction] Retrieved:', action);
+                return action;
+            } catch (e) {
+                console.error('[PendingAction] Parse error:', e);
+                return null;
+            }
+        }
+        return null;
+    },
+
+    // Restore action to storage (if user isn't logged in yet)
+    restore(action) {
+        if (action) {
+            sessionStorage.setItem(PENDING_ACTION_KEY, JSON.stringify(action));
+            console.log('[PendingAction] Restored to storage');
+        }
+    },
+
+    // Execute a pending action based on its type
+    execute(action) {
+        if (!action) return;
+
+        console.log('[PendingAction] Executing:', action.type);
+
+        const handlers = {
+            // Chat query - submit a question to the AI
+            'chat_query': (data) => {
+                const input = document.getElementById('queryInput');
+                if (input) {
+                    input.value = data.query;
+                    // Wait for horse data to load
+                    const trySubmit = () => {
+                        if (horseData) {
+                            sendQuery();
+                        } else {
+                            setTimeout(trySubmit, 200);
+                        }
+                    };
+                    setTimeout(trySubmit, 100);
+                }
+            },
+
+            // Navigate - go to a specific page (for future use)
+            'navigate': (data) => {
+                if (data.url) {
+                    window.location.href = data.url;
+                }
+            },
+
+            // Add more action types as needed:
+            // 'save_favorite': (data) => { ... },
+            // 'submit_form': (data) => { ... },
+        };
+
+        const handler = handlers[action.type];
+        if (handler) {
+            handler(action.data);
+        } else {
+            console.warn('[PendingAction] Unknown action type:', action.type);
+        }
+    }
+};
+
+// ========== SUPABASE AUTH ==========
+const SUPABASE_URL = 'https://vejhtrzmesjpxlonwhig.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_QYHw3yzSd61GgQj3Izb3ng_zkfT_IZv';
+
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+let currentUser = null;
+
+// Initialize auth state
+async function initAuth() {
+    console.log('[AUTH] initAuth starting');
+
+    // IMPORTANT: Retrieve pending action BEFORE getSession - Supabase may clear storage
+    const pendingAction = PendingAction.retrieve();
+
+    // Check current session
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    console.log('[AUTH] getSession result:', session ? 'has session' : 'no session');
+
+    if (session) {
+        currentUser = session.user;
+        console.log('[AUTH] User logged in:', currentUser.email);
+        updateAuthUI(session.user);
+        // Execute any pending action from before OAuth redirect
+        if (pendingAction) {
+            PendingAction.execute(pendingAction);
+        }
+    } else {
+        console.log('[AUTH] No session, user not logged in');
+        updateAuthUI(null);
+        // Restore pending action if user isn't logged in yet
+        PendingAction.restore(pendingAction);
+    }
+
+    // Listen for auth changes
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+        console.log('[AUTH] onAuthStateChange:', event);
+        currentUser = session?.user || null;
+        updateAuthUI(currentUser);
+
+        // If user just signed in, check for pending action
+        if (event === 'SIGNED_IN' && currentUser) {
+            closeSignInModal();
+            const action = PendingAction.retrieve();
+            if (action) {
+                PendingAction.execute(action);
+            }
+        }
+    });
+}
+
+// Update UI based on auth state
+function updateAuthUI(user) {
+    const loginBtn = document.getElementById('loginBtn');
+    const userInfo = document.getElementById('userInfo');
+    const userEmail = document.getElementById('userEmail');
+    const inputContainer = document.querySelector('.input-container');
+
+    if (user) {
+        // User is logged in
+        loginBtn.style.display = 'none';
+        userInfo.style.display = 'flex';
+        userEmail.textContent = user.email;
+        if (inputContainer) inputContainer.style.display = 'flex';
+    } else {
+        // User is logged out
+        loginBtn.style.display = 'block';
+        userInfo.style.display = 'none';
+        userEmail.textContent = '';
+        // Optionally hide chat input when not logged in
+        // if (inputContainer) inputContainer.style.display = 'none';
+    }
+}
+
+// Sign in with Google
+async function signInWithGoogle() {
+    const { data, error } = await supabaseClient.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+            redirectTo: window.location.origin
+        }
+    });
+
+    if (error) {
+        console.error('Sign in error:', error);
+        alert('Sign in failed: ' + error.message);
+    }
+}
+
+// Sign out
+async function signOut() {
+    const { error } = await supabaseClient.auth.signOut();
+    if (error) {
+        console.error('Sign out error:', error);
+    }
+    conversationHistory = [];
+}
+
+// Get current auth token for API calls
+async function getAuthToken() {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    return session?.access_token || null;
+}
+
+// Show sign-in modal
+function showSignInModal() {
+    document.getElementById('signInModal').style.display = 'flex';
+}
+
+// Close sign-in modal
+function closeSignInModal() {
+    document.getElementById('signInModal').style.display = 'none';
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('signInModal');
+    if (e.target === modal) {
+        closeSignInModal();
+    }
+});
+
+// ========== APP DATA ==========
 let horseData = null;
+let gearData = null;
 let conversationHistory = [];
 
-// Load horse data
+// Load horse and gear data
 async function loadHorseData() {
     try {
-        const response = await fetch('horses.json');
-        horseData = await response.json();
+        const [horseResponse, gearResponse] = await Promise.all([
+            fetch('horses.json'),
+            fetch('gear.json')
+        ]);
+        horseData = await horseResponse.json();
+        gearData = await gearResponse.json();
         console.log('Horse data loaded:', horseData.horses.length, 'horses');
+        console.log('Gear data loaded');
     } catch (error) {
-        console.error('Failed to load horse data:', error);
+        console.error('Failed to load data:', error);
     }
 }
 
@@ -46,7 +269,21 @@ function addMessage(content, type) {
     }
 
     container.appendChild(messageDiv);
-    container.scrollTop = container.scrollHeight;
+
+    // For user messages, scroll to bottom (show the question)
+    // For assistant messages, scroll to top of the response so user can read from beginning
+    if (type === 'assistant') {
+        // Use setTimeout to ensure DOM has fully rendered before scrolling
+        // Scroll the window to the top of the assistant message
+        setTimeout(() => {
+            const rect = messageDiv.getBoundingClientRect();
+            const scrollTop = window.pageYOffset + rect.top - 20; // 20px padding above
+            window.scrollTo({ top: scrollTop, behavior: 'instant' });
+        }, 100);
+    } else {
+        // For user messages, scroll to bottom of page
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
+    }
 
     return messageDiv;
 }
@@ -101,10 +338,98 @@ function getHorseLink(breed, coat) {
     return `horse.html?breed=${encodeURIComponent(breed.trim())}&coat=${encodeURIComponent(coat.trim())}`;
 }
 
-// Format response with basic markdown
+// Render a horse card from data
+function renderHorseCard(breed, coat) {
+    if (!horseData || !horseData.horses) return `<em>Horse not found: ${breed} - ${coat}</em>`;
+
+    const horse = horseData.horses.find(h =>
+        h.breed.toLowerCase() === breed.toLowerCase() &&
+        h.coat.toLowerCase() === coat.toLowerCase()
+    );
+
+    if (!horse) return `<em>Horse not found: ${breed} - ${coat}</em>`;
+
+    const imagePath = horse.image || `images/horses/${breed.toLowerCase().replace(/\s+/g, '_')}_${coat.toLowerCase().replace(/\s+/g, '_')}.webp`;
+    const horseLink = `horse.html?breed=${encodeURIComponent(breed)}&coat=${encodeURIComponent(coat)}`;
+
+    // Extract stats from nested structure
+    const baseHealth = horse.baseStats?.health || 0;
+    const baseStamina = horse.baseStats?.stamina || 0;
+    const baseSpeed = horse.baseStats?.speed || 0;
+    const baseAccel = horse.baseStats?.acceleration || 0;
+
+    // Use maxStats from JSON if available, otherwise calculate
+    const maxHealth = horse.maxStats?.health || (baseHealth + 1);
+    const maxStamina = horse.maxStats?.stamina || (baseStamina + 1);
+    const maxSpeed = horse.maxStats?.speed || (baseSpeed + 2);
+    const maxAccel = horse.maxStats?.acceleration || (baseAccel + 2);
+
+    // Format price
+    const priceText = !horse.price ? 'Free (Wild)' : `$${horse.price.toFixed(2)}`;
+
+    // Get location and availability from acquisition object
+    const location = horse.acquisition?.location || 'Unknown';
+    const availability = horse.acquisition?.chapter || 'Unknown';
+
+    // Build card HTML without newlines to prevent markdown processing issues
+    const communityHtml = horse.communityNotes ? `<div class="horse-card-notes"><strong>Community:</strong> ${horse.communityNotes}</div>` : '';
+
+    return `<div class="horse-card"><a href="${horseLink}" class="horse-card-image-link"><img src="${imagePath}" alt="${breed} ${coat}" class="horse-card-image" onerror="this.style.display='none'"></a><div class="horse-card-content"><a href="${horseLink}" class="horse-card-title">${breed} - ${coat}</a><div class="horse-card-badges"><span class="badge badge-handling">${horse.handling}</span><span class="badge badge-price">${priceText}</span><span class="badge badge-chapter">${availability}</span></div><div class="horse-card-stats"><div class="stat-row"><span class="stat-label">Health</span><div class="stat-bar-container"><div class="stat-bar" style="width: ${(baseHealth / 10) * 100}%"></div><div class="stat-bar stat-bar-max" style="width: ${(maxHealth / 10) * 100}%"></div></div><span class="stat-value">${baseHealth}→${maxHealth}</span></div><div class="stat-row"><span class="stat-label">Stamina</span><div class="stat-bar-container"><div class="stat-bar" style="width: ${(baseStamina / 10) * 100}%"></div><div class="stat-bar stat-bar-max" style="width: ${(maxStamina / 10) * 100}%"></div></div><span class="stat-value">${baseStamina}→${maxStamina}</span></div><div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-container"><div class="stat-bar" style="width: ${(baseSpeed / 10) * 100}%"></div><div class="stat-bar stat-bar-max" style="width: ${(maxSpeed / 10) * 100}%"></div></div><span class="stat-value">${baseSpeed}→${maxSpeed}</span></div><div class="stat-row"><span class="stat-label">Accel</span><div class="stat-bar-container"><div class="stat-bar" style="width: ${(baseAccel / 10) * 100}%"></div><div class="stat-bar stat-bar-max" style="width: ${(maxAccel / 10) * 100}%"></div></div><span class="stat-value">${baseAccel}→${maxAccel}</span></div></div><div class="horse-card-location"><strong>Location:</strong> ${location}</div>${communityHtml}</div></div>`;
+}
+
+// Render a saddle card from data
+function renderSaddleCard(name) {
+    if (!gearData) return `<em>Saddle not found: ${name}</em>`;
+
+    // Search all saddle types
+    let saddle = null;
+    let saddleType = '';
+
+    for (const type of ['stable', 'trapper', 'special']) {
+        if (gearData.saddles && gearData.saddles[type]) {
+            const found = gearData.saddles[type].find(s =>
+                s.name.toLowerCase() === name.toLowerCase()
+            );
+            if (found) {
+                saddle = found;
+                saddleType = type.charAt(0).toUpperCase() + type.slice(1);
+                break;
+            }
+        }
+    }
+
+    if (!saddle) return `<em>Saddle not found: ${name}</em>`;
+
+    // Build stats HTML
+    const staminaDrainHtml = saddle.staminaDrain ? `<div class="gear-stat"><span class="gear-stat-label">Stam Drain</span><span class="gear-stat-value ${saddle.staminaDrain < 0 ? 'stat-good' : ''}">${saddle.staminaDrain}%</span></div>` : '';
+    const speedHtml = saddle.speedBonus ? `<div class="gear-stat"><span class="gear-stat-label">Speed</span><span class="gear-stat-value stat-good">+${saddle.speedBonus}</span></div>` : '';
+    const accelHtml = saddle.accelBonus ? `<div class="gear-stat"><span class="gear-stat-label">Accel</span><span class="gear-stat-value stat-good">+${saddle.accelBonus}</span></div>` : '';
+    const costText = saddle.cost || `$${saddle.price?.toFixed(2) || '0.00'}`;
+
+    return `<div class="gear-card saddle-card"><div class="gear-card-header"><span class="gear-card-icon">🐎</span><span class="gear-card-title">${saddle.name}</span><span class="badge badge-type">${saddleType}</span></div><div class="gear-card-stats"><div class="gear-stat"><span class="gear-stat-label">Stamina Core</span><span class="gear-stat-value ${saddle.staminaCoreDrain < 0 ? 'stat-good' : ''}">${saddle.staminaCoreDrain}%</span></div><div class="gear-stat"><span class="gear-stat-label">Health Core</span><span class="gear-stat-value ${saddle.healthCoreDrain < 0 ? 'stat-good' : ''}">${saddle.healthCoreDrain}%</span></div><div class="gear-stat"><span class="gear-stat-label">Stam Regen</span><span class="gear-stat-value ${saddle.staminaRegen > 0 ? 'stat-good' : ''}">+${saddle.staminaRegen}%</span></div>${staminaDrainHtml}${speedHtml}${accelHtml}</div><div class="gear-card-footer"><span class="gear-cost">${costText}</span><span class="gear-availability">${saddle.availability || 'Stable'}</span></div></div>`;
+}
+
+// Render a stirrups card from data
+function renderStirrupsCard(name) {
+    if (!gearData || !gearData.stirrups) return `<em>Stirrups not found: ${name}</em>`;
+
+    const stirrups = gearData.stirrups.find(s =>
+        s.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (!stirrups) return `<em>Stirrups not found: ${name}</em>`;
+
+    const priceText = stirrups.price ? `$${stirrups.price.toFixed(2)}` : 'Free';
+
+    return `<div class="gear-card stirrups-card"><div class="gear-card-header"><span class="gear-card-icon">⚙️</span><span class="gear-card-title">${stirrups.name} Stirrups</span></div><div class="gear-card-stats"><div class="gear-stat"><span class="gear-stat-label">Speed</span><span class="gear-stat-value stat-good">+${stirrups.speedBonus}</span></div><div class="gear-stat"><span class="gear-stat-label">Accel</span><span class="gear-stat-value stat-good">+${stirrups.accelBonus}</span></div><div class="gear-stat"><span class="gear-stat-label">Stam Drain</span><span class="gear-stat-value ${stirrups.staminaDrain < 0 ? 'stat-good' : ''}">${stirrups.staminaDrain}%</span></div></div><div class="gear-card-footer"><span class="gear-cost">${priceText}</span></div></div>`;
+}
+
+// Format response with markdown support
 function formatResponse(text) {
-    // First, convert horse image tags [IMG:Breed - Coat] to clickable images
-    let html = text.replace(/\[IMG:([^\]]+)\]/g, (match, horseInfo) => {
+    let html = text;
+
+    // Legacy: convert horse image tags [IMG:Breed - Coat] to clickable images
+    html = html.replace(/\[IMG:([^\]]+)\]/g, (match, horseInfo) => {
         const parts = horseInfo.split(' - ');
         if (parts.length === 2) {
             const [breed, coat] = parts;
@@ -115,27 +440,59 @@ function formatResponse(text) {
         return '';
     });
 
+    // Convert markdown tables to HTML tables
+    html = html.replace(/(\|.+\|[\r\n]+\|[-:\s|]+\|[\r\n]+(?:\|.+\|[\r\n]*)+)/g, (match) => {
+        const lines = match.trim().split('\n').filter(line => line.trim());
+        if (lines.length < 2) return match;
+
+        // Parse header row
+        const headerCells = lines[0].split('|').filter(cell => cell.trim()).map(cell => cell.trim());
+        // Skip separator row (lines[1])
+        // Parse data rows
+        const dataRows = lines.slice(2).map(line =>
+            line.split('|').filter(cell => cell.trim()).map(cell => cell.trim())
+        );
+
+        let tableHtml = '<table><thead><tr>';
+        headerCells.forEach(cell => {
+            tableHtml += `<th>${cell}</th>`;
+        });
+        tableHtml += '</tr></thead><tbody>';
+        dataRows.forEach(row => {
+            tableHtml += '<tr>';
+            row.forEach(cell => {
+                tableHtml += `<td>${cell}</td>`;
+            });
+            tableHtml += '</tr>';
+        });
+        tableHtml += '</tbody></table>';
+        return tableHtml;
+    });
+
     // Convert markdown links [text](url) to HTML links
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, url) => {
         // Check if it's a horse detail link or external citation
         if (url.startsWith('horse.html') || url.startsWith('./horse.html')) {
-            return `<a href="${url}" class="horse-name-link"><strong>${text}</strong></a>`;
+            return `<a href="${url}" class="horse-name-link"><strong>${linkText}</strong></a>`;
         } else {
             // External link - open in new tab, style as citation
-            return `<a href="${url}" class="citation-link" target="_blank" rel="noopener">${text}</a>`;
+            return `<a href="${url}" class="citation-link" target="_blank" rel="noopener">${linkText}</a>`;
         }
+    });
+
+    // Fallback: catch "Text (horse.html?...)" pattern (AI sometimes outputs this instead of markdown)
+    html = html.replace(/([A-Z][^()\n]+?)\s*\((horse\.html\?[^)]+)\)/g, (match, linkText, url) => {
+        return `<a href="${url}" class="horse-name-link"><strong>${linkText.trim()}</strong></a>`;
     });
 
     // Convert bare URLs to clickable links (not already in an href)
     html = html.replace(/(?<!href=["'])(https?:\/\/[^\s<>"]+)/g, (match, url) => {
-        // Clean up trailing punctuation that might have been captured
         const cleanUrl = url.replace(/[.,;:!?)]+$/, '');
         return `<a href="${cleanUrl}" class="citation-link" target="_blank" rel="noopener">${cleanUrl}</a>`;
     });
 
     // Convert bold horse names (e.g., **Arabian - White**) to clickable links (fallback)
     html = html.replace(/\*\*([^*]+) - ([^*]+)\*\*/g, (match, breed, coat) => {
-        // Check if this looks like a horse name (exists in our data)
         const isHorse = horseData && horseData.horses && horseData.horses.some(h =>
             h.breed.toLowerCase() === breed.trim().toLowerCase()
         );
@@ -148,36 +505,69 @@ function formatResponse(text) {
 
     // Convert markdown-style formatting
     html = html
-        // Headers
-        .replace(/^### (.*$)/gm, '<h4>$1</h4>')
-        .replace(/^## (.*$)/gm, '<h3>$1</h3>')
+        // Horizontal rules
+        .replace(/^---+$/gm, '<hr>')
+        // Headers (## = h2, ### = h3, #### = h4)
+        .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
+        .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+        .replace(/^## (.*$)/gm, '<h2>$1</h2>')
         // Bold (remaining)
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         // Italic
         .replace(/\*(.*?)\*/g, '<em>$1</em>')
         // Code
-        .replace(/`(.*?)`/g, '<code>$1</code>')
-        // Line breaks
-        .replace(/\n\n/g, '</p><p>')
-        .replace(/\n/g, '<br>');
+        .replace(/`(.*?)`/g, '<code>$1</code>');
+
+    // Handle line breaks and paragraphs (but not inside tables)
+    const parts = html.split(/(<table>[\s\S]*?<\/table>|<h[234]>[\s\S]*?<\/h[234]>|<hr>)/);
+    html = parts.map(part => {
+        if (part.startsWith('<table>') || part.startsWith('<h') || part === '<hr>') {
+            return part;
+        }
+        return part
+            .replace(/\n\n/g, '</p><p>')
+            .replace(/\n/g, '<br>');
+    }).join('');
 
     // Handle bullet points
     html = html.replace(/(<br>)?- (.*?)(<br>|<\/p>|$)/g, (match, pre, content, post) => {
         return `<li>${content}</li>${post === '</p>' ? '</p>' : ''}`;
     });
 
-    // Wrap lists
-    html = html.replace(/(<li>.*?<\/li>)+/g, '<ul>$&</ul>');
+    // Wrap consecutive li elements in ul
+    html = html.replace(/(<li>[\s\S]*?<\/li>)+/g, '<ul>$&</ul>');
+
+    // Clean up empty paragraphs
+    html = html.replace(/<p>\s*<\/p>/g, '');
+
+    // LAST: Convert card markers to rendered cards (after all markdown processing)
+    // [HORSE:Breed|Coat] -> full horse card
+    html = html.replace(/\[HORSE:([^|\]]+)\|([^\]]+)\]/g, (match, breed, coat) => {
+        return renderHorseCard(breed.trim(), coat.trim());
+    });
+
+    // [SADDLE:Name] -> saddle card
+    html = html.replace(/\[SADDLE:([^\]]+)\]/g, (match, name) => {
+        return renderSaddleCard(name.trim());
+    });
+
+    // [STIRRUPS:Name] -> stirrups card
+    html = html.replace(/\[STIRRUPS:([^\]]+)\]/g, (match, name) => {
+        return renderStirrupsCard(name.trim());
+    });
 
     return `<p>${html}</p>`;
 }
 
 // Build system prompt with horse data
 function buildSystemPrompt() {
-    return `You are an expert Red Dead Redemption 2 horse advisor. You have complete knowledge of all horses in the game.
+    return `You are an expert Red Dead Redemption 2 horse and gear advisor. You have complete knowledge of all horses and horse equipment in the game.
 
 Here is the complete horse database:
 ${JSON.stringify(horseData, null, 2)}
+
+Here is the complete gear database (saddles, stirrups, saddlebags, etc.):
+${JSON.stringify(gearData, null, 2)}
 
 CRITICAL CHAPTER RESTRICTIONS:
 - If the user mentions their current chapter, ONLY recommend horses they can actually get RIGHT NOW
@@ -202,29 +592,36 @@ According to data miners, ALL horses have the SAME base courage stat. Bonding (l
 2. Share community reports (in "communityNotes" field)
 3. Emphasize bonding level matters most
 
-HORSE LINKS AND IMAGES:
-Each horse has a "detailUrl" field with a pre-built link to its detail page. When recommending a horse, ALWAYS make the horse name a clickable link using markdown format.
+FORMATTING - USE CARD MARKERS:
+The UI renders rich visual cards from simple markers. Use these markers when recommending horses or gear:
 
-Format horse names as clickable links like this:
-[Breed - Coat](detailUrl)
+FOR HORSES - output this marker (the UI will render a full card with image, stats, badges):
+[HORSE:Breed|Coat]
 
-For example: [Arabian - White](horse.html?breed=Arabian&coat=White)
+Example: [HORSE:Arabian|White] or [HORSE:Missouri Fox Trotter|Silver Dapple Pinto]
 
-Each horse also has an image. Include an image tag like this after the link:
-[IMG:Breed - Coat]
+FOR SADDLES - output this marker:
+[SADDLE:Name]
 
-When recommending horses, format like this:
-[Horse Name - Coat](use the detailUrl from the horse data)
-[IMG:Horse Name - Coat]
-- Base: Health [X], Stamina [X], Speed [X], Acceleration [X]
-- Max:  Health [X], Stamina [X], Speed [X], Acceleration [X]
-- Handling: [Type]
-- Location: [Where to get it]
-- Available: [Chapter/Epilogue]
-- Price: [Amount or "Free (wild)"]
-- Community: [communityNotes - player opinions/tips]
+Example: [SADDLE:Panther Trail] or [SADDLE:Improved McClelland]
 
-Max stats = bonding (+1 HP/Stam) + best saddle/stirrups (+2 Spd/Accel).
+FOR STIRRUPS - output this marker:
+[STIRRUPS:Name]
+
+Example: [STIRRUPS:Hooded] or [STIRRUPS:Bell Flower]
+
+IMPORTANT MARKER RULES:
+- Use EXACT names from the database (case-sensitive for coat names)
+- One marker per horse/gear item - the UI handles all the visual details
+- You can include multiple markers in a response
+- Add brief context BEFORE or AFTER the marker, not instead of it
+
+GENERAL FORMATTING:
+- Use ## for major section headers (e.g., "## Best Overall Setup")
+- Use **bold** for emphasis in explanatory text
+- Keep explanations concise - the cards show all the stats
+- For comparisons, show multiple cards and explain the trade-offs
+- Max horse stats = bonding (+1 HP/Stam) + best saddle/stirrups (+2 Spd/Accel)
 
 WEB SEARCH CITATIONS:
 When you use web search and cite external sources, ALWAYS include the source as a clickable markdown link.
@@ -239,6 +636,14 @@ async function sendQuery() {
     const query = input.value.trim();
 
     if (!query) return;
+
+    // Check if user is logged in
+    if (!currentUser) {
+        // Save the pending action so we can continue after sign-in
+        PendingAction.save('chat_query', { query });
+        showSignInModal();
+        return;
+    }
 
     if (!horseData) {
         addMessage('Horse data is still loading. Please try again.', 'error');
@@ -279,10 +684,13 @@ async function sendQuery() {
 
 // Call API via serverless proxy
 async function callAPI() {
+    const token = await getAuthToken();
+
     const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
             system: buildSystemPrompt(),
@@ -292,7 +700,13 @@ async function callAPI() {
 
     if (!response.ok) {
         const error = await response.json();
-        throw new Error(error.error?.message || 'API request failed');
+
+        // Handle rate limit specifically
+        if (response.status === 429) {
+            throw new Error(error.message || `Daily limit of ${error.limit} queries reached. Try again tomorrow!`);
+        }
+
+        throw new Error(error.message || error.error || 'API request failed');
     }
 
     const data = await response.json();
@@ -311,9 +725,9 @@ function clearChat() {
             <ul class="example-queries">
                 <li onclick="setQuery(this.textContent)">"What's the fastest horse I can get in Chapter 2?"</li>
                 <li onclick="setQuery(this.textContent)">"I want a brave horse that won't buck me off near predators"</li>
-                <li onclick="setQuery(this.textContent)">"I have a Kentucky Saddler, what's better?"</li>
                 <li onclick="setQuery(this.textContent)">"Where do I find the White Arabian?"</li>
-                <li onclick="setQuery(this.textContent)">"Best horse for combat?"</li>
+                <li onclick="setQuery(this.textContent)">"What's the best saddle and stirrups combo?"</li>
+                <li onclick="setQuery(this.textContent)">"How do I get the Panther Trail saddle?"</li>
                 <li onclick="setQuery(this.textContent)">"Compare Turkoman vs Arabian"</li>
             </ul>
         </div>
@@ -322,5 +736,8 @@ function clearChat() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    // Ensure page starts at the top
+    window.scrollTo(0, 0);
+    initAuth();
     loadHorseData();
 });

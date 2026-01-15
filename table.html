@@ -184,6 +184,8 @@
             }
         }
     </style>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
     <div class="container table-container">
@@ -231,6 +233,11 @@
         let horseData = [];
         let currentSort = { column: 'breed', direction: 'asc' };
 
+        // Helper to get first acquisition (handles both array and object)
+        function getAcquisition(horse) {
+            return Array.isArray(horse.acquisition) ? horse.acquisition[0] : horse.acquisition;
+        }
+
         async function loadHorses() {
             try {
                 const response = await fetch('horses.json');
@@ -264,7 +271,7 @@
                     <td class="stat-cell hide-mobile"><span class="stat-base">${horse.baseStats.acceleration}</span>→<span class="stat-max">${horse.maxStats.acceleration}</span></td>
                     <td class="hide-mobile">${horse.handling}</td>
                     <td class="price-cell">${horse.price ? '$' + horse.price.toLocaleString() : '<span class="price-free">Free</span>'}</td>
-                    <td class="chapter-cell hide-mobile">${horse.acquisition.chapter}</td>
+                    <td class="chapter-cell hide-mobile">${getAcquisition(horse).chapter}</td>
                 </tr>
             `).join('');
         }
@@ -316,8 +323,8 @@
                         valB = b.price || 0;
                         break;
                     case 'chapter':
-                        valA = a.acquisition.chapter;
-                        valB = b.acquisition.chapter;
+                        valA = getAcquisition(a).chapter;
+                        valB = getAcquisition(b).chapter;
                         break;
                     default:
                         return 0;
@@ -333,15 +340,21 @@
             if (!query) return horses;
 
             const lowerQuery = query.toLowerCase();
-            return horses.filter(horse =>
-                horse.breed.toLowerCase().includes(lowerQuery) ||
-                horse.coat.toLowerCase().includes(lowerQuery) ||
-                horse.category.toLowerCase().includes(lowerQuery) ||
-                horse.handling.toLowerCase().includes(lowerQuery) ||
-                horse.acquisition.location.toLowerCase().includes(lowerQuery) ||
-                horse.acquisition.chapter.toLowerCase().includes(lowerQuery) ||
-                (horse.communityNotes && horse.communityNotes.toLowerCase().includes(lowerQuery))
-            );
+            return horses.filter(horse => {
+                // Search all acquisition methods
+                const acqs = Array.isArray(horse.acquisition) ? horse.acquisition : [horse.acquisition];
+                const acqMatch = acqs.some(acq =>
+                    acq.location.toLowerCase().includes(lowerQuery) ||
+                    acq.chapter.toLowerCase().includes(lowerQuery)
+                );
+
+                return horse.breed.toLowerCase().includes(lowerQuery) ||
+                    horse.coat.toLowerCase().includes(lowerQuery) ||
+                    horse.category.toLowerCase().includes(lowerQuery) ||
+                    horse.handling.toLowerCase().includes(lowerQuery) ||
+                    acqMatch ||
+                    (horse.communityNotes && horse.communityNotes.toLowerCase().includes(lowerQuery));
+            });
         }
 
         function updateTable() {

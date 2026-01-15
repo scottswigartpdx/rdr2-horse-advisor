@@ -21,5 +21,8 @@
   "homepage": "https://github.com/scottswigartpdx/rdr2-horse-advisor#readme",
   "dependencies": {
     "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "playwright": "^1.57.0"
   }
 }

@@ -204,7 +204,7 @@
             display: flex;
             gap: 10px;
             margin: 10px 0;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .answer-label {
@@ -230,7 +230,7 @@
         }
 
         .stat-values {
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .stat-base {
@@ -253,6 +253,7 @@
         .detail-item {
             display: flex;
             gap: 8px;
+            font-size: 1rem;
         }
 
         .detail-label {
@@ -269,7 +270,8 @@
             border-radius: 4px;
             border-left: 3px solid var(--rust);
             margin-top: 15px;
-            font-size: 0.9rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
             color: var(--text-muted);
             font-style: italic;
         }
@@ -281,12 +283,28 @@
 
         .community-note {
             margin-top: 10px;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
             color: var(--text-muted);
             padding: 12px;
             background: var(--bg-dark);
             border-radius: 4px;
             border: 1px solid var(--border-subtle);
+        }
+
+        .alt-acquisition {
+            margin-top: 10px;
+            padding: 10px 12px;
+            background: var(--bg-elevated);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .alt-method {
+            display: block;
+            margin-top: 5px;
+            color: var(--text-muted);
+            font-style: italic;
         }
 
         .community-note strong {
@@ -360,6 +378,10 @@
             }
         }
     </style>
+    <!-- Supabase Auth -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
     <div class="container chooser-container">
@@ -384,9 +406,55 @@
     </div>
 
     <script>
+        // Supabase Auth
+        const SUPABASE_URL = 'https://vejhtrzmesjpxlonwhig.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_QYHw3yzSd61GgQj3Izb3ng_zkfT_IZv';
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        async function getAuthToken() {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            return session?.access_token || null;
+        }
+
+        async function signInWithGoogle() {
+            await supabaseClient.auth.signInWithOAuth({
+                provider: 'google',
+                options: { redirectTo: window.location.href }
+            });
+        }
+
         let horseData = null;
         let currentQuestion = 0;
         let answers = {};
+
+        // Helper to get first acquisition (handles both array and object)
+        function getAcquisition(horse) {
+            return Array.isArray(horse.acquisition) ? horse.acquisition[0] : horse.acquisition;
+        }
+
+        // Render acquisition notes and alternate acquisition methods
+        function renderAcquisitionNotes(horse) {
+            const acqs = Array.isArray(horse.acquisition) ? horse.acquisition : [horse.acquisition];
+            let html = '';
+
+            // Show notes from first acquisition
+            if (acqs[0].notes) {
+                html += `<p style="color: var(--text-muted); font-size: 0.95rem;"><strong>Note:</strong> ${acqs[0].notes}</p>`;
+            }
+
+            // Show alternate acquisition methods
+            if (acqs.length > 1) {
+                html += `<div class="alt-acquisition">
+                    <strong style="color: var(--rust);">Also available:</strong>
+                    ${acqs.slice(1).map(acq => {
+                        const method = acq.method === 'wild' ? 'Wild' : acq.method === 'stable' ? 'Stable' : acq.method;
+                        return `<span class="alt-method">${method} at ${acq.location} (${acq.chapter})</span>`;
+                    }).join('')}
+                </div>`;
+            }
+
+            return html;
+        }
 
         const questions = [
             {
@@ -556,14 +624,20 @@
                 console.error('Error:', error);
                 document.getElementById('resultsContent').innerHTML = `
                     <div class="error-message">
-                        <p>Sorry, there was an error getting recommendations. Please try again.</p>
-                        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">${error.message}</p>
+                        <p>Sorry, there was an error getting recommendations.</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">${error.message}</p>
                     </div>
                 `;
             }
         }
 
         async function getAIRecommendations() {
+            // Check auth first
+            const token = await getAuthToken();
+            if (!token) {
+                throw new Error('Please sign in to get personalized recommendations. <a href="#" onclick="signInWithGoogle(); return false;" style="color: var(--rust);">Sign in with Google</a>');
+            }
+
             const prompt = `You are an RDR2 horse expert. Recommend 3 horses based on the player's preferences.
 
 Player's answers:
@@ -604,18 +678,24 @@ Only return the JSON, no other text.`;
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
-                    model: 'claude-3-5-haiku-20241022',
-                    max_tokens: 1000,
-                    messages: [{ role: 'user', content: prompt }]
+                    system: prompt,
+                    messages: [{ role: 'user', content: 'Find me the best horses based on my preferences above.' }]
                 })
             });
 
             if (!response.ok) {
                 const err = await response.json();
-                throw new Error(err.error?.message || 'API request failed');
+                if (response.status === 401) {
+                    throw new Error('Please sign in to get recommendations. <a href="#" onclick="signInWithGoogle(); return false;" style="color: var(--rust);">Sign in with Google</a>');
+                }
+                if (response.status === 429) {
+                    throw new Error(err.message || 'Daily limit reached. Try again tomorrow!');
+                }
+                throw new Error(err.message || err.error || 'API request failed');
             }
 
             const data = await response.json();
@@ -742,15 +822,15 @@ Only return the JSON, no other text.`;
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Location:</span>
-                                <span class="detail-value">${horse.acquisition.location}</span>
+                                <span class="detail-value">${getAcquisition(horse).location}</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Available:</span>
-                                <span class="detail-value">${horse.acquisition.chapter}</span>
+                                <span class="detail-value">${getAcquisition(horse).chapter}</span>
                             </div>
                         </div>
 
-                        ${horse.acquisition.notes ? `<p style="color: var(--text-secondary); font-size: 0.85rem;"><strong>Note:</strong> ${horse.acquisition.notes}</p>` : ''}
+                        ${renderAcquisitionNotes(horse)}
 
                         <div class="community-note">
                             <strong>Community says:</strong> ${horse.communityNotes}

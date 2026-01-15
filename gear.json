@@ -1,0 +1,554 @@
+{
+  "saddles": {
+    "stable": [
+      {
+        "name": "Kneller Mother Hubbard",
+        "variant": "Stock",
+        "price": 39.00,
+        "staminaCoreDrain": -4,
+        "healthCoreDrain": -6,
+        "staminaRegen": 4,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Valentine Stable (Chapter 2+)"
+      },
+      {
+        "name": "Kneller Mother Hubbard",
+        "variant": "Improved",
+        "price": 65.00,
+        "staminaCoreDrain": -12,
+        "healthCoreDrain": -14,
+        "staminaRegen": 12,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Valentine Stable (Chapter 2+)"
+      },
+      {
+        "name": "Lumley Ranch Cutter",
+        "variant": "Stock",
+        "price": 45.00,
+        "staminaCoreDrain": -4,
+        "healthCoreDrain": -8,
+        "staminaRegen": 6,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Valentine Stable (Chapter 2+)"
+      },
+      {
+        "name": "Lumley Ranch Cutter",
+        "variant": "Improved",
+        "price": 75.00,
+        "staminaCoreDrain": -12,
+        "healthCoreDrain": -14,
+        "staminaRegen": 14,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Valentine Stable (Chapter 2+)"
+      },
+      {
+        "name": "Kneller Dakota",
+        "variant": "Stock",
+        "price": 43.00,
+        "staminaCoreDrain": -8,
+        "healthCoreDrain": -4,
+        "staminaRegen": 6,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Strawberry Stable (Chapter 2+)"
+      },
+      {
+        "name": "Kneller Dakota",
+        "variant": "Improved",
+        "price": 72.00,
+        "staminaCoreDrain": -16,
+        "healthCoreDrain": -12,
+        "staminaRegen": 14,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Strawberry Stable (Chapter 2+)"
+      },
+      {
+        "name": "Lumley McClelland",
+        "variant": "Stock",
+        "price": 42.00,
+        "staminaCoreDrain": -6,
+        "healthCoreDrain": -4,
+        "staminaRegen": 4,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Strawberry Stable (Chapter 2+)"
+      },
+      {
+        "name": "Lumley McClelland",
+        "variant": "Improved",
+        "price": 70.00,
+        "staminaCoreDrain": -14,
+        "healthCoreDrain": -12,
+        "staminaRegen": 12,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Strawberry Stable (Chapter 2+)"
+      },
+      {
+        "name": "Stenger Roping",
+        "variant": "Stock",
+        "price": 47.00,
+        "staminaCoreDrain": -4,
+        "healthCoreDrain": -10,
+        "staminaRegen": 8,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Scarlett Meadows Stable (Chapter 3+)"
+      },
+      {
+        "name": "Stenger Roping",
+        "variant": "Improved",
+        "price": 78.00,
+        "staminaCoreDrain": -12,
+        "healthCoreDrain": -18,
+        "staminaRegen": 16,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Scarlett Meadows Stable (Chapter 3+)"
+      },
+      {
+        "name": "Gerden Vaquero",
+        "variant": "Stock",
+        "price": 51.00,
+        "staminaCoreDrain": -8,
+        "healthCoreDrain": -6,
+        "staminaRegen": 8,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Saint Denis Stable (Chapter 4+)"
+      },
+      {
+        "name": "Gerden Vaquero",
+        "variant": "Improved",
+        "price": 85.00,
+        "staminaCoreDrain": -16,
+        "healthCoreDrain": -14,
+        "staminaRegen": 16,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Saint Denis Stable (Chapter 4+)"
+      },
+      {
+        "name": "Gerden Trail",
+        "variant": "Stock",
+        "price": 48.00,
+        "staminaCoreDrain": -10,
+        "healthCoreDrain": -4,
+        "staminaRegen": 8,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Saint Denis Stable (Chapter 4+)"
+      },
+      {
+        "name": "Gerden Trail",
+        "variant": "Improved",
+        "price": 80.00,
+        "staminaCoreDrain": -18,
+        "healthCoreDrain": -12,
+        "staminaRegen": 16,
+        "staminaDrain": 0,
+        "speedBonus": 0,
+        "accelBonus": 0,
+        "customizable": true,
+        "availability": "Saint Denis Stable (Chapter 4+)"
+      }
+    ],
+    "trapper": [
+      {
+        "name": "Boar Mother Hubbard",
+        "variant": "Special",
+        "price": null,
+        "cost": "1 Perfect Boar Pelt",
+        "staminaCoreDrain": -20,
+        "healthCoreDrain": -22,
+        "staminaRegen": 20,
+        "staminaDrain": -50,
+        "speedBonus": 2,
+        "accelBonus": 2,
+        "customizable": false,
+        "availability": "Trapper"
+      },
+      {
+        "name": "Alligator Ranch Cutter",
+        "variant": "Special",
+        "price": null,
+        "cost": "1 Perfect Alligator Skin",
+        "staminaCoreDrain": -20,
+        "healthCoreDrain": -24,
+        "staminaRegen": 22,
+        "staminaDrain": -50,
+        "speedBonus": 2,
+        "accelBonus": 2,
+        "customizable": false,
+        "availability": "Trapper"
+      },
+      {
+        "name": "Beaver Roping",
+        "variant": "Special",
+        "price": null,
+        "cost": "1 Perfect Beaver Pelt",
+        "staminaCoreDrain": -20,
+        "healthCoreDrain": -26,
+        "staminaRegen": 24,
+        "staminaDrain": -50,
+        "speedBonus": 2,
+        "accelBonus": 2,
+        "customizable": false,
+        "availability": "Trapper"
+      },
+      {
+        "name": "Cougar McClelland",
+        "variant": "Special",
+        "price": null,
+        "cost": "1 Perfect Cougar Pelt",
+        "staminaCoreDrain": -22,
+        "healthCoreDrain": -20,
+        "staminaRegen": 20,
+        "staminaDrain": -50,
+        "speedBonus": 2,
+        "accelBonus": 2,
+        "customizable": false,
+        "availability": "Trapper"
+      },
+      {
+        "name": "Bear Dakota",
+        "variant": "Special",
+        "price": null,
+        "cost": "1 Perfect Bear Pelt",
+        "staminaCoreDrain": -24,
+        "healthCoreDrain": -20,
+        "staminaRegen": 22,
+        "staminaDrain": -50,
+        "speedBonus": 2,
+        "accelBonus": 2,
+        "customizable": false,
+        "availability": "Trapper"
+      },
+      {
+        "name": "Rattlesnake Vaquero",
+        "variant": "Special",
+        "price": null,
+        "cost": "10 Perfect Snake Skins",
+        "staminaCoreDrain": -24,
+        "healthCoreDrain": -22,
+        "staminaRegen": 24,
+        "staminaDrain": -50,
+        "speedBonus": 2,
+        "accelBonus": 2,
+        "customizable": false,
+        "availability": "Trapper"
+      },
+      {
+        "name": "Panther Trail",
+        "variant": "Special",
+        "price": null,
+        "cost": "1 Perfect Panther Pelt",
+        "staminaCoreDrain": -26,
+        "healthCoreDrain": -20,
+        "staminaRegen": 24,
+        "staminaDrain": -50,
+        "speedBonus": 2,
+        "accelBonus": 2,
+        "customizable": false,
+        "availability": "Trapper",
+        "notes": "Best overall saddle in story mode"
+      }
+    ],
+    "special": [
+      {
+        "name": "Nuevo Paraiso",
+        "variant": "Special Edition",
+        "price": null,
+        "cost": "Special/Ultimate Edition bonus",
+        "staminaCoreDrain": -12,
+        "healthCoreDrain": -12,
+        "staminaRegen": 12,
+        "staminaDrain": -25,
+        "speedBonus": 1,
+        "accelBonus": 1,
+        "customizable": false,
+        "availability": "Special/Ultimate Edition only"
+      },
+      {
+        "name": "High Plains Cutting",
+        "variant": "Special Edition",
+        "price": null,
+        "cost": "Ultimate Edition bonus",
+        "staminaCoreDrain": -14,
+        "healthCoreDrain": -14,
+        "staminaRegen": 14,
+        "staminaDrain": -30,
+        "speedBonus": 1,
+        "accelBonus": 1,
+        "customizable": false,
+        "availability": "Ultimate Edition only"
+      }
+    ]
+  },
+  "stirrups": [
+    {
+      "name": "Fillies",
+      "price": 10.00,
+      "speedBonus": 0,
+      "accelBonus": 0,
+      "staminaDrain": 0,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Baroque",
+      "price": 12.50,
+      "speedBonus": 0,
+      "accelBonus": 0,
+      "staminaDrain": -5,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Slim-line Iron",
+      "price": 15.00,
+      "speedBonus": 0,
+      "accelBonus": 0,
+      "staminaDrain": -10,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Slim-line",
+      "price": 18.50,
+      "speedBonus": 1,
+      "accelBonus": 1,
+      "staminaDrain": -15,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Deep Roper",
+      "price": 20.00,
+      "speedBonus": 1,
+      "accelBonus": 1,
+      "staminaDrain": -20,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Belled Oxbow",
+      "price": 22.00,
+      "speedBonus": 1,
+      "accelBonus": 1,
+      "staminaDrain": -25,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Oxbow",
+      "price": 24.75,
+      "speedBonus": 1,
+      "accelBonus": 1,
+      "staminaDrain": -30,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Bell",
+      "price": 28.50,
+      "speedBonus": 2,
+      "accelBonus": 2,
+      "staminaDrain": -35,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Safety",
+      "price": 30.25,
+      "speedBonus": 2,
+      "accelBonus": 2,
+      "staminaDrain": -40,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Tapaderos",
+      "price": 32.50,
+      "speedBonus": 2,
+      "accelBonus": 2,
+      "staminaDrain": -45,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Hooded",
+      "price": 36.00,
+      "speedBonus": 2,
+      "accelBonus": 2,
+      "staminaDrain": -50,
+      "availability": "All Stables",
+      "notes": "Best stirrups - max speed/accel bonus and stamina drain reduction"
+    }
+  ],
+  "saddlebags": [
+    {
+      "name": "Standard Saddlebags",
+      "price": 12.00,
+      "capacity": "Small",
+      "outfitSlots": 1,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Upgraded Saddlebags",
+      "price": 40.00,
+      "capacity": "Large",
+      "outfitSlots": 3,
+      "availability": "All Stables",
+      "notes": "Allows storing 3 outfits and more provisions"
+    },
+    {
+      "name": "Collector's Saddlebags",
+      "price": null,
+      "capacity": "Large",
+      "outfitSlots": 5,
+      "availability": "Special/Ultimate Edition only",
+      "notes": "Best saddlebags - 5 outfit slots"
+    }
+  ],
+  "blankets": [
+    {
+      "name": "Wool Blanket",
+      "colors": ["Black", "Blue", "Brown", "Gray", "Green", "Red"],
+      "price": 8.00,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Navajo Blanket",
+      "colors": ["Multi-color patterns"],
+      "price": 10.00,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Snake Skin Blanket",
+      "colors": ["Natural"],
+      "price": 12.00,
+      "availability": "Trapper"
+    },
+    {
+      "name": "Gila Monster Blanket",
+      "colors": ["Natural"],
+      "price": 14.00,
+      "availability": "Trapper"
+    }
+  ],
+  "bedrolls": [
+    {
+      "name": "Wool Bedroll",
+      "price": 5.50,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Padded Wool Bedroll",
+      "price": 8.25,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Canvas Bedroll",
+      "price": 7.00,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Cougar Bedroll",
+      "price": null,
+      "cost": "1 Perfect Cougar Pelt",
+      "availability": "Trapper"
+    },
+    {
+      "name": "Bear Bedroll",
+      "price": null,
+      "cost": "1 Perfect Bear Pelt",
+      "availability": "Trapper"
+    }
+  ],
+  "horns": [
+    {
+      "name": "Wood Horn",
+      "variants": ["Plain", "Carved", "Painted"],
+      "priceRange": "$3.00 - $8.00",
+      "availability": "All Stables"
+    },
+    {
+      "name": "Steel Horn",
+      "variants": ["Plain", "Engraved"],
+      "priceRange": "$12.00 - $18.00",
+      "availability": "All Stables"
+    },
+    {
+      "name": "Brass Horn",
+      "variants": ["Plain", "Engraved", "Decorated"],
+      "priceRange": "$15.00 - $25.00",
+      "availability": "All Stables"
+    },
+    {
+      "name": "Silver Horn",
+      "variants": ["Plain", "Engraved", "Ornate"],
+      "priceRange": "$45.00 - $75.00",
+      "availability": "All Stables"
+    },
+    {
+      "name": "Gold Horn",
+      "variants": ["Plain", "Engraved", "Ornate"],
+      "priceRange": "$85.00 - $132.50",
+      "availability": "All Stables"
+    },
+    {
+      "name": "Bone Horn",
+      "variants": ["Natural"],
+      "price": null,
+      "cost": "Various animal bones",
+      "availability": "Trapper"
+    }
+  ],
+  "statExplanations": {
+    "staminaCoreDrain": "Reduces how fast the horse's stamina core depletes (percentage reduction)",
+    "healthCoreDrain": "Reduces how fast the horse's health core depletes (percentage reduction)",
+    "staminaRegen": "Increases how fast stamina regenerates (percentage increase)",
+    "staminaDrain": "Reduces stamina consumption while sprinting/galloping (percentage reduction)",
+    "speedBonus": "Flat bonus added to horse's base speed stat (max +2 from stirrups, +2 from saddle)",
+    "accelBonus": "Flat bonus added to horse's base acceleration stat (max +2 from stirrups, +2 from saddle)"
+  },
+  "recommendations": {
+    "bestEarlyGame": {
+      "saddle": "Kneller Dakota (Improved)",
+      "stirrups": "Hooded",
+      "notes": "Best combination available in Chapter 2 from Strawberry stable"
+    },
+    "bestOverall": {
+      "saddle": "Panther Trail (Trapper)",
+      "stirrups": "Hooded",
+      "notes": "Requires hunting a perfect panther - found in Lemoyne swamps"
+    },
+    "bestBudget": {
+      "saddle": "Gerden Trail (Improved)",
+      "stirrups": "Hooded",
+      "notes": "Good stats, available from Saint Denis in Chapter 4"
+    }
+  }
+}
