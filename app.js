@@ -1,6 +1,7 @@
 // RDR2 Horse Advisor - Main Application
 
 let horseData = null;
+let conversationHistory = [];
 
 // Load horse data
 async function loadHorseData() {
@@ -114,7 +115,25 @@ function formatResponse(text) {
         return '';
     });
 
-    // Convert bold horse names (e.g., **Arabian - White**) to clickable links
+    // Convert markdown links [text](url) to HTML links
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
+        // Check if it's a horse detail link or external citation
+        if (url.startsWith('horse.html') || url.startsWith('./horse.html')) {
+            return `<a href="${url}" class="horse-name-link"><strong>${text}</strong></a>`;
+        } else {
+            // External link - open in new tab, style as citation
+            return `<a href="${url}" class="citation-link" target="_blank" rel="noopener">${text}</a>`;
+        }
+    });
+
+    // Convert bare URLs to clickable links (not already in an href)
+    html = html.replace(/(?<!href=["'])(https?:\/\/[^\s<>"]+)/g, (match, url) => {
+        // Clean up trailing punctuation that might have been captured
+        const cleanUrl = url.replace(/[.,;:!?)]+$/, '');
+        return `<a href="${cleanUrl}" class="citation-link" target="_blank" rel="noopener">${cleanUrl}</a>`;
+    });
+
+    // Convert bold horse names (e.g., **Arabian - White**) to clickable links (fallback)
     html = html.replace(/\*\*([^*]+) - ([^*]+)\*\*/g, (match, breed, coat) => {
         // Check if this looks like a horse name (exists in our data)
         const isHorse = horseData && horseData.horses && horseData.horses.some(h =>
@@ -183,15 +202,19 @@ According to data miners, ALL horses have the SAME base courage stat. Bonding (l
 2. Share community reports (in "communityNotes" field)
 3. Emphasize bonding level matters most
 
-HORSE IMAGES:
-Each horse has an image available. When recommending a horse, include an image tag like this:
+HORSE LINKS AND IMAGES:
+Each horse has a "detailUrl" field with a pre-built link to its detail page. When recommending a horse, ALWAYS make the horse name a clickable link using markdown format.
+
+Format horse names as clickable links like this:
+[Breed - Coat](detailUrl)
+
+For example: [Arabian - White](horse.html?breed=Arabian&coat=White)
+
+Each horse also has an image. Include an image tag like this after the link:
 [IMG:Breed - Coat]
 
-For example: [IMG:Arabian - White] or [IMG:Missouri Fox Trotter - Amber Champagne]
-Place the image tag on its own line, right after the horse name heading.
-
 When recommending horses, format like this:
-**[Horse Name] - [Coat]**
+[Horse Name - Coat](use the detailUrl from the horse data)
 [IMG:Horse Name - Coat]
 - Base: Health [X], Stamina [X], Speed [X], Acceleration [X]
 - Max:  Health [X], Stamina [X], Speed [X], Acceleration [X]
@@ -201,7 +224,13 @@ When recommending horses, format like this:
 - Price: [Amount or "Free (wild)"]
 - Community: [communityNotes - player opinions/tips]
 
-Max stats = bonding (+1 HP/Stam) + best saddle/stirrups (+2 Spd/Accel).`;
+Max stats = bonding (+1 HP/Stam) + best saddle/stirrups (+2 Spd/Accel).
+
+WEB SEARCH CITATIONS:
+When you use web search and cite external sources, ALWAYS include the source as a clickable markdown link.
+Format: [Source Name](full URL)
+Example: [IGN Guide](https://www.ign.com/wikis/red-dead-redemption-2/Horses)
+Never mention a website without including its URL as a clickable link.`;
 }
 
 // Send query to AI
@@ -226,9 +255,15 @@ async function sendQuery() {
     showLoading();
 
     try {
-        const response = await callAPI(query);
+        // Add user message to history
+        conversationHistory.push({ role: 'user', content: query });
+
+        const response = await callAPI();
         hideLoading();
         addMessage(response, 'assistant');
+
+        // Add assistant response to history
+        conversationHistory.push({ role: 'assistant', content: response });
 
     } catch (error) {
         hideLoading();
@@ -243,7 +278,7 @@ async function sendQuery() {
 }
 
 // Call API via serverless proxy
-async function callAPI(query) {
+async function callAPI() {
     const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -251,9 +286,7 @@ async function callAPI(query) {
         },
         body: JSON.stringify({
             system: buildSystemPrompt(),
-            messages: [
-                { role: 'user', content: query }
-            ]
+            messages: conversationHistory
         })
     });
 
@@ -264,6 +297,27 @@ async function callAPI(query) {
 
     const data = await response.json();
     return data.content[0].text;
+}
+
+// Clear conversation history (for new chat)
+function clearChat() {
+    conversationHistory = [];
+    const container = document.getElementById('chatContainer');
+    container.innerHTML = `
+        <div class="welcome-message">
+            <h2>Ask about horses...</h2>
+            <p class="welcome-hint">e.g., "What's the bravest horse available in Chapter 3?"</p>
+            <h3>Or try one of these:</h3>
+            <ul class="example-queries">
+                <li onclick="setQuery(this.textContent)">"What's the fastest horse I can get in Chapter 2?"</li>
+                <li onclick="setQuery(this.textContent)">"I want a brave horse that won't buck me off near predators"</li>
+                <li onclick="setQuery(this.textContent)">"I have a Kentucky Saddler, what's better?"</li>
+                <li onclick="setQuery(this.textContent)">"Where do I find the White Arabian?"</li>
+                <li onclick="setQuery(this.textContent)">"Best horse for combat?"</li>
+                <li onclick="setQuery(this.textContent)">"Compare Turkoman vs Arabian"</li>
+            </ul>
+        </div>
+    `;
 }
 
 // Initialize

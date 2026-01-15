@@ -4,8 +4,18 @@
       "breed": "Arabian",
       "coat": "White",
       "image": "images/horses/arabian_white.webp",
-      "baseStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 6 },
-      "maxStats": { "health": 6, "stamina": 6, "speed": 8, "acceleration": 8 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 8,
+        "acceleration": 8
+      },
       "handling": "Elite",
       "category": "Superior",
       "price": null,
@@ -15,14 +25,25 @@
         "chapter": "Chapter 2+",
         "notes": "Rare spawn in snowy area. Save/reload if not present."
       },
-      "communityNotes": "Best free horse early game. Many players report it's skittish around predators, but others say bonding fixes this."
+      "communityNotes": "Best free horse early game. Many players report it's skittish around predators, but others say bonding fixes this.",
+      "detailUrl": "horse.html?breed=Arabian&coat=White"
     },
     {
       "breed": "Arabian",
       "coat": "Black",
       "image": "images/horses/arabian_black.webp",
-      "baseStats": { "health": 6, "stamina": 6, "speed": 6, "acceleration": 6 },
-      "maxStats": { "health": 7, "stamina": 7, "speed": 8, "acceleration": 8 },
+      "baseStats": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "maxStats": {
+        "health": 7,
+        "stamina": 7,
+        "speed": 8,
+        "acceleration": 8
+      },
       "handling": "Elite",
       "category": "Superior",
       "price": 1050,
@@ -32,14 +53,25 @@
         "chapter": "Chapter 4+",
         "notes": "Best balanced stats of purchasable Arabians"
       },
-      "communityNotes": "Popular for its balanced stats. Some players find Arabians too jumpy for combat."
+      "communityNotes": "Popular for its balanced stats. Some players find Arabians too jumpy for combat.",
+      "detailUrl": "horse.html?breed=Arabian&coat=Black"
     },
     {
       "breed": "Arabian",
       "coat": "Rose Grey Bay",
       "image": "images/horses/arabian_rose_grey_bay.webp",
-      "baseStats": { "health": 7, "stamina": 7, "speed": 6, "acceleration": 6 },
-      "maxStats": { "health": 8, "stamina": 8, "speed": 8, "acceleration": 8 },
+      "baseStats": {
+        "health": 7,
+        "stamina": 7,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "maxStats": {
+        "health": 8,
+        "stamina": 8,
+        "speed": 8,
+        "acceleration": 8
+      },
       "handling": "Elite",
       "category": "Superior",
       "price": 1250,
@@ -49,14 +81,25 @@
         "chapter": "Epilogue 1+",
         "notes": "Best overall base stats in the game"
       },
-      "communityNotes": "Highest total stats. Many consider it the 'best' horse purely by numbers."
+      "communityNotes": "Highest total stats. Many consider it the 'best' horse purely by numbers.",
+      "detailUrl": "horse.html?breed=Arabian&coat=Rose%20Grey%20Bay"
     },
     {
       "breed": "Arabian",
       "coat": "Warped Brindle",
       "image": "images/horses/arabian_warped_brindle.webp",
-      "baseStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 6 },
-      "maxStats": { "health": 6, "stamina": 6, "speed": 8, "acceleration": 8 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 8,
+        "acceleration": 8
+      },
       "handling": "Elite",
       "category": "Superior",
       "price": null,
@@ -66,14 +109,25 @@
         "chapter": "Chapter 2+",
         "notes": "Rare spawn. Look above the reservation name on the map."
       },
-      "communityNotes": "Unique coat pattern. Same stats as White Arabian but harder to find."
+      "communityNotes": "Unique coat pattern. Same stats as White Arabian but harder to find.",
+      "detailUrl": "horse.html?breed=Arabian&coat=Warped%20Brindle"
     },
     {
       "breed": "Arabian",
       "coat": "Red Chestnut",
       "image": "images/horses/arabian_red_chestnut.webp",
-      "baseStats": { "health": 4, "stamina": 4, "speed": 6, "acceleration": 6 },
-      "maxStats": { "health": 5, "stamina": 5, "speed": 8, "acceleration": 8 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 8,
+        "acceleration": 8
+      },
       "handling": "Elite",
       "category": "Superior",
       "price": null,
@@ -83,14 +137,25 @@
         "chapter": "Chapter 2+",
         "notes": "Rare spawn with limited spawn conditions"
       },
-      "communityNotes": "Weakest Arabian but still has Elite handling. Good early option if you can find it."
+      "communityNotes": "Weakest Arabian but still has Elite handling. Good early option if you can find it.",
+      "detailUrl": "horse.html?breed=Arabian&coat=Red%20Chestnut"
     },
     {
       "breed": "Turkoman",
       "coat": "Gold",
       "image": "images/horses/turkoman_gold.webp",
-      "baseStats": { "health": 7, "stamina": 5, "speed": 6, "acceleration": 5 },
-      "maxStats": { "health": 8, "stamina": 6, "speed": 8, "acceleration": 7 },
+      "baseStats": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 8,
+        "stamina": 6,
+        "speed": 8,
+        "acceleration": 7
+      },
       "handling": "Standard",
       "category": "Multi/War",
       "price": 950,
@@ -100,14 +165,25 @@
         "chapter": "Chapter 4+",
         "notes": "War horse with high health"
       },
-      "communityNotes": "Fan favorite. Players often report it handles combat and predators better than Arabians. Larger size may contribute to feeling more stable."
+      "communityNotes": "Fan favorite. Players often report it handles combat and predators better than Arabians. Larger size may contribute to feeling more stable.",
+      "detailUrl": "horse.html?breed=Turkoman&coat=Gold"
     },
     {
       "breed": "Turkoman",
       "coat": "Dark Bay",
       "image": "images/horses/turkoman_dark_bay.webp",
-      "baseStats": { "health": 7, "stamina": 5, "speed": 6, "acceleration": 5 },
-      "maxStats": { "health": 8, "stamina": 6, "speed": 8, "acceleration": 7 },
+      "baseStats": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 8,
+        "stamina": 6,
+        "speed": 8,
+        "acceleration": 7
+      },
       "handling": "Standard",
       "category": "Multi/War",
       "price": 925,
@@ -117,14 +193,25 @@
         "chapter": "Epilogue 1+",
         "notes": "War horse variant available in epilogue"
       },
-      "communityNotes": "Same stats as Gold, slightly cheaper. Good epilogue pickup."
+      "communityNotes": "Same stats as Gold, slightly cheaper. Good epilogue pickup.",
+      "detailUrl": "horse.html?breed=Turkoman&coat=Dark%20Bay"
     },
     {
       "breed": "Turkoman",
       "coat": "Silver",
       "image": "images/horses/turkoman_silver.webp",
-      "baseStats": { "health": 7, "stamina": 5, "speed": 6, "acceleration": 5 },
-      "maxStats": { "health": 8, "stamina": 6, "speed": 8, "acceleration": 7 },
+      "baseStats": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 8,
+        "stamina": 6,
+        "speed": 8,
+        "acceleration": 7
+      },
       "handling": "Standard",
       "category": "Multi/War",
       "price": 950,
@@ -134,14 +221,25 @@
         "chapter": "Epilogue 1+",
         "notes": "War horse variant in New Austin"
       },
-      "communityNotes": "Rarest coat color for Turkoman. Worth the trip to Tumbleweed for collectors."
+      "communityNotes": "Rarest coat color for Turkoman. Worth the trip to Tumbleweed for collectors.",
+      "detailUrl": "horse.html?breed=Turkoman&coat=Silver"
     },
     {
       "breed": "Missouri Fox Trotter",
       "coat": "Amber Champagne",
       "image": "images/horses/missouri_fox_trotter_amber_champagne.webp",
-      "baseStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 5 },
-      "maxStats": { "health": 6, "stamina": 7, "speed": 9, "acceleration": 7 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 7,
+        "speed": 9,
+        "acceleration": 7
+      },
       "handling": "Standard",
       "category": "Multi",
       "price": 950,
@@ -151,14 +249,25 @@
         "chapter": "Chapter 4+",
         "notes": "Fastest multi-purpose horse"
       },
-      "communityNotes": "Many players consider this the best all-around horse. High speed with decent health. Often recommended over Arabians for general use."
+      "communityNotes": "Many players consider this the best all-around horse. High speed with decent health. Often recommended over Arabians for general use.",
+      "detailUrl": "horse.html?breed=Missouri%20Fox%20Trotter&coat=Amber%20Champagne"
     },
     {
       "breed": "Missouri Fox Trotter",
       "coat": "Silver Dapple Pinto",
       "image": "images/horses/missouri_fox_trotter_silver_dapple_pinto.webp",
-      "baseStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 5 },
-      "maxStats": { "health": 6, "stamina": 7, "speed": 9, "acceleration": 7 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 7,
+        "speed": 9,
+        "acceleration": 7
+      },
       "handling": "Standard",
       "category": "Multi",
       "price": 950,
@@ -168,14 +277,25 @@
         "chapter": "Epilogue 1+",
         "notes": "One of the fastest horses in the game"
       },
-      "communityNotes": "Beautiful coat. Speed 9 when maxed ties for fastest in game."
+      "communityNotes": "Beautiful coat. Speed 9 when maxed ties for fastest in game.",
+      "detailUrl": "horse.html?breed=Missouri%20Fox%20Trotter&coat=Silver%20Dapple%20Pinto"
     },
     {
       "breed": "Thoroughbred",
       "coat": "Brindle",
       "image": "images/horses/thoroughbred_brindle.webp",
-      "baseStats": { "health": 3, "stamina": 3, "speed": 7, "acceleration": 5 },
-      "maxStats": { "health": 4, "stamina": 4, "speed": 9, "acceleration": 7 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 9,
+        "acceleration": 7
+      },
       "handling": "Race",
       "category": "Race",
       "price": 450,
@@ -185,14 +305,25 @@
         "chapter": "Chapter 3+",
         "notes": "Fast racing horse"
       },
-      "communityNotes": "Glass cannon - very fast but dies easily. Not recommended for combat or predator areas."
+      "communityNotes": "Glass cannon - very fast but dies easily. Not recommended for combat or predator areas.",
+      "detailUrl": "horse.html?breed=Thoroughbred&coat=Brindle"
     },
     {
       "breed": "Thoroughbred",
       "coat": "Blood Bay",
       "image": "images/horses/thoroughbred_blood_bay.webp",
-      "baseStats": { "health": 3, "stamina": 3, "speed": 7, "acceleration": 5 },
-      "maxStats": { "health": 4, "stamina": 4, "speed": 9, "acceleration": 7 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 9,
+        "acceleration": 7
+      },
       "handling": "Race",
       "category": "Race",
       "price": 450,
@@ -202,14 +333,25 @@
         "chapter": "Chapter 3+",
         "notes": "Racing variant at Valentine"
       },
-      "communityNotes": "Same stats as Brindle. Pick based on coat preference."
+      "communityNotes": "Same stats as Brindle. Pick based on coat preference.",
+      "detailUrl": "horse.html?breed=Thoroughbred&coat=Blood%20Bay"
     },
     {
       "breed": "Thoroughbred",
       "coat": "Dappled Black",
       "image": "images/horses/thoroughbred_dappled_black.webp",
-      "baseStats": { "health": 3, "stamina": 3, "speed": 7, "acceleration": 5 },
-      "maxStats": { "health": 4, "stamina": 4, "speed": 9, "acceleration": 7 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 9,
+        "acceleration": 7
+      },
       "handling": "Race",
       "category": "Race",
       "price": null,
@@ -219,14 +361,25 @@
         "chapter": "Chapter 2+",
         "notes": "Pre-order/Ultimate Edition bonus horse"
       },
-      "communityNotes": "Free if you have the bonus. Good early speed horse but fragile."
+      "communityNotes": "Free if you have the bonus. Good early speed horse but fragile.",
+      "detailUrl": "horse.html?breed=Thoroughbred&coat=Dappled%20Black"
     },
     {
       "breed": "Nokota",
       "coat": "Reverse Dapple Roan",
       "image": "images/horses/nokota_reverse_dapple_roan.webp",
-      "baseStats": { "health": 3, "stamina": 3, "speed": 7, "acceleration": 5 },
-      "maxStats": { "health": 4, "stamina": 4, "speed": 9, "acceleration": 7 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 9,
+        "acceleration": 7
+      },
       "handling": "Race",
       "category": "Race",
       "price": 450,
@@ -236,14 +389,25 @@
         "chapter": "Chapter 4+",
         "notes": "Top speed racing horse"
       },
-      "communityNotes": "Matches Thoroughbred speed. Beautiful unique coat pattern."
+      "communityNotes": "Matches Thoroughbred speed. Beautiful unique coat pattern.",
+      "detailUrl": "horse.html?breed=Nokota&coat=Reverse%20Dapple%20Roan"
     },
     {
       "breed": "Nokota",
       "coat": "Blue Roan",
       "image": "images/horses/nokota_blue_roan.webp",
-      "baseStats": { "health": 3, "stamina": 3, "speed": 6, "acceleration": 5 },
-      "maxStats": { "health": 4, "stamina": 4, "speed": 8, "acceleration": 7 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 8,
+        "acceleration": 7
+      },
       "handling": "Race",
       "category": "Race",
       "price": 130,
@@ -253,14 +417,25 @@
         "chapter": "Chapter 2+",
         "notes": "Budget racing option"
       },
-      "communityNotes": "Good value for early game speed. Only $130."
+      "communityNotes": "Good value for early game speed. Only $130.",
+      "detailUrl": "horse.html?breed=Nokota&coat=Blue%20Roan"
     },
     {
       "breed": "Nokota",
       "coat": "Wild",
       "image": "images/horses/nokota_blue_roan.webp",
-      "baseStats": { "health": 3, "stamina": 3, "speed": 6, "acceleration": 5 },
-      "maxStats": { "health": 4, "stamina": 4, "speed": 8, "acceleration": 7 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 8,
+        "acceleration": 7
+      },
       "handling": "Race",
       "category": "Race",
       "price": null,
@@ -270,14 +445,25 @@
         "chapter": "Epilogue 1+",
         "notes": "Wild racing horse in late game"
       },
-      "communityNotes": "Free racing horse if you're in the epilogue."
+      "communityNotes": "Free racing horse if you're in the epilogue.",
+      "detailUrl": "horse.html?breed=Nokota&coat=Wild"
     },
     {
       "breed": "Andalusian",
       "coat": "Perlino",
       "image": "images/horses/andalusian_perlino.webp",
-      "baseStats": { "health": 7, "stamina": 5, "speed": 4, "acceleration": 4 },
-      "maxStats": { "health": 8, "stamina": 6, "speed": 6, "acceleration": 6 },
+      "baseStats": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "maxStats": {
+        "health": 8,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 6
+      },
       "handling": "Standard",
       "category": "War",
       "price": null,
@@ -287,14 +473,25 @@
         "chapter": "Chapter 2+",
         "notes": "Free war horse spawn"
       },
-      "communityNotes": "HIGHLY praised by community for temperament. Many players swear this is the calmest horse around predators and in combat. Slower than Arabians but players report it feels more reliable."
+      "communityNotes": "HIGHLY praised by community for temperament. Many players swear this is the calmest horse around predators and in combat. Slower than Arabians but players report it feels more reliable.",
+      "detailUrl": "horse.html?breed=Andalusian&coat=Perlino"
     },
     {
       "breed": "Andalusian",
       "coat": "Dark Bay",
       "image": "images/horses/andalusian_dark_bay.webp",
-      "baseStats": { "health": 7, "stamina": 5, "speed": 4, "acceleration": 4 },
-      "maxStats": { "health": 8, "stamina": 6, "speed": 6, "acceleration": 6 },
+      "baseStats": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "maxStats": {
+        "health": 8,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 6
+      },
       "handling": "Standard",
       "category": "War",
       "price": 440,
@@ -304,14 +501,25 @@
         "chapter": "Chapter 2+",
         "notes": "Purchasable war horse"
       },
-      "communityNotes": "Same glowing reviews as Perlino. Community favorite for swamp/predator areas."
+      "communityNotes": "Same glowing reviews as Perlino. Community favorite for swamp/predator areas.",
+      "detailUrl": "horse.html?breed=Andalusian&coat=Dark%20Bay"
     },
     {
       "breed": "Andalusian",
       "coat": "Rose Grey",
       "image": "images/horses/andalusian_rose_grey.webp",
-      "baseStats": { "health": 7, "stamina": 5, "speed": 4, "acceleration": 4 },
-      "maxStats": { "health": 8, "stamina": 6, "speed": 6, "acceleration": 6 },
+      "baseStats": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "maxStats": {
+        "health": 8,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 6
+      },
       "handling": "Standard",
       "category": "War",
       "price": 440,
@@ -321,14 +529,25 @@
         "chapter": "Chapter 2+",
         "notes": "Early-available war horse"
       },
-      "communityNotes": "Players love this for early game combat-focused playstyle."
+      "communityNotes": "Players love this for early game combat-focused playstyle.",
+      "detailUrl": "horse.html?breed=Andalusian&coat=Rose%20Grey"
     },
     {
       "breed": "Ardennes",
       "coat": "Bay Roan",
       "image": "images/horses/ardennes_bay_roan.webp",
-      "baseStats": { "health": 8, "stamina": 4, "speed": 3, "acceleration": 3 },
-      "maxStats": { "health": 9, "stamina": 5, "speed": 5, "acceleration": 5 },
+      "baseStats": {
+        "health": 8,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 9,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 5
+      },
       "handling": "Heavy",
       "category": "War",
       "price": 450,
@@ -338,14 +557,25 @@
         "chapter": "Chapter 3+",
         "notes": "Highest base health in the game"
       },
-      "communityNotes": "Tank build. Very slow but takes a lot of damage. Heavy handling makes tight turns difficult. Some players report it's actually more skittish than Andalusian despite being a 'war' horse."
+      "communityNotes": "Tank build. Very slow but takes a lot of damage. Heavy handling makes tight turns difficult. Some players report it's actually more skittish than Andalusian despite being a 'war' horse.",
+      "detailUrl": "horse.html?breed=Ardennes&coat=Bay%20Roan"
     },
     {
       "breed": "Ardennes",
       "coat": "Strawberry Roan",
       "image": "images/horses/ardennes_strawberry_roan.webp",
-      "baseStats": { "health": 8, "stamina": 4, "speed": 3, "acceleration": 3 },
-      "maxStats": { "health": 9, "stamina": 5, "speed": 5, "acceleration": 5 },
+      "baseStats": {
+        "health": 8,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 9,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 5
+      },
       "handling": "Heavy",
       "category": "War",
       "price": 450,
@@ -355,14 +585,25 @@
         "chapter": "Chapter 2+",
         "notes": "Tank-like war horse"
       },
-      "communityNotes": "Same as Bay Roan. Pick based on coat preference."
+      "communityNotes": "Same as Bay Roan. Pick based on coat preference.",
+      "detailUrl": "horse.html?breed=Ardennes&coat=Strawberry%20Roan"
     },
     {
       "breed": "Ardennes",
       "coat": "Iron Grey",
       "image": "images/horses/ardennes_iron_grey.webp",
-      "baseStats": { "health": 8, "stamina": 4, "speed": 3, "acceleration": 3 },
-      "maxStats": { "health": 9, "stamina": 5, "speed": 5, "acceleration": 5 },
+      "baseStats": {
+        "health": 8,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 9,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 5
+      },
       "handling": "Heavy",
       "category": "War",
       "price": null,
@@ -372,14 +613,25 @@
         "chapter": "Chapter 2+",
         "notes": "Pre-order/Ultimate Edition bonus war horse"
       },
-      "communityNotes": "Free if you have the bonus. Good for soaking damage early game."
+      "communityNotes": "Free if you have the bonus. Good for soaking damage early game.",
+      "detailUrl": "horse.html?breed=Ardennes&coat=Iron%20Grey"
     },
     {
       "breed": "Dutch Warmblood",
       "coat": "Chocolate Roan",
       "image": "images/horses/dutch_warmblood_chocolate_roan.webp",
-      "baseStats": { "health": 5, "stamina": 6, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 6, "stamina": 7, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 7,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Work",
       "price": 450,
@@ -389,14 +641,25 @@
         "chapter": "Chapter 3+",
         "notes": "Solid work horse with good stamina"
       },
-      "communityNotes": "Reliable workhorse. Nothing flashy but gets the job done."
+      "communityNotes": "Reliable workhorse. Nothing flashy but gets the job done.",
+      "detailUrl": "horse.html?breed=Dutch%20Warmblood&coat=Chocolate%20Roan"
     },
     {
       "breed": "Dutch Warmblood",
       "coat": "Seal Brown",
       "image": "images/horses/dutch_warmblood_seal_brown.webp",
-      "baseStats": { "health": 5, "stamina": 6, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 6, "stamina": 7, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 7,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Work",
       "price": 450,
@@ -406,14 +669,25 @@
         "chapter": "Chapter 3+",
         "notes": "Work horse option at Strawberry"
       },
-      "communityNotes": "Same as Chocolate Roan stats."
+      "communityNotes": "Same as Chocolate Roan stats.",
+      "detailUrl": "horse.html?breed=Dutch%20Warmblood&coat=Seal%20Brown"
     },
     {
       "breed": "Dutch Warmblood",
       "coat": "Sooty Buckskin",
       "image": "images/horses/dutch_warmblood_sooty_buckskin.webp",
-      "baseStats": { "health": 4, "stamina": 5, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 5, "stamina": 6, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Work",
       "price": 150,
@@ -423,14 +697,25 @@
         "chapter": "Chapter 2+",
         "notes": "Budget work horse"
       },
-      "communityNotes": "Good value at $150. Slightly weaker than other Warmbloods."
+      "communityNotes": "Good value at $150. Slightly weaker than other Warmbloods.",
+      "detailUrl": "horse.html?breed=Dutch%20Warmblood&coat=Sooty%20Buckskin"
     },
     {
       "breed": "Dutch Warmblood",
       "coat": "Cremello Gold (Buell)",
       "image": "images/horses/dutch_warmblood_buell.webp",
-      "baseStats": { "health": 6, "stamina": 6, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 7, "stamina": 7, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 7,
+        "stamina": 7,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Work",
       "price": null,
@@ -440,14 +725,25 @@
         "chapter": "Chapter 6+ (best to wait until Epilogue)",
         "notes": "Unique horse from Hamish Sinclair. Complete all 4 'Veteran' stranger missions."
       },
-      "communityNotes": "IMPORTANT: If you get Buell as Arthur in Chapter 6, you LOSE him. Wait until Epilogue and do the missions as John to keep him permanently. Beloved by the community for the story behind him."
+      "communityNotes": "IMPORTANT: If you get Buell as Arthur in Chapter 6, you LOSE him. Wait until Epilogue and do the missions as John to keep him permanently. Beloved by the community for the story behind him.",
+      "detailUrl": "horse.html?breed=Dutch%20Warmblood&coat=Cremello%20Gold%20(Buell)"
     },
     {
       "breed": "Hungarian Halfbred",
       "coat": "Dapple Dark Grey",
       "image": "images/horses/hungarian_halfbred_dapple_dark_grey.webp",
-      "baseStats": { "health": 5, "stamina": 5, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 6, "stamina": 6, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Heavy",
       "category": "Work",
       "price": 150,
@@ -457,14 +753,25 @@
         "chapter": "Chapter 2+",
         "notes": "Early available work horse"
       },
-      "communityNotes": "Decent early horse. Heavy handling can be annoying in forests."
+      "communityNotes": "Decent early horse. Heavy handling can be annoying in forests.",
+      "detailUrl": "horse.html?breed=Hungarian%20Halfbred&coat=Dapple%20Dark%20Grey"
     },
     {
       "breed": "Hungarian Halfbred",
       "coat": "Piebald Tobiano",
       "image": "images/horses/hungarian_halfbred_piebald_tobiano.webp",
-      "baseStats": { "health": 5, "stamina": 5, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 6, "stamina": 6, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Heavy",
       "category": "Work",
       "price": 130,
@@ -474,14 +781,25 @@
         "chapter": "Chapter 2+",
         "notes": "Budget work horse at Strawberry"
       },
-      "communityNotes": "Nice spotted coat pattern. Slightly cheaper than Dapple."
+      "communityNotes": "Nice spotted coat pattern. Slightly cheaper than Dapple.",
+      "detailUrl": "horse.html?breed=Hungarian%20Halfbred&coat=Piebald%20Tobiano"
     },
     {
       "breed": "Hungarian Halfbred",
       "coat": "Wild",
       "image": "images/horses/hungarian_halfbred_dapple_dark_grey.webp",
-      "baseStats": { "health": 5, "stamina": 5, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 6, "stamina": 6, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Heavy",
       "category": "Work",
       "price": null,
@@ -491,14 +809,25 @@
         "chapter": "Epilogue 1+",
         "notes": "Wild work horse in late game area"
       },
-      "communityNotes": "Free if you're in the epilogue, but by then you likely have better horses."
+      "communityNotes": "Free if you're in the epilogue, but by then you likely have better horses.",
+      "detailUrl": "horse.html?breed=Hungarian%20Halfbred&coat=Wild"
     },
     {
       "breed": "Mustang",
       "coat": "Grullo Dun",
       "image": "images/horses/mustang_grullo_dun.webp",
-      "baseStats": { "health": 4, "stamina": 4, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Multi",
       "price": null,
@@ -508,14 +837,25 @@
         "chapter": "Chapter 2+",
         "notes": "Free wild horse"
       },
-      "communityNotes": "Community reports Mustangs are calm and reliable. Good free early game option. Many players say they handle predators well."
+      "communityNotes": "Community reports Mustangs are calm and reliable. Good free early game option. Many players say they handle predators well.",
+      "detailUrl": "horse.html?breed=Mustang&coat=Grullo%20Dun"
     },
     {
       "breed": "Mustang",
       "coat": "Wild Bay",
       "image": "images/horses/mustang_wild_bay.webp",
-      "baseStats": { "health": 4, "stamina": 4, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Multi",
       "price": 130,
@@ -525,14 +865,25 @@
         "chapter": "Chapter 2+",
         "notes": "Affordable multi-purpose horse"
       },
-      "communityNotes": "Budget-friendly and reportedly steady temperament."
+      "communityNotes": "Budget-friendly and reportedly steady temperament.",
+      "detailUrl": "horse.html?breed=Mustang&coat=Wild%20Bay"
     },
     {
       "breed": "Mustang",
       "coat": "Tiger Striped Bay",
       "image": "images/horses/mustang_tiger_striped_bay.webp",
-      "baseStats": { "health": 4, "stamina": 4, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 5, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Multi",
       "price": null,
@@ -542,14 +893,25 @@
         "chapter": "Epilogue 1+",
         "notes": "RARE unique coat. One-of-a-kind spawn."
       },
-      "communityNotes": "Collectors love this unique coat. Same stats as other Mustangs but the rarest coat in the game."
+      "communityNotes": "Collectors love this unique coat. Same stats as other Mustangs but the rarest coat in the game.",
+      "detailUrl": "horse.html?breed=Mustang&coat=Tiger%20Striped%20Bay"
     },
     {
       "breed": "Appaloosa",
       "coat": "Blanket",
       "image": "images/horses/appaloosa_blanket.webp",
-      "baseStats": { "health": 4, "stamina": 4, "speed": 5, "acceleration": 3 },
-      "maxStats": { "health": 5, "stamina": 5, "speed": 7, "acceleration": 5 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 7,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Multi",
       "price": 130,
@@ -559,14 +921,25 @@
         "chapter": "Chapter 2+",
         "notes": "Decent all-rounder"
       },
-      "communityNotes": "Good value. Slightly faster than Mustang. Nothing special but reliable."
+      "communityNotes": "Good value. Slightly faster than Mustang. Nothing special but reliable.",
+      "detailUrl": "horse.html?breed=Appaloosa&coat=Blanket"
     },
     {
       "breed": "Appaloosa",
       "coat": "Brown Leopard",
       "image": "images/horses/appaloosa_brown_leopard.webp",
-      "baseStats": { "health": 4, "stamina": 4, "speed": 5, "acceleration": 3 },
-      "maxStats": { "health": 5, "stamina": 5, "speed": 7, "acceleration": 5 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 7,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Multi",
       "price": 430,
@@ -576,14 +949,25 @@
         "chapter": "Chapter 4+",
         "notes": "Spotted coat variant"
       },
-      "communityNotes": "Overpriced for stats. Get the Blanket coat at Strawberry for $130 instead."
+      "communityNotes": "Overpriced for stats. Get the Blanket coat at Strawberry for $130 instead.",
+      "detailUrl": "horse.html?breed=Appaloosa&coat=Brown%20Leopard"
     },
     {
       "breed": "Appaloosa",
       "coat": "Few-Spotted",
       "image": "images/horses/appaloosa_few_spotted.webp",
-      "baseStats": { "health": 4, "stamina": 4, "speed": 5, "acceleration": 3 },
-      "maxStats": { "health": 5, "stamina": 5, "speed": 7, "acceleration": 5 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 7,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Multi",
       "price": null,
@@ -593,14 +977,25 @@
         "chapter": "Chapter 2+",
         "notes": "Rare wild spawn with unique spotted pattern"
       },
-      "communityNotes": "Hard to find but free. Same stats as purchasable Appaloosas."
+      "communityNotes": "Hard to find but free. Same stats as purchasable Appaloosas.",
+      "detailUrl": "horse.html?breed=Appaloosa&coat=Few-Spotted"
     },
     {
       "breed": "American Standardbred",
       "coat": "Palomino Dapple",
       "image": "images/horses/american_standardbred_palomino_dapple.webp",
-      "baseStats": { "health": 4, "stamina": 5, "speed": 5, "acceleration": 4 },
-      "maxStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 6 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 7,
+        "acceleration": 6
+      },
       "handling": "Standard",
       "category": "Race",
       "price": 150,
@@ -610,14 +1005,25 @@
         "chapter": "Chapter 2+",
         "notes": "Budget racing option"
       },
-      "communityNotes": "Good early game racer. Better stamina than Thoroughbred for only $150."
+      "communityNotes": "Good early game racer. Better stamina than Thoroughbred for only $150.",
+      "detailUrl": "horse.html?breed=American%20Standardbred&coat=Palomino%20Dapple"
     },
     {
       "breed": "American Standardbred",
       "coat": "Black",
       "image": "images/horses/american_standardbred_black.webp",
-      "baseStats": { "health": 4, "stamina": 5, "speed": 5, "acceleration": 4 },
-      "maxStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 6 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 7,
+        "acceleration": 6
+      },
       "handling": "Standard",
       "category": "Race",
       "price": 150,
@@ -627,14 +1033,25 @@
         "chapter": "Epilogue 1+",
         "notes": "Racing horse in New Austin"
       },
-      "communityNotes": "Same as Palomino. By epilogue you probably have better options."
+      "communityNotes": "Same as Palomino. By epilogue you probably have better options.",
+      "detailUrl": "horse.html?breed=American%20Standardbred&coat=Black"
     },
     {
       "breed": "American Standardbred",
       "coat": "Wild",
       "image": "images/horses/american_standardbred_palomino_dapple.webp",
-      "baseStats": { "health": 4, "stamina": 5, "speed": 5, "acceleration": 4 },
-      "maxStats": { "health": 5, "stamina": 6, "speed": 7, "acceleration": 6 },
+      "baseStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 7,
+        "acceleration": 6
+      },
       "handling": "Standard",
       "category": "Race",
       "price": null,
@@ -644,14 +1061,25 @@
         "chapter": "Chapter 2+",
         "notes": "Free racing horse in the wild"
       },
-      "communityNotes": "Free decent racer early game. Worth grabbing in Chapter 2."
+      "communityNotes": "Free decent racer early game. Worth grabbing in Chapter 2.",
+      "detailUrl": "horse.html?breed=American%20Standardbred&coat=Wild"
     },
     {
       "breed": "American Paint",
       "coat": "Grey Overo",
       "image": "images/horses/american_paint_grey_overo.webp",
-      "baseStats": { "health": 3, "stamina": 4, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 4, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Standard",
       "price": 130,
@@ -661,14 +1089,25 @@
         "chapter": "Chapter 2+",
         "notes": "Budget standard horse"
       },
-      "communityNotes": "Below average stats. Better options available for similar price."
+      "communityNotes": "Below average stats. Better options available for similar price.",
+      "detailUrl": "horse.html?breed=American%20Paint&coat=Grey%20Overo"
     },
     {
       "breed": "American Paint",
       "coat": "Splashed White",
       "image": "images/horses/american_paint_splashed_white.webp",
-      "baseStats": { "health": 3, "stamina": 4, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 4, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Standard",
       "price": null,
@@ -678,14 +1117,25 @@
         "chapter": "Chapter 2+",
         "notes": "RARE. Only spawns at hostile NPC camps. Random chance."
       },
-      "communityNotes": "Very rare spawn. Collectors hunt this for the unique coat, not the stats."
+      "communityNotes": "Very rare spawn. Collectors hunt this for the unique coat, not the stats.",
+      "detailUrl": "horse.html?breed=American%20Paint&coat=Splashed%20White"
     },
     {
       "breed": "American Paint",
       "coat": "Wild",
       "image": "images/horses/american_paint_grey_overo.webp",
-      "baseStats": { "health": 3, "stamina": 4, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 4, "stamina": 5, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Standard",
       "price": null,
@@ -695,14 +1145,25 @@
         "chapter": "Epilogue 1+",
         "notes": "Wild paint horse in late game"
       },
-      "communityNotes": "Free but weak. Not worth the trip to New Austin."
+      "communityNotes": "Free but weak. Not worth the trip to New Austin.",
+      "detailUrl": "horse.html?breed=American%20Paint&coat=Wild"
     },
     {
       "breed": "Kentucky Saddler",
       "coat": "Grey",
       "image": "images/horses/kentucky_saddler_grey.webp",
-      "baseStats": { "health": 3, "stamina": 3, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 4, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Riding",
       "price": 50,
@@ -712,14 +1173,25 @@
         "chapter": "Chapter 2+",
         "notes": "Cheap starter horse"
       },
-      "communityNotes": "Starter-tier horse. Fine for early game if you're broke."
+      "communityNotes": "Starter-tier horse. Fine for early game if you're broke.",
+      "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Grey"
     },
     {
       "breed": "Kentucky Saddler",
       "coat": "Black",
       "image": "images/horses/kentucky_saddler_black.webp",
-      "baseStats": { "health": 3, "stamina": 3, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 4, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Riding",
       "price": 50,
@@ -729,14 +1201,25 @@
         "chapter": "Chapter 2+",
         "notes": "Basic riding horse"
       },
-      "communityNotes": "Same as Grey. Pick based on coat."
+      "communityNotes": "Same as Grey. Pick based on coat.",
+      "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Black"
     },
     {
       "breed": "Kentucky Saddler",
       "coat": "Wild",
       "image": "images/horses/kentucky_saddler_grey.webp",
-      "baseStats": { "health": 3, "stamina": 3, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 4, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Riding",
       "price": null,
@@ -746,14 +1229,25 @@
         "chapter": "Epilogue 1+",
         "notes": "Wild riding horse"
       },
-      "communityNotes": "Free but not worth seeking out in epilogue."
+      "communityNotes": "Free but not worth seeking out in epilogue.",
+      "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Wild"
     },
     {
       "breed": "Morgan",
       "coat": "Bay",
       "image": "images/horses/morgan_bay.webp",
-      "baseStats": { "health": 2, "stamina": 2, "speed": 3, "acceleration": 3 },
-      "maxStats": { "health": 3, "stamina": 3, "speed": 5, "acceleration": 5 },
+      "baseStats": {
+        "health": 2,
+        "stamina": 2,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 5,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Riding",
       "price": 15,
@@ -763,14 +1257,25 @@
         "chapter": "Chapter 2+",
         "notes": "Cheapest horse in the game"
       },
-      "communityNotes": "Bottom tier. Only buy if you literally have $15."
+      "communityNotes": "Bottom tier. Only buy if you literally have $15.",
+      "detailUrl": "horse.html?breed=Morgan&coat=Bay"
     },
     {
       "breed": "Morgan",
       "coat": "Palomino",
       "image": "images/horses/morgan_palomino.webp",
-      "baseStats": { "health": 2, "stamina": 2, "speed": 3, "acceleration": 3 },
-      "maxStats": { "health": 3, "stamina": 3, "speed": 5, "acceleration": 5 },
+      "baseStats": {
+        "health": 2,
+        "stamina": 2,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 5,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Riding",
       "price": 55,
@@ -780,14 +1285,25 @@
         "chapter": "Chapter 2+",
         "notes": "Budget Morgan variant"
       },
-      "communityNotes": "Overpriced for a Morgan. Get the Bay for $15 if you need one."
+      "communityNotes": "Overpriced for a Morgan. Get the Bay for $15 if you need one.",
+      "detailUrl": "horse.html?breed=Morgan&coat=Palomino"
     },
     {
       "breed": "Morgan",
       "coat": "Wild",
       "image": "images/horses/morgan_bay.webp",
-      "baseStats": { "health": 2, "stamina": 2, "speed": 3, "acceleration": 3 },
-      "maxStats": { "health": 3, "stamina": 3, "speed": 5, "acceleration": 5 },
+      "baseStats": {
+        "health": 2,
+        "stamina": 2,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 5,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Riding",
       "price": null,
@@ -797,14 +1313,25 @@
         "chapter": "Chapter 2+",
         "notes": "Common wild horse"
       },
-      "communityNotes": "Free is the right price. Upgrade ASAP."
+      "communityNotes": "Free is the right price. Upgrade ASAP.",
+      "detailUrl": "horse.html?breed=Morgan&coat=Wild"
     },
     {
       "breed": "Tennessee Walker",
       "coat": "Dapple Bay",
       "image": "images/horses/tennessee_walker_dapple_bay.webp",
-      "baseStats": { "health": 2, "stamina": 3, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 3, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 2,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Riding",
       "price": 60,
@@ -814,14 +1341,25 @@
         "chapter": "Chapter 2+",
         "notes": "Budget horse"
       },
-      "communityNotes": "Community reports this breed is extremely skittish. Bucks frequently near predators and gunfire. Not recommended despite okay speed stats."
+      "communityNotes": "Community reports this breed is extremely skittish. Bucks frequently near predators and gunfire. Not recommended despite okay speed stats.",
+      "detailUrl": "horse.html?breed=Tennessee%20Walker&coat=Dapple%20Bay"
     },
     {
       "breed": "Tennessee Walker",
       "coat": "Wild",
       "image": "images/horses/tennessee_walker_dapple_bay.webp",
-      "baseStats": { "health": 2, "stamina": 3, "speed": 4, "acceleration": 3 },
-      "maxStats": { "health": 3, "stamina": 4, "speed": 6, "acceleration": 5 },
+      "baseStats": {
+        "health": 2,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 5
+      },
       "handling": "Standard",
       "category": "Riding",
       "price": null,
@@ -831,14 +1369,25 @@
         "chapter": "Chapter 2+",
         "notes": "Common wild horse"
       },
-      "communityNotes": "Free but widely considered the worst temperament in the game."
+      "communityNotes": "Free but widely considered the worst temperament in the game.",
+      "detailUrl": "horse.html?breed=Tennessee%20Walker&coat=Wild"
     },
     {
       "breed": "Shire",
       "coat": "Raven Black",
       "image": "images/horses/shire_raven_black.webp",
-      "baseStats": { "health": 5, "stamina": 4, "speed": 3, "acceleration": 2 },
-      "maxStats": { "health": 6, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
       "handling": "Heavy",
       "category": "Draft",
       "price": 120,
@@ -848,14 +1397,25 @@
         "chapter": "Chapter 2+",
         "notes": "Large draft horse"
       },
-      "communityNotes": "Big and slow. Heavy handling is clunky. Some players like the imposing size."
+      "communityNotes": "Big and slow. Heavy handling is clunky. Some players like the imposing size.",
+      "detailUrl": "horse.html?breed=Shire&coat=Raven%20Black"
     },
     {
       "breed": "Shire",
       "coat": "Dark Bay",
       "image": "images/horses/shire_dark_bay.webp",
-      "baseStats": { "health": 5, "stamina": 4, "speed": 3, "acceleration": 2 },
-      "maxStats": { "health": 6, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
       "handling": "Heavy",
       "category": "Draft",
       "price": 120,
@@ -865,14 +1425,25 @@
         "chapter": "Chapter 2+",
         "notes": "Draft horse variant"
       },
-      "communityNotes": "Same as Raven Black."
+      "communityNotes": "Same as Raven Black.",
+      "detailUrl": "horse.html?breed=Shire&coat=Dark%20Bay"
     },
     {
       "breed": "Suffolk Punch",
       "coat": "Sorrel",
       "image": "images/horses/suffolk_punch_sorrel.webp",
-      "baseStats": { "health": 5, "stamina": 4, "speed": 3, "acceleration": 2 },
-      "maxStats": { "health": 6, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "baseStats": {
+        "health": 5,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
       "handling": "Heavy",
       "category": "Draft",
       "price": 120,
@@ -882,14 +1453,25 @@
         "chapter": "Chapter 2+",
         "notes": "Draft horse option"
       },
-      "communityNotes": "Same stats as Shire. Pick based on coat preference."
+      "communityNotes": "Same stats as Shire. Pick based on coat preference.",
+      "detailUrl": "horse.html?breed=Suffolk%20Punch&coat=Sorrel"
     },
     {
       "breed": "Belgian Draft",
       "coat": "Blonde Chestnut",
       "image": "images/horses/belgian_draft_blonde_chestnut.webp",
-      "baseStats": { "health": 6, "stamina": 4, "speed": 3, "acceleration": 2 },
-      "maxStats": { "health": 7, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "baseStats": {
+        "health": 6,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
       "handling": "Heavy",
       "category": "Draft",
       "price": 120,
@@ -899,14 +1481,25 @@
         "chapter": "Chapter 2+",
         "notes": "Draft horse with extra health"
       },
-      "communityNotes": "Best draft horse stats-wise (+1 health over others). Still slow and clunky."
+      "communityNotes": "Best draft horse stats-wise (+1 health over others). Still slow and clunky.",
+      "detailUrl": "horse.html?breed=Belgian%20Draft&coat=Blonde%20Chestnut"
     },
     {
       "breed": "Belgian Draft",
       "coat": "Mealy Chestnut",
       "image": "images/horses/belgian_draft_mealy_chestnut.webp",
-      "baseStats": { "health": 6, "stamina": 4, "speed": 3, "acceleration": 2 },
-      "maxStats": { "health": 7, "stamina": 5, "speed": 5, "acceleration": 4 },
+      "baseStats": {
+        "health": 6,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
       "handling": "Heavy",
       "category": "Draft",
       "price": 120,
@@ -916,16 +1509,23 @@
         "chapter": "Chapter 2+",
         "notes": "Alternate draft coat"
       },
-      "communityNotes": "Same as Blonde Chestnut."
+      "communityNotes": "Same as Blonde Chestnut.",
+      "detailUrl": "horse.html?breed=Belgian%20Draft&coat=Mealy%20Chestnut"
     }
   ],
   "statBonuses": {
     "bonding": {
-      "level4": { "health": 1, "stamina": 1 },
+      "level4": {
+        "health": 1,
+        "stamina": 1
+      },
       "notes": "Max bonding (Level 4) adds +1 Health and +1 Stamina"
     },
     "equipment": {
-      "bestSaddleStirups": { "speed": 2, "acceleration": 2 },
+      "bestSaddleStirups": {
+        "speed": 2,
+        "acceleration": 2
+      },
       "notes": "Best saddle (Panther Trail or Beaver) + best stirrups add approx +2 Speed, +2 Acceleration"
     },
     "trinkets": {

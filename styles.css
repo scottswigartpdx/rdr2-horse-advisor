@@ -445,6 +445,35 @@ main {
     color: var(--text-cream);
 }
 
+#newChatBtn {
+    width: 52px;
+    min-height: 52px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-medium);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+#newChatBtn:hover {
+    background: var(--bg-card);
+    border-color: var(--rust);
+}
+
+#newChatBtn svg {
+    width: 22px;
+    height: 22px;
+    color: var(--text-muted);
+}
+
+#newChatBtn:hover svg {
+    color: var(--rust);
+}
+
 /* ========== FOOTER ========== */
 footer {
     text-align: center;
@@ -710,4 +739,25 @@ footer {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Citation links from web search */
+.citation-link {
+    color: #6ba3d6;
+    text-decoration: none;
+    border-bottom: 1px dotted #6ba3d6;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.citation-link:hover {
+    color: #8bc4f0;
+    border-bottom-color: #8bc4f0;
+    text-decoration: none;
+}
+
+.citation-link::after {
+    content: '↗';
+    font-size: 0.7em;
+    margin-left: 2px;
+    vertical-align: super;
 }
