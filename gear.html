@@ -235,10 +235,6 @@
                 padding: 8px 6px;
             }
 
-            .hide-mobile {
-                display: none;
-            }
-
             .tabs {
                 gap: 6px;
             }
@@ -246,6 +242,61 @@
             .tab-btn {
                 padding: 8px 12px;
                 font-size: 0.8rem;
+            }
+
+            /* Mobile: horizontal scroll with sticky first column */
+            .table-outer-wrapper {
+                position: relative;
+            }
+
+            .table-scroll-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Fade shadow on right edge to indicate more content */
+            .table-outer-wrapper::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 30px;
+                background: linear-gradient(to right, transparent, var(--bg-dark));
+                pointer-events: none;
+                z-index: 10;
+                opacity: 1;
+                transition: opacity 0.2s;
+            }
+
+            /* Hide shadow when scrolled to end */
+            .table-outer-wrapper.scrolled-end::after {
+                opacity: 0;
+            }
+
+            .gear-table {
+                min-width: 600px;
+                border-collapse: separate;
+                border-spacing: 0;
+                overflow: visible;
+                border-radius: 0;
+            }
+
+            /* Sticky first column */
+            .gear-table th:first-child,
+            .gear-table td:first-child {
+                position: sticky;
+                left: 0;
+                z-index: 2;
+                background: var(--bg-elevated);
+            }
+
+            .gear-table td:first-child {
+                background: var(--bg-card);
+            }
+
+            .gear-table tr:hover td:first-child {
+                background: var(--bg-elevated);
             }
         }
     </style>
@@ -275,15 +326,19 @@
 
             <div id="resultsCount" class="results-count"></div>
 
-            <table class="gear-table" id="gearTable">
-                <thead id="tableHead">
-                </thead>
-                <tbody id="tableBody">
-                    <tr>
-                        <td colspan="10" class="no-results">Loading gear...</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-outer-wrapper">
+                <div class="table-scroll-wrapper" id="tableScrollWrapper">
+                    <table class="gear-table" id="gearTable">
+                    <thead id="tableHead">
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="10" class="no-results">Loading gear...</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
         </main>
 
         <footer>
@@ -371,7 +426,7 @@
             const thead = document.getElementById('tableHead');
             thead.innerHTML = `<tr>${info.columns.map((col, i) => {
                 const sortKey = col.toLowerCase().replace(/\s+/g, '');
-                return `<th data-sort="${sortKey}" class="${i > 2 ? 'hide-mobile' : ''}">${col}</th>`;
+                return `<th data-sort="${sortKey}">${col}</th>`;
             }).join('')}</tr>`;
 
             // Re-attach sort listeners
@@ -391,13 +446,13 @@
                     <td><strong>${s.name}</strong></td>
                     <td><span class="variant-badge ${s.type === 'Trapper' || s.type === 'Special' ? 'special' : ''}">${s.type}</span></td>
                     <td class="stat-cell stat-positive">${s.staminaCoreDrain}%</td>
-                    <td class="stat-cell stat-positive hide-mobile">${s.healthCoreDrain}%</td>
-                    <td class="stat-cell stat-positive hide-mobile">+${s.staminaRegen}%</td>
-                    <td class="stat-cell hide-mobile">${s.staminaDrain ? `${s.staminaDrain}%` : '-'}</td>
-                    <td class="stat-cell hide-mobile">${s.speedBonus ? `+${s.speedBonus}` : '-'}</td>
-                    <td class="stat-cell hide-mobile">${s.accelBonus ? `+${s.accelBonus}` : '-'}</td>
+                    <td class="stat-cell stat-positive">${s.healthCoreDrain}%</td>
+                    <td class="stat-cell stat-positive">+${s.staminaRegen}%</td>
+                    <td class="stat-cell">${s.staminaDrain ? `${s.staminaDrain}%` : '-'}</td>
+                    <td class="stat-cell">${s.speedBonus ? `+${s.speedBonus}` : '-'}</td>
+                    <td class="stat-cell">${s.accelBonus ? `+${s.accelBonus}` : '-'}</td>
                     <td class="price-cell">${s.price ? '$' + s.price.toFixed(2) : `<span class="cost-cell">${s.cost || 'Free'}</span>`}</td>
-                    <td class="availability-cell hide-mobile">${s.availability}</td>
+                    <td class="availability-cell">${s.availability}</td>
                 </tr>
             `).join('');
         }
@@ -412,9 +467,9 @@
                     <td><strong>${s.name}</strong>${s.notes ? ' ⭐' : ''}</td>
                     <td class="stat-cell">${s.speedBonus ? `<span class="stat-positive">+${s.speedBonus}</span>` : '<span class="stat-neutral">-</span>'}</td>
                     <td class="stat-cell">${s.accelBonus ? `<span class="stat-positive">+${s.accelBonus}</span>` : '<span class="stat-neutral">-</span>'}</td>
-                    <td class="stat-cell hide-mobile">${s.staminaDrain ? `<span class="stat-positive">${s.staminaDrain}%</span>` : '<span class="stat-neutral">-</span>'}</td>
+                    <td class="stat-cell">${s.staminaDrain ? `<span class="stat-positive">${s.staminaDrain}%</span>` : '<span class="stat-neutral">-</span>'}</td>
                     <td class="price-cell">$${s.price.toFixed(2)}</td>
-                    <td class="availability-cell hide-mobile">${s.availability}</td>
+                    <td class="availability-cell">${s.availability}</td>
                 </tr>
             `).join('');
         }
@@ -429,9 +484,9 @@
                     <td><strong>${b.name}</strong></td>
                     <td>${b.capacity}</td>
                     <td class="stat-cell">${b.outfitSlots}</td>
-                    <td class="price-cell hide-mobile">${b.price ? '$' + b.price.toFixed(2) : '<span class="price-free">Edition Bonus</span>'}</td>
-                    <td class="availability-cell hide-mobile">${b.availability}</td>
-                    <td class="notes-cell hide-mobile">${b.notes || '-'}</td>
+                    <td class="price-cell">${b.price ? '$' + b.price.toFixed(2) : '<span class="price-free">Edition Bonus</span>'}</td>
+                    <td class="availability-cell">${b.availability}</td>
+                    <td class="notes-cell">${b.notes || '-'}</td>
                 </tr>
             `).join('');
         }
@@ -480,9 +535,9 @@
                 <tr>
                     <td><span class="variant-badge">${item.type}</span></td>
                     <td><strong>${item.name}</strong></td>
-                    <td class="hide-mobile">${item.details}</td>
-                    <td class="price-cell hide-mobile">${item.price ? (typeof item.price === 'number' ? '$' + item.price.toFixed(2) : item.price) : '<span class="price-free">Craft</span>'}</td>
-                    <td class="availability-cell hide-mobile">${item.availability}</td>
+                    <td>${item.details}</td>
+                    <td class="price-cell">${item.price ? (typeof item.price === 'number' ? '$' + item.price.toFixed(2) : item.price) : '<span class="price-free">Craft</span>'}</td>
+                    <td class="availability-cell">${item.availability}</td>
                 </tr>
             `).join('');
         }
@@ -641,6 +696,14 @@
 
         // Initialize
         loadGear();
+
+        // Scroll shadow: hide when scrolled to end
+        const scrollWrapper = document.getElementById('tableScrollWrapper');
+        const outerWrapper = scrollWrapper.parentElement;
+        scrollWrapper.addEventListener('scroll', () => {
+            const isAtEnd = scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 5;
+            outerWrapper.classList.toggle('scrolled-end', isAtEnd);
+        });
     </script>
 </body>
 </html>

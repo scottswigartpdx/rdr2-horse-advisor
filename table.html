@@ -179,8 +179,59 @@
                 padding: 8px 6px;
             }
 
-            .hide-mobile {
-                display: none;
+            /* Mobile: horizontal scroll with sticky first column */
+            .table-outer-wrapper {
+                position: relative;
+            }
+
+            .table-scroll-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Fade shadow on right edge to indicate more content */
+            .table-outer-wrapper::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 30px;
+                background: linear-gradient(to right, transparent, var(--bg-dark));
+                pointer-events: none;
+                z-index: 10;
+                opacity: 1;
+                transition: opacity 0.2s;
+            }
+
+            /* Hide shadow when scrolled to end */
+            .table-outer-wrapper.scrolled-end::after {
+                opacity: 0;
+            }
+
+            .horse-table {
+                min-width: 800px;
+                border-collapse: separate;
+                border-spacing: 0;
+                overflow: visible; /* Override hidden - required for sticky */
+                border-radius: 0; /* Remove radius since we can't clip without overflow:hidden */
+            }
+
+            /* Sticky first column */
+            .horse-table th:first-child,
+            .horse-table td:first-child {
+                position: sticky;
+                left: 0;
+                z-index: 2;
+                background: var(--bg-elevated);
+            }
+
+            .horse-table td:first-child {
+                background: var(--bg-card);
+            }
+
+            .horse-table tr:hover td:first-child {
+                background: var(--bg-elevated);
             }
         }
     </style>
@@ -201,27 +252,31 @@
 
             <div id="resultsCount" class="results-count"></div>
 
-            <table class="horse-table" id="horseTable">
-                <thead>
-                    <tr>
-                        <th data-sort="breed">Breed</th>
-                        <th data-sort="coat">Coat</th>
-                        <th data-sort="category">Category</th>
-                        <th data-sort="health" class="stat-cell">Health</th>
-                        <th data-sort="stamina" class="stat-cell">Stamina</th>
-                        <th data-sort="speed" class="stat-cell">Speed</th>
-                        <th data-sort="accel" class="stat-cell hide-mobile">Accel</th>
-                        <th data-sort="handling" class="hide-mobile">Handling</th>
-                        <th data-sort="price">Price</th>
-                        <th data-sort="chapter" class="hide-mobile">Available</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <tr>
-                        <td colspan="10" class="no-results">Loading horses...</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-outer-wrapper">
+                <div class="table-scroll-wrapper" id="tableScrollWrapper">
+                    <table class="horse-table" id="horseTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="breed">Breed</th>
+                            <th data-sort="coat">Coat</th>
+                            <th data-sort="category">Category</th>
+                            <th data-sort="health" class="stat-cell">Health</th>
+                            <th data-sort="stamina" class="stat-cell">Stamina</th>
+                            <th data-sort="speed" class="stat-cell">Speed</th>
+                            <th data-sort="accel" class="stat-cell">Accel</th>
+                            <th data-sort="handling">Handling</th>
+                            <th data-sort="price">Price</th>
+                            <th data-sort="chapter">Available</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="10" class="no-results">Loading horses...</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
         </main>
 
         <footer>
@@ -268,10 +323,10 @@
                     <td class="stat-cell"><span class="stat-base">${horse.baseStats.health}</span>→<span class="stat-max">${horse.maxStats.health}</span></td>
                     <td class="stat-cell"><span class="stat-base">${horse.baseStats.stamina}</span>→<span class="stat-max">${horse.maxStats.stamina}</span></td>
                     <td class="stat-cell"><span class="stat-base">${horse.baseStats.speed}</span>→<span class="stat-max">${horse.maxStats.speed}</span></td>
-                    <td class="stat-cell hide-mobile"><span class="stat-base">${horse.baseStats.acceleration}</span>→<span class="stat-max">${horse.maxStats.acceleration}</span></td>
-                    <td class="hide-mobile">${horse.handling}</td>
+                    <td class="stat-cell"><span class="stat-base">${horse.baseStats.acceleration}</span>→<span class="stat-max">${horse.maxStats.acceleration}</span></td>
+                    <td>${horse.handling}</td>
                     <td class="price-cell">${horse.price ? '$' + horse.price.toLocaleString() : '<span class="price-free">Free</span>'}</td>
-                    <td class="chapter-cell hide-mobile">${getAcquisition(horse).chapter}</td>
+                    <td class="chapter-cell">${getAcquisition(horse).chapter}</td>
                 </tr>
             `).join('');
         }
@@ -398,6 +453,14 @@
         // Initialize
         loadHorses().then(() => {
             updateSortIndicators();
+        });
+
+        // Scroll shadow: hide when scrolled to end
+        const scrollWrapper = document.getElementById('tableScrollWrapper');
+        const outerWrapper = scrollWrapper.parentElement;
+        scrollWrapper.addEventListener('scroll', () => {
+            const isAtEnd = scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 5;
+            outerWrapper.classList.toggle('scrolled-end', isAtEnd);
         });
     </script>
 </body>
