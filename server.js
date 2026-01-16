@@ -8,6 +8,9 @@ require('dotenv').config();
 
 // Shared auth utilities
 const { verifySupabaseToken, checkRateLimit, DAILY_QUERY_LIMIT } = require('./lib/auth');
+const { createClient } = require('@supabase/supabase-js');
+
+const SUPABASE_URL = 'https://tbnbfdcqdmfcaczxczyx.supabase.co';
 
 const PORT = 3000;
 
@@ -136,6 +139,113 @@ const server = http.createServer(async (req, res) => {
                 res.end(JSON.stringify({ error: 'Failed to call API' }));
             }
         });
+        return;
+    }
+
+    // Admin stats endpoint
+    if (req.url === '/api/admin/stats' && req.method === 'GET') {
+        try {
+            // Verify auth token
+            const authHeader = req.headers['authorization'];
+            const token = authHeader?.replace('Bearer ', '');
+
+            const user = await verifySupabaseToken(token, SUPABASE_ANON_KEY);
+            if (!user) {
+                res.writeHead(401, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: 'Unauthorized' }));
+                return;
+            }
+
+            // Check if user is admin
+            if (user.email !== process.env.ADMIN_EMAIL) {
+                res.writeHead(403, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: 'Forbidden - admin only' }));
+                return;
+            }
+
+            const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
+            const today = new Date().toISOString().split('T')[0];
+
+            // Get today's stats
+            const { data: todayStats, error: todayError } = await supabase
+                .from('rate_limits')
+                .select('user_id, query_count')
+                .eq('date', today);
+
+            if (todayError) throw todayError;
+
+            // Get all-time stats
+            const { data: allTimeStats, error: allTimeError } = await supabase
+                .from('rate_limits')
+                .select('user_id, query_count, date');
+
+            if (allTimeError) throw allTimeError;
+
+            // Get user emails from auth
+            const { data: { users }, error: usersError } = await supabase.auth.admin.listUsers();
+
+            const userEmailMap = {};
+            if (!usersError && users) {
+                users.forEach(u => {
+                    userEmailMap[u.id] = u.email;
+                });
+            }
+
+            // Calculate stats
+            const uniqueUsersToday = new Set(todayStats?.map(r => r.user_id) || []).size;
+            const queriesToday = todayStats?.reduce((sum, r) => sum + r.query_count, 0) || 0;
+            const uniqueUsersAllTime = new Set(allTimeStats?.map(r => r.user_id) || []).size;
+            const queriesAllTime = allTimeStats?.reduce((sum, r) => sum + r.query_count, 0) || 0;
+
+            // Daily breakdown
+            const dailyStats = {};
+            allTimeStats?.forEach(r => {
+                if (!dailyStats[r.date]) {
+                    dailyStats[r.date] = { users: new Set(), queries: 0 };
+                }
+                dailyStats[r.date].users.add(r.user_id);
+                dailyStats[r.date].queries += r.query_count;
+            });
+
+            const dailyBreakdown = Object.entries(dailyStats)
+                .map(([date, stats]) => ({
+                    date,
+                    uniqueUsers: stats.users.size,
+                    totalQueries: stats.queries
+                }))
+                .sort((a, b) => b.date.localeCompare(a.date))
+                .slice(0, 30);
+
+            // Per-user stats
+            const userStats = {};
+            allTimeStats?.forEach(r => {
+                if (!userStats[r.user_id]) {
+                    userStats[r.user_id] = { queries: 0, days: new Set() };
+                }
+                userStats[r.user_id].queries += r.query_count;
+                userStats[r.user_id].days.add(r.date);
+            });
+
+            const userBreakdown = Object.entries(userStats)
+                .map(([userId, stats]) => ({
+                    email: userEmailMap[userId] || userId,
+                    totalQueries: stats.queries,
+                    activeDays: stats.days.size
+                }))
+                .sort((a, b) => b.totalQueries - a.totalQueries);
+
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({
+                today: { date: today, uniqueUsers: uniqueUsersToday, totalQueries: queriesToday },
+                allTime: { uniqueUsers: uniqueUsersAllTime, totalQueries: queriesAllTime },
+                dailyBreakdown,
+                userBreakdown
+            }));
+        } catch (error) {
+            console.error('Admin stats error:', error);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Failed to fetch stats' }));
+        }
         return;
     }
 
