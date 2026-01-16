@@ -228,6 +228,47 @@ let horseData = null;
 let gearData = null;
 let conversationHistory = [];
 
+// Loading messages system
+let loadingMessages = ['Searching the frontier...'];
+let recentMessages = [];
+const RECENT_MESSAGES_BUFFER = 50; // Avoid repeating last 50 messages
+
+// Load loading messages
+async function loadLoadingMessages() {
+    try {
+        const response = await fetch('loading-messages.json');
+        if (response.ok) {
+            loadingMessages = await response.json();
+            console.log('Loading messages loaded:', loadingMessages.length, 'messages');
+        }
+    } catch (error) {
+        console.log('Using default loading message');
+    }
+}
+
+// Get random loading message (avoiding recent repeats)
+function getRandomLoadingMessage() {
+    // Filter out recently used messages
+    const available = loadingMessages.filter(msg => !recentMessages.includes(msg));
+
+    // If we've used too many, reset the buffer
+    if (available.length === 0) {
+        recentMessages = [];
+        return loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+    }
+
+    // Pick random from available
+    const message = available[Math.floor(Math.random() * available.length)];
+
+    // Track it as recent
+    recentMessages.push(message);
+    if (recentMessages.length > RECENT_MESSAGES_BUFFER) {
+        recentMessages.shift();
+    }
+
+    return message;
+}
+
 // Load horse and gear data
 async function loadHorseData() {
     try {
@@ -320,7 +361,7 @@ function showLoading() {
             <span></span>
             <span></span>
         </div>
-        <span>Searching the frontier...</span>
+        <span>${getRandomLoadingMessage()}</span>
     `;
     container.appendChild(loadingDiv);
     container.scrollTop = container.scrollHeight;
@@ -721,4 +762,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, 0);
     initAuth();
     loadHorseData();
+    loadLoadingMessages();
 });
