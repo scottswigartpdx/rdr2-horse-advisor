@@ -109,45 +109,20 @@ const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_
 
 let currentUser = null;
 
-// Debug helper - shows auth info on screen when ?debug=1 is in URL or localStorage
-// Persists across OAuth redirects
-if (window.location.search.includes('debug=1')) {
-    localStorage.setItem('rdr2_debug', '1');
-}
-const DEBUG_MODE = localStorage.getItem('rdr2_debug') === '1';
-
-function debugLog(msg) {
-    console.log(msg);
-    if (DEBUG_MODE) {
-        let debugDiv = document.getElementById('authDebug');
-        if (!debugDiv) {
-            debugDiv = document.createElement('div');
-            debugDiv.id = 'authDebug';
-            debugDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#000;color:#0f0;font-family:monospace;font-size:11px;padding:5px;z-index:9999;max-height:200px;overflow-y:auto;';
-            document.body.prepend(debugDiv);
-        }
-        debugDiv.innerHTML += msg + '<br>';
-        debugDiv.scrollTop = debugDiv.scrollHeight;
-    }
-}
-
 // Initialize auth state
 async function initAuth() {
-    debugLog('[AUTH] initAuth starting');
-    debugLog('[AUTH] localStorage keys: ' + Object.keys(localStorage).filter(k => k.includes('supabase') || k.includes('sb-')).join(', '));
-    debugLog('[AUTH] URL hash: ' + (window.location.hash ? 'has hash' : 'no hash'));
-    debugLog('[AUTH] URL search: ' + window.location.search);
+    console.log('[AUTH] initAuth starting');
 
     // IMPORTANT: Retrieve pending action BEFORE getSession - Supabase may clear storage
     const pendingAction = PendingAction.retrieve();
 
     // Check current session
-    const { data: { session }, error } = await supabaseClient.auth.getSession();
-    debugLog('[AUTH] getSession: ' + (session ? 'has session' : 'no session') + (error ? ' error: ' + error.message : ''));
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    console.log('[AUTH] getSession result:', session ? 'has session' : 'no session');
 
     if (session) {
         currentUser = session.user;
-        debugLog('[AUTH] User logged in: ' + currentUser.email);
+        console.log('[AUTH] User logged in:', currentUser.email);
         updateAuthUI(session.user);
         // Execute any pending action from before OAuth redirect
         if (pendingAction) {
@@ -202,14 +177,10 @@ function updateAuthUI(user) {
 
 // Sign in with Google
 async function signInWithGoogle() {
-    const redirectUrl = window.location.origin;
-    debugLog('[AUTH] Signing in with redirect to: ' + redirectUrl);
-    alert('Redirect URL: ' + redirectUrl); // Temp alert for mobile debugging
-
     const { data, error } = await supabaseClient.auth.signInWithOAuth({
         provider: 'google',
         options: {
-            redirectTo: redirectUrl
+            redirectTo: window.location.origin
         }
     });
 
@@ -230,9 +201,7 @@ async function signOut() {
 
 // Get current auth token for API calls
 async function getAuthToken() {
-    debugLog('[AUTH] getAuthToken called');
-    const { data: { session }, error } = await supabaseClient.auth.getSession();
-    debugLog('[AUTH] getAuthToken: ' + (session ? 'has token' : 'NO TOKEN') + (error ? ' error: ' + error.message : ''));
+    const { data: { session } } = await supabaseClient.auth.getSession();
     return session?.access_token || null;
 }
 
@@ -697,7 +666,6 @@ async function sendQuery() {
 // Call API via serverless proxy
 async function callAPI() {
     const token = await getAuthToken();
-    debugLog('[API] Token: ' + (token ? 'present (' + token.substring(0,20) + '...)' : 'NULL'));
 
     const response = await fetch('/api/chat', {
         method: 'POST',
@@ -713,7 +681,6 @@ async function callAPI() {
 
     if (!response.ok) {
         const error = await response.json();
-        debugLog('[API] Error response: ' + response.status + ' - ' + JSON.stringify(error));
 
         // Handle rate limit specifically
         if (response.status === 429) {
