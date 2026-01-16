@@ -228,12 +228,25 @@ async function loadHorseData() {
             fetch('horses.json'),
             fetch('gear.json')
         ]);
+
+        if (!horseResponse.ok || !gearResponse.ok) {
+            throw new Error('Failed to fetch data files');
+        }
+
         horseData = await horseResponse.json();
         gearData = await gearResponse.json();
         console.log('Horse data loaded:', horseData.horses.length, 'horses');
         console.log('Gear data loaded');
     } catch (error) {
         console.error('Failed to load data:', error);
+        // Show error to user in chat container
+        const container = document.getElementById('chatContainer');
+        if (container) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'message assistant error-message';
+            errorDiv.innerHTML = '<strong>Unable to load horse data.</strong> Please refresh the page to try again.';
+            container.appendChild(errorDiv);
+        }
     }
 }
 
@@ -263,7 +276,7 @@ function addMessage(content, type) {
     messageDiv.className = `message ${type}`;
 
     if (type === 'assistant') {
-        messageDiv.innerHTML = formatResponse(content);
+        messageDiv.innerHTML = DOMPurify.sanitize(formatResponse(content));
     } else {
         messageDiv.textContent = content;
     }
@@ -367,9 +380,10 @@ function renderHorseCard(breed, coat) {
     // Format price
     const priceText = !horse.price ? 'Free (Wild)' : `$${horse.price.toFixed(2)}`;
 
-    // Get location and availability from acquisition object
-    const location = horse.acquisition?.location || 'Unknown';
-    const availability = horse.acquisition?.chapter || 'Unknown';
+    // Get location and availability from acquisition array (use first entry)
+    const acq = Array.isArray(horse.acquisition) ? horse.acquisition[0] : horse.acquisition;
+    const location = acq?.location || 'Unknown';
+    const availability = acq?.chapter || 'Unknown';
 
     // Build card HTML without newlines to prevent markdown processing issues
     const communityHtml = horse.communityNotes ? `<div class="horse-card-notes"><strong>Community:</strong> ${horse.communityNotes}</div>` : '';
@@ -426,73 +440,77 @@ function renderStirrupsCard(name) {
 
 // Format response with markdown support
 function formatResponse(text) {
-    let html = text;
+    let content = text;
 
-    // Legacy: convert horse image tags [IMG:Breed - Coat] to clickable images
-    html = html.replace(/\[IMG:([^\]]+)\]/g, (match, horseInfo) => {
+    // Pre-process: Convert custom tags to placeholders before markdown parsing
+    // Use HTML comments as placeholders - marked.js preserves these
+    const placeholders = [];
+
+    // [IMG:Breed - Coat] -> horse images
+    content = content.replace(/\[IMG:([^\]]+)\]/g, (match, horseInfo) => {
         const parts = horseInfo.split(' - ');
         if (parts.length === 2) {
             const [breed, coat] = parts;
             const imagePath = getHorseImagePath(breed.trim(), coat.trim());
             const horseLink = getHorseLink(breed, coat);
-            return `<a href="${horseLink}" class="horse-image-link"><img src="${imagePath}" alt="${breed} ${coat}" class="horse-image" onerror="this.style.display='none'"></a>`;
+            const placeholder = `<!--CARD_PLACEHOLDER_${placeholders.length}-->`;
+            placeholders.push(`<a href="${horseLink}" class="horse-image-link"><img src="${imagePath}" alt="${breed} ${coat}" class="horse-image" onerror="this.style.display='none'"></a>`);
+            return placeholder;
         }
         return '';
     });
 
-    // Convert markdown tables to HTML tables
-    html = html.replace(/(\|.+\|[\r\n]+\|[-:\s|]+\|[\r\n]+(?:\|.+\|[\r\n]*)+)/g, (match) => {
-        const lines = match.trim().split('\n').filter(line => line.trim());
-        if (lines.length < 2) return match;
-
-        // Parse header row
-        const headerCells = lines[0].split('|').filter(cell => cell.trim()).map(cell => cell.trim());
-        // Skip separator row (lines[1])
-        // Parse data rows
-        const dataRows = lines.slice(2).map(line =>
-            line.split('|').filter(cell => cell.trim()).map(cell => cell.trim())
-        );
-
-        let tableHtml = '<table><thead><tr>';
-        headerCells.forEach(cell => {
-            tableHtml += `<th>${cell}</th>`;
-        });
-        tableHtml += '</tr></thead><tbody>';
-        dataRows.forEach(row => {
-            tableHtml += '<tr>';
-            row.forEach(cell => {
-                tableHtml += `<td>${cell}</td>`;
-            });
-            tableHtml += '</tr>';
-        });
-        tableHtml += '</tbody></table>';
-        return tableHtml;
+    // [HORSE:Breed|Coat] -> horse cards
+    content = content.replace(/\[HORSE:([^|\]]+)\|([^\]]+)\]/g, (match, breed, coat) => {
+        const placeholder = `<!--CARD_PLACEHOLDER_${placeholders.length}-->`;
+        placeholders.push(renderHorseCard(breed.trim(), coat.trim()));
+        return placeholder;
     });
 
-    // Convert markdown links [text](url) to HTML links
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, url) => {
-        // Check if it's a horse detail link or external citation
-        if (url.startsWith('horse.html') || url.startsWith('./horse.html')) {
-            return `<a href="${url}" class="horse-name-link"><strong>${linkText}</strong></a>`;
-        } else {
-            // External link - open in new tab, style as citation
-            return `<a href="${url}" class="citation-link" target="_blank" rel="noopener">${linkText}</a>`;
+    // [SADDLE:Name] -> saddle cards
+    content = content.replace(/\[SADDLE:([^\]]+)\]/g, (match, name) => {
+        const placeholder = `<!--CARD_PLACEHOLDER_${placeholders.length}-->`;
+        placeholders.push(renderSaddleCard(name.trim()));
+        return placeholder;
+    });
+
+    // [STIRRUPS:Name] -> stirrups cards
+    content = content.replace(/\[STIRRUPS:([^\]]+)\]/g, (match, name) => {
+        const placeholder = `<!--CARD_PLACEHOLDER_${placeholders.length}-->`;
+        placeholders.push(renderStirrupsCard(name.trim()));
+        return placeholder;
+    });
+
+    // Use marked.js for all standard markdown parsing
+    // Configure marked for our needs
+    marked.setOptions({
+        breaks: true,  // Convert \n to <br>
+        gfm: true      // GitHub Flavored Markdown (tables, etc.)
+    });
+
+    // Custom renderer to handle links specially
+    const renderer = new marked.Renderer();
+    renderer.link = function(href, title, text) {
+        // Horse detail links
+        if (href.startsWith('horse.html') || href.startsWith('./horse.html')) {
+            return `<a href="${href}" class="horse-name-link"><strong>${text}</strong></a>`;
         }
+        // External links
+        return `<a href="${href}" class="citation-link" target="_blank" rel="noopener">${text}</a>`;
+    };
+
+    marked.setOptions({ renderer });
+
+    // Parse markdown
+    let html = marked.parse(content);
+
+    // Post-process: Restore placeholders
+    placeholders.forEach((replacement, i) => {
+        html = html.replace(`<!--CARD_PLACEHOLDER_${i}-->`, replacement);
     });
 
-    // Fallback: catch "Text (horse.html?...)" pattern (AI sometimes outputs this instead of markdown)
-    html = html.replace(/([A-Z][^()\n]+?)\s*\((horse\.html\?[^)]+)\)/g, (match, linkText, url) => {
-        return `<a href="${url}" class="horse-name-link"><strong>${linkText.trim()}</strong></a>`;
-    });
-
-    // Convert bare URLs to clickable links (not already in an href)
-    html = html.replace(/(?<!href=["'])(https?:\/\/[^\s<>"]+)/g, (match, url) => {
-        const cleanUrl = url.replace(/[.,;:!?)]+$/, '');
-        return `<a href="${cleanUrl}" class="citation-link" target="_blank" rel="noopener">${cleanUrl}</a>`;
-    });
-
-    // Convert bold horse names (e.g., **Arabian - White**) to clickable links (fallback)
-    html = html.replace(/\*\*([^*]+) - ([^*]+)\*\*/g, (match, breed, coat) => {
+    // Handle bold horse names "**Breed - Coat**" -> clickable links (AI sometimes does this)
+    html = html.replace(/<strong>([^<]+) - ([^<]+)<\/strong>/g, (match, breed, coat) => {
         const isHorse = horseData && horseData.horses && horseData.horses.some(h =>
             h.breed.toLowerCase() === breed.trim().toLowerCase()
         );
@@ -500,63 +518,10 @@ function formatResponse(text) {
             const horseLink = getHorseLink(breed, coat);
             return `<a href="${horseLink}" class="horse-name-link"><strong>${breed} - ${coat}</strong></a>`;
         }
-        return `<strong>${breed} - ${coat}</strong>`;
+        return match;
     });
 
-    // Convert markdown-style formatting
-    html = html
-        // Horizontal rules
-        .replace(/^---+$/gm, '<hr>')
-        // Headers (## = h2, ### = h3, #### = h4)
-        .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
-        .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-        .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-        // Bold (remaining)
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        // Italic
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
-        // Code
-        .replace(/`(.*?)`/g, '<code>$1</code>');
-
-    // Handle line breaks and paragraphs (but not inside tables)
-    const parts = html.split(/(<table>[\s\S]*?<\/table>|<h[234]>[\s\S]*?<\/h[234]>|<hr>)/);
-    html = parts.map(part => {
-        if (part.startsWith('<table>') || part.startsWith('<h') || part === '<hr>') {
-            return part;
-        }
-        return part
-            .replace(/\n\n/g, '</p><p>')
-            .replace(/\n/g, '<br>');
-    }).join('');
-
-    // Handle bullet points
-    html = html.replace(/(<br>)?- (.*?)(<br>|<\/p>|$)/g, (match, pre, content, post) => {
-        return `<li>${content}</li>${post === '</p>' ? '</p>' : ''}`;
-    });
-
-    // Wrap consecutive li elements in ul
-    html = html.replace(/(<li>[\s\S]*?<\/li>)+/g, '<ul>$&</ul>');
-
-    // Clean up empty paragraphs
-    html = html.replace(/<p>\s*<\/p>/g, '');
-
-    // LAST: Convert card markers to rendered cards (after all markdown processing)
-    // [HORSE:Breed|Coat] -> full horse card
-    html = html.replace(/\[HORSE:([^|\]]+)\|([^\]]+)\]/g, (match, breed, coat) => {
-        return renderHorseCard(breed.trim(), coat.trim());
-    });
-
-    // [SADDLE:Name] -> saddle card
-    html = html.replace(/\[SADDLE:([^\]]+)\]/g, (match, name) => {
-        return renderSaddleCard(name.trim());
-    });
-
-    // [STIRRUPS:Name] -> stirrups card
-    html = html.replace(/\[STIRRUPS:([^\]]+)\]/g, (match, name) => {
-        return renderStirrupsCard(name.trim());
-    });
-
-    return `<p>${html}</p>`;
+    return html;
 }
 
 // Build system prompt with horse data
