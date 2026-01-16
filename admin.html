@@ -104,13 +104,13 @@
         const SUPABASE_URL = 'https://tbnbfdcqdmfcaczxczyx.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRibmJmZGNxZG1mY2FjenhjenleCiIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzQ5MTY0NTcwLCJleHAiOjIwNjQ3NDA1NzB9.00OT4BaLMQyFJvFqNqdPnkjnhj15EZpX5SHCpn_4nqM';
 
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         async function loadStats() {
             const content = document.getElementById('content');
 
             // Check if user is logged in
-            const { data: { session } } = await supabase.auth.getSession();
+            const { data: { session } } = await supabaseClient.auth.getSession();
 
             if (!session) {
                 content.innerHTML = `
@@ -211,7 +211,7 @@
         }
 
         async function signIn() {
-            await supabase.auth.signInWithOAuth({
+            await supabaseClient.auth.signInWithOAuth({
                 provider: 'google',
                 options: {
                     redirectTo: window.location.href
