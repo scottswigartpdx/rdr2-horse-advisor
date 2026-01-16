@@ -1,10 +1,8 @@
 // Admin endpoint for usage statistics
 // Restricted to ADMIN_EMAIL
 
-const { verifySupabaseToken } = require('../../lib/auth');
+const { verifySupabaseToken, SUPABASE_URL } = require('../../lib/auth');
 const { createClient } = require('@supabase/supabase-js');
-
-const SUPABASE_URL = 'https://tbnbfdcqdmfcaczxczyx.supabase.co';
 
 export default async function handler(req, res) {
     if (req.method !== 'GET') {

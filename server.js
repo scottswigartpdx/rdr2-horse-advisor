@@ -7,10 +7,8 @@ const path = require('path');
 require('dotenv').config();
 
 // Shared auth utilities
-const { verifySupabaseToken, checkRateLimit, DAILY_QUERY_LIMIT } = require('./lib/auth');
+const { verifySupabaseToken, checkRateLimit, DAILY_QUERY_LIMIT, SUPABASE_URL } = require('./lib/auth');
 const { createClient } = require('@supabase/supabase-js');
-
-const SUPABASE_URL = 'https://tbnbfdcqdmfcaczxczyx.supabase.co';
 
 const PORT = 3000;
 

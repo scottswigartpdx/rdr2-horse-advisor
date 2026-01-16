@@ -101,10 +101,17 @@
     </div>
 
     <script>
-        const SUPABASE_URL = 'https://tbnbfdcqdmfcaczxczyx.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRibmJmZGNxZG1mY2FjenhjenleCiIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzQ5MTY0NTcwLCJleHAiOjIwNjQ3NDA1NzB9.00OT4BaLMQyFJvFqNqdPnkjnhj15EZpX5SHCpn_4nqM';
+        const SUPABASE_URL = 'https://vejhtrzmesjpxlonwhig.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_QYHw3yzSd61GgQj3Izb3ng_zkfT_IZv';
 
-        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+            auth: {
+                detectSessionInUrl: true,
+                persistSession: true,
+                autoRefreshToken: true,
+                flowType: 'pkce'
+            }
+        });
 
         async function loadStats() {
             const content = document.getElementById('content');

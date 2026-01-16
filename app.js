@@ -98,7 +98,14 @@ const PendingAction = {
 const SUPABASE_URL = 'https://vejhtrzmesjpxlonwhig.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_QYHw3yzSd61GgQj3Izb3ng_zkfT_IZv';
 
-const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: {
+        detectSessionInUrl: true,
+        persistSession: true,
+        autoRefreshToken: true,
+        flowType: 'pkce'
+    }
+});
 
 let currentUser = null;
 
