@@ -231,6 +231,7 @@ let conversationHistory = [];
 // Loading messages system
 let loadingMessages = ['Searching the frontier...'];
 let recentMessages = [];
+let loadingMessageInterval = null;
 const RECENT_MESSAGES_BUFFER = 50; // Avoid repeating last 50 messages
 
 // Load loading messages
@@ -361,14 +362,26 @@ function showLoading() {
             <span></span>
             <span></span>
         </div>
-        <span>${getRandomLoadingMessage()}</span>
+        <span id="loadingMessageText">${getRandomLoadingMessage()}</span>
     `;
     container.appendChild(loadingDiv);
     container.scrollTop = container.scrollHeight;
+
+    // Rotate message every 5 seconds
+    loadingMessageInterval = setInterval(() => {
+        const msgSpan = document.getElementById('loadingMessageText');
+        if (msgSpan) {
+            msgSpan.textContent = getRandomLoadingMessage();
+        }
+    }, 5000);
 }
 
 // Hide loading
 function hideLoading() {
+    if (loadingMessageInterval) {
+        clearInterval(loadingMessageInterval);
+        loadingMessageInterval = null;
+    }
     const loading = document.getElementById('loadingIndicator');
     if (loading) loading.remove();
 }
