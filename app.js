@@ -489,8 +489,11 @@ function formatResponse(text) {
     });
 
     // Custom renderer to handle links specially
+    // Note: marked.js v5+ passes an object { href, title, text, tokens } instead of separate params
     const renderer = new marked.Renderer();
-    renderer.link = function(href, title, text) {
+    renderer.link = function(token) {
+        const href = token.href || '';
+        const text = token.text || '';
         // Horse detail links
         if (href.startsWith('horse.html') || href.startsWith('./horse.html')) {
             return `<a href="${href}" class="horse-name-link"><strong>${text}</strong></a>`;
