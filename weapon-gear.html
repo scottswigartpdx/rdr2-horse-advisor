@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapon Gear Guide - RDR2 Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gear-guide-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--rust);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            color: var(--red-primary);
+            text-decoration: underline;
+        }
+
+        .page-title {
+            font-family: 'Chinese Rocks', 'Rye', cursive;
+            color: var(--text-cream);
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .info-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .info-section h2 {
+            font-family: 'Rye', cursive;
+            color: var(--rust);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .info-section h3 {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .info-section ul {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .info-section li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: var(--text-cream);
+            font-weight: 600;
+        }
+
+        .key-point {
+            background: var(--bg-dark);
+            border-left: 4px solid var(--rust);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .key-point p {
+            margin: 0;
+            color: var(--text-cream);
+            font-style: italic;
+        }
+
+        .set-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .set-table th {
+            background: var(--bg-elevated);
+            color: var(--rust);
+            font-family: 'Rye', cursive;
+            font-size: 0.9rem;
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 2px solid var(--border-medium);
+        }
+
+        .set-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-cream);
+        }
+
+        .set-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .set-table tr:hover {
+            background: var(--bg-elevated);
+        }
+
+        .attribute-health {
+            color: #e74c3c;
+        }
+
+        .attribute-stamina {
+            color: #f1c40f;
+        }
+
+        .attribute-deadeye {
+            color: #3498db;
+        }
+
+        .unlock-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .unlock-item {
+            background: var(--bg-dark);
+            padding: 15px 10px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .unlock-rank {
+            font-family: 'Rye', cursive;
+            color: var(--rust);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .unlock-piece {
+            color: var(--text-cream);
+            font-size: 0.85rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th {
+            background: var(--bg-elevated);
+            color: var(--rust);
+            font-family: 'Rye', cursive;
+            font-size: 0.85rem;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+        }
+
+        .comparison-table .better {
+            color: #5cb85c;
+            font-weight: 600;
+        }
+
+        .comparison-table .worse {
+            color: var(--text-muted);
+        }
+
+        .legend-outfit {
+            background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-dark) 100%);
+            border: 2px solid var(--gold);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .legend-outfit h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .legend-bonuses {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .legend-bonus {
+            background: var(--bg-dark);
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-cream);
+        }
+
+        @media (max-width: 600px) {
+            .unlock-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .legend-bonuses {
+                grid-template-columns: 1fr;
+            }
+
+            .set-table, .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .set-table th, .set-table td,
+            .comparison-table th, .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+    <div class="container gear-guide-container">
+        <header>
+            <a href="weapons.html" class="back-link">&larr; Back to Weapons</a>
+            <h1 class="page-title">Weapon Gear Guide</h1>
+            <p class="page-subtitle">Bandoliers, Holsters, Gun Belts & Equipment Sets</p>
+        </header>
+
+        <main>
+            <div class="info-section">
+                <h2>The Key Thing to Know</h2>
+                <div class="key-point">
+                    <p>You do NOT have to wear equipment to get the bonuses. Once you purchase gear from the Trapper, the stat boosts are permanent and automatic. Wear whatever looks good.</p>
+                </div>
+                <p>There are two places to get weapon gear upgrades: the <span class="highlight">Gunsmith</span> (basic upgrades for cash) and the <span class="highlight">Trapper</span> (better upgrades from completing challenges). The Trapper's reinforced equipment is superior in every way.</p>
+            </div>
+
+            <div class="info-section">
+                <h2>Gunsmith vs Trapper Equipment</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Piece</th>
+                            <th>Gunsmith</th>
+                            <th>Trapper (Challenges)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bandolier</td>
+                            <td class="worse">+50% longarm ammo ($69.50)</td>
+                            <td class="better">+100% longarm ammo</td>
+                        </tr>
+                        <tr>
+                            <td>Gun Belt</td>
+                            <td class="worse">+50% sidearm ammo</td>
+                            <td class="better">+100% sidearm ammo</td>
+                        </tr>
+                        <tr>
+                            <td>Holsters</td>
+                            <td class="worse">Basic</td>
+                            <td class="better">+ Set bonus when complete</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>The Gunsmith upgrades are available immediately for cash. The Trapper's reinforced equipment requires completing challenges first, but gives double the ammo bonus plus attribute boosts.</p>
+            </div>
+
+            <div class="info-section">
+                <h2>Challenge Equipment Sets</h2>
+                <p>There are <span class="highlight">9 challenge categories</span>, each with 10 ranks. Completing challenges unlocks equipment at the Trapper. Each category gives you a full set: Bandolier, Holster, Off-Hand Holster, and Gun Belt.</p>
+
+                <p>When you buy all 4 pieces from the same challenge set, you get a <span class="highlight">permanent attribute bonus</span> (Health, Stamina, or Dead Eye).</p>
+
+                <table class="set-table">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Challenge Sets</th>
+                            <th>Bonus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="attribute-health">Health</td>
+                            <td>Horseman, Sharpshooter, Weapons Expert</td>
+                            <td>+1 Health bar per set</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-stamina">Stamina</td>
+                            <td>Bandit, Gambler, Master Hunter</td>
+                            <td>+1 Stamina bar per set</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-deadeye">Dead Eye</td>
+                            <td>Explorer, Herbalist, Survivalist</td>
+                            <td>+1 Dead Eye bar per set</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>How the Bonus Bars Work</h3>
+                <ul>
+                    <li>Your natural max level for each attribute is <span class="highlight">Level 8</span></li>
+                    <li>Complete <span class="highlight">1 set</span> in a group → Level 9 (first bonus bar)</li>
+                    <li>Complete <span class="highlight">all 3 sets</span> in a group → Level 10 (second bonus bar)</li>
+                    <li>Example: Buy all Horseman gear → Health goes to 9. Then buy all Sharpshooter AND Weapons Expert gear → Health goes to 10.</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h2>When Equipment Unlocks</h2>
+                <p>Each challenge category unlocks one piece of equipment at specific ranks:</p>
+
+                <div class="unlock-grid">
+                    <div class="unlock-item">
+                        <div class="unlock-rank">1</div>
+                        <div class="unlock-piece">Bandolier</div>
+                    </div>
+                    <div class="unlock-item">
+                        <div class="unlock-rank">3</div>
+                        <div class="unlock-piece">Holster</div>
+                    </div>
+                    <div class="unlock-item">
+                        <div class="unlock-rank">7</div>
+                        <div class="unlock-piece">Off-Hand Holster</div>
+                    </div>
+                    <div class="unlock-item">
+                        <div class="unlock-rank">10</div>
+                        <div class="unlock-piece">Gun Belt</div>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic;">Note: The exact order may vary slightly by challenge category, but you'll always have all 4 pieces by Rank 10.</p>
+            </div>
+
+            <div class="info-section">
+                <h2>Recommended Priority</h2>
+                <h3>If you want max Health first:</h3>
+                <p>Focus on <span class="highlight">Horseman</span> challenges (riding/horse skills) - they're fun and natural to complete while playing. Then <span class="highlight">Sharpshooter</span> (combat challenges) and <span class="highlight">Weapons Expert</span> (kill challenges).</p>
+
+                <h3>If you want max Dead Eye first:</h3>
+                <p>Focus on <span class="highlight">Explorer</span> (finding treasure maps - easy with guides), <span class="highlight">Herbalist</span> (collecting plants), and <span class="highlight">Survivalist</span> (crafting/survival skills).</p>
+
+                <h3>If you want max Stamina first:</h3>
+                <p><span class="highlight">Master Hunter</span> (hunting challenges) is straightforward. <span class="highlight">Bandit</span> (outlaw activities) is fun. <span class="highlight">Gambler</span> challenges are notoriously frustrating (Blackjack, Dominoes) - save these for last.</p>
+
+                <div class="key-point">
+                    <p>Tip: The individual equipment pieces give you the ammo bonuses immediately. You don't need to complete the full set to get +100% ammo - just buy each piece as you unlock it.</p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>The Ultimate Reward</h2>
+                <div class="legend-outfit">
+                    <h3>Legend of the East Outfit</h3>
+                    <p style="color: var(--text-muted);">Complete all 90 challenges (all 9 categories, rank 10 each) to unlock this legendary outfit with unique bonuses:</p>
+                    <div class="legend-bonuses">
+                        <div class="legend-bonus">-10% Core drain rate</div>
+                        <div class="legend-bonus">-10% Horse core drain</div>
+                        <div class="legend-bonus">-10% Dead Eye drain</div>
+                        <div class="legend-bonus">-10% Damage on horseback</div>
+                        <div class="legend-bonus">+10% Looting money</div>
+                        <div class="legend-bonus">+10% XP gain</div>
+                        <div class="legend-bonus">-10% Weapon degradation</div>
+                        <div class="legend-bonus">-10% Eagle Eye drain</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>Quick Reference</h2>
+                <table class="set-table">
+                    <thead>
+                        <tr>
+                            <th>Challenge</th>
+                            <th>Type</th>
+                            <th>Attribute</th>
+                            <th>Difficulty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bandit</td>
+                            <td>Outlaw activities</td>
+                            <td class="attribute-stamina">Stamina</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Explorer</td>
+                            <td>Treasure hunting</td>
+                            <td class="attribute-deadeye">Dead Eye</td>
+                            <td>Easy (with guides)</td>
+                        </tr>
+                        <tr>
+                            <td>Gambler</td>
+                            <td>Card/dice games</td>
+                            <td class="attribute-stamina">Stamina</td>
+                            <td>Frustrating (RNG)</td>
+                        </tr>
+                        <tr>
+                            <td>Herbalist</td>
+                            <td>Plant collection</td>
+                            <td class="attribute-deadeye">Dead Eye</td>
+                            <td>Time-consuming</td>
+                        </tr>
+                        <tr>
+                            <td>Horseman</td>
+                            <td>Riding challenges</td>
+                            <td class="attribute-health">Health</td>
+                            <td>Easy-Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Master Hunter</td>
+                            <td>Hunting challenges</td>
+                            <td class="attribute-stamina">Stamina</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Sharpshooter</td>
+                            <td>Combat/shooting</td>
+                            <td class="attribute-health">Health</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Survivalist</td>
+                            <td>Crafting/survival</td>
+                            <td class="attribute-deadeye">Dead Eye</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Weapons Expert</td>
+                            <td>Kill challenges</td>
+                            <td class="attribute-health">Health</td>
+                            <td>Medium</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <p>Data sourced from the RDR2 community. Not affiliated with Rockstar Games.</p>
+        </footer>
+    </div>
+</body>
+</html>
