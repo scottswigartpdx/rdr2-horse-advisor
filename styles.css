@@ -1,5 +1,13 @@
 /* RDR2 Horse Advisor - Dark Frontier Theme */
 
+/* Chinese Rocks font - RDR2 style */
+@font-face {
+    font-family: 'Chinese Rocks';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Chinese Rocks Rg'), url('https://fonts.cdnfonts.com/s/2754/chinese rocks rg.woff') format('woff');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -73,13 +81,13 @@ header {
 }
 
 header h1 {
-    font-family: 'Rye', cursive;
-    font-size: 1.6rem;
-    color: var(--accent-primary);
+    font-family: 'Chinese Rocks', 'Rye', cursive;
+    font-size: 2.4rem;
+    color: #c12c3a;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 6px;
-    opacity: 0.9;
+    letter-spacing: 5px;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6), 0 0 12px rgba(196,30,58,0.2);
 }
 
 header h1 a {
@@ -115,19 +123,21 @@ header h1 a:hover {
 }
 
 .auth-btn {
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-medium);
-    color: var(--text-cream);
+    background: #171717;
+    border: 1px solid #3a352b;
+    color: var(--text-muted);
     padding: 8px 16px;
     border-radius: var(--radius);
     font-family: 'Crimson Text', serif;
-    font-size: 0.9rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .auth-btn:hover {
-    background: var(--bg-card);
+    color: var(--text-cream);
     border-color: var(--gold);
 }
 
@@ -290,6 +300,153 @@ header h1 a:hover {
     border-color: var(--text-muted);
 }
 
+/* ========== GAME-LIKE SECTION SELECTOR ========== */
+.section-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    margin-top: 28px;
+    margin-bottom: 20px;
+    background: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(15,15,15,0.9) 50%, rgba(10,10,10,0) 100%);
+}
+
+.section-nav-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 26px;
+    border: 1px solid rgba(74,69,57,0.65);
+    background: linear-gradient(180deg, rgba(18,18,18,0.95), rgba(12,12,12,0.95));
+    background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 3px 3px;
+    background-blend-mode: overlay;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        inset 0 -1px 0 rgba(0,0,0,0.7),
+        inset 0 0 24px rgba(0,0,0,0.65),
+        0 8px 24px rgba(0,0,0,0.55);
+}
+
+/* Inner rule lines for menu framing */
+.section-nav-inner::before,
+.section-nav-inner::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #4a4539, transparent);
+}
+
+.section-nav-inner::before { margin-bottom: 8px; }
+.section-nav-inner::after  { margin-top: 8px; }
+
+.section-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    padding: 10px 20px 10px 50px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Cattleman revolver pointer (RDR2 style) */
+.section-nav-item::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    width: 32px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23c9a227' d='M481.14 125.357c-18.78 5.476-34.912 14.487-46.952 32.973h46.953v-32.973zm-188.915 50.01-13.125.002-.116 35.74H491.47l-.343-35.74H292.225v-.003zm-29.125.002-33.07.003-97.298.008c-16.018 27.973-16.89 57.78 1.04 94.07H262.8l.063-20.22H168.09a8 8 0 1 1 0-16h94.8v-22.68h-95.15a8 8 0 1 1 0-16h95.3l.06-19.18zm-161.377.01c-7.834 28.723-12.348 45.61-18.73 58.69-6.78 13.893-15.75 23.88-32.3 41.7C11.077 351.204 17.48 389.416 20.46 432.083c12.07 14.128 29.67 21.282 48.724 23.54 17.703 2.097 36.135-.286 50.816-4.597-.272-47.016 8.213-93.296 40.84-139.84l5.264-7.507 6.724 6.23c18.24 16.9 40.922 21.272 63.205 17.717 22.283-3.555 43.756-15.464 57.254-30.285 9.92-10.894 12.492-23.074 11.66-37.932h-26.115l-.084 26.04h-.695c-9.56 10.992-33.904 24.083-47.803 24.146-13.556.06-35.84-13.197-47.896-24.145H123.88l-2.253-4.266c-20.284-38.435-21.828-74.208-7.06-105.803h-12.844zm-74.88 2.47c7.33 23.547 19.127 43.547 34.825 60.796 2.733-3.822 4.952-7.508 6.945-11.593 2.33-4.772 4.44-10.37 6.715-17.44-.225-.142-.403-.248-.635-.394-7.68-4.854-17.46-11.227-27.117-17.58-10.508-6.916-13.477-8.943-20.734-13.79zm252.09 49.26-.042 13.66v2.638h82.72V227.11h-82.676zM88.642 293.9c16.474 0 30 13.525 30 29.998 0 16.474-13.526 30-30 30-16.473 0-30-13.526-30-30 0-16.473 13.527-29.998 30-29.998zm0 15.998c-7.826 0-14 6.174-14 14 0 7.827 6.174 14 14 14 7.827 0 14-6.173 14-14 0-7.826-6.173-14-14-14zm-18.025 67.676a13 13 0 0 1 12.625 12.998 13 13 0 1 1-26 0 13 13 0 0 1 13.375-12.998z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.section-nav-item:hover::before,
+.section-nav-item.active::before {
+    opacity: 1;
+}
+
+.section-nav-item:hover::before {
+    transform: translateY(-50%) translateX(2px);
+}
+
+.section-nav-item .section-text {
+    font-family: 'Chinese Rocks', 'Rye', cursive;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #c2b8a6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.section-nav-item:hover .section-text {
+    color: var(--text-cream);
+}
+
+/* Hover/active underline cue */
+.section-nav-item:hover .section-text::after,
+.section-nav-item.active .section-text::after {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--gold);
+    margin-top: 6px;
+}
+
+.section-nav-item.active .section-text {
+    color: var(--gold);
+    text-shadow: 0 0 12px rgba(201, 162, 39, 0.25);
+}
+
+/* Hide the bullet pointer - using left rule instead */
+.section-nav-item .revolver-pointer {
+    display: none;
+}
+
+/* Subtle line decorations */
+.section-nav::before,
+.section-nav::after {
+    content: '';
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+}
+
+.section-nav::before {
+    margin-bottom: 20px;
+}
+
+.section-nav::after {
+    margin-top: 20px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .section-nav-item .section-text {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .section-nav-item {
+        padding-left: 36px;
+    }
+
+    .section-nav-inner {
+        padding: 12px 20px;
+    }
+}
+
 /* ========== CARDS & PANELS ========== */
 .question-card,
 .result-card,
@@ -316,7 +473,7 @@ main {
 
 .welcome-message {
     text-align: center;
-    padding: 30px 20px;
+    padding: 18px 20px 30px;
 }
 
 .welcome-message h2 {
@@ -1053,6 +1210,12 @@ footer {
     border-color: #b5571f;
 }
 
+.badge-dual {
+    background: #5c4d8c;
+    color: var(--text-cream);
+    border-color: #4a3d70;
+}
+
 /* Stat bars */
 .horse-card-stats {
     display: flex;
@@ -1162,6 +1325,11 @@ footer {
     font-family: 'Rye', cursive;
     font-size: 1rem;
     color: var(--text-cream);
+    text-decoration: none;
+}
+
+a.gear-card-title:hover {
+    color: var(--rust);
 }
 
 .gear-card-stats {

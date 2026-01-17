@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loadout Builder - RDR2 Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chooser-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .question-card {
+            padding: 30px;
+        }
+
+        .question-card h2 {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .question-hint {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .question-number {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .freeform-textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 15px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-medium);
+            border-radius: 4px;
+            color: var(--text-cream);
+            font-size: 1rem;
+            font-family: 'Crimson Text', Georgia, serif;
+            resize: vertical;
+        }
+
+        .freeform-textarea:focus {
+            outline: none;
+            border-color: var(--red-primary);
+        }
+
+        .freeform-textarea::placeholder {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .example-chips {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .example-chip {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .example-chip:hover {
+            border-color: var(--red-primary);
+            color: var(--text-cream);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        .nav-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-medium);
+            color: var(--text-cream);
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Crimson Text', Georgia, serif;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            border-color: var(--red-primary);
+        }
+
+        .nav-btn.primary {
+            background: var(--red-primary);
+            color: var(--text-cream);
+            border: none;
+            font-weight: 600;
+            font-family: 'Rye', cursive;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn.primary:hover {
+            background: #d42945;
+            box-shadow: 0 0 20px var(--red-glow);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-bar {
+            background: var(--bg-dark);
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            background: var(--red-primary);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .skip-link {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .skip-link:hover {
+            color: var(--rust);
+        }
+
+        /* Results */
+        .results-container {
+            display: none;
+        }
+
+        .results-container.show {
+            display: block;
+        }
+
+        .ai-thinking {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .ai-thinking .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-subtle);
+            border-top-color: var(--red-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .ai-thinking p {
+            color: var(--text-muted);
+            max-width: 300px;
+            font-style: italic;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .your-answers h3 {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .answer-item {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .answer-label {
+            color: var(--text-muted);
+            min-width: 100px;
+        }
+
+        .answer-value {
+            color: var(--text-cream);
+            font-style: italic;
+        }
+
+        .loadout-section {
+            margin: 25px 0;
+        }
+
+        .loadout-section h3 {
+            font-family: 'Rye', cursive;
+            color: var(--rust);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .weapon-slot {
+            background: var(--bg-card);
+            border: 1px solid var(--border-medium);
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .weapon-slot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .weapon-name {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            font-size: 1.2rem;
+        }
+
+        .weapon-name a {
+            color: var(--text-cream);
+            text-decoration: none;
+        }
+
+        .weapon-name a:hover {
+            color: var(--rust);
+        }
+
+        .weapon-category {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .slot-badge {
+            background: var(--rust);
+            color: var(--text-cream);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .weapon-stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .weapon-stat {
+            text-align: center;
+            padding: 8px 4px;
+            background: var(--bg-dark);
+            border-radius: 4px;
+        }
+
+        .weapon-stat-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .weapon-stat-value {
+            font-size: 0.95rem;
+            color: var(--text-cream);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .weapon-details {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .weapon-details span {
+            color: var(--text-cream);
+        }
+
+        .ai-reason {
+            background: var(--bg-dark);
+            padding: 12px 16px;
+            border-radius: 4px;
+            border-left: 3px solid var(--rust);
+            margin-top: 12px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .ai-reason strong {
+            color: var(--rust);
+            font-style: normal;
+        }
+
+        .loadout-summary {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-medium);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .loadout-summary h3 {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            margin-bottom: 12px;
+        }
+
+        .loadout-summary p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .restart-btn {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-medium);
+            color: var(--text-cream);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Crimson Text', Georgia, serif;
+        }
+
+        .restart-btn:hover {
+            border-color: var(--red-primary);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--rust);
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+            color: var(--red-primary);
+        }
+
+        .error-message {
+            background: var(--red-dark);
+            color: var(--text-cream);
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid var(--red-primary);
+        }
+
+        .dual-badge {
+            display: inline-block;
+            background: #5c4d8c;
+            color: var(--text-cream);
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .weapon-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .weapon-details {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+    <!-- Supabase Auth -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+    <div class="container chooser-container">
+        <header>
+            <a href="weapons.html" class="back-link">&larr; Back to Weapons</a>
+            <h1>RDR2 Loadout Builder</h1>
+            <p class="subtitle">Build your perfect weapon loadout</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+
+        <main id="questionContainer">
+            <!-- Questions will be injected here -->
+        </main>
+
+        <div class="results-container" id="resultsContainer">
+            <div id="resultsContent"></div>
+            <button class="restart-btn" onclick="restart()">Start Over</button>
+        </div>
+    </div>
+
+    <script>
+        // Supabase Auth
+        const SUPABASE_URL = 'https://vejhtrzmesjpxlonwhig.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_QYHw3yzSd61GgQj3Izb3ng_zkfT_IZv';
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+            auth: {
+                detectSessionInUrl: true,
+                persistSession: true,
+                autoRefreshToken: true,
+                flowType: 'pkce'
+            }
+        });
+
+        async function getAuthToken() {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            return session?.access_token || null;
+        }
+
+        async function signInWithGoogle() {
+            await supabaseClient.auth.signInWithOAuth({
+                provider: 'google',
+                options: { redirectTo: window.location.href }
+            });
+        }
+
+        let weaponData = null;
+        let currentQuestion = 0;
+        let answers = {};
+
+        // Helper to get first acquisition
+        function getAcquisition(weapon) {
+            return Array.isArray(weapon.acquisition) ? weapon.acquisition[0] : weapon.acquisition;
+        }
+
+        const questions = [
+            {
+                id: 'chapter',
+                question: 'Where are you in the story?',
+                hint: 'This determines which weapons are available to you.',
+                placeholder: 'e.g., "Just started Chapter 2" or "In the epilogue"',
+                examples: [
+                    'Early Chapter 2',
+                    'Chapter 3',
+                    'Chapter 4 or later',
+                    'Epilogue, everything unlocked'
+                ]
+            },
+            {
+                id: 'philosophy',
+                question: 'Specialized loadout or versatile all-rounders?',
+                hint: 'Do you want the perfect tool for each situation, or guns that handle anything?',
+                placeholder: 'e.g., "I want a dedicated hunting setup and separate combat weapons" or "Give me versatile guns"',
+                examples: [
+                    'Specialized - different guns for hunting vs combat',
+                    'Versatile - weapons that handle any situation',
+                    'Combat focused, I\'ll figure out hunting later',
+                    'I want options for every range and scenario'
+                ]
+            },
+            {
+                id: 'sidearm_vibe',
+                question: 'What\'s your sidearm style?',
+                hint: 'This is as much about feel and aesthetics as it is about stats.',
+                placeholder: 'e.g., "Classic revolvers, authentic Western feel" or "Dual sawed-offs for maximum chaos"',
+                examples: [
+                    'Classic Western - Cattleman or Schofield, period-authentic',
+                    'Stopping power - slow, deliberate, every shot counts',
+                    'Modern firepower - M1899 or Mauser, authenticity be damned',
+                    'Dual sawed-offs - up close and devastating',
+                    'Dual wielding revolvers for style'
+                ]
+            },
+            {
+                id: 'combat_style',
+                question: 'How do you fight?',
+                hint: 'Think about your typical gunfight. Are you patient or aggressive?',
+                placeholder: 'e.g., "I take my time and go for headshots" or "I get in close and make it quick"',
+                examples: [
+                    'Patient sharpshooter - one shot, one kill',
+                    'Classic gunslinger - mid-range shootouts',
+                    'Up close and violent - I like shotguns',
+                    'Spray and pray - fast firing, lots of lead',
+                    'Depends on the situation, I adapt'
+                ]
+            },
+            {
+                id: 'gunslinger_identity',
+                question: 'What kind of gunslinger are you?',
+                hint: 'Pure vibes. What feels right for your Arthur or John?',
+                placeholder: 'e.g., "Clint Eastwood silent professional" or "Flashy outlaw who loves overkill"',
+                examples: [
+                    'Quiet professional - efficient, no flash',
+                    'Grizzled survivor - practical, weathered',
+                    'Flashy outlaw - intimidating, loud',
+                    'Gentleman gunslinger - refined but deadly',
+                    'Just give me what wins gunfights'
+                ],
+                optional: true
+            }
+        ];
+
+        // Load weapon data
+        async function loadData() {
+            const response = await fetch('weapons.json');
+            weaponData = await response.json();
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const container = document.getElementById('questionContainer');
+            const q = questions[currentQuestion];
+            const progress = ((currentQuestion) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = `${progress}%`;
+
+            container.innerHTML = `
+                <div class="question-card">
+                    <div class="question-number">Question ${currentQuestion + 1} of ${questions.length}</div>
+                    <h2>${q.question}</h2>
+                    <p class="question-hint">${q.hint}</p>
+                    <textarea
+                        class="freeform-textarea"
+                        id="answerInput"
+                        placeholder="${q.placeholder}"
+                        onkeyup="updateAnswer()"
+                    >${answers[q.id] || ''}</textarea>
+                    <div class="example-chips">
+                        ${q.examples.map(ex => `
+                            <span class="example-chip" onclick="setExample('${ex.replace(/'/g, "\\'")}')">${ex}</span>
+                        `).join('')}
+                    </div>
+                    <div class="nav-buttons">
+                        <button class="nav-btn" onclick="prevQuestion()" ${currentQuestion === 0 ? 'disabled' : ''}>
+                            ← Back
+                        </button>
+                        <button class="nav-btn primary" onclick="nextQuestion()" id="nextBtn">
+                            ${currentQuestion === questions.length - 1 ? 'Build My Loadout →' : 'Next →'}
+                        </button>
+                    </div>
+                    ${q.optional ? '<span class="skip-link" onclick="skipAndFinish()">Skip and build loadout</span>' : ''}
+                </div>
+            `;
+        }
+
+        function setExample(text) {
+            document.getElementById('answerInput').value = text;
+            answers[questions[currentQuestion].id] = text;
+        }
+
+        function updateAnswer() {
+            answers[questions[currentQuestion].id] = document.getElementById('answerInput').value;
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            updateAnswer();
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function skipAndFinish() {
+            showResults();
+        }
+
+        async function showResults() {
+            document.getElementById('questionContainer').style.display = 'none';
+            document.getElementById('resultsContainer').classList.add('show');
+            document.getElementById('progressFill').style.width = '100%';
+
+            document.getElementById('resultsContent').innerHTML = `
+                <div class="ai-thinking">
+                    <div class="spinner"></div>
+                    <p>Building your perfect loadout based on your playstyle...</p>
+                </div>
+            `;
+
+            try {
+                const result = await getAIRecommendations();
+                renderResults(result);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('resultsContent').innerHTML = `
+                    <div class="error-message">
+                        <p>Sorry, there was an error building your loadout.</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function getAIRecommendations() {
+            const token = await getAuthToken();
+            if (!token) {
+                throw new Error('Please sign in to get personalized recommendations. <a href="#" onclick="signInWithGoogle(); return false;" style="color: var(--rust);">Sign in with Google</a>');
+            }
+
+            const prompt = `You are an RDR2 weapon expert. Build a complete weapon loadout based on the player's preferences and STYLE.
+
+Player's answers:
+- Story Progress: ${answers.chapter || 'Not specified'}
+- Loadout Philosophy: ${answers.philosophy || 'Not specified'}
+- Sidearm Style/Vibe: ${answers.sidearm_vibe || 'Not specified'}
+- Combat Style: ${answers.combat_style || 'Not specified'}
+- Gunslinger Identity: ${answers.gunslinger_identity || 'Not specified'}
+
+Weapon database:
+${JSON.stringify(weaponData.weapons, null, 2)}
+
+CRITICAL WEAPON KNOWLEDGE:
+
+CHAPTER AVAILABILITY:
+- Each weapon has an "acquisition.chapter" field (e.g., "Chapter 1", "Chapter 2+", "Chapter 4+")
+- Many great weapons are available early: Schofield (free in Ch2 from Valentine doctor robbery), Pump-Action Shotgun (free in Ch2 from Chez Porter), Bolt-Action Rifle (given in Ch3)
+- LeMat Revolver only available Chapter 4+ at Saint Denis gunsmith
+- Some weapons are Epilogue-only
+- ONLY recommend weapons available in the player's current chapter
+
+WEAPON SLOTS:
+- Players carry: 2 sidearms (dual wield unlocked mid-story) + 2 back/shoulder weapons
+- Recommend exactly: 2 sidearms + 2 long guns (or 1 long gun + bow if they hunt)
+
+HUNTING REQUIREMENTS (if player hunts):
+- Small game (rabbits, birds): Varmint Rifle required for clean kills
+- Medium game: Bow with regular arrows, or Repeater
+- Large game (deer, elk, bears): Bolt-Action Rifle or Springfield with scope
+- The game tells players what weapon to use when they study animals
+- If they hunt seriously, they NEED: Varmint Rifle + Bow or Bolt-Action
+
+WEAPON CLASS GUIDANCE:
+- SHOTGUNS dominate close-range/indoor combat. Semi-Auto is best overall, Pump-Action is great and free early.
+- REPEATERS are versatile mid-range. Lancaster is best (accurate, fast, 14 rounds). Litchfield hits harder but is slow and inaccurate.
+- RIFLES are for long-range. Bolt-Action is the all-purpose king. Carcano/Rolling Block are snipers.
+- REVOLVERS: Schofield is best all-rounder. LeMat has highest damage + shotgun mode but slow. Cattleman is solid starting gun.
+- PISTOLS: Faster fire rate than revolvers but less damage. Mauser and Semi-Auto are late-game powerhouses.
+
+SIDEARM COMBOS (function AND style):
+- Dual Cattlemans: Classic Western authenticity, solid stats, available from start
+- Dual Schofields: The refined choice, balanced and reliable, available early
+- Dual LeMats: Maximum stopping power, 9 rounds + shotgun mode, for patient shooters (Ch4+)
+- Dual Sawed-Offs: Pure chaos, devastating up close, intimidating
+- Dual Mausers/M1899s: Modern firepower, fast firing, less "authentic Western" but effective (late game)
+- Schofield + Sawed-Off: Best of both worlds, range and close-quarters backup
+- Mix and match based on their VIBE - if they want "classic Western", don't give them M1899s
+
+STYLE MATTERS:
+- Pay attention to the player's aesthetic preferences, not just optimization
+- "Classic Western" players want Cattleman, Schofield, Double-Action - NOT semi-auto pistols
+- "Modern firepower" players are fine with M1899, Mauser, Semi-Auto Shotgun
+- "Flashy outlaw" might want intimidating weapons like dual sawed-offs or LeMats
+- "Quiet professional" wants efficient, no-nonsense choices
+- Match the weapons to their gunslinger IDENTITY, not just stats
+
+Return your response as JSON in this exact format:
+{
+    "loadout": {
+        "sidearm1": {
+            "name": "Weapon Name",
+            "reason": "1-2 sentences why this fits their style"
+        },
+        "sidearm2": {
+            "name": "Weapon Name",
+            "reason": "1-2 sentences why this fits"
+        },
+        "backWeapon1": {
+            "name": "Weapon Name",
+            "reason": "1-2 sentences why"
+        },
+        "backWeapon2": {
+            "name": "Weapon Name",
+            "reason": "1-2 sentences why"
+        }
+    },
+    "summary": "2-3 sentences explaining how this loadout works together and fits their playstyle"
+}
+
+Only return the JSON, no other text.`;
+
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    system: prompt,
+                    messages: [{ role: 'user', content: 'Build me the best loadout based on my preferences above.' }]
+                })
+            });
+
+            if (!response.ok) {
+                const err = await response.json();
+                if (response.status === 401) {
+                    throw new Error('Please sign in to get recommendations. <a href="#" onclick="signInWithGoogle(); return false;" style="color: var(--rust);">Sign in with Google</a>');
+                }
+                if (response.status === 429) {
+                    throw new Error(err.message || 'Daily limit reached. Try again tomorrow!');
+                }
+                throw new Error(err.message || err.error || 'API request failed');
+            }
+
+            const data = await response.json();
+            const aiText = data.content[0].text.trim();
+
+            let parsed;
+            try {
+                parsed = JSON.parse(aiText);
+            } catch (e) {
+                const match = aiText.match(/\{[\s\S]*\}/);
+                if (match) {
+                    parsed = JSON.parse(match[0]);
+                } else {
+                    throw new Error('Could not parse AI response');
+                }
+            }
+
+            return parsed;
+        }
+
+        function renderWeaponSlot(slotName, slotLabel, rec) {
+            const weapon = weaponData.weapons.find(w =>
+                w.name.toLowerCase() === rec.name.toLowerCase()
+            );
+
+            if (!weapon) {
+                return `
+                    <div class="weapon-slot">
+                        <div class="weapon-slot-header">
+                            <div>
+                                <div class="weapon-name">${rec.name}</div>
+                            </div>
+                            <span class="slot-badge">${slotLabel}</span>
+                        </div>
+                        <div class="ai-reason"><strong>Why:</strong> ${rec.reason}</div>
+                    </div>
+                `;
+            }
+
+            const acq = getAcquisition(weapon);
+            const base = weapon.baseStats || {};
+            const max = weapon.maxStats || base;
+            const dualBadge = weapon.canDualWield ? '<span class="dual-badge">Dual Wield</span>' : '';
+            const weaponLink = `weapon.html?name=${encodeURIComponent(weapon.name)}`;
+
+            const formatStat = (val, maxVal) => {
+                if (val === undefined) return '—';
+                if (maxVal && maxVal !== val) return `${val.toFixed(1)}→${maxVal.toFixed(1)}`;
+                return val.toFixed(1);
+            };
+
+            return `
+                <div class="weapon-slot">
+                    <div class="weapon-slot-header">
+                        <div>
+                            <div class="weapon-name"><a href="${weaponLink}">${weapon.name}</a>${dualBadge}</div>
+                            <div class="weapon-category">${weapon.category}</div>
+                        </div>
+                        <span class="slot-badge">${slotLabel}</span>
+                    </div>
+                    <div class="weapon-stats">
+                        <div class="weapon-stat">
+                            <div class="weapon-stat-label">Damage</div>
+                            <div class="weapon-stat-value">${formatStat(base.damage, max.damage)}</div>
+                        </div>
+                        <div class="weapon-stat">
+                            <div class="weapon-stat-label">Range</div>
+                            <div class="weapon-stat-value">${formatStat(base.range, max.range)}</div>
+                        </div>
+                        <div class="weapon-stat">
+                            <div class="weapon-stat-label">Fire Rate</div>
+                            <div class="weapon-stat-value">${formatStat(base.fireRate, max.fireRate)}</div>
+                        </div>
+                        <div class="weapon-stat">
+                            <div class="weapon-stat-label">Accuracy</div>
+                            <div class="weapon-stat-value">${formatStat(base.accuracy, max.accuracy)}</div>
+                        </div>
+                        <div class="weapon-stat">
+                            <div class="weapon-stat-label">Reload</div>
+                            <div class="weapon-stat-value">${formatStat(base.reload, max.reload)}</div>
+                        </div>
+                    </div>
+                    <div class="weapon-details">
+                        <div>Price: <span>${weapon.price ? '$' + weapon.price.toLocaleString() : 'Free'}</span></div>
+                        <div>Available: <span>${acq.chapter}</span></div>
+                        <div>Location: <span>${acq.location}</span></div>
+                    </div>
+                    <div class="ai-reason"><strong>Why:</strong> ${rec.reason}</div>
+                </div>
+            `;
+        }
+
+        function renderResults(result) {
+            const container = document.getElementById('resultsContent');
+
+            if (!result.loadout) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h3>Couldn't build a loadout</h3>
+                        <p>Try adjusting your requirements.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const answersHtml = `
+                <div class="your-answers">
+                    <h3>Your Preferences</h3>
+                    ${answers.chapter ? `<div class="answer-item"><span class="answer-label">Chapter:</span><span class="answer-value">${answers.chapter}</span></div>` : ''}
+                    ${answers.philosophy ? `<div class="answer-item"><span class="answer-label">Philosophy:</span><span class="answer-value">${answers.philosophy}</span></div>` : ''}
+                    ${answers.sidearm_vibe ? `<div class="answer-item"><span class="answer-label">Sidearm Style:</span><span class="answer-value">${answers.sidearm_vibe}</span></div>` : ''}
+                    ${answers.combat_style ? `<div class="answer-item"><span class="answer-label">Combat:</span><span class="answer-value">${answers.combat_style}</span></div>` : ''}
+                    ${answers.gunslinger_identity ? `<div class="answer-item"><span class="answer-label">Identity:</span><span class="answer-value">${answers.gunslinger_identity}</span></div>` : ''}
+                </div>
+            `;
+
+            const loadout = result.loadout;
+
+            container.innerHTML = `
+                <h2 style="color: var(--rust); text-align: center; margin-bottom: 25px;">Your Custom Loadout</h2>
+                ${answersHtml}
+
+                <div class="loadout-section">
+                    <h3>Sidearms</h3>
+                    ${renderWeaponSlot('sidearm1', 'Primary', loadout.sidearm1)}
+                    ${renderWeaponSlot('sidearm2', 'Off-Hand', loadout.sidearm2)}
+                </div>
+
+                <div class="loadout-section">
+                    <h3>Back Weapons</h3>
+                    ${renderWeaponSlot('backWeapon1', 'Shoulder', loadout.backWeapon1)}
+                    ${renderWeaponSlot('backWeapon2', 'Back', loadout.backWeapon2)}
+                </div>
+
+                <div class="loadout-summary">
+                    <h3>How This Loadout Works</h3>
+                    <p>${result.summary}</p>
+                </div>
+            `;
+        }
+
+        function restart() {
+            currentQuestion = 0;
+            answers = {};
+            document.getElementById('questionContainer').style.display = 'block';
+            document.getElementById('resultsContainer').classList.remove('show');
+            renderQuestion();
+        }
+
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>

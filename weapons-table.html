@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Horses - RDR2 Companion</title>
+    <title>All Weapons - RDR2 Companion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -66,7 +66,7 @@
             margin-bottom: 10px;
         }
 
-        .horse-table {
+        .weapon-table {
             width: 100%;
             border-collapse: collapse;
             background: var(--bg-card);
@@ -74,7 +74,7 @@
             overflow: hidden;
         }
 
-        .horse-table th {
+        .weapon-table th {
             background: var(--bg-elevated);
             color: var(--rust);
             font-family: 'Rye', cursive;
@@ -87,43 +87,43 @@
             border-bottom: 2px solid var(--border-medium);
         }
 
-        .horse-table th:hover {
+        .weapon-table th:hover {
             background: var(--bg-dark);
             color: var(--red-primary);
         }
 
-        .horse-table th.sorted-asc::after {
+        .weapon-table th.sorted-asc::after {
             content: ' ▲';
             font-size: 0.7rem;
         }
 
-        .horse-table th.sorted-desc::after {
+        .weapon-table th.sorted-desc::after {
             content: ' ▼';
             font-size: 0.7rem;
         }
 
-        .horse-table td {
+        .weapon-table td {
             padding: 10px;
             border-bottom: 1px solid var(--border-subtle);
             color: var(--text-cream);
             font-size: 0.95rem;
         }
 
-        .horse-table tr:hover {
+        .weapon-table tr:hover {
             background: var(--bg-elevated);
         }
 
-        .horse-table tr:last-child td {
+        .weapon-table tr:last-child td {
             border-bottom: none;
         }
 
-        .horse-link {
+        .weapon-link {
             color: var(--rust);
             text-decoration: none;
             font-weight: 600;
         }
 
-        .horse-link:hover {
+        .weapon-link:hover {
             color: var(--red-primary);
             text-decoration: underline;
         }
@@ -164,6 +164,17 @@
             color: var(--text-muted);
         }
 
+        .dual-wield-badge {
+            display: inline-block;
+            background: var(--rust);
+            color: var(--text-cream);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .no-results {
             text-align: center;
             padding: 40px;
@@ -171,12 +182,12 @@
         }
 
         @media (max-width: 900px) {
-            .horse-table {
+            .weapon-table {
                 font-size: 0.85rem;
             }
 
-            .horse-table th,
-            .horse-table td {
+            .weapon-table th,
+            .weapon-table td {
                 padding: 8px 6px;
             }
 
@@ -210,28 +221,28 @@
                 opacity: 0;
             }
 
-            .horse-table {
-                min-width: 800px;
+            .weapon-table {
+                min-width: 900px;
                 border-collapse: separate;
                 border-spacing: 0;
-                overflow: visible; /* Override hidden - required for sticky */
-                border-radius: 0; /* Remove radius since we can't clip without overflow:hidden */
+                overflow: visible;
+                border-radius: 0;
             }
 
             /* Sticky first column */
-            .horse-table th:first-child,
-            .horse-table td:first-child {
+            .weapon-table th:first-child,
+            .weapon-table td:first-child {
                 position: sticky;
                 left: 0;
                 z-index: 2;
                 background: var(--bg-elevated);
             }
 
-            .horse-table td:first-child {
+            .weapon-table td:first-child {
                 background: var(--bg-card);
             }
 
-            .horse-table tr:hover td:first-child {
+            .weapon-table tr:hover td:first-child {
                 background: var(--bg-elevated);
             }
         }
@@ -242,37 +253,36 @@
 <body>
     <div class="container table-container">
         <header>
-            <a href="horses.html" class="back-link">&larr; Back to Horses</a>
-            <h1 class="page-title">All Horses</h1>
+            <a href="weapons.html" class="back-link">&larr; Back to Weapons</a>
+            <h1 class="page-title">All Weapons</h1>
         </header>
 
         <main>
             <div class="search-container">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search by breed, coat, category, location..." autofocus>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by name, category, location..." autofocus>
             </div>
 
             <div id="resultsCount" class="results-count"></div>
 
             <div class="table-outer-wrapper">
                 <div class="table-scroll-wrapper" id="tableScrollWrapper">
-                    <table class="horse-table" id="horseTable">
+                    <table class="weapon-table" id="weaponTable">
                     <thead>
                         <tr>
-                            <th data-sort="breed">Breed</th>
-                            <th data-sort="coat">Coat</th>
+                            <th data-sort="name">Weapon</th>
                             <th data-sort="category">Category</th>
-                            <th data-sort="health" class="stat-cell">Health</th>
-                            <th data-sort="stamina" class="stat-cell">Stamina</th>
-                            <th data-sort="speed" class="stat-cell">Speed</th>
-                            <th data-sort="accel" class="stat-cell">Accel</th>
-                            <th data-sort="handling">Handling</th>
+                            <th data-sort="damage" class="stat-cell">Damage</th>
+                            <th data-sort="range" class="stat-cell">Range</th>
+                            <th data-sort="fireRate" class="stat-cell">Fire Rate</th>
+                            <th data-sort="accuracy" class="stat-cell">Accuracy</th>
+                            <th data-sort="reload" class="stat-cell">Reload</th>
                             <th data-sort="price">Price</th>
                             <th data-sort="chapter">Available</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
                         <tr>
-                            <td colspan="10" class="no-results">Loading horses...</td>
+                            <td colspan="9" class="no-results">Loading weapons...</td>
                         </tr>
                     </tbody>
                     </table>
@@ -286,93 +296,113 @@
     </div>
 
     <script>
-        let horseData = [];
-        let currentSort = { column: 'breed', direction: 'asc' };
+        let weaponData = [];
+        let currentSort = { column: 'name', direction: 'asc' };
 
         // Helper to get first acquisition (handles both array and object)
-        function getAcquisition(horse) {
-            return Array.isArray(horse.acquisition) ? horse.acquisition[0] : horse.acquisition;
+        function getAcquisition(weapon) {
+            return Array.isArray(weapon.acquisition) ? weapon.acquisition[0] : weapon.acquisition;
         }
 
-        async function loadHorses() {
+        async function loadWeapons() {
             try {
-                const response = await fetch('horses.json');
+                const response = await fetch('weapons.json');
                 const data = await response.json();
-                horseData = data.horses;
-                renderTable(horseData);
-                updateResultsCount(horseData.length);
+                weaponData = data.weapons;
+                renderTable(weaponData);
+                updateResultsCount(weaponData.length);
             } catch (error) {
-                console.error('Failed to load horses:', error);
+                console.error('Failed to load weapons:', error);
                 document.getElementById('tableBody').innerHTML =
-                    '<tr><td colspan="10" class="no-results">Failed to load horse data</td></tr>';
+                    '<tr><td colspan="9" class="no-results">Failed to load weapon data</td></tr>';
             }
         }
 
-        function renderTable(horses) {
+        function renderTable(weapons) {
             const tbody = document.getElementById('tableBody');
 
-            if (horses.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="10" class="no-results">No horses match your search</td></tr>';
+            if (weapons.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="9" class="no-results">No weapons match your search</td></tr>';
                 return;
             }
 
-            tbody.innerHTML = horses.map(horse => `
+            tbody.innerHTML = weapons.map(weapon => {
+                const acq = getAcquisition(weapon);
+                const dualBadge = weapon.canDualWield ? '<span class="dual-wield-badge">Dual</span>' : '';
+                const base = weapon.baseStats || {};
+                const max = weapon.maxStats || base;
+
+                // Helper to format stat with arrow if upgradeable
+                const formatStat = (baseStat, maxStat) => {
+                    if (baseStat === undefined || baseStat === null) return '—';
+                    if (maxStat === undefined || maxStat === null || baseStat === maxStat) {
+                        return `<span class="stat-max">${baseStat.toFixed(1)}</span>`;
+                    }
+                    return `<span class="stat-base">${baseStat.toFixed(1)}</span>→<span class="stat-max">${maxStat.toFixed(1)}</span>`;
+                };
+
+                return `
                 <tr>
-                    <td><a href="${horse.detailUrl}" class="horse-link">${horse.breed}</a></td>
-                    <td>${horse.coat}</td>
-                    <td><span class="category-badge">${horse.category}</span></td>
-                    <td class="stat-cell"><span class="stat-base">${horse.baseStats.health}</span>→<span class="stat-max">${horse.maxStats.health}</span></td>
-                    <td class="stat-cell"><span class="stat-base">${horse.baseStats.stamina}</span>→<span class="stat-max">${horse.maxStats.stamina}</span></td>
-                    <td class="stat-cell"><span class="stat-base">${horse.baseStats.speed}</span>→<span class="stat-max">${horse.maxStats.speed}</span></td>
-                    <td class="stat-cell"><span class="stat-base">${horse.baseStats.acceleration}</span>→<span class="stat-max">${horse.maxStats.acceleration}</span></td>
-                    <td>${horse.handling}</td>
-                    <td class="price-cell">${horse.price ? '$' + horse.price.toLocaleString() : '<span class="price-free">Free</span>'}</td>
-                    <td class="chapter-cell">${getAcquisition(horse).chapter}</td>
+                    <td>
+                        <a href="weapon.html?name=${encodeURIComponent(weapon.name)}" class="weapon-link">${weapon.name}</a>
+                        ${dualBadge}
+                    </td>
+                    <td><span class="category-badge">${weapon.category}</span></td>
+                    <td class="stat-cell">${formatStat(base.damage, max.damage)}</td>
+                    <td class="stat-cell">${formatStat(base.range, max.range)}</td>
+                    <td class="stat-cell">${formatStat(base.fireRate, max.fireRate)}</td>
+                    <td class="stat-cell">${formatStat(base.accuracy, max.accuracy)}</td>
+                    <td class="stat-cell">${formatStat(base.reload, max.reload)}</td>
+                    <td class="price-cell">${weapon.price ? '$' + weapon.price.toLocaleString() : '<span class="price-free">Free</span>'}</td>
+                    <td class="chapter-cell">${acq.chapter}</td>
                 </tr>
-            `).join('');
+            `}).join('');
         }
 
         function updateResultsCount(count) {
             document.getElementById('resultsCount').textContent =
-                `Showing ${count} horse${count !== 1 ? 's' : ''}`;
+                `Showing ${count} weapon${count !== 1 ? 's' : ''}`;
         }
 
-        function sortHorses(horses, column, direction) {
-            return [...horses].sort((a, b) => {
+        function sortWeapons(weapons, column, direction) {
+            return [...weapons].sort((a, b) => {
                 let valA, valB;
 
+                // Helper to safely get stat value
+                const getStat = (weapon, stat) => {
+                    const max = weapon.maxStats?.[stat];
+                    const base = weapon.baseStats?.[stat];
+                    return max ?? base ?? 0;
+                };
+
                 switch (column) {
-                    case 'breed':
-                        valA = a.breed.toLowerCase();
-                        valB = b.breed.toLowerCase();
-                        break;
-                    case 'coat':
-                        valA = a.coat.toLowerCase();
-                        valB = b.coat.toLowerCase();
+                    case 'name':
+                        valA = a.name.toLowerCase();
+                        valB = b.name.toLowerCase();
                         break;
                     case 'category':
                         valA = a.category.toLowerCase();
                         valB = b.category.toLowerCase();
                         break;
-                    case 'health':
-                        valA = a.maxStats.health;
-                        valB = b.maxStats.health;
+                    case 'damage':
+                        valA = getStat(a, 'damage');
+                        valB = getStat(b, 'damage');
                         break;
-                    case 'stamina':
-                        valA = a.maxStats.stamina;
-                        valB = b.maxStats.stamina;
+                    case 'range':
+                        valA = getStat(a, 'range');
+                        valB = getStat(b, 'range');
                         break;
-                    case 'speed':
-                        valA = a.maxStats.speed;
-                        valB = b.maxStats.speed;
+                    case 'fireRate':
+                        valA = getStat(a, 'fireRate');
+                        valB = getStat(b, 'fireRate');
                         break;
-                    case 'accel':
-                        valA = a.maxStats.acceleration;
-                        valB = b.maxStats.acceleration;
+                    case 'accuracy':
+                        valA = getStat(a, 'accuracy');
+                        valB = getStat(b, 'accuracy');
                         break;
-                    case 'handling':
-                        valA = a.handling.toLowerCase();
-                        valB = b.handling.toLowerCase();
+                    case 'reload':
+                        valA = getStat(a, 'reload');
+                        valB = getStat(b, 'reload');
                         break;
                     case 'price':
                         valA = a.price || 0;
@@ -392,37 +422,35 @@
             });
         }
 
-        function filterHorses(horses, query) {
-            if (!query) return horses;
+        function filterWeapons(weapons, query) {
+            if (!query) return weapons;
 
             const lowerQuery = query.toLowerCase();
-            return horses.filter(horse => {
+            return weapons.filter(weapon => {
                 // Search all acquisition methods
-                const acqs = Array.isArray(horse.acquisition) ? horse.acquisition : [horse.acquisition];
+                const acqs = Array.isArray(weapon.acquisition) ? weapon.acquisition : [weapon.acquisition];
                 const acqMatch = acqs.some(acq =>
                     acq.location.toLowerCase().includes(lowerQuery) ||
                     acq.chapter.toLowerCase().includes(lowerQuery)
                 );
 
-                return horse.breed.toLowerCase().includes(lowerQuery) ||
-                    horse.coat.toLowerCase().includes(lowerQuery) ||
-                    horse.category.toLowerCase().includes(lowerQuery) ||
-                    horse.handling.toLowerCase().includes(lowerQuery) ||
+                return weapon.name.toLowerCase().includes(lowerQuery) ||
+                    weapon.category.toLowerCase().includes(lowerQuery) ||
                     acqMatch ||
-                    (horse.communityNotes && horse.communityNotes.toLowerCase().includes(lowerQuery));
+                    (weapon.communityNotes && weapon.communityNotes.toLowerCase().includes(lowerQuery));
             });
         }
 
         function updateTable() {
             const query = document.getElementById('searchInput').value;
-            let filtered = filterHorses(horseData, query);
-            let sorted = sortHorses(filtered, currentSort.column, currentSort.direction);
+            let filtered = filterWeapons(weaponData, query);
+            let sorted = sortWeapons(filtered, currentSort.column, currentSort.direction);
             renderTable(sorted);
             updateResultsCount(sorted.length);
         }
 
         function updateSortIndicators() {
-            document.querySelectorAll('.horse-table th').forEach(th => {
+            document.querySelectorAll('.weapon-table th').forEach(th => {
                 th.classList.remove('sorted-asc', 'sorted-desc');
                 if (th.dataset.sort === currentSort.column) {
                     th.classList.add(currentSort.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
@@ -433,7 +461,7 @@
         // Event listeners
         document.getElementById('searchInput').addEventListener('input', updateTable);
 
-        document.querySelectorAll('.horse-table th[data-sort]').forEach(th => {
+        document.querySelectorAll('.weapon-table th[data-sort]').forEach(th => {
             th.addEventListener('click', () => {
                 const column = th.dataset.sort;
                 if (currentSort.column === column) {
@@ -441,9 +469,9 @@
                     currentSort.direction = currentSort.direction === 'desc' ? 'asc' : 'desc';
                 } else {
                     currentSort.column = column;
-                    // Price and chapter: ascending first (lower is better)
                     // Stats: descending first (higher is better)
-                    const ascFirstColumns = ['price', 'chapter', 'breed', 'coat'];
+                    // Price and chapter: ascending first (lower is better)
+                    const ascFirstColumns = ['price', 'chapter', 'name', 'category'];
                     currentSort.direction = ascFirstColumns.includes(column) ? 'asc' : 'desc';
                 }
                 updateSortIndicators();
@@ -452,7 +480,7 @@
         });
 
         // Initialize
-        loadHorses().then(() => {
+        loadWeapons().then(() => {
             updateSortIndicators();
         });
 

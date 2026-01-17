@@ -226,6 +226,7 @@ document.addEventListener('click', (e) => {
 // ========== APP DATA ==========
 let horseData = null;
 let gearData = null;
+let weaponData = null;
 let conversationHistory = [];
 
 // Loading messages system
@@ -270,22 +271,25 @@ function getRandomLoadingMessage() {
     return message;
 }
 
-// Load horse and gear data
+// Load horse, gear, and weapon data
 async function loadHorseData() {
     try {
-        const [horseResponse, gearResponse] = await Promise.all([
+        const [horseResponse, gearResponse, weaponResponse] = await Promise.all([
             fetch('horses.json'),
-            fetch('gear.json')
+            fetch('gear.json'),
+            fetch('weapons.json')
         ]);
 
-        if (!horseResponse.ok || !gearResponse.ok) {
+        if (!horseResponse.ok || !gearResponse.ok || !weaponResponse.ok) {
             throw new Error('Failed to fetch data files');
         }
 
         horseData = await horseResponse.json();
         gearData = await gearResponse.json();
+        weaponData = await weaponResponse.json();
         console.log('Horse data loaded:', horseData.horses.length, 'horses');
         console.log('Gear data loaded');
+        console.log('Weapon data loaded:', weaponData.weapons.length, 'weapons');
     } catch (error) {
         console.error('Failed to load data:', error);
         // Show error to user in chat container
@@ -499,6 +503,38 @@ function renderStirrupsCard(name) {
     return `<div class="gear-card stirrups-card"><div class="gear-card-header"><span class="gear-card-icon">⚙️</span><span class="gear-card-title">${stirrups.name} Stirrups</span></div><div class="gear-card-stats"><div class="gear-stat"><span class="gear-stat-label">Speed</span><span class="gear-stat-value stat-good">+${stirrups.speedBonus}</span></div><div class="gear-stat"><span class="gear-stat-label">Accel</span><span class="gear-stat-value stat-good">+${stirrups.accelBonus}</span></div><div class="gear-stat"><span class="gear-stat-label">Stam Drain</span><span class="gear-stat-value ${stirrups.staminaDrain < 0 ? 'stat-good' : ''}">${stirrups.staminaDrain}%</span></div></div><div class="gear-card-footer"><span class="gear-cost">${priceText}</span></div></div>`;
 }
 
+// Render a weapon card from data
+function renderWeaponCard(name) {
+    if (!weaponData || !weaponData.weapons) return `<em>Weapon not found: ${name}</em>`;
+
+    const weapon = weaponData.weapons.find(w =>
+        w.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (!weapon) return `<em>Weapon not found: ${name}</em>`;
+
+    const base = weapon.baseStats || {};
+    const max = weapon.maxStats || base;
+    const priceText = weapon.price ? `$${weapon.price.toLocaleString()}` : 'Free';
+    const dualBadge = weapon.canDualWield ? '<span class="badge badge-dual">Dual Wield</span>' : '';
+
+    // Get first acquisition
+    const acq = Array.isArray(weapon.acquisition) ? weapon.acquisition[0] : weapon.acquisition;
+    const location = acq ? acq.location : 'Unknown';
+    const chapter = acq ? acq.chapter : 'Unknown';
+
+    // Helper to format stat
+    const formatStat = (label, baseStat, maxStat) => {
+        if (baseStat === undefined) return '';
+        const hasUpgrade = maxStat !== undefined && maxStat !== baseStat;
+        return `<div class="gear-stat"><span class="gear-stat-label">${label}</span><span class="gear-stat-value">${baseStat.toFixed(1)}${hasUpgrade ? '→' + maxStat.toFixed(1) : ''}</span></div>`;
+    };
+
+    const weaponLink = `weapon.html?name=${encodeURIComponent(weapon.name)}`;
+
+    return `<div class="gear-card weapon-card"><div class="gear-card-header"><span class="gear-card-icon">🔫</span><a href="${weaponLink}" class="gear-card-title">${weapon.name}</a><span class="badge badge-type">${weapon.category}</span>${dualBadge}</div><div class="gear-card-stats">${formatStat('Damage', base.damage, max.damage)}${formatStat('Range', base.range, max.range)}${formatStat('Fire Rate', base.fireRate, max.fireRate)}${formatStat('Accuracy', base.accuracy, max.accuracy)}${formatStat('Reload', base.reload, max.reload)}</div><div class="gear-card-footer"><span class="gear-cost">${priceText}</span><span class="gear-availability">${chapter} - ${location}</span></div></div>`;
+}
+
 // Format response with markdown support
 function formatResponse(text) {
     let content = text;
@@ -539,6 +575,13 @@ function formatResponse(text) {
     content = content.replace(/\[STIRRUPS:([^\]]+)\]/g, (match, name) => {
         const placeholder = `<!--CARD_PLACEHOLDER_${placeholders.length}-->`;
         placeholders.push(renderStirrupsCard(name.trim()));
+        return placeholder;
+    });
+
+    // [WEAPON:Name] -> weapon cards
+    content = content.replace(/\[WEAPON:([^\]]+)\]/g, (match, name) => {
+        const placeholder = `<!--CARD_PLACEHOLDER_${placeholders.length}-->`;
+        placeholders.push(renderWeaponCard(name.trim()));
         return placeholder;
     });
 
@@ -590,13 +633,16 @@ function formatResponse(text) {
 
 // Build system prompt with horse data
 function buildSystemPrompt() {
-    return `You are an expert Red Dead Redemption 2 horse and gear advisor. You have complete knowledge of all horses and horse equipment in the game.
+    return `You are an expert Red Dead Redemption 2 advisor. You have complete knowledge of all horses, horse equipment, and weapons in the game.
 
 Here is the complete horse database:
 ${JSON.stringify(horseData, null, 2)}
 
 Here is the complete gear database (saddles, stirrups, saddlebags, etc.):
 ${JSON.stringify(gearData, null, 2)}
+
+Here is the complete weapons database:
+${JSON.stringify(weaponData, null, 2)}
 
 CRITICAL CHAPTER RESTRICTIONS:
 - If the user mentions their current chapter, ONLY recommend horses they can actually get RIGHT NOW
@@ -606,7 +652,7 @@ CRITICAL CHAPTER RESTRICTIONS:
 - Epilogue ONLY: Blackwater and Tumbleweed stables
 - NEVER recommend a horse from a later chapter unless you clearly state "not available until Chapter X"
 
-IMPORTANT GUIDELINES:
+IMPORTANT GUIDELINES FOR HORSES:
 1. Always recommend specific horses with their exact stats
 2. Include WHERE to get the horse (stable location, wild spawn point, or mission)
 3. Include WHEN it's available (which chapter or epilogue)
@@ -614,6 +660,15 @@ IMPORTANT GUIDELINES:
 5. For wild horses, give specific spawn locations
 6. Compare stats when asked about "better" horses
 7. Be concise but thorough
+
+IMPORTANT GUIDELINES FOR WEAPONS:
+1. Recommend specific weapons with their exact stats (damage, range, fire rate, accuracy, reload)
+2. Include WHERE to get the weapon (gunsmith, mission, found location)
+3. Include WHEN it's available (which chapter)
+4. Include the PRICE if purchasable
+5. Mention if a weapon can be dual-wielded (canDualWield field)
+6. Compare stats when asked about "best" weapons
+7. Mention available upgrades when relevant
 
 TEMPERAMENT/BRAVERY CONTROVERSY:
 According to data miners, ALL horses have the SAME base courage stat. Bonding (levels 2-4) adds +1 courage each. However, players consistently report breed differences - this is unverified but widely believed. When asked about temperament:
@@ -639,6 +694,11 @@ FOR STIRRUPS - output this marker:
 
 Example: [STIRRUPS:Hooded] or [STIRRUPS:Bell Flower]
 
+FOR WEAPONS - output this marker:
+[WEAPON:Name]
+
+Example: [WEAPON:Schofield Revolver] or [WEAPON:Lancaster Repeater]
+
 IMPORTANT MARKER RULES:
 - Use EXACT names from the database (case-sensitive for coat names)
 - One marker per horse/gear item - the UI handles all the visual details
@@ -653,7 +713,7 @@ GENERAL FORMATTING:
 - Max horse stats = bonding (+1 HP/Stam) + best saddle/stirrups (+2 Spd/Accel)
 
 WHEN TO USE WEB SEARCH:
-- ALWAYS answer questions about horses and gear from the provided database above - that's the authoritative source
+- ALWAYS answer questions about horses, gear, and weapons from the provided databases above - that's the authoritative source
 - If someone asks about something NOT in the database (game mechanics, story, locations, glitches, tips, etc.), USE WEB SEARCH to find current, accurate information
 - NEVER answer from general knowledge alone - if it's not in the database, search the web
 - When in doubt, search - it's better to provide verified information than guess

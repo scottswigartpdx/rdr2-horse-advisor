@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horse Details - RDR2 Companion</title>
+    <title>Weapon Details - RDR2 Companion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .horse-detail-container {
+        .weapon-detail-container {
             max-width: 800px;
             margin: 0 auto;
         }
@@ -27,42 +27,20 @@
             text-decoration: underline;
         }
 
-        .horse-hero {
-            display: flex;
-            gap: 30px;
+        .weapon-hero {
             margin-bottom: 30px;
+            text-align: center;
         }
 
-        .horse-hero-image {
-            width: 280px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 3px solid var(--border-medium);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-            flex-shrink: 0;
-        }
-
-        .horse-hero-info {
-            flex: 1;
-        }
-
-        .horse-hero-info h1 {
+        .weapon-hero h1 {
             font-family: 'Chinese Rocks', 'Rye', cursive;
             color: var(--text-cream);
-            font-size: 2rem;
-            margin-bottom: 5px;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
             letter-spacing: 2px;
         }
 
-        .horse-coat {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-bottom: 5px;
-        }
-
-        .horse-category {
+        .weapon-category {
             display: inline-block;
             background: var(--bg-elevated);
             color: var(--rust);
@@ -71,16 +49,38 @@
             font-size: 0.85rem;
             font-family: 'Rye', cursive;
             letter-spacing: 1px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
-        .horse-handling {
-            color: var(--text-muted);
-            margin-bottom: 15px;
+        .weapon-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
         }
 
-        .horse-handling strong {
+        .weapon-badge {
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-dual {
+            background: var(--rust);
             color: var(--text-cream);
+        }
+
+        .badge-ammo {
+            background: var(--bg-dark);
+            color: var(--text-muted);
+            border: 1px solid var(--border-medium);
+        }
+
+        .badge-price {
+            background: var(--gold);
+            color: var(--text-dark);
         }
 
         .stats-section {
@@ -98,22 +98,22 @@
             margin-bottom: 20px;
         }
 
-        .stats-row {
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
         }
 
         .stat-box {
             text-align: center;
-            padding: 15px;
+            padding: 15px 10px;
             background: var(--bg-dark);
             border-radius: 6px;
             border: 1px solid var(--border-subtle);
         }
 
         .stat-box .stat-name {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -126,17 +126,18 @@
 
         .stat-box .stat-base {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .stat-box .stat-arrow {
             color: var(--text-muted);
-            margin: 0 5px;
+            margin: 0 3px;
+            font-size: 0.8rem;
         }
 
         .stat-box .stat-max {
             color: var(--red-primary);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .stat-bar-container {
@@ -192,6 +193,36 @@
             font-size: 1.05rem;
         }
 
+        .upgrades-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .upgrades-section h2 {
+            font-family: 'Rye', cursive;
+            color: var(--rust);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .upgrades-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .upgrade-item {
+            background: var(--bg-dark);
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-cream);
+            border: 1px solid var(--border-subtle);
+        }
+
         .community-section {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
@@ -225,10 +256,6 @@
             font-style: italic;
         }
 
-        .acquisition-alt {
-            padding-top: 5px;
-        }
-
         .not-found {
             text-align: center;
             padding: 60px 20px;
@@ -241,19 +268,16 @@
         }
 
         @media (max-width: 600px) {
-            .horse-hero {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+            .weapon-hero h1 {
+                font-size: 1.8rem;
             }
 
-            .horse-hero-image {
-                width: 200px;
-                height: 200px;
-            }
-
-            .stats-row {
+            .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid .stat-box:last-child {
+                grid-column: span 2;
             }
 
             .info-grid {
@@ -265,19 +289,19 @@
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <div class="container horse-detail-container">
+    <div class="container weapon-detail-container">
         <header>
-            <a href="table.html" class="back-link">&larr; Back to All Horses</a>
+            <a href="weapons-table.html" class="back-link">&larr; Back to All Weapons</a>
         </header>
 
-        <main id="horseContent">
+        <main id="weaponContent">
             <div class="loading">
                 <div class="loading-dots">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <span>Loading horse data...</span>
+                <span>Loading weapon data...</span>
             </div>
         </main>
 
@@ -287,92 +311,111 @@
     </div>
 
     <script>
-        async function loadHorse() {
+        async function loadWeapon() {
             const params = new URLSearchParams(window.location.search);
-            const breed = (params.get('breed') || '').trim();
-            const coat = (params.get('coat') || '').trim();
+            const name = (params.get('name') || '').trim();
 
-            console.log('Looking for horse:', { breed, coat });
+            console.log('Looking for weapon:', { name });
 
-            if (!breed || !coat) {
+            if (!name) {
                 showNotFound();
                 return;
             }
 
             try {
-                const response = await fetch('horses.json');
+                const response = await fetch('weapons.json');
                 const data = await response.json();
 
-                console.log('Available horses:', data.horses.map(h => `${h.breed} - ${h.coat}`));
-
-                const horse = data.horses.find(h =>
-                    h.breed.toLowerCase() === breed.toLowerCase() &&
-                    h.coat.toLowerCase() === coat.toLowerCase()
+                const weapon = data.weapons.find(w =>
+                    w.name.toLowerCase() === name.toLowerCase()
                 );
 
-                console.log('Found horse:', horse);
+                console.log('Found weapon:', weapon);
 
-                if (horse) {
-                    renderHorse(horse);
-                    document.title = `${horse.breed} (${horse.coat}) - RDR2 Companion`;
+                if (weapon) {
+                    renderWeapon(weapon);
+                    document.title = `${weapon.name} - RDR2 Companion`;
                 } else {
                     showNotFound();
                 }
             } catch (error) {
-                console.error('Error loading horse:', error);
+                console.error('Error loading weapon:', error);
                 showNotFound();
             }
         }
 
-        function renderHorse(horse) {
-            const container = document.getElementById('horseContent');
+        function formatUpgradeName(upgrade) {
+            return upgrade
+                .split('_')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+
+        function renderWeapon(weapon) {
+            const container = document.getElementById('weaponContent');
+            const acqs = Array.isArray(weapon.acquisition) ? weapon.acquisition : [weapon.acquisition];
+            const base = weapon.baseStats || {};
+            const max = weapon.maxStats || base;
+            const hasStats = base.damage !== undefined;
 
             container.innerHTML = `
-                <div class="horse-hero">
-                    ${horse.image ? `<img src="${horse.image}" alt="${horse.breed} ${horse.coat}" class="horse-hero-image" onerror="this.style.display='none'">` : ''}
-                    <div class="horse-hero-info">
-                        <h1>${horse.breed}</h1>
-                        <div class="horse-coat">${horse.coat}</div>
-                        <div class="horse-category">${horse.category}</div>
-                        <div class="horse-handling"><strong>Handling:</strong> ${horse.handling}</div>
-                        <div class="horse-handling"><strong>Price:</strong> ${horse.price ? '$' + horse.price.toLocaleString() : 'Free (Wild)'}</div>
+                <div class="weapon-hero">
+                    <h1>${weapon.name}</h1>
+                    <div class="weapon-category">${weapon.category}</div>
+                    <div class="weapon-badges">
+                        ${weapon.canDualWield ? '<span class="weapon-badge badge-dual">Can Dual Wield</span>' : ''}
+                        ${weapon.ammoCapacity ? `<span class="weapon-badge badge-ammo">${weapon.ammoCapacity} rounds</span>` : ''}
+                        <span class="weapon-badge badge-price">${weapon.price ? '$' + weapon.price.toLocaleString() : 'Free'}</span>
                     </div>
                 </div>
 
+                ${hasStats ? `
                 <div class="stats-section">
                     <h2>Stats</h2>
-                    <div class="stats-row">
-                        ${renderStat('Health', horse.baseStats.health, horse.maxStats.health)}
-                        ${renderStat('Stamina', horse.baseStats.stamina, horse.maxStats.stamina)}
-                        ${renderStat('Speed', horse.baseStats.speed, horse.maxStats.speed)}
-                        ${renderStat('Acceleration', horse.baseStats.acceleration, horse.maxStats.acceleration)}
+                    <div class="stats-grid">
+                        ${renderStat('Damage', base.damage, max.damage)}
+                        ${renderStat('Range', base.range, max.range)}
+                        ${renderStat('Fire Rate', base.fireRate, max.fireRate)}
+                        ${renderStat('Accuracy', base.accuracy, max.accuracy)}
+                        ${renderStat('Reload', base.reload, max.reload)}
                     </div>
                     <p style="margin-top: 15px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
-                        Max stats achieved through full bonding (+1 HP/Stamina) and best saddle/stirrups (+2 Speed/Accel).
+                        Stats shown on a 0-4 scale.${weapon.maxStats ? ' Max stats achieved with all upgrades equipped.' : ''}
                     </p>
                 </div>
+                ` : ''}
+
+                ${weapon.upgrades && weapon.upgrades.length > 0 ? `
+                <div class="upgrades-section">
+                    <h2>Available Upgrades</h2>
+                    <div class="upgrades-list">
+                        ${weapon.upgrades.map(u => `<span class="upgrade-item">${formatUpgradeName(u)}</span>`).join('')}
+                    </div>
+                </div>
+                ` : ''}
 
                 <div class="info-section">
                     <h2>How to Get</h2>
-                    ${renderAcquisitions(horse.acquisition)}
+                    ${renderAcquisitions(acqs)}
                 </div>
 
                 <div class="community-section">
                     <h2>Community Notes</h2>
-                    <div class="community-note">${horse.communityNotes}</div>
+                    <div class="community-note">${weapon.communityNotes || 'No community notes available.'}</div>
                 </div>
             `;
         }
 
-        function renderAcquisitions(acquisition) {
-            // Handle both array and legacy object format
-            const acqs = Array.isArray(acquisition) ? acquisition : [acquisition];
-
+        function renderAcquisitions(acqs) {
             return acqs.map((acq, index) => {
-                const methodLabel = acq.method === 'wild' ? 'Wild (Free)' :
-                                   acq.method === 'stable' ? 'Stable Purchase' :
+                const methodLabel = acq.method === 'starting' ? 'Starting Weapon' :
+                                   acq.method === 'store' ? 'Store Purchase' :
+                                   acq.method === 'found' ? 'Found in World' :
                                    acq.method === 'mission' ? 'Mission Reward' :
-                                   acq.method === 'bonus' ? 'Bonus Content' : acq.method;
+                                   acq.method === 'unique' ? 'Unique Variant' :
+                                   acq.method === 'crafted' ? 'Crafted' :
+                                   acq.method === 'fence' ? 'Fence Purchase' :
+                                   acq.method === 'trapper' ? 'Trapper' : acq.method;
 
                 return `
                     <div class="acquisition-block ${index > 0 ? 'acquisition-alt' : ''}">
@@ -403,14 +446,21 @@
         }
 
         function renderStat(name, base, max) {
-            const percentage = (max / 10) * 100;
+            const effectiveMax = max ?? base;
+            const percentage = (effectiveMax / 4) * 100; // Stats are on 0-4 scale
+            const showArrow = max !== null && max !== undefined && base !== max;
+
             return `
                 <div class="stat-box">
                     <div class="stat-name">${name}</div>
                     <div class="stat-values">
-                        <span class="stat-base">${base}</span>
-                        <span class="stat-arrow">→</span>
-                        <span class="stat-max">${max}</span>
+                        ${showArrow ? `
+                            <span class="stat-base">${base.toFixed(1)}</span>
+                            <span class="stat-arrow">→</span>
+                            <span class="stat-max">${effectiveMax.toFixed(1)}</span>
+                        ` : `
+                            <span class="stat-max">${effectiveMax.toFixed(1)}</span>
+                        `}
                     </div>
                     <div class="stat-bar-container">
                         <div class="stat-bar-fill" style="width: ${percentage}%"></div>
@@ -420,17 +470,17 @@
         }
 
         function showNotFound() {
-            const container = document.getElementById('horseContent');
+            const container = document.getElementById('weaponContent');
             container.innerHTML = `
                 <div class="not-found">
-                    <h2>Horse Not Found</h2>
-                    <p>We couldn't find that horse in our database.</p>
-                    <a href="table.html" class="back-link" style="margin-top: 20px;">&larr; Back to All Horses</a>
+                    <h2>Weapon Not Found</h2>
+                    <p>We couldn't find that weapon in our database.</p>
+                    <a href="weapons.html" class="back-link" style="margin-top: 20px;">&larr; Back to All Weapons</a>
                 </div>
             `;
         }
 
-        loadHorse();
+        loadWeapon();
     </script>
 </body>
 </html>
