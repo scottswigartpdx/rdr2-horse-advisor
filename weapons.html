@@ -11,59 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        .section-links {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .section-link {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid var(--border-medium);
-            background: #171717;
-            color: var(--text-muted);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-        }
-
-        .section-link:hover {
-            color: var(--text-cream);
-            border-color: var(--gold);
-        }
-
-        .back-link {
-            display: inline-block;
-            color: var(--rust);
-            text-decoration: none;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        .back-link:hover {
-            color: var(--red-primary);
-            text-decoration: underline;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .page-title {
-            font-family: 'Chinese Rocks', 'Rye', cursive;
-            color: var(--text-cream);
-            font-size: 2rem;
-            letter-spacing: 3px;
-            margin-bottom: 5px;
-        }
-    </style>
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -91,7 +38,7 @@
     <div class="container">
         <header>
             <div class="header-top">
-                <a href="index.html" class="back-link">&larr; Back to RDR2 Companion</a>
+                <h1><a href="/">Weapons</a></h1>
                 <div class="auth-container" id="authContainer">
                     <button id="loginBtn" class="auth-btn" onclick="signInWithGoogle()" style="display: none;">
                         Sign in with Google
@@ -102,53 +49,82 @@
                     </div>
                 </div>
             </div>
-            <div class="page-header">
-                <h1 class="page-title">Weapons</h1>
-            </div>
+            <p class="subtitle"><a href="/" style="color: inherit; text-decoration: none;">&larr; Back to RDR2 Companion</a></p>
         </header>
 
-        <nav class="section-links">
-            <a href="loadout.html" class="section-link">Loadout Builder</a>
-            <a href="weapons-table.html" class="section-link">All Weapons</a>
-            <a href="weapon-gear.html" class="section-link">Gear Guide</a>
-        </nav>
-
         <main>
-            <div class="chat-container" id="chatContainer">
-                <div class="welcome-message">
-                    <h2>Ask about weapons...</h2>
-                    <p class="welcome-hint">Get recommendations, compare stats, find locations</p>
-                    <h3>Or try one of these:</h3>
-                    <ul class="example-queries">
-                        <li onclick="setQuery(this.textContent)">"What's the best revolver in the game?"</li>
-                        <li onclick="setQuery(this.textContent)">"Compare Lancaster Repeater vs Litchfield Repeater"</li>
-                        <li onclick="setQuery(this.textContent)">"What's the best rifle for hunting?"</li>
-                        <li onclick="setQuery(this.textContent)">"Where can I get a free shotgun early in the game?"</li>
-                        <li onclick="setQuery(this.textContent)">"What sidearms should I dual wield?"</li>
-                        <li onclick="setQuery(this.textContent)">"Best weapons available in Chapter 2?"</li>
-                    </ul>
-                </div>
-            </div>
+            <section class="hero-panel">
+                <div class="hero-panel-inner">
+                    <div class="hero-panel-nav">
+                        <nav class="section-nav">
+                            <div class="section-nav-inner">
+                                <a href="loadout.html" class="section-nav-item">
+                                    <span class="revolver-pointer">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 8h12l4 4-4 4H4V8z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="section-text">Loadout Builder</span>
+                                </a>
+                                <a href="weapons-table.html" class="section-nav-item">
+                                    <span class="revolver-pointer">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 8h12l4 4-4 4H4V8z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="section-text">All Weapons</span>
+                                </a>
+                                <a href="weapon-gear.html" class="section-nav-item">
+                                    <span class="revolver-pointer">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 8h12l4 4-4 4H4V8z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="section-text">Gear Guide</span>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
 
-            <div class="input-container">
-                <textarea
-                    id="queryInput"
-                    placeholder="Ask about weapons..."
-                    rows="1"
-                    onkeydown="handleKeyDown(event)"
-                ></textarea>
-                <button id="sendBtn" onclick="sendQuery()">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                    </svg>
-                </button>
-                <button id="newChatBtn" onclick="clearChat()" title="New Chat">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M3 12a9 9 0 1 0 9-9"/>
-                        <path d="M3 3v6h6"/>
-                    </svg>
-                </button>
-            </div>
+                    <div class="hero-panel-welcome">
+                        <div class="welcome-message">
+                            <h2>Ask about weapons...</h2>
+                            <p class="welcome-hint">Get recommendations, compare stats, find locations</p>
+                            <h3>Or try one of these:</h3>
+                            <ul class="example-queries">
+                                <li onclick="setQuery(this.textContent)">"What's the best revolver in the game?"</li>
+                                <li onclick="setQuery(this.textContent)">"Compare Lancaster Repeater vs Litchfield Repeater"</li>
+                                <li onclick="setQuery(this.textContent)">"What's the best rifle for hunting?"</li>
+                                <li onclick="setQuery(this.textContent)">"Where can I get a free shotgun early in the game?"</li>
+                                <li onclick="setQuery(this.textContent)">"What sidearms should I dual wield?"</li>
+                                <li onclick="setQuery(this.textContent)">"Best weapons available in Chapter 2?"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="input-container hero-input">
+                        <textarea
+                            id="queryInput"
+                            placeholder="Ask about weapons..."
+                            rows="1"
+                            onkeydown="handleKeyDown(event)"
+                        ></textarea>
+                        <button id="sendBtn" onclick="sendQuery()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                        <button id="newChatBtn" onclick="clearChat()" title="New Chat">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12a9 9 0 1 0 9-9"/>
+                                <path d="M3 3v6h6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="chat-container" id="chatContainer"></div>
         </main>
 
         <footer>
