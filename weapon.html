@@ -215,34 +215,154 @@
             font-size: 1.05rem;
         }
 
-        .upgrades-section {
+        /* Upgrades & Ammo Sections - Full Table Layout */
+        .upgrades-section,
+        .ammo-section {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
+            padding: 20px;
+            margin-bottom: 20px;
         }
 
-        .upgrades-section h2 {
+        .upgrades-section h2,
+        .ammo-section h2 {
             font-family: 'Rye', cursive;
             color: var(--rust);
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
 
-        .upgrades-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .upgrade-item {
-            background: var(--bg-dark);
-            padding: 8px 14px;
-            border-radius: 4px;
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 0.9rem;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 8px 12px;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .data-table th.col-stat {
+            text-align: center;
+            width: 70px;
+        }
+
+        .data-table th.col-flag {
+            text-align: center;
+            width: 60px;
+        }
+
+        .data-table td {
+            padding: 10px 12px;
             color: var(--text-cream);
-            border: 1px solid var(--border-subtle);
+            background: var(--bg-dark);
+            border-bottom: 2px solid var(--bg-card);
+        }
+
+        .data-table tr:first-child td {
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-bottom: none;
+        }
+
+        .data-table td.col-stat {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .data-table td.col-flag {
+            text-align: center;
+        }
+
+        .data-table .stat-positive {
+            color: var(--gold);
+        }
+
+        .data-table .stat-negative {
+            color: var(--red-primary);
+        }
+
+        .data-table .stat-empty {
+            color: var(--text-muted);
+            opacity: 0.3;
+        }
+
+        .data-table .flag-yes {
+            color: var(--gold);
+        }
+
+        .data-table .flag-no {
+            color: var(--text-muted);
+            opacity: 0.3;
+        }
+
+        .upgrade-name,
+        .ammo-name {
+            font-weight: 600;
+        }
+
+        /* Info tooltip bubble */
+        .info-bubble {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.6rem;
+            font-weight: 600;
+            margin-left: 4px;
+            cursor: help;
+            position: relative;
+        }
+
+        .info-bubble:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--text-cream);
+        }
+
+        .info-bubble .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-elevated);
+            color: var(--text-cream);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            white-space: nowrap;
+            z-index: 100;
+            margin-bottom: 6px;
+            border: 1px solid var(--border-medium);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: opacity 0.15s, visibility 0.15s;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .info-bubble:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
         }
 
         .community-section {
@@ -355,7 +475,7 @@
                 console.log('Found weapon:', weapon);
 
                 if (weapon) {
-                    renderWeapon(weapon);
+                    renderWeapon(weapon, data.ammoTypes || {}, data.upgradeTypes || {});
                     document.title = `${weapon.name} - RDR2 Companion`;
                 } else {
                     showNotFound();
@@ -373,12 +493,36 @@
                 .join(' ');
         }
 
-        function renderWeapon(weapon) {
+        function renderWeapon(weapon, ammoTypes, upgradeTypes) {
             const container = document.getElementById('weaponContent');
             const acqs = Array.isArray(weapon.acquisition) ? weapon.acquisition : [weapon.acquisition];
             const base = weapon.baseStats || {};
             const max = weapon.maxStats || base;
             const hasStats = base.damage !== undefined;
+            const hasAmmo = weapon.availableAmmo && weapon.availableAmmo.length > 0;
+            const hasUpgrades = weapon.upgrades && weapon.upgrades.length > 0;
+
+            // Render upgrade table row
+            const renderUpgradeRow = (upgradeKey) => {
+                const upgrade = upgradeTypes[upgradeKey];
+                const name = upgrade ? upgrade.name : formatUpgradeName(upgradeKey);
+                const modifiers = upgrade?.modifiers || {};
+
+                const formatStat = (value) => {
+                    if (value === undefined) return '<span class="stat-empty">—</span>';
+                    const sign = value >= 0 ? '+' : '';
+                    const className = value >= 0 ? 'stat-positive' : 'stat-negative';
+                    return `<span class="${className}">${sign}${value.toFixed(1)}</span>`;
+                };
+
+                return `
+                    <tr>
+                        <td class="upgrade-name">${name}</td>
+                        <td class="col-stat">${formatStat(modifiers.range)}</td>
+                        <td class="col-stat">${formatStat(modifiers.accuracy)}</td>
+                    </tr>
+                `;
+            };
 
             container.innerHTML = `
                 <div class="weapon-hero">
@@ -408,12 +552,42 @@
                 </div>
                 ` : ''}
 
-                ${weapon.upgrades && weapon.upgrades.length > 0 ? `
+                ${hasUpgrades ? `
                 <div class="upgrades-section">
                     <h2>Available Upgrades</h2>
-                    <div class="upgrades-list">
-                        ${weapon.upgrades.map(u => `<span class="upgrade-item">${formatUpgradeName(u)}</span>`).join('')}
-                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Upgrade</th>
+                                <th class="col-stat">Range</th>
+                                <th class="col-stat">Accuracy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${weapon.upgrades.map(u => renderUpgradeRow(u)).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                ` : ''}
+
+                ${hasAmmo ? `
+                <div class="ammo-section">
+                    <h2>Available Ammo Types</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Ammo</th>
+                                <th class="col-stat">Damage</th>
+                                <th class="col-stat">Range</th>
+                                <th class="col-stat">Accuracy</th>
+                                <th class="col-flag"><span style="white-space: nowrap;">Crafted <span class="info-bubble">?<span class="tooltip">Must be crafted at a campfire</span></span></span></th>
+                                <th class="col-flag"><span style="white-space: nowrap;">Limited <span class="info-bubble">?<span class="tooltip">You can only carry a small amount of this ammo at a time</span></span></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${renderAmmoTypes(weapon.availableAmmo, ammoTypes)}
+                        </tbody>
+                    </table>
                 </div>
                 ` : ''}
 
@@ -427,6 +601,55 @@
                     <div class="community-note">${weapon.communityNotes || 'No community notes available.'}</div>
                 </div>
             `;
+        }
+
+        function renderAmmoTypes(availableAmmo, ammoTypes) {
+            // Calculate effectiveness score for sorting (sum of positive modifiers)
+            const getEffectiveness = (ammoKey) => {
+                const ammo = ammoTypes[ammoKey];
+                if (!ammo || !ammo.modifiers) return 0;
+                return Object.values(ammo.modifiers).reduce((sum, val) => sum + (val > 0 ? val : 0), 0);
+            };
+
+            // Sort: Regular/base first, then by effectiveness (highest first)
+            const sortedAmmo = [...availableAmmo].sort((a, b) => {
+                const ammoA = ammoTypes[a];
+                const ammoB = ammoTypes[b];
+                const isBaseA = !ammoA?.modifiers || Object.keys(ammoA.modifiers).length === 0;
+                const isBaseB = !ammoB?.modifiers || Object.keys(ammoB.modifiers).length === 0;
+                if (isBaseA && !isBaseB) return -1;
+                if (!isBaseA && isBaseB) return 1;
+                return getEffectiveness(b) - getEffectiveness(a);
+            });
+
+            const formatStat = (value) => {
+                if (value === undefined) return '<span class="stat-empty">—</span>';
+                const sign = value >= 0 ? '+' : '';
+                const className = value >= 0 ? 'stat-positive' : 'stat-negative';
+                return `<span class="${className}">${sign}${value.toFixed(1)}</span>`;
+            };
+
+            const formatFlag = (value) => {
+                return value ? '<span class="flag-yes">✓</span>' : '<span class="flag-no">—</span>';
+            };
+
+            return sortedAmmo.map(ammoKey => {
+                const ammo = ammoTypes[ammoKey];
+                if (!ammo) return '';
+
+                const modifiers = ammo.modifiers || {};
+
+                return `
+                    <tr>
+                        <td class="ammo-name">${ammo.name}</td>
+                        <td class="col-stat">${formatStat(modifiers.damage)}</td>
+                        <td class="col-stat">${formatStat(modifiers.range)}</td>
+                        <td class="col-stat">${formatStat(modifiers.accuracy)}</td>
+                        <td class="col-flag">${formatFlag(ammo.crafted)}</td>
+                        <td class="col-flag">${formatFlag(ammo.limitedCapacity)}</td>
+                    </tr>
+                `;
+            }).join('');
         }
 
         function renderAcquisitions(acqs) {
