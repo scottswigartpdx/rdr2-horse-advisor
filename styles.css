@@ -1314,7 +1314,184 @@ footer {
     font-weight: 600;
 }
 
-/* Gear cards */
+/* ========== WEAPON CARDS (new design matching horse cards) ========== */
+.weapon-card {
+    display: flex;
+    gap: 20px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-medium);
+    border-radius: 10px;
+    padding: 24px;
+    margin: 24px 0;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-card);
+}
+
+.weapon-card:hover {
+    border-color: var(--rust);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.weapon-card-image {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    background: var(--bg-dark);
+    border: 2px solid var(--border-medium);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--text-muted);
+    transition: border-color 0.2s;
+    overflow: hidden;
+}
+
+.weapon-card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.weapon-card:hover .weapon-card-image {
+    border-color: var(--rust);
+}
+
+.weapon-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.weapon-card-title {
+    font-family: 'Rye', cursive;
+    font-size: 1.4rem;
+    color: var(--text-cream);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.weapon-card-title:hover {
+    color: var(--rust);
+}
+
+.weapon-card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Weapon stat bars (reuses .stat-row from horse cards) */
+.weapon-card-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Weapon-specific sections */
+.weapon-card-section {
+    padding-top: 12px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.weapon-card-section-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.weapon-card-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.weapon-card-chip {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-cream);
+}
+
+.weapon-card-chip--highlight {
+    background: rgba(201, 146, 71, 0.15);
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.weapon-card-chip .mod {
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin-left: 4px;
+}
+
+.weapon-card-chip .tag {
+    display: inline-block;
+    background: var(--rust);
+    color: var(--text-cream);
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.weapon-card-chip .tag--limited {
+    background: var(--red-dark);
+}
+
+.weapon-card-meta {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weapon-card-price {
+    font-family: 'Rye', cursive;
+    color: var(--gold);
+    font-size: 1.1rem;
+}
+
+.weapon-card-availability {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Responsive weapon card */
+@media (max-width: 600px) {
+    .weapon-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .weapon-card-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .weapon-card-badges {
+        justify-content: center;
+    }
+
+    .weapon-card-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* ========== GEAR CARDS (saddles/stirrups) ========== */
 .gear-card {
     background: var(--bg-elevated);
     border: 1px solid var(--border-medium);
@@ -1914,4 +2091,55 @@ header {
 /* User messages stay right-aligned */
 .chat-container .message.user {
     align-self: flex-end;
+}
+
+/* ========== MOBILE LAYOUT FIXES ========== */
+@media (max-width: 600px) {
+    /* Stack hero panel vertically on mobile */
+    .hero-panel-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    /* Reset nav to not span rows */
+    .hero-panel-nav {
+        grid-row: auto;
+        grid-column: 1;
+    }
+
+    /* Nav items horizontal on mobile */
+    .hero-panel .section-nav-inner {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* Input spans full width */
+    .hero-input {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    /* Hide vertical divider */
+    .hero-panel-inner::after {
+        display: none;
+    }
+
+    /* Center text on mobile */
+    .hero-panel .welcome-message,
+    .hero-panel .welcome-message h2,
+    .hero-panel .welcome-message h3,
+    .hero-panel .welcome-hint {
+        text-align: center;
+    }
+
+    /* Single column example queries */
+    .hero-panel .example-queries {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-panel .example-queries li {
+        text-align: center;
+    }
 }

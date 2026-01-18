@@ -503,7 +503,7 @@ function renderStirrupsCard(name) {
     return `<div class="gear-card stirrups-card"><div class="gear-card-header"><span class="gear-card-icon">⚙️</span><span class="gear-card-title">${stirrups.name} Stirrups</span></div><div class="gear-card-stats"><div class="gear-stat"><span class="gear-stat-label">Speed</span><span class="gear-stat-value stat-good">+${stirrups.speedBonus}</span></div><div class="gear-stat"><span class="gear-stat-label">Accel</span><span class="gear-stat-value stat-good">+${stirrups.accelBonus}</span></div><div class="gear-stat"><span class="gear-stat-label">Stam Drain</span><span class="gear-stat-value ${stirrups.staminaDrain < 0 ? 'stat-good' : ''}">${stirrups.staminaDrain}%</span></div></div><div class="gear-card-footer"><span class="gear-cost">${priceText}</span></div></div>`;
 }
 
-// Render a weapon card from data
+// Render a weapon card from data (new design matching horse cards)
 function renderWeaponCard(name) {
     if (!weaponData || !weaponData.weapons) return `<em>Weapon not found: ${name}</em>`;
 
@@ -516,70 +516,94 @@ function renderWeaponCard(name) {
     const base = weapon.baseStats || {};
     const max = weapon.maxStats || base;
     const priceText = weapon.price ? `$${weapon.price.toLocaleString()}` : 'Free';
-    const dualBadge = weapon.canDualWield ? '<span class="badge badge-dual">Dual Wield</span>' : '';
+    const weaponLink = `weapon.html?name=${encodeURIComponent(weapon.name)}`;
 
     // Get first acquisition
     const acq = Array.isArray(weapon.acquisition) ? weapon.acquisition[0] : weapon.acquisition;
-    const location = acq ? acq.location : 'Unknown';
     const chapter = acq ? acq.chapter : 'Unknown';
 
-    // Helper to format stat
-    const formatStat = (label, baseStat, maxStat) => {
-        if (baseStat === undefined) return '';
-        const hasUpgrade = maxStat !== undefined && maxStat !== baseStat;
-        return `<div class="gear-stat"><span class="gear-stat-label">${label}</span><span class="gear-stat-value">${baseStat.toFixed(1)}${hasUpgrade ? '→' + maxStat.toFixed(1) : ''}</span></div>`;
+    // Get weapon image HTML
+    const getWeaponImageHtml = (weapon) => {
+        if (weapon.image) {
+            return `<img src="${weapon.image}" alt="${weapon.name}" onerror="this.parentElement.innerHTML='${weapon.category.charAt(0)}'">`;
+        }
+        // Fallback to first letter of category
+        return weapon.category.charAt(0);
     };
 
-    // Render upgrades section
+    // Helper to render stat bar row (matching horse card pattern)
+    const renderStatBar = (label, baseStat, maxStat, maxPossible = 5) => {
+        if (baseStat === undefined) return '';
+        const basePercent = (baseStat / maxPossible) * 100;
+        const maxPercent = maxStat ? (maxStat / maxPossible) * 100 : basePercent;
+        const valueText = maxStat && maxStat !== baseStat
+            ? `${baseStat.toFixed(1)}→${maxStat.toFixed(1)}`
+            : baseStat.toFixed(1);
+        return `<div class="stat-row"><span class="stat-label">${label}</span><div class="stat-bar-container"><div class="stat-bar" style="width: ${basePercent}%"></div><div class="stat-bar stat-bar-max" style="width: ${maxPercent}%"></div></div><span class="stat-value">${valueText}</span></div>`;
+    };
+
+    // Build badges
+    const badges = [];
+    badges.push(`<span class="badge badge-type">${weapon.category}</span>`);
+    if (weapon.canDualWield) {
+        badges.push('<span class="badge badge-dual">Dual Wield</span>');
+    }
+    badges.push(`<span class="badge badge-chapter">${chapter}</span>`);
+    const badgesHtml = badges.join('');
+
+    // Build stat bars
+    const statsHtml = [
+        renderStatBar('Damage', base.damage, max.damage),
+        renderStatBar('Range', base.range, max.range),
+        renderStatBar('Accuracy', base.accuracy, max.accuracy),
+        renderStatBar('Fire Rate', base.fireRate, max.fireRate),
+        renderStatBar('Reload', base.reload, max.reload)
+    ].filter(Boolean).join('');
+
+    // Render upgrades section with chips
     const renderUpgradesSection = () => {
         if (!weapon.upgrades || weapon.upgrades.length === 0) return '';
         const upgradeTypes = weaponData.upgradeTypes || {};
-        const upgradeItems = weapon.upgrades
-            .map(key => {
-                const upgrade = upgradeTypes[key];
-                if (!upgrade) return `<span class="upgrade-type">${key.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>`;
-                const modifiers = upgrade.modifiers || {};
-                const modList = Object.entries(modifiers)
-                    .map(([stat, value]) => {
-                        const statName = stat === 'fireRate' ? 'FR' : stat.charAt(0).toUpperCase() + stat.slice(1).substring(0, 3);
-                        return `<span class="upgrade-mod-positive">${statName}+${value}</span>`;
-                    }).join(' ');
-                return `<span class="upgrade-type">${upgrade.name}${modList ? ' ' + modList : ''}</span>`;
-            })
-            .join('');
-        return `<div class="weapon-upgrades-section"><span class="upgrades-label">Upgrades:</span>${upgradeItems}</div>`;
+        const chips = weapon.upgrades.map(key => {
+            const upgrade = upgradeTypes[key];
+            if (!upgrade) return `<span class="weapon-card-chip">${key.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>`;
+            const modifiers = upgrade.modifiers || {};
+            const modList = Object.entries(modifiers)
+                .map(([stat, value]) => {
+                    const statName = stat === 'fireRate' ? 'FR' : stat.substring(0, 3).charAt(0).toUpperCase() + stat.substring(1, 3);
+                    return `<span class="mod">+${value} ${statName}</span>`;
+                }).join('');
+            return `<span class="weapon-card-chip">${upgrade.name}${modList}</span>`;
+        }).join('');
+        return `<div class="weapon-card-section"><div class="weapon-card-section-title">Upgrades</div><div class="weapon-card-chips">${chips}</div></div>`;
     };
 
-    // Render ammo types section
+    // Render ammo section with chips
     const renderAmmoSection = () => {
         if (!weapon.availableAmmo || weapon.availableAmmo.length === 0) return '';
         const ammoTypes = weaponData.ammoTypes || {};
-        const ammoNames = weapon.availableAmmo
-            .map(key => {
-                const ammo = ammoTypes[key];
-                if (!ammo) return null;
-                const modifiers = ammo.modifiers || {};
-                const modList = Object.entries(modifiers)
-                    .filter(([_, v]) => v !== 0)
-                    .map(([stat, value]) => {
-                        const sign = value >= 0 ? '+' : '';
-                        const statName = stat === 'fireRate' ? 'FR' : stat.charAt(0).toUpperCase() + stat.slice(1).substring(0, 2);
-                        return `<span class="${value >= 0 ? 'ammo-mod-positive' : 'ammo-mod-negative'}">${statName}${sign}${value}</span>`;
-                    }).join(' ');
-                const tags = [];
-                if (ammo.crafted) tags.push('<span class="ammo-crafted">C</span>');
-                if (ammo.limitedCapacity) tags.push('<span class="ammo-limited">L</span>');
-                const tagHtml = tags.length > 0 ? tags.join('') : '';
-                return `<span class="ammo-type">${ammo.name}${tagHtml}${modList ? ' ' + modList : ''}</span>`;
-            })
-            .filter(Boolean)
-            .join('');
-        return `<div class="weapon-ammo-section"><span class="ammo-label">Ammo:</span>${ammoNames}</div>`;
+        const chips = weapon.availableAmmo.map(key => {
+            const ammo = ammoTypes[key];
+            if (!ammo) return null;
+            const modifiers = ammo.modifiers || {};
+            const modList = Object.entries(modifiers)
+                .filter(([_, v]) => v !== 0)
+                .map(([stat, value]) => {
+                    const sign = value >= 0 ? '+' : '';
+                    const statName = stat === 'fireRate' ? 'FR' : stat.substring(0, 3).charAt(0).toUpperCase() + stat.substring(1, 3);
+                    return `<span class="mod">${sign}${value} ${statName}</span>`;
+                }).join('');
+            const tags = [];
+            if (ammo.crafted) tags.push('<span class="tag">C</span>');
+            if (ammo.limitedCapacity) tags.push('<span class="tag tag--limited">L</span>');
+            const tagHtml = tags.join('');
+            return `<span class="weapon-card-chip">${ammo.name}${tagHtml}${modList}</span>`;
+        }).filter(Boolean).join('');
+        return `<div class="weapon-card-section"><div class="weapon-card-section-title">Ammo Types</div><div class="weapon-card-chips">${chips}</div></div>`;
     };
 
-    const weaponLink = `weapon.html?name=${encodeURIComponent(weapon.name)}`;
-
-    return `<div class="gear-card weapon-card"><div class="gear-card-header"><span class="gear-card-icon">🔫</span><a href="${weaponLink}" class="gear-card-title">${weapon.name}</a><span class="badge badge-type">${weapon.category}</span>${dualBadge}</div><div class="gear-card-stats">${formatStat('Damage', base.damage, max.damage)}${formatStat('Range', base.range, max.range)}${formatStat('Fire Rate', base.fireRate, max.fireRate)}${formatStat('Accuracy', base.accuracy, max.accuracy)}${formatStat('Reload', base.reload, max.reload)}</div>${renderUpgradesSection()}${renderAmmoSection()}<div class="gear-card-footer"><span class="gear-cost">${priceText}</span><span class="gear-availability">${chapter} - ${location}</span></div></div>`;
+    // Build the card HTML (matching horse card structure)
+    return `<div class="weapon-card"><div class="weapon-card-image">${getWeaponImageHtml(weapon)}</div><div class="weapon-card-content"><a href="${weaponLink}" class="weapon-card-title">${weapon.name}</a><div class="weapon-card-badges">${badgesHtml}</div><div class="weapon-card-stats">${statsHtml}</div>${renderUpgradesSection()}${renderAmmoSection()}<div class="weapon-card-meta"><span class="weapon-card-price">${priceText}</span><span class="weapon-card-availability">${chapter}</span></div></div></div>`;
 }
 
 // Format response with markdown support
