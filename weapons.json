@@ -32,7 +32,14 @@
         "notes": "Arthur's default revolver"
       },
       "communityNotes": "Reliable all-rounder. Fast reload makes it forgiving in combat. Good for early game dual-wielding.",
-      "image": "images/weapons/cattleman_revolver.webp"
+      "image": "images/weapons/cattleman_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Double-Action Revolver",
@@ -66,7 +73,14 @@
         "notes": null
       },
       "communityNotes": "Highest fire rate revolver but weakest damage. Best for spray-and-pray style.",
-      "image": "images/weapons/double_action_revolver.webp"
+      "image": "images/weapons/double_action_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Schofield Revolver",
@@ -108,7 +122,14 @@
         }
       ],
       "communityNotes": "Best overall revolver for accuracy and damage. Slower but hits harder than Cattleman.",
-      "image": "images/weapons/schofield_revolver.webp"
+      "image": "images/weapons/schofield_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "LeMat Revolver",
@@ -143,7 +164,14 @@
         "notes": "Available after 'The Gilded Cage' mission"
       },
       "communityNotes": "Unique hybrid revolver/shotgun. 9-round capacity plus secondary shotgun barrel. Highest revolver damage but slowest reload.",
-      "image": "images/weapons/lemat_revolver.webp"
+      "image": "images/weapons/lemat_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Navy Revolver",
@@ -177,7 +205,14 @@
         "notes": "Originally Red Dead Online exclusive, added to Story Mode"
       },
       "communityNotes": "Excellent balance of damage and accuracy. Strong alternative to Schofield.",
-      "image": "images/weapons/navy_revolver.webp"
+      "image": "images/weapons/navy_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Flaco's Revolver",
@@ -202,7 +237,14 @@
         "notes": "Defeat Flaco Hernandez in 'The Noblest of Men, and a Woman' stranger mission. Loot from body - MISSABLE"
       },
       "communityNotes": "Unique silver revolver with sugar skull engraving and ivory grips. Good early dual-wield option.",
-      "image": "images/weapons/flacos_revolver.webp"
+      "image": "images/weapons/flacos_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Granger's Revolver",
@@ -227,7 +269,14 @@
         "notes": "Defeat Emmet Granger in 'The Noblest of Men, and a Woman' stranger mission. Loot from body - MISSABLE"
       },
       "communityNotes": "Unique Cattleman variant with fast fire rate. Part of the gunslinger questline.",
-      "image": "images/weapons/grangers_revolver.webp"
+      "image": "images/weapons/grangers_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Calloway's Revolver",
@@ -252,7 +301,14 @@
         "notes": "Obtained at end of 'The Noblest of Men, and a Woman' gunslinger questline"
       },
       "communityNotes": "Ornate Schofield variant. Reward for completing all gunslinger duels.",
-      "image": "images/weapons/calloways_revolver.webp"
+      "image": "images/weapons/calloways_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Otis Miller's Revolver",
@@ -277,7 +333,14 @@
         "notes": "Found in chest as part of treasure hunt. Requires completing all treasure maps."
       },
       "communityNotes": "Powerful unique Schofield. Only available in Epilogue.",
-      "image": "images/weapons/otis_millers_revolver.webp"
+      "image": "images/weapons/otis_millers_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Algernon's Revolver",
@@ -302,7 +365,14 @@
         "notes": "Reward for completing all 'Duchesses and Other Animals' requests"
       },
       "communityNotes": "Gold-plated Double-Action variant. Requires extensive flower/feather collecting.",
-      "image": "images/weapons/algernons_revolver.webp"
+      "image": "images/weapons/algernons_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Micah's Revolver",
@@ -327,7 +397,14 @@
         "notes": "Found on frozen corpse after 'American Venom' mission"
       },
       "communityNotes": "Distinctive revolver with best range of any revolver. Only available post-story.",
-      "image": "images/weapons/micahs_revolver.webp"
+      "image": "images/weapons/micahs_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
     },
     {
       "name": "Volcanic Pistol",
@@ -361,7 +438,14 @@
         "notes": null
       },
       "communityNotes": "Highest damage pistol, almost rifle-like. Slow fire rate but devastating per shot.",
-      "image": "images/weapons/volcanic_pistol.webp"
+      "image": "images/weapons/volcanic_pistol.webp",
+      "availableAmmo": [
+        "pistol_regular",
+        "pistol_high_velocity",
+        "pistol_split_point",
+        "pistol_express",
+        "pistol_explosive"
+      ]
     },
     {
       "name": "Semi-Automatic Pistol",
@@ -395,7 +479,14 @@
         "notes": null
       },
       "communityNotes": "Fastest firing sidearm. Low damage but magazine fed for quick reloads. Great for Dead Eye spam.",
-      "image": "images/weapons/semi_automatic_pistol.webp"
+      "image": "images/weapons/semi_automatic_pistol.webp",
+      "availableAmmo": [
+        "pistol_regular",
+        "pistol_high_velocity",
+        "pistol_split_point",
+        "pistol_express",
+        "pistol_explosive"
+      ]
     },
     {
       "name": "Mauser Pistol",
@@ -429,7 +520,14 @@
         "notes": "Also can be obtained from Angelo Bronte's men in Chapter 4"
       },
       "communityNotes": "Slightly more damage than Semi-Auto with 10-round magazine. Best pistol for capacity.",
-      "image": "images/weapons/mauser_pistol.webp"
+      "image": "images/weapons/mauser_pistol.webp",
+      "availableAmmo": [
+        "pistol_regular",
+        "pistol_high_velocity",
+        "pistol_split_point",
+        "pistol_express",
+        "pistol_explosive"
+      ]
     },
     {
       "name": "M1899 Pistol",
@@ -463,7 +561,14 @@
         "notes": "Available after 'The Battle of Shady Belle'. Originally PC exclusive."
       },
       "communityNotes": "Modern semi-auto pistol. Balanced stats between Semi-Auto and Mauser.",
-      "image": "images/weapons/m1899_pistol.webp"
+      "image": "images/weapons/m1899_pistol.webp",
+      "availableAmmo": [
+        "pistol_regular",
+        "pistol_high_velocity",
+        "pistol_split_point",
+        "pistol_express",
+        "pistol_explosive"
+      ]
     },
     {
       "name": "Midnight's Pistol",
@@ -488,7 +593,14 @@
         "notes": "Defeat Billy Midnight in 'The Noblest of Men, and a Woman' stranger mission - MISSABLE"
       },
       "communityNotes": "Gold-plated Mauser available very early. One of the best early-game acquisitions. Don't forget to loot!",
-      "image": "images/weapons/midnights_pistol.webp"
+      "image": "images/weapons/midnights_pistol.webp",
+      "availableAmmo": [
+        "pistol_regular",
+        "pistol_high_velocity",
+        "pistol_split_point",
+        "pistol_express",
+        "pistol_explosive"
+      ]
     },
     {
       "name": "Carbine Repeater",
@@ -523,7 +635,14 @@
         "notes": "Given during story missions"
       },
       "communityNotes": "Solid starting repeater. Versatile but outclassed by Lancaster in accuracy.",
-      "image": "images/weapons/carbine_repeater.webp"
+      "image": "images/weapons/carbine_repeater.webp",
+      "availableAmmo": [
+        "repeater_regular",
+        "repeater_high_velocity",
+        "repeater_split_point",
+        "repeater_express",
+        "repeater_explosive"
+      ]
     },
     {
       "name": "Lancaster Repeater",
@@ -558,7 +677,14 @@
         "notes": "Obtained automatically during mission"
       },
       "communityNotes": "Best all-around weapon in the game. Exceptional accuracy with 14-round capacity. Most players' main weapon.",
-      "image": "images/weapons/lancaster_repeater.webp"
+      "image": "images/weapons/lancaster_repeater.webp",
+      "availableAmmo": [
+        "repeater_regular",
+        "repeater_high_velocity",
+        "repeater_split_point",
+        "repeater_express",
+        "repeater_explosive"
+      ]
     },
     {
       "name": "Litchfield Repeater",
@@ -593,7 +719,14 @@
         "notes": "Obtained automatically during mission"
       },
       "communityNotes": "Highest damage repeater with 16-round capacity. Less accurate than Lancaster but hits harder.",
-      "image": "images/weapons/litchfield_repeater.webp"
+      "image": "images/weapons/litchfield_repeater.webp",
+      "availableAmmo": [
+        "repeater_regular",
+        "repeater_high_velocity",
+        "repeater_split_point",
+        "repeater_express",
+        "repeater_explosive"
+      ]
     },
     {
       "name": "Evans Repeater",
@@ -628,7 +761,14 @@
         "notes": "Originally PC exclusive, added to all platforms"
       },
       "communityNotes": "Massive 26-round capacity. Lower damage but rarely need to reload. Great for prolonged fights.",
-      "image": "images/weapons/evans_repeater.webp"
+      "image": "images/weapons/evans_repeater.webp",
+      "availableAmmo": [
+        "repeater_regular",
+        "repeater_high_velocity",
+        "repeater_split_point",
+        "repeater_express",
+        "repeater_explosive"
+      ]
     },
     {
       "name": "Varmint Rifle",
@@ -662,7 +802,10 @@
         "notes": null
       },
       "communityNotes": "Essential for hunting small game. Very accurate but weak against humans. Use .22 ammo.",
-      "image": "images/weapons/varmint_rifle.webp"
+      "image": "images/weapons/varmint_rifle.webp",
+      "availableAmmo": [
+        "varmint_regular"
+      ]
     },
     {
       "name": "Springfield Rifle",
@@ -696,7 +839,14 @@
         "notes": null
       },
       "communityNotes": "Single-shot rifle with excellent damage and range. Great for hunting medium/large game.",
-      "image": "images/weapons/springfield_rifle.webp"
+      "image": "images/weapons/springfield_rifle.webp",
+      "availableAmmo": [
+        "rifle_regular",
+        "rifle_high_velocity",
+        "rifle_split_point",
+        "rifle_express",
+        "rifle_explosive"
+      ]
     },
     {
       "name": "Bolt Action Rifle",
@@ -730,7 +880,14 @@
         "notes": "Obtained automatically during mission"
       },
       "communityNotes": "Excellent combat rifle. 5-round magazine balances power and practicality. Great all-rounder.",
-      "image": "images/weapons/bolt_action_rifle.webp"
+      "image": "images/weapons/bolt_action_rifle.webp",
+      "availableAmmo": [
+        "rifle_regular",
+        "rifle_high_velocity",
+        "rifle_split_point",
+        "rifle_express",
+        "rifle_explosive"
+      ]
     },
     {
       "name": "Rolling Block Rifle",
@@ -763,7 +920,14 @@
         "notes": null
       },
       "communityNotes": "Powerful single-shot sniper. Highest damage rifle but slow to reload. Best for long range.",
-      "image": "images/weapons/rolling_block_rifle.webp"
+      "image": "images/weapons/rolling_block_rifle.webp",
+      "availableAmmo": [
+        "rifle_regular",
+        "rifle_high_velocity",
+        "rifle_split_point",
+        "rifle_express",
+        "rifle_explosive"
+      ]
     },
     {
       "name": "Rare Rolling Block Rifle",
@@ -788,7 +952,14 @@
         "notes": "Found in shed where sniper was hiding - MISSABLE"
       },
       "communityNotes": "Unique variant with brass fittings. Identical stats to standard version.",
-      "image": "images/weapons/rare_rolling_block_rifle.webp"
+      "image": "images/weapons/rare_rolling_block_rifle.webp",
+      "availableAmmo": [
+        "rifle_regular",
+        "rifle_high_velocity",
+        "rifle_split_point",
+        "rifle_express",
+        "rifle_explosive"
+      ]
     },
     {
       "name": "Carcano Rifle",
@@ -821,7 +992,14 @@
         "notes": "Available after 'Goodbye, Dear Friend' mission"
       },
       "communityNotes": "Best sniper rifle. 6-round magazine allows follow-up shots. Slightly less damage than Rolling Block but much more practical.",
-      "image": "images/weapons/carcano_rifle.webp"
+      "image": "images/weapons/carcano_rifle.webp",
+      "availableAmmo": [
+        "rifle_regular",
+        "rifle_high_velocity",
+        "rifle_split_point",
+        "rifle_express",
+        "rifle_explosive"
+      ]
     },
     {
       "name": "Elephant Rifle",
@@ -854,7 +1032,14 @@
         "notes": "Added post-launch"
       },
       "communityNotes": "Massive stopping power, knocks Arthur back when firing. Overkill for most situations but fun.",
-      "image": "images/weapons/elephant_rifle.webp"
+      "image": "images/weapons/elephant_rifle.webp",
+      "availableAmmo": [
+        "rifle_regular",
+        "rifle_high_velocity",
+        "rifle_split_point",
+        "rifle_express",
+        "rifle_explosive"
+      ]
     },
     {
       "name": "Double-Barreled Shotgun",
@@ -887,7 +1072,13 @@
         "notes": null
       },
       "communityNotes": "Classic break-action shotgun. Only 2 shots but devastating up close.",
-      "image": "images/weapons/double_barreled_shotgun.webp"
+      "image": "images/weapons/double_barreled_shotgun.webp",
+      "availableAmmo": [
+        "shotgun_regular",
+        "shotgun_slug",
+        "shotgun_incendiary",
+        "shotgun_explosive"
+      ]
     },
     {
       "name": "Rare Shotgun",
@@ -912,7 +1103,13 @@
         "notes": "Kill hermit at cabin and loot. Unique brass and wood engravings."
       },
       "communityNotes": "Beautiful unique shotgun. Slightly better stats than standard Double-Barrel. Worth the trip.",
-      "image": "images/weapons/rare_shotgun.webp"
+      "image": "images/weapons/rare_shotgun.webp",
+      "availableAmmo": [
+        "shotgun_regular",
+        "shotgun_slug",
+        "shotgun_incendiary",
+        "shotgun_explosive"
+      ]
     },
     {
       "name": "Sawed-Off Shotgun",
@@ -945,7 +1142,13 @@
         "notes": "Given during story missions"
       },
       "communityNotes": "Can be dual-wielded! Highest shotgun damage but shortest range. Devastating in close quarters.",
-      "image": "images/weapons/sawed_off_shotgun.webp"
+      "image": "images/weapons/sawed_off_shotgun.webp",
+      "availableAmmo": [
+        "shotgun_regular",
+        "shotgun_slug",
+        "shotgun_incendiary",
+        "shotgun_explosive"
+      ]
     },
     {
       "name": "Pump-Action Shotgun",
@@ -978,7 +1181,13 @@
         "notes": null
       },
       "communityNotes": "Best all-around shotgun. 5-round capacity with solid damage. Reliable workhorse.",
-      "image": "images/weapons/pump_action_shotgun.webp"
+      "image": "images/weapons/pump_action_shotgun.webp",
+      "availableAmmo": [
+        "shotgun_regular",
+        "shotgun_slug",
+        "shotgun_incendiary",
+        "shotgun_explosive"
+      ]
     },
     {
       "name": "Semi-Auto Shotgun",
@@ -1011,7 +1220,13 @@
         "notes": null
       },
       "communityNotes": "Fastest firing shotgun. Lower damage per shot but can unload quickly.",
-      "image": "images/weapons/semi_auto_shotgun.webp"
+      "image": "images/weapons/semi_auto_shotgun.webp",
+      "availableAmmo": [
+        "shotgun_regular",
+        "shotgun_slug",
+        "shotgun_incendiary",
+        "shotgun_explosive"
+      ]
     },
     {
       "name": "Repeating Shotgun",
@@ -1044,7 +1259,13 @@
         "notes": null
       },
       "communityNotes": "Lever-action shotgun with 6-round capacity. Good balance of fire rate and power.",
-      "image": "images/weapons/repeating_shotgun.webp"
+      "image": "images/weapons/repeating_shotgun.webp",
+      "availableAmmo": [
+        "shotgun_regular",
+        "shotgun_slug",
+        "shotgun_incendiary",
+        "shotgun_explosive"
+      ]
     },
     {
       "name": "Bow",
@@ -1074,7 +1295,15 @@
         "notes": "Essential for silent hunting"
       },
       "communityNotes": "Silent weapon, essential for hunting. Different arrow types drastically change effectiveness. Cannot be upgraded.",
-      "image": "images/weapons/bow.webp"
+      "image": "images/weapons/bow.webp",
+      "availableAmmo": [
+        "arrow_regular",
+        "arrow_improved",
+        "arrow_small_game",
+        "arrow_poison",
+        "arrow_fire",
+        "arrow_dynamite"
+      ]
     },
     {
       "name": "Hunting Knife",
@@ -1460,43 +1689,278 @@
   "upgradeTypes": {
     "improved_rifling": {
       "name": "Improved Rifling",
-      "effect": "Range +10%, Damage falloff +10%",
-      "statBonus": {
-        "range": 0.3
-      }
+      "modifiers": {
+        "range": 0.2
+      },
+      "description": "Increases bullet velocity for better range"
     },
     "longer_barrel": {
       "name": "Longer Barrel",
-      "effect": "Accuracy increased",
-      "statBonus": {
-        "accuracy": 0.3
-      }
+      "modifiers": {
+        "range": 0.1,
+        "accuracy": 0.1
+      },
+      "description": "Extends effective range and improves accuracy"
     },
     "improved_sights": {
-      "name": "Improved Iron Sights",
-      "effect": "Accuracy increased",
-      "statBonus": {
-        "accuracy": 0.3
-      }
+      "name": "Improved Sights",
+      "modifiers": {
+        "accuracy": 0.2
+      },
+      "description": "Better iron sights for improved accuracy"
     },
     "scope": {
       "name": "Scope",
-      "effect": "Adds zoom capability, improves long-range accuracy",
-      "variants": [
-        "short",
-        "medium",
-        "long"
-      ]
-    },
-    "wrap": {
-      "name": "Leather Wrap",
-      "effect": "Reduces degradation rate by 10%",
-      "statBonus": null
+      "modifiers": {
+        "range": 0.2,
+        "accuracy": 0.2
+      },
+      "description": "Magnified optic for long-range precision"
     }
   },
   "statsScale": {
     "min": 0,
     "max": 4,
     "description": "All stats are on a 0-4.0 scale"
+  },
+  "ammoTypes": {
+    "revolver_regular": {
+      "name": "Regular",
+      "category": "revolver",
+      "modifiers": {}
+    },
+    "revolver_high_velocity": {
+      "name": "High Velocity",
+      "category": "revolver",
+      "modifiers": {
+        "damage": 0.2,
+        "range": 0.5
+      }
+    },
+    "revolver_split_point": {
+      "name": "Split Point",
+      "category": "revolver",
+      "modifiers": {
+        "damage": 0.2,
+        "accuracy": 0.5
+      },
+      "crafted": true
+    },
+    "revolver_express": {
+      "name": "Express",
+      "category": "revolver",
+      "modifiers": {
+        "damage": 0.5
+      }
+    },
+    "revolver_explosive": {
+      "name": "Explosive",
+      "category": "revolver",
+      "modifiers": {
+        "damage": 1
+      },
+      "crafted": true,
+      "limitedCapacity": true
+    },
+    "pistol_regular": {
+      "name": "Regular",
+      "category": "pistol",
+      "modifiers": {}
+    },
+    "pistol_high_velocity": {
+      "name": "High Velocity",
+      "category": "pistol",
+      "modifiers": {
+        "damage": 0.2,
+        "range": 0.3
+      }
+    },
+    "pistol_split_point": {
+      "name": "Split Point",
+      "category": "pistol",
+      "modifiers": {
+        "damage": 0.2,
+        "accuracy": 0.3
+      },
+      "crafted": true
+    },
+    "pistol_express": {
+      "name": "Express",
+      "category": "pistol",
+      "modifiers": {
+        "damage": 0.5
+      }
+    },
+    "pistol_explosive": {
+      "name": "Explosive",
+      "category": "pistol",
+      "modifiers": {
+        "damage": 1
+      },
+      "crafted": true,
+      "limitedCapacity": true
+    },
+    "repeater_regular": {
+      "name": "Regular",
+      "category": "repeater",
+      "modifiers": {}
+    },
+    "repeater_high_velocity": {
+      "name": "High Velocity",
+      "category": "repeater",
+      "modifiers": {
+        "damage": 0.2,
+        "range": 0.3
+      }
+    },
+    "repeater_split_point": {
+      "name": "Split Point",
+      "category": "repeater",
+      "modifiers": {
+        "damage": 0.2,
+        "accuracy": 0.5
+      },
+      "crafted": true
+    },
+    "repeater_express": {
+      "name": "Express",
+      "category": "repeater",
+      "modifiers": {
+        "damage": 0.6
+      }
+    },
+    "repeater_explosive": {
+      "name": "Explosive",
+      "category": "repeater",
+      "modifiers": {
+        "damage": 1
+      },
+      "crafted": true,
+      "limitedCapacity": true
+    },
+    "rifle_regular": {
+      "name": "Regular",
+      "category": "rifle",
+      "modifiers": {}
+    },
+    "rifle_high_velocity": {
+      "name": "High Velocity",
+      "category": "rifle",
+      "modifiers": {
+        "damage": 0.2,
+        "range": 0.3
+      }
+    },
+    "rifle_split_point": {
+      "name": "Split Point",
+      "category": "rifle",
+      "modifiers": {
+        "damage": 0.2,
+        "accuracy": 0.5
+      },
+      "crafted": true
+    },
+    "rifle_express": {
+      "name": "Express",
+      "category": "rifle",
+      "modifiers": {
+        "damage": 0.6
+      }
+    },
+    "rifle_explosive": {
+      "name": "Explosive",
+      "category": "rifle",
+      "modifiers": {
+        "damage": 1
+      },
+      "crafted": true,
+      "limitedCapacity": true
+    },
+    "shotgun_regular": {
+      "name": "Regular Buckshot",
+      "category": "shotgun",
+      "modifiers": {}
+    },
+    "shotgun_slug": {
+      "name": "Slug",
+      "category": "shotgun",
+      "modifiers": {
+        "range": 0.2,
+        "accuracy": 0.8
+      }
+    },
+    "shotgun_incendiary": {
+      "name": "Incendiary Buckshot",
+      "category": "shotgun",
+      "modifiers": {
+        "damage": 0.6
+      },
+      "crafted": true
+    },
+    "shotgun_explosive": {
+      "name": "Explosive Slug",
+      "category": "shotgun",
+      "modifiers": {
+        "damage": 1,
+        "range": 0.2,
+        "accuracy": 0.8
+      },
+      "crafted": true,
+      "limitedCapacity": true
+    },
+    "arrow_regular": {
+      "name": "Regular Arrow",
+      "category": "bow",
+      "modifiers": {}
+    },
+    "arrow_improved": {
+      "name": "Improved Arrow",
+      "category": "bow",
+      "modifiers": {
+        "damage": 0.6
+      },
+      "crafted": true
+    },
+    "arrow_small_game": {
+      "name": "Small Game Arrow",
+      "category": "bow",
+      "modifiers": {
+        "damage": -0.8
+      },
+      "crafted": true,
+      "note": "Preserves small animal pelts"
+    },
+    "arrow_poison": {
+      "name": "Poison Arrow",
+      "category": "bow",
+      "modifiers": {
+        "damage": 0.2
+      },
+      "crafted": true,
+      "note": "Damage over time"
+    },
+    "arrow_fire": {
+      "name": "Fire Arrow",
+      "category": "bow",
+      "modifiers": {
+        "damage": 0.8
+      },
+      "crafted": true
+    },
+    "arrow_dynamite": {
+      "name": "Dynamite Arrow",
+      "category": "bow",
+      "modifiers": {
+        "damage": 1.6
+      },
+      "crafted": true,
+      "limitedCapacity": true
+    },
+    "varmint_regular": {
+      "name": ".22 Caliber",
+      "category": "varmint",
+      "modifiers": {},
+      "note": "Small caliber for small game"
+    }
   }
 }

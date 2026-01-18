@@ -530,9 +530,56 @@ function renderWeaponCard(name) {
         return `<div class="gear-stat"><span class="gear-stat-label">${label}</span><span class="gear-stat-value">${baseStat.toFixed(1)}${hasUpgrade ? '→' + maxStat.toFixed(1) : ''}</span></div>`;
     };
 
+    // Render upgrades section
+    const renderUpgradesSection = () => {
+        if (!weapon.upgrades || weapon.upgrades.length === 0) return '';
+        const upgradeTypes = weaponData.upgradeTypes || {};
+        const upgradeItems = weapon.upgrades
+            .map(key => {
+                const upgrade = upgradeTypes[key];
+                if (!upgrade) return `<span class="upgrade-type">${key.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>`;
+                const modifiers = upgrade.modifiers || {};
+                const modList = Object.entries(modifiers)
+                    .map(([stat, value]) => {
+                        const statName = stat === 'fireRate' ? 'FR' : stat.charAt(0).toUpperCase() + stat.slice(1).substring(0, 3);
+                        return `<span class="upgrade-mod-positive">${statName}+${value}</span>`;
+                    }).join(' ');
+                return `<span class="upgrade-type">${upgrade.name}${modList ? ' ' + modList : ''}</span>`;
+            })
+            .join('');
+        return `<div class="weapon-upgrades-section"><span class="upgrades-label">Upgrades:</span>${upgradeItems}</div>`;
+    };
+
+    // Render ammo types section
+    const renderAmmoSection = () => {
+        if (!weapon.availableAmmo || weapon.availableAmmo.length === 0) return '';
+        const ammoTypes = weaponData.ammoTypes || {};
+        const ammoNames = weapon.availableAmmo
+            .map(key => {
+                const ammo = ammoTypes[key];
+                if (!ammo) return null;
+                const modifiers = ammo.modifiers || {};
+                const modList = Object.entries(modifiers)
+                    .filter(([_, v]) => v !== 0)
+                    .map(([stat, value]) => {
+                        const sign = value >= 0 ? '+' : '';
+                        const statName = stat === 'fireRate' ? 'FR' : stat.charAt(0).toUpperCase() + stat.slice(1).substring(0, 2);
+                        return `<span class="${value >= 0 ? 'ammo-mod-positive' : 'ammo-mod-negative'}">${statName}${sign}${value}</span>`;
+                    }).join(' ');
+                const tags = [];
+                if (ammo.crafted) tags.push('<span class="ammo-crafted">C</span>');
+                if (ammo.limitedCapacity) tags.push('<span class="ammo-limited">L</span>');
+                const tagHtml = tags.length > 0 ? tags.join('') : '';
+                return `<span class="ammo-type">${ammo.name}${tagHtml}${modList ? ' ' + modList : ''}</span>`;
+            })
+            .filter(Boolean)
+            .join('');
+        return `<div class="weapon-ammo-section"><span class="ammo-label">Ammo:</span>${ammoNames}</div>`;
+    };
+
     const weaponLink = `weapon.html?name=${encodeURIComponent(weapon.name)}`;
 
-    return `<div class="gear-card weapon-card"><div class="gear-card-header"><span class="gear-card-icon">🔫</span><a href="${weaponLink}" class="gear-card-title">${weapon.name}</a><span class="badge badge-type">${weapon.category}</span>${dualBadge}</div><div class="gear-card-stats">${formatStat('Damage', base.damage, max.damage)}${formatStat('Range', base.range, max.range)}${formatStat('Fire Rate', base.fireRate, max.fireRate)}${formatStat('Accuracy', base.accuracy, max.accuracy)}${formatStat('Reload', base.reload, max.reload)}</div><div class="gear-card-footer"><span class="gear-cost">${priceText}</span><span class="gear-availability">${chapter} - ${location}</span></div></div>`;
+    return `<div class="gear-card weapon-card"><div class="gear-card-header"><span class="gear-card-icon">🔫</span><a href="${weaponLink}" class="gear-card-title">${weapon.name}</a><span class="badge badge-type">${weapon.category}</span>${dualBadge}</div><div class="gear-card-stats">${formatStat('Damage', base.damage, max.damage)}${formatStat('Range', base.range, max.range)}${formatStat('Fire Rate', base.fireRate, max.fireRate)}${formatStat('Accuracy', base.accuracy, max.accuracy)}${formatStat('Reload', base.reload, max.reload)}</div>${renderUpgradesSection()}${renderAmmoSection()}<div class="gear-card-footer"><span class="gear-cost">${priceText}</span><span class="gear-availability">${chapter} - ${location}</span></div></div>`;
 }
 
 // Format response with markdown support

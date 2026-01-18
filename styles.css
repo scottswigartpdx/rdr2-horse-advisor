@@ -1382,6 +1382,104 @@ a.gear-card-title:hover {
     color: #5cb85c;
 }
 
+/* Weapon upgrades section in chat cards */
+.weapon-upgrades-section {
+    padding: 8px 0;
+    border-top: 1px dashed var(--border-subtle);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.weapon-upgrades-section .upgrades-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 4px;
+}
+
+.weapon-upgrades-section .upgrade-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: var(--bg-dark);
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    color: var(--text-cream);
+    border: 1px solid var(--border-subtle);
+}
+
+.weapon-upgrades-section .upgrade-mod-positive {
+    color: var(--gold);
+    font-size: 0.7rem;
+    margin-left: 2px;
+}
+
+/* Weapon ammo section in chat cards */
+.weapon-ammo-section {
+    padding: 8px 0;
+    border-top: 1px dashed var(--border-subtle);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.weapon-ammo-section .ammo-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 4px;
+}
+
+.weapon-ammo-section .ammo-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: var(--bg-dark);
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    color: var(--text-cream);
+    border: 1px solid var(--border-subtle);
+}
+
+.weapon-ammo-section .ammo-crafted {
+    background: var(--rust);
+    color: var(--text-cream);
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+.weapon-ammo-section .ammo-limited {
+    background: var(--red-dark);
+    color: var(--text-cream);
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+.weapon-ammo-section .ammo-mod-positive {
+    color: var(--gold);
+    font-size: 0.7rem;
+    margin-left: 2px;
+}
+
+.weapon-ammo-section .ammo-mod-negative {
+    color: var(--red-primary);
+    font-size: 0.7rem;
+    margin-left: 2px;
+}
+
 .gear-card-footer {
     display: flex;
     justify-content: space-between;
