@@ -467,8 +467,18 @@ main {
 .chat-container {
     flex: 1;
     overflow-y: auto;
-    padding: 20px 0;
     min-height: 400px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: linear-gradient(180deg, rgba(22,22,22,0.98), rgba(12,12,12,0.98));
+    border: 1px solid var(--border-medium);
+    border-radius: 8px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 10px 24px rgba(0,0,0,0.5);
 }
 
 .welcome-message {
@@ -530,7 +540,10 @@ main {
     padding: 18px 22px;
     margin: 12px 0;
     border-radius: 4px;
+    flex: 0 0 90%;
+    width: 90%;
     max-width: 90%;
+    box-sizing: border-box;
 }
 
 .message.user {
@@ -666,6 +679,10 @@ li:has(.stirrups-card) {
     border-radius: 4px;
     margin: 12px 0;
     color: var(--text-muted);
+    flex: 0 0 90%;
+    width: 90%;
+    max-width: 90%;
+    box-sizing: border-box;
 }
 
 .loading-dots {
@@ -1425,4 +1442,378 @@ a.gear-card-title:hover {
     .gear-card-stats {
         grid-template-columns: 1fr;
     }
+}
+
+/* ========== HOME PAGE HERO PANEL ========== */
+.hero-panel {
+    margin: 18px auto 28px;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero-panel-inner {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 26px;
+    padding: 26px;
+    background: linear-gradient(180deg, rgba(20,20,20,0.98), rgba(12,12,12,0.98));
+    border: 1px solid var(--border-medium);
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 12px 28px rgba(0,0,0,0.55);
+}
+
+/* Nav side tweaks inside hero */
+.hero-panel .section-nav {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+.hero-panel .section-nav::before,
+.hero-panel .section-nav::after {
+    display: none;
+}
+
+.hero-panel .section-nav-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.hero-panel .section-nav-item {
+    border-radius: 0;
+}
+
+/* Welcome side adjustments */
+.hero-panel .welcome-message {
+    text-align: left;
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+.hero-panel .welcome-message h2 {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.hero-panel .welcome-message h3 {
+    text-align: left;
+    margin: 16px 0 12px;
+}
+
+.hero-panel .welcome-hint {
+    text-align: left;
+}
+
+/* Example queries as bounty cards */
+.hero-panel .example-queries {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: none;
+    margin: 0;
+}
+
+.hero-panel .example-queries li {
+    background: linear-gradient(180deg, #1e1a16, #14120f);
+    border: 1px solid #3a2e22;
+    border-left: 3px solid var(--rust);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 0.9rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.hero-panel .example-queries li:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold);
+    border-left-color: var(--gold);
+}
+
+/* Responsive hero panel */
+@media (max-width: 800px) {
+    .hero-panel-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hero-panel .section-nav-inner {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .hero-panel .welcome-message {
+        text-align: center;
+    }
+
+    .hero-panel .welcome-message h2,
+    .hero-panel .welcome-message h3,
+    .hero-panel .welcome-hint {
+        text-align: center;
+    }
+
+    .hero-panel .example-queries {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-panel .example-queries li {
+        text-align: center;
+    }
+}
+
+/* ========== VISUAL IMPROVEMENTS ========== */
+
+/* Background grit/texture */
+body {
+    background-image:
+        radial-gradient(ellipse at center, #171717 0%, #0b0b0b 70%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0 1px, transparent 1px 2px),
+        repeating-linear-gradient(90deg, rgba(0,0,0,0.03) 0 1px, transparent 1px 3px);
+    background-blend-mode: normal;
+}
+
+/* Better input container */
+.input-container {
+    background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(12,12,12,0.95));
+    border: 1px solid var(--border-medium);
+    border-radius: 8px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 8px 18px rgba(0,0,0,0.5);
+    max-width: 900px;
+    margin: 20px auto 0;
+}
+
+/* Better send button */
+#sendBtn {
+    background: linear-gradient(180deg, #d4a848, #b8860b);
+    border-color: #b8860b;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 6px rgba(0,0,0,0.4);
+}
+
+#sendBtn:hover {
+    background: linear-gradient(180deg, #e0b855, #c99315);
+}
+
+#sendBtn:active {
+    transform: translateY(1px);
+}
+
+/* Header separator */
+header::after {
+    content: '';
+    display: block;
+    margin: 16px auto 0;
+    width: 260px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+    opacity: 0.8;
+}
+
+/* ========== HERO PANEL QUICK FIXES ========== */
+
+/* Hide empty chat container */
+#chatContainer:empty {
+    display: none;
+}
+
+/* Make input bar match hero panel width */
+.input-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 18px auto 0;
+}
+
+/* Vertical divider between nav and welcome */
+.hero-panel-inner {
+    position: relative;
+}
+
+.hero-panel-inner::after {
+    content: '';
+    position: absolute;
+    left: 266px;
+    top: 26px;
+    bottom: 26px;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--border-medium), transparent);
+    opacity: 0.6;
+}
+
+/* Let nav fill its column */
+.hero-panel-nav {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-panel .section-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-panel .section-nav-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hide divider on mobile */
+@media (max-width: 800px) {
+    .hero-panel-inner::after {
+        display: none;
+    }
+}
+
+/* ========== FINAL POLISH TWEAKS ========== */
+
+/* Fix nav vertical alignment */
+.hero-panel-nav {
+    display: flex;
+    align-items: center;
+}
+
+.hero-panel .section-nav-inner {
+    padding: 18px 22px;
+    gap: 12px;
+}
+
+/* Reduce header to hero gap */
+header {
+    padding-bottom: 10px;
+}
+
+.hero-panel {
+    margin-top: 8px;
+}
+
+/* Boost example card legibility */
+.hero-panel .example-queries li {
+    color: #e1d9cb;
+    border-color: #4a3a2c;
+}
+
+/* ========== INPUT BOX ALIGNMENT ========== */
+
+/* Match input container to hero panel width and add padding */
+.input-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 18px auto 0;
+    padding: 16px 18px;
+    box-sizing: border-box;
+}
+
+/* More substantial input field */
+#queryInput {
+    padding: 16px 18px;
+}
+
+/* Slightly larger buttons */
+#sendBtn, #newChatBtn {
+    width: 56px;
+    min-height: 56px;
+}
+
+/* Fix input container width to match hero panel */
+.input-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* ========== ALIGNMENT FIX (GPT) ========== */
+/* Remove extra padding that was causing hero panel to be offset */
+.hero-panel {
+    padding-inline: 0;
+}
+
+/* Standardize both blocks to same width */
+.hero-panel,
+.input-container {
+    max-width: 900px;
+    width: 100%;
+    margin-inline: auto;
+}
+
+/* Reset input-container to clean state */
+.input-container {
+    padding: 16px 18px;
+    box-sizing: border-box;
+}
+
+/* ========== INPUT INSIDE HERO PANEL ========== */
+.hero-input {
+    grid-column: 1 / -1;
+    margin: 18px 0 0 0;
+    max-width: none;
+    width: 100%;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-medium);
+    border-radius: 6px;
+}
+
+/* Fix inner alignment - input aligns to welcome column */
+.hero-input {
+    grid-column: 2 / -1;
+}
+
+/* ========== FULL HEIGHT NAV ========== */
+/* Make nav column stretch to full height of content */
+.hero-panel-inner {
+    align-items: stretch;
+}
+
+.hero-panel-nav {
+    display: flex;
+    align-items: stretch;
+}
+
+.hero-panel .section-nav {
+    flex: 1;
+    display: flex;
+}
+
+.hero-panel .section-nav-inner {
+    flex: 1;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Make nav span all rows including input row */
+.hero-panel-nav {
+    grid-row: 1 / -1;
+}
+
+.hero-panel .section-nav-inner {
+    height: 100%;
+}
+
+/* Force nav to fully stretch */
+.hero-panel-nav {
+    align-self: stretch;
+}
+
+/* ========== EXPLICIT GRID ROWS FIX ========== */
+.hero-panel-inner {
+    grid-template-rows: auto auto;
+}
+
+.hero-input {
+    grid-row: 2;
+    margin: 0;
+}
+
+.hero-panel-nav {
+    grid-row: 1 / span 2;
+}
+
+/* User messages stay right-aligned */
+.chat-container .message.user {
+    align-self: flex-end;
 }
