@@ -156,15 +156,10 @@
             color: var(--text-muted);
         }
 
-        .dual-wield-badge {
-            display: inline-block;
-            background: var(--rust);
-            color: var(--text-cream);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .dual-check {
+            color: var(--rust);
+            font-size: 1.1rem;
+            text-align: center;
         }
 
         .no-results {
@@ -262,6 +257,7 @@
                     <thead>
                         <tr>
                             <th data-sort="name">Weapon</th>
+                            <th data-sort="dualWield" class="stat-cell">Dual</th>
                             <th data-sort="category">Category</th>
                             <th data-sort="damage" class="stat-cell">Damage</th>
                             <th data-sort="range" class="stat-cell">Range</th>
@@ -274,7 +270,7 @@
                     </thead>
                     <tbody id="tableBody">
                         <tr>
-                            <td colspan="9" class="no-results">Loading weapons...</td>
+                            <td colspan="10" class="no-results">Loading weapons...</td>
                         </tr>
                     </tbody>
                     </table>
@@ -306,7 +302,7 @@
             } catch (error) {
                 console.error('Failed to load weapons:', error);
                 document.getElementById('tableBody').innerHTML =
-                    '<tr><td colspan="9" class="no-results">Failed to load weapon data</td></tr>';
+                    '<tr><td colspan="10" class="no-results">Failed to load weapon data</td></tr>';
             }
         }
 
@@ -314,13 +310,13 @@
             const tbody = document.getElementById('tableBody');
 
             if (weapons.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="9" class="no-results">No weapons match your search</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="10" class="no-results">No weapons match your search</td></tr>';
                 return;
             }
 
             tbody.innerHTML = weapons.map(weapon => {
                 const acq = getAcquisition(weapon);
-                const dualBadge = weapon.canDualWield ? '<span class="dual-wield-badge">Dual</span>' : '';
+                const dualCheck = weapon.canDualWield ? '✓' : '';
                 const base = weapon.baseStats || {};
                 const max = weapon.maxStats || base;
 
@@ -337,8 +333,8 @@
                 <tr>
                     <td>
                         <a href="weapon.html?name=${encodeURIComponent(weapon.name)}" class="weapon-link">${weapon.name}</a>
-                        ${dualBadge}
                     </td>
+                    <td class="dual-check">${dualCheck}</td>
                     <td><span class="category-badge">${weapon.category}</span></td>
                     <td class="stat-cell">${formatStat(base.damage, max.damage)}</td>
                     <td class="stat-cell">${formatStat(base.range, max.range)}</td>
@@ -371,6 +367,10 @@
                     case 'name':
                         valA = a.name.toLowerCase();
                         valB = b.name.toLowerCase();
+                        break;
+                    case 'dualWield':
+                        valA = a.canDualWield ? 1 : 0;
+                        valB = b.canDualWield ? 1 : 0;
                         break;
                     case 'category':
                         valA = a.category.toLowerCase();
