@@ -141,16 +141,27 @@
 
         .stat-bar-container {
             margin-top: 10px;
-            height: 6px;
-            background: var(--bg-elevated);
-            border-radius: 3px;
+            height: 10px;
+            background: var(--bg-dark);
+            border-radius: 5px;
             overflow: hidden;
+            position: relative;
         }
 
-        .stat-bar-fill {
+        .stat-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
             height: 100%;
-            background: linear-gradient(90deg, var(--red-dark), var(--red-primary));
-            border-radius: 3px;
+            background: linear-gradient(90deg, var(--red-dark), var(--gold));
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        .stat-bar-max {
+            background: linear-gradient(90deg, var(--rust), var(--gold));
+            opacity: 0.4;
+            z-index: 1;
         }
 
         .info-section {
@@ -403,7 +414,8 @@
         }
 
         function renderStat(name, base, max) {
-            const percentage = (max / 10) * 100;
+            const basePercentage = (base / 10) * 100;
+            const maxPercentage = (max / 10) * 100;
             return `
                 <div class="stat-box">
                     <div class="stat-name">${name}</div>
@@ -413,7 +425,8 @@
                         <span class="stat-max">${max}</span>
                     </div>
                     <div class="stat-bar-container">
-                        <div class="stat-bar-fill" style="width: ${percentage}%"></div>
+                        <div class="stat-bar" style="width: ${basePercentage}%"></div>
+                        <div class="stat-bar stat-bar-max" style="width: ${maxPercentage}%"></div>
                     </div>
                 </div>
             `;

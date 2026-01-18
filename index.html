@@ -51,66 +51,73 @@
             </div>
             <p class="subtitle">Your guide to Red Dead Redemption 2</p>
 
-            <!-- Game-like section selector -->
-            <nav class="section-nav">
-                <div class="section-nav-inner">
-                    <a href="horses.html" class="section-nav-item">
-                        <span class="revolver-pointer">
-                            <!-- Bullet/shell casing pointing right -->
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 8h12l4 4-4 4H4V8z"/>
-                            </svg>
-                        </span>
-                        <span class="section-text">Horses</span>
-                    </a>
-                    <a href="weapons.html" class="section-nav-item">
-                        <span class="revolver-pointer">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 8h12l4 4-4 4H4V8z"/>
-                            </svg>
-                        </span>
-                        <span class="section-text">Weapons</span>
-                    </a>
-                </div>
-            </nav>
         </header>
 
         <main>
-            <div class="chat-container" id="chatContainer">
-                <div class="welcome-message">
-                    <h2>Ask about RDR2...</h2>
-                    <p class="welcome-hint">Horses, weapons, gear, and more</p>
-                    <h3>Or try one of these:</h3>
-                    <ul class="example-queries">
-                        <li onclick="setQuery(this.textContent)">"What's the fastest horse I can get in Chapter 2?"</li>
-                        <li onclick="setQuery(this.textContent)">"What's the best revolver in the game?"</li>
-                        <li onclick="setQuery(this.textContent)">"Where do I find the White Arabian?"</li>
-                        <li onclick="setQuery(this.textContent)">"What's the best rifle for hunting?"</li>
-                        <li onclick="setQuery(this.textContent)">"What's the best saddle and stirrups combo?"</li>
-                        <li onclick="setQuery(this.textContent)">"Compare Lancaster Repeater vs Litchfield Repeater"</li>
-                    </ul>
-                </div>
-            </div>
+            <section class="hero-panel">
+                <div class="hero-panel-inner">
+                    <div class="hero-panel-nav">
+                        <nav class="section-nav">
+                            <div class="section-nav-inner">
+                                <a href="horses.html" class="section-nav-item">
+                                    <span class="revolver-pointer">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 8h12l4 4-4 4H4V8z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="section-text">Horses</span>
+                                </a>
+                                <a href="weapons.html" class="section-nav-item">
+                                    <span class="revolver-pointer">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 8h12l4 4-4 4H4V8z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="section-text">Weapons</span>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
 
-            <div class="input-container">
-                <textarea
-                    id="queryInput"
-                    placeholder="Ask about horses, weapons, gear..."
-                    rows="1"
-                    onkeydown="handleKeyDown(event)"
-                ></textarea>
-                <button id="sendBtn" onclick="sendQuery()">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                    </svg>
-                </button>
-                <button id="newChatBtn" onclick="clearChat()" title="New Chat">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M3 12a9 9 0 1 0 9-9"/>
-                        <path d="M3 3v6h6"/>
-                    </svg>
-                </button>
-            </div>
+                    <div class="hero-panel-welcome">
+                        <div class="welcome-message">
+                            <h2>Ask about RDR2...</h2>
+                            <p class="welcome-hint">Horses, weapons, gear, and more</p>
+                            <h3>Or try one of these:</h3>
+                            <ul class="example-queries">
+                                <li onclick="setQuery(this.textContent)">"What's the fastest horse I can get in Chapter 2?"</li>
+                                <li onclick="setQuery(this.textContent)">"What's the best revolver in the game?"</li>
+                                <li onclick="setQuery(this.textContent)">"Where do I find the White Arabian?"</li>
+                                <li onclick="setQuery(this.textContent)">"What's the best rifle for hunting?"</li>
+                                <li onclick="setQuery(this.textContent)">"What's the best saddle and stirrups combo?"</li>
+                                <li onclick="setQuery(this.textContent)">"Compare Lancaster Repeater vs Litchfield Repeater"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="input-container hero-input">
+                        <textarea
+                            id="queryInput"
+                            placeholder="Ask about horses, weapons, gear..."
+                            rows="1"
+                            onkeydown="handleKeyDown(event)"
+                        ></textarea>
+                        <button id="sendBtn" onclick="sendQuery()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                        <button id="newChatBtn" onclick="clearChat()" title="New Chat">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12a9 9 0 1 0 9-9"/>
+                                <path d="M3 3v6h6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="chat-container" id="chatContainer"></div>
         </main>
 
         <footer>

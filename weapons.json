@@ -6,28 +6,33 @@
       "baseStats": {
         "damage": 1.7,
         "range": 2.7,
-        "fireRate": 2.0,
+        "fireRate": 2,
         "accuracy": 2.5,
         "reload": 2.8
       },
       "maxStats": {
         "damage": 1.7,
-        "range": 3.0,
-        "fireRate": 2.0,
+        "range": 3,
+        "fireRate": 2,
         "accuracy": 2.8,
         "reload": 2.8
       },
       "ammoCapacity": 6,
       "price": 50,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "starting",
         "location": "Starting weapon",
         "chapter": "Chapter 1",
         "notes": "Arthur's default revolver"
       },
-      "communityNotes": "Reliable all-rounder. Fast reload makes it forgiving in combat. Good for early game dual-wielding."
+      "communityNotes": "Reliable all-rounder. Fast reload makes it forgiving in combat. Good for early game dual-wielding.",
+      "image": "images/weapons/cattleman_revolver.webp"
     },
     {
       "name": "Double-Action Revolver",
@@ -49,14 +54,19 @@
       "ammoCapacity": 6,
       "price": 65,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 2+",
         "notes": null
       },
-      "communityNotes": "Highest fire rate revolver but weakest damage. Best for spray-and-pray style."
+      "communityNotes": "Highest fire rate revolver but weakest damage. Best for spray-and-pray style.",
+      "image": "images/weapons/double_action_revolver.webp"
     },
     {
       "name": "Schofield Revolver",
@@ -72,13 +82,17 @@
         "damage": 1.8,
         "range": 3.1,
         "fireRate": 1.8,
-        "accuracy": 3.0,
+        "accuracy": 3,
         "reload": 2.5
       },
       "ammoCapacity": 6,
       "price": 84,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights"
+      ],
       "acquisition": [
         {
           "method": "store",
@@ -93,20 +107,21 @@
           "notes": "Steal from weapon case during robbery"
         }
       ],
-      "communityNotes": "Best overall revolver for accuracy and damage. Slower but hits harder than Cattleman."
+      "communityNotes": "Best overall revolver for accuracy and damage. Slower but hits harder than Cattleman.",
+      "image": "images/weapons/schofield_revolver.webp"
     },
     {
       "name": "LeMat Revolver",
       "category": "Revolver",
       "baseStats": {
-        "damage": 2.0,
-        "range": 3.0,
+        "damage": 2,
+        "range": 3,
         "fireRate": 1.6,
         "accuracy": 2.6,
         "reload": 2.2
       },
       "maxStats": {
-        "damage": 2.0,
+        "damage": 2,
         "range": 3.3,
         "fireRate": 1.6,
         "accuracy": 2.9,
@@ -116,14 +131,19 @@
       "secondaryAmmo": "shotgun shell",
       "price": 172,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Saint Denis Gunsmith",
         "chapter": "Chapter 4+",
         "notes": "Available after 'The Gilded Cage' mission"
       },
-      "communityNotes": "Unique hybrid revolver/shotgun. 9-round capacity plus secondary shotgun barrel. Highest revolver damage but slowest reload."
+      "communityNotes": "Unique hybrid revolver/shotgun. 9-round capacity plus secondary shotgun barrel. Highest revolver damage but slowest reload.",
+      "image": "images/weapons/lemat_revolver.webp"
     },
     {
       "name": "Navy Revolver",
@@ -145,14 +165,19 @@
       "ammoCapacity": 6,
       "price": 275,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 2+",
         "notes": "Originally Red Dead Online exclusive, added to Story Mode"
       },
-      "communityNotes": "Excellent balance of damage and accuracy. Strong alternative to Schofield."
+      "communityNotes": "Excellent balance of damage and accuracy. Strong alternative to Schofield.",
+      "image": "images/weapons/navy_revolver.webp"
     },
     {
       "name": "Flaco's Revolver",
@@ -176,7 +201,8 @@
         "chapter": "Chapter 2+",
         "notes": "Defeat Flaco Hernandez in 'The Noblest of Men, and a Woman' stranger mission. Loot from body - MISSABLE"
       },
-      "communityNotes": "Unique silver revolver with sugar skull engraving and ivory grips. Good early dual-wield option."
+      "communityNotes": "Unique silver revolver with sugar skull engraving and ivory grips. Good early dual-wield option.",
+      "image": "images/weapons/flacos_revolver.webp"
     },
     {
       "name": "Granger's Revolver",
@@ -200,7 +226,8 @@
         "chapter": "Chapter 2+",
         "notes": "Defeat Emmet Granger in 'The Noblest of Men, and a Woman' stranger mission. Loot from body - MISSABLE"
       },
-      "communityNotes": "Unique Cattleman variant with fast fire rate. Part of the gunslinger questline."
+      "communityNotes": "Unique Cattleman variant with fast fire rate. Part of the gunslinger questline.",
+      "image": "images/weapons/grangers_revolver.webp"
     },
     {
       "name": "Calloway's Revolver",
@@ -224,7 +251,8 @@
         "chapter": "Chapter 4+",
         "notes": "Obtained at end of 'The Noblest of Men, and a Woman' gunslinger questline"
       },
-      "communityNotes": "Ornate Schofield variant. Reward for completing all gunslinger duels."
+      "communityNotes": "Ornate Schofield variant. Reward for completing all gunslinger duels.",
+      "image": "images/weapons/calloways_revolver.webp"
     },
     {
       "name": "Otis Miller's Revolver",
@@ -248,7 +276,8 @@
         "chapter": "Epilogue",
         "notes": "Found in chest as part of treasure hunt. Requires completing all treasure maps."
       },
-      "communityNotes": "Powerful unique Schofield. Only available in Epilogue."
+      "communityNotes": "Powerful unique Schofield. Only available in Epilogue.",
+      "image": "images/weapons/otis_millers_revolver.webp"
     },
     {
       "name": "Algernon's Revolver",
@@ -272,7 +301,8 @@
         "chapter": "Chapter 4+",
         "notes": "Reward for completing all 'Duchesses and Other Animals' requests"
       },
-      "communityNotes": "Gold-plated Double-Action variant. Requires extensive flower/feather collecting."
+      "communityNotes": "Gold-plated Double-Action variant. Requires extensive flower/feather collecting.",
+      "image": "images/weapons/algernons_revolver.webp"
     },
     {
       "name": "Micah's Revolver",
@@ -296,7 +326,8 @@
         "chapter": "Epilogue 2",
         "notes": "Found on frozen corpse after 'American Venom' mission"
       },
-      "communityNotes": "Distinctive revolver with best range of any revolver. Only available post-story."
+      "communityNotes": "Distinctive revolver with best range of any revolver. Only available post-story.",
+      "image": "images/weapons/micahs_revolver.webp"
     },
     {
       "name": "Volcanic Pistol",
@@ -318,14 +349,19 @@
       "ammoCapacity": 8,
       "price": 150,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 1+",
         "notes": null
       },
-      "communityNotes": "Highest damage pistol, almost rifle-like. Slow fire rate but devastating per shot."
+      "communityNotes": "Highest damage pistol, almost rifle-like. Slow fire rate but devastating per shot.",
+      "image": "images/weapons/volcanic_pistol.webp"
     },
     {
       "name": "Semi-Automatic Pistol",
@@ -347,14 +383,19 @@
       "ammoCapacity": 8,
       "price": 210,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 4+",
         "notes": null
       },
-      "communityNotes": "Fastest firing sidearm. Low damage but magazine fed for quick reloads. Great for Dead Eye spam."
+      "communityNotes": "Fastest firing sidearm. Low damage but magazine fed for quick reloads. Great for Dead Eye spam.",
+      "image": "images/weapons/semi_automatic_pistol.webp"
     },
     {
       "name": "Mauser Pistol",
@@ -362,28 +403,33 @@
       "baseStats": {
         "damage": 1.5,
         "range": 2.3,
-        "fireRate": 3.0,
+        "fireRate": 3,
         "accuracy": 2.5,
-        "reload": 3.0
+        "reload": 3
       },
       "maxStats": {
         "damage": 1.5,
         "range": 2.6,
-        "fireRate": 3.0,
+        "fireRate": 3,
         "accuracy": 2.8,
-        "reload": 3.0
+        "reload": 3
       },
       "ammoCapacity": 10,
       "price": 250,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 5+",
         "notes": "Also can be obtained from Angelo Bronte's men in Chapter 4"
       },
-      "communityNotes": "Slightly more damage than Semi-Auto with 10-round magazine. Best pistol for capacity."
+      "communityNotes": "Slightly more damage than Semi-Auto with 10-round magazine. Best pistol for capacity.",
+      "image": "images/weapons/mauser_pistol.webp"
     },
     {
       "name": "M1899 Pistol",
@@ -405,14 +451,19 @@
       "ammoCapacity": 8,
       "price": 350,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Saint Denis Gunsmith",
         "chapter": "Chapter 4+",
         "notes": "Available after 'The Battle of Shady Belle'. Originally PC exclusive."
       },
-      "communityNotes": "Modern semi-auto pistol. Balanced stats between Semi-Auto and Mauser."
+      "communityNotes": "Modern semi-auto pistol. Balanced stats between Semi-Auto and Mauser.",
+      "image": "images/weapons/m1899_pistol.webp"
     },
     {
       "name": "Midnight's Pistol",
@@ -423,7 +474,7 @@
         "range": 2.7,
         "fireRate": 2.8,
         "accuracy": 2.6,
-        "reload": 3.0
+        "reload": 3
       },
       "maxStats": null,
       "ammoCapacity": 10,
@@ -436,7 +487,8 @@
         "chapter": "Chapter 2+",
         "notes": "Defeat Billy Midnight in 'The Noblest of Men, and a Woman' stranger mission - MISSABLE"
       },
-      "communityNotes": "Gold-plated Mauser available very early. One of the best early-game acquisitions. Don't forget to loot!"
+      "communityNotes": "Gold-plated Mauser available very early. One of the best early-game acquisitions. Don't forget to loot!",
+      "image": "images/weapons/midnights_pistol.webp"
     },
     {
       "name": "Carbine Repeater",
@@ -446,26 +498,32 @@
         "range": 3.4,
         "fireRate": 2.3,
         "accuracy": 2.6,
-        "reload": 3.0
+        "reload": 3
       },
       "maxStats": {
         "damage": 2.3,
         "range": 3.7,
         "fireRate": 2.3,
         "accuracy": 3.2,
-        "reload": 3.0
+        "reload": 3
       },
       "ammoCapacity": 7,
       "price": 90,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights", "scope"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights",
+        "scope"
+      ],
       "acquisition": {
         "method": "starting",
         "location": "Starting weapon",
         "chapter": "Chapter 1",
         "notes": "Given during story missions"
       },
-      "communityNotes": "Solid starting repeater. Versatile but outclassed by Lancaster in accuracy."
+      "communityNotes": "Solid starting repeater. Versatile but outclassed by Lancaster in accuracy.",
+      "image": "images/weapons/carbine_repeater.webp"
     },
     {
       "name": "Lancaster Repeater",
@@ -474,7 +532,7 @@
         "damage": 2.1,
         "range": 3.2,
         "fireRate": 2.3,
-        "accuracy": 3.0,
+        "accuracy": 3,
         "reload": 2.8
       },
       "maxStats": {
@@ -487,14 +545,20 @@
       "ammoCapacity": 14,
       "price": 135,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights", "scope"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights",
+        "scope"
+      ],
       "acquisition": {
         "method": "starting",
         "location": "Given during story",
         "chapter": "Chapter 2",
         "notes": "Obtained automatically during mission"
       },
-      "communityNotes": "Best all-around weapon in the game. Exceptional accuracy with 14-round capacity. Most players' main weapon."
+      "communityNotes": "Best all-around weapon in the game. Exceptional accuracy with 14-round capacity. Most players' main weapon.",
+      "image": "images/weapons/lancaster_repeater.webp"
     },
     {
       "name": "Litchfield Repeater",
@@ -502,41 +566,47 @@
       "baseStats": {
         "damage": 2.5,
         "range": 3.6,
-        "fireRate": 2.0,
+        "fireRate": 2,
         "accuracy": 2.4,
         "reload": 2.5
       },
       "maxStats": {
         "damage": 2.5,
         "range": 3.9,
-        "fireRate": 2.0,
-        "accuracy": 3.0,
+        "fireRate": 2,
+        "accuracy": 3,
         "reload": 2.5
       },
       "ammoCapacity": 16,
       "price": 145,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights", "scope"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights",
+        "scope"
+      ],
       "acquisition": {
         "method": "starting",
         "location": "Given during story",
         "chapter": "Chapter 6",
         "notes": "Obtained automatically during mission"
       },
-      "communityNotes": "Highest damage repeater with 16-round capacity. Less accurate than Lancaster but hits harder."
+      "communityNotes": "Highest damage repeater with 16-round capacity. Less accurate than Lancaster but hits harder.",
+      "image": "images/weapons/litchfield_repeater.webp"
     },
     {
       "name": "Evans Repeater",
       "category": "Repeater",
       "baseStats": {
-        "damage": 2.0,
-        "range": 3.0,
+        "damage": 2,
+        "range": 3,
         "fireRate": 2.4,
         "accuracy": 2.8,
         "reload": 2.4
       },
       "maxStats": {
-        "damage": 2.0,
+        "damage": 2,
         "range": 3.3,
         "fireRate": 2.4,
         "accuracy": 3.4,
@@ -545,14 +615,20 @@
       "ammoCapacity": 26,
       "price": 140,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "longer_barrel", "improved_sights", "scope"],
+      "upgrades": [
+        "improved_rifling",
+        "longer_barrel",
+        "improved_sights",
+        "scope"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 2+",
         "notes": "Originally PC exclusive, added to all platforms"
       },
-      "communityNotes": "Massive 26-round capacity. Lower damage but rarely need to reload. Great for prolonged fights."
+      "communityNotes": "Massive 26-round capacity. Lower damage but rarely need to reload. Great for prolonged fights.",
+      "image": "images/weapons/evans_repeater.webp"
     },
     {
       "name": "Varmint Rifle",
@@ -574,43 +650,53 @@
       "ammoCapacity": 14,
       "price": 72,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "improved_sights", "scope"],
+      "upgrades": [
+        "improved_rifling",
+        "improved_sights",
+        "scope"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 1+",
         "notes": null
       },
-      "communityNotes": "Essential for hunting small game. Very accurate but weak against humans. Use .22 ammo."
+      "communityNotes": "Essential for hunting small game. Very accurate but weak against humans. Use .22 ammo.",
+      "image": "images/weapons/varmint_rifle.webp"
     },
     {
       "name": "Springfield Rifle",
       "category": "Rifle",
       "baseStats": {
         "damage": 3.2,
-        "range": 4.0,
+        "range": 4,
         "fireRate": 1.2,
         "accuracy": 3.4,
         "reload": 1.8
       },
       "maxStats": {
         "damage": 3.2,
-        "range": 4.0,
+        "range": 4,
         "fireRate": 1.2,
-        "accuracy": 4.0,
+        "accuracy": 4,
         "reload": 1.8
       },
       "ammoCapacity": 1,
       "price": 120,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "improved_sights", "scope"],
+      "upgrades": [
+        "improved_rifling",
+        "improved_sights",
+        "scope"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 1+",
         "notes": null
       },
-      "communityNotes": "Single-shot rifle with excellent damage and range. Great for hunting medium/large game."
+      "communityNotes": "Single-shot rifle with excellent damage and range. Great for hunting medium/large game.",
+      "image": "images/weapons/springfield_rifle.webp"
     },
     {
       "name": "Bolt Action Rifle",
@@ -624,7 +710,7 @@
       },
       "maxStats": {
         "damage": 2.8,
-        "range": 4.0,
+        "range": 4,
         "fireRate": 1.5,
         "accuracy": 3.8,
         "reload": 2.2
@@ -632,43 +718,52 @@
       "ammoCapacity": 5,
       "price": 180,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "improved_sights", "scope"],
+      "upgrades": [
+        "improved_rifling",
+        "improved_sights",
+        "scope"
+      ],
       "acquisition": {
         "method": "starting",
         "location": "Given during story",
         "chapter": "Chapter 3",
         "notes": "Obtained automatically during mission"
       },
-      "communityNotes": "Excellent combat rifle. 5-round magazine balances power and practicality. Great all-rounder."
+      "communityNotes": "Excellent combat rifle. 5-round magazine balances power and practicality. Great all-rounder.",
+      "image": "images/weapons/bolt_action_rifle.webp"
     },
     {
       "name": "Rolling Block Rifle",
       "category": "Sniper Rifle",
       "baseStats": {
         "damage": 3.3,
-        "range": 4.0,
+        "range": 4,
         "fireRate": 1.2,
         "accuracy": 3.6,
         "reload": 1.5
       },
       "maxStats": {
         "damage": 3.3,
-        "range": 4.0,
+        "range": 4,
         "fireRate": 1.2,
-        "accuracy": 4.0,
+        "accuracy": 4,
         "reload": 1.5
       },
       "ammoCapacity": 1,
       "price": 187,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "scope"],
+      "upgrades": [
+        "improved_rifling",
+        "scope"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 2+",
         "notes": null
       },
-      "communityNotes": "Powerful single-shot sniper. Highest damage rifle but slow to reload. Best for long range."
+      "communityNotes": "Powerful single-shot sniper. Highest damage rifle but slow to reload. Best for long range.",
+      "image": "images/weapons/rolling_block_rifle.webp"
     },
     {
       "name": "Rare Rolling Block Rifle",
@@ -676,7 +771,7 @@
       "variant": "Rolling Block Rifle",
       "baseStats": {
         "damage": 3.3,
-        "range": 4.0,
+        "range": 4,
         "fireRate": 1.1,
         "accuracy": 3.6,
         "reload": 1.5
@@ -692,65 +787,74 @@
         "chapter": "Chapter 3",
         "notes": "Found in shed where sniper was hiding - MISSABLE"
       },
-      "communityNotes": "Unique variant with brass fittings. Identical stats to standard version."
+      "communityNotes": "Unique variant with brass fittings. Identical stats to standard version.",
+      "image": "images/weapons/rare_rolling_block_rifle.webp"
     },
     {
       "name": "Carcano Rifle",
       "category": "Sniper Rifle",
       "baseStats": {
-        "damage": 3.0,
-        "range": 4.0,
+        "damage": 3,
+        "range": 4,
         "fireRate": 1.5,
         "accuracy": 3.4,
         "reload": 2.8
       },
       "maxStats": {
-        "damage": 3.0,
-        "range": 4.0,
+        "damage": 3,
+        "range": 4,
         "fireRate": 1.5,
-        "accuracy": 4.0,
+        "accuracy": 4,
         "reload": 2.8
       },
       "ammoCapacity": 6,
       "price": 190,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "scope"],
+      "upgrades": [
+        "improved_rifling",
+        "scope"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 6+",
         "notes": "Available after 'Goodbye, Dear Friend' mission"
       },
-      "communityNotes": "Best sniper rifle. 6-round magazine allows follow-up shots. Slightly less damage than Rolling Block but much more practical."
+      "communityNotes": "Best sniper rifle. 6-round magazine allows follow-up shots. Slightly less damage than Rolling Block but much more practical.",
+      "image": "images/weapons/carcano_rifle.webp"
     },
     {
       "name": "Elephant Rifle",
       "category": "Rifle",
       "baseStats": {
-        "damage": 4.0,
+        "damage": 4,
         "range": 2.5,
-        "fireRate": 1.0,
-        "accuracy": 2.0,
+        "fireRate": 1,
+        "accuracy": 2,
         "reload": 1.5
       },
       "maxStats": {
-        "damage": 4.0,
+        "damage": 4,
         "range": 2.8,
-        "fireRate": 1.0,
+        "fireRate": 1,
         "accuracy": 2.6,
         "reload": 1.5
       },
       "ammoCapacity": 2,
       "price": 580,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 2+",
         "notes": "Added post-launch"
       },
-      "communityNotes": "Massive stopping power, knocks Arthur back when firing. Overkill for most situations but fun."
+      "communityNotes": "Massive stopping power, knocks Arthur back when firing. Overkill for most situations but fun.",
+      "image": "images/weapons/elephant_rifle.webp"
     },
     {
       "name": "Double-Barreled Shotgun",
@@ -760,26 +864,30 @@
         "range": 1.5,
         "fireRate": 1.5,
         "accuracy": 1.8,
-        "reload": 2.0
+        "reload": 2
       },
       "maxStats": {
         "damage": 2.5,
         "range": 1.8,
         "fireRate": 1.5,
         "accuracy": 2.4,
-        "reload": 2.0
+        "reload": 2
       },
       "ammoCapacity": 2,
       "price": 95,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 1+",
         "notes": null
       },
-      "communityNotes": "Classic break-action shotgun. Only 2 shots but devastating up close."
+      "communityNotes": "Classic break-action shotgun. Only 2 shots but devastating up close.",
+      "image": "images/weapons/double_barreled_shotgun.webp"
     },
     {
       "name": "Rare Shotgun",
@@ -803,7 +911,8 @@
         "chapter": "Chapter 2+",
         "notes": "Kill hermit at cabin and loot. Unique brass and wood engravings."
       },
-      "communityNotes": "Beautiful unique shotgun. Slightly better stats than standard Double-Barrel. Worth the trip."
+      "communityNotes": "Beautiful unique shotgun. Slightly better stats than standard Double-Barrel. Worth the trip.",
+      "image": "images/weapons/rare_shotgun.webp"
     },
     {
       "name": "Sawed-Off Shotgun",
@@ -813,26 +922,30 @@
         "range": 1.2,
         "fireRate": 1.3,
         "accuracy": 1.5,
-        "reload": 2.0
+        "reload": 2
       },
       "maxStats": {
         "damage": 2.8,
         "range": 1.5,
         "fireRate": 1.3,
         "accuracy": 2.1,
-        "reload": 2.0
+        "reload": 2
       },
       "ammoCapacity": 2,
       "price": 85,
       "canDualWield": true,
-      "upgrades": ["improved_rifling", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "starting",
         "location": "Starting weapon",
         "chapter": "Chapter 1",
         "notes": "Given during story missions"
       },
-      "communityNotes": "Can be dual-wielded! Highest shotgun damage but shortest range. Devastating in close quarters."
+      "communityNotes": "Can be dual-wielded! Highest shotgun damage but shortest range. Devastating in close quarters.",
+      "image": "images/weapons/sawed_off_shotgun.webp"
     },
     {
       "name": "Pump-Action Shotgun",
@@ -841,7 +954,7 @@
         "damage": 2.5,
         "range": 1.5,
         "fireRate": 1.5,
-        "accuracy": 2.0,
+        "accuracy": 2,
         "reload": 2.5
       },
       "maxStats": {
@@ -854,14 +967,18 @@
       "ammoCapacity": 5,
       "price": 148,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 2+",
         "notes": null
       },
-      "communityNotes": "Best all-around shotgun. 5-round capacity with solid damage. Reliable workhorse."
+      "communityNotes": "Best all-around shotgun. 5-round capacity with solid damage. Reliable workhorse.",
+      "image": "images/weapons/pump_action_shotgun.webp"
     },
     {
       "name": "Semi-Auto Shotgun",
@@ -869,28 +986,32 @@
       "baseStats": {
         "damage": 2.3,
         "range": 1.4,
-        "fireRate": 2.0,
+        "fireRate": 2,
         "accuracy": 1.9,
         "reload": 2.3
       },
       "maxStats": {
         "damage": 2.3,
         "range": 1.7,
-        "fireRate": 2.0,
+        "fireRate": 2,
         "accuracy": 2.5,
         "reload": 2.3
       },
       "ammoCapacity": 5,
       "price": 225,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 4+",
         "notes": null
       },
-      "communityNotes": "Fastest firing shotgun. Lower damage per shot but can unload quickly."
+      "communityNotes": "Fastest firing shotgun. Lower damage per shot but can unload quickly.",
+      "image": "images/weapons/semi_auto_shotgun.webp"
     },
     {
       "name": "Repeating Shotgun",
@@ -899,7 +1020,7 @@
         "damage": 2.5,
         "range": 1.5,
         "fireRate": 1.8,
-        "accuracy": 2.0,
+        "accuracy": 2,
         "reload": 2.5
       },
       "maxStats": {
@@ -912,14 +1033,18 @@
       "ammoCapacity": 6,
       "price": 185,
       "canDualWield": false,
-      "upgrades": ["improved_rifling", "improved_sights"],
+      "upgrades": [
+        "improved_rifling",
+        "improved_sights"
+      ],
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
         "chapter": "Chapter 6+",
         "notes": null
       },
-      "communityNotes": "Lever-action shotgun with 6-round capacity. Good balance of fire rate and power."
+      "communityNotes": "Lever-action shotgun with 6-round capacity. Good balance of fire rate and power.",
+      "image": "images/weapons/repeating_shotgun.webp"
     },
     {
       "name": "Bow",
@@ -948,7 +1073,8 @@
         "chapter": "Chapter 1",
         "notes": "Essential for silent hunting"
       },
-      "communityNotes": "Silent weapon, essential for hunting. Different arrow types drastically change effectiveness. Cannot be upgraded."
+      "communityNotes": "Silent weapon, essential for hunting. Different arrow types drastically change effectiveness. Cannot be upgraded.",
+      "image": "images/weapons/bow.webp"
     },
     {
       "name": "Hunting Knife",
@@ -971,13 +1097,14 @@
         "chapter": "Chapter 1",
         "notes": "Used for skinning and stealth kills"
       },
-      "communityNotes": "Essential tool for skinning animals. Used for stealth kills from behind."
+      "communityNotes": "Essential tool for skinning animals. Used for stealth kills from behind.",
+      "image": "images/weapons/hunting_knife.webp"
     },
     {
       "name": "Machete",
       "category": "Melee",
       "baseStats": {
-        "damage": 2.0,
+        "damage": 2,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1002,7 +1129,8 @@
           "notes": "Found during 'A Fine Night For It' stranger mission"
         }
       ],
-      "communityNotes": "Longer reach than knife. Good for melee combat."
+      "communityNotes": "Longer reach than knife. Good for melee combat.",
+      "image": "images/weapons/machete.webp"
     },
     {
       "name": "Hatchet",
@@ -1025,7 +1153,8 @@
         "chapter": "Chapter 1+",
         "notes": "Can also be thrown"
       },
-      "communityNotes": "Versatile melee/throwing weapon. Many unique variants found throughout the world."
+      "communityNotes": "Versatile melee/throwing weapon. Many unique variants found throughout the world.",
+      "image": "images/weapons/hatchet.webp"
     },
     {
       "name": "Cleaver",
@@ -1048,7 +1177,8 @@
         "chapter": "Chapter 5+",
         "notes": null
       },
-      "communityNotes": "Heavy melee weapon. Brutal but slow."
+      "communityNotes": "Heavy melee weapon. Brutal but slow.",
+      "image": "images/weapons/cleaver.webp"
     },
     {
       "name": "Broken Pirate Sword",
@@ -1071,7 +1201,8 @@
         "chapter": "Chapter 2+",
         "notes": "On skeleton in shipwreck"
       },
-      "communityNotes": "Unique cosmetic melee weapon. Fun but not practical."
+      "communityNotes": "Unique cosmetic melee weapon. Fun but not practical.",
+      "image": "images/weapons/broken_pirate_sword.webp"
     },
     {
       "name": "Civil War Knife",
@@ -1094,7 +1225,8 @@
         "chapter": "Chapter 2+",
         "notes": "On skeleton in basement"
       },
-      "communityNotes": "Historic unique knife. Cosmetic variant."
+      "communityNotes": "Historic unique knife. Cosmetic variant.",
+      "image": "images/weapons/civil_war_knife.webp"
     },
     {
       "name": "Ornate Dagger",
@@ -1117,7 +1249,8 @@
         "chapter": "Chapter 4+",
         "notes": "Find 5 vampire markings around Saint Denis, then encounter vampire at midnight in marked alley"
       },
-      "communityNotes": "Reward from killing the Saint Denis vampire. One of the game's hidden encounters."
+      "communityNotes": "Reward from killing the Saint Denis vampire. One of the game's hidden encounters.",
+      "image": "images/weapons/ornate_dagger.webp"
     },
     {
       "name": "Jawbone Knife",
@@ -1140,7 +1273,8 @@
         "chapter": "Chapter 2+",
         "notes": "Reward for finding all 30 dinosaur bones"
       },
-      "communityNotes": "Made from dinosaur jawbone. Reward for completing paleontology collection."
+      "communityNotes": "Made from dinosaur jawbone. Reward for completing paleontology collection.",
+      "image": "images/weapons/jawbone_knife.webp"
     },
     {
       "name": "Viking Hatchet",
@@ -1163,7 +1297,8 @@
         "chapter": "Chapter 2+",
         "notes": "In viking burial site with ancient helmet"
       },
-      "communityNotes": "Ancient hatchet from viking burial. Near the tomb with the ancient viking helmet."
+      "communityNotes": "Ancient hatchet from viking burial. Near the tomb with the ancient viking helmet.",
+      "image": "images/weapons/viking_hatchet.webp"
     },
     {
       "name": "Ancient Tomahawk",
@@ -1172,7 +1307,7 @@
         "damage": 2.5,
         "range": 1.5,
         "fireRate": 0,
-        "accuracy": 2.0,
+        "accuracy": 2,
         "reload": 0
       },
       "maxStats": null,
@@ -1186,7 +1321,8 @@
         "chapter": "Chapter 2+",
         "notes": "Stuck in archery target"
       },
-      "communityNotes": "Stone-age tomahawk. Higher damage than regular tomahawk."
+      "communityNotes": "Stone-age tomahawk. Higher damage than regular tomahawk.",
+      "image": "images/weapons/ancient_tomahawk.webp"
     },
     {
       "name": "Throwing Knife",
@@ -1200,7 +1336,7 @@
       },
       "maxStats": null,
       "ammoCapacity": 8,
-      "price": 2.50,
+      "price": 2.5,
       "canDualWield": false,
       "upgrades": [],
       "acquisition": {
@@ -1209,7 +1345,8 @@
         "chapter": "Chapter 2+",
         "notes": "Can carry up to 8"
       },
-      "communityNotes": "Silent ranged weapon. Great for stealth."
+      "communityNotes": "Silent ranged weapon. Great for stealth.",
+      "image": "images/weapons/throwing_knife.webp"
     },
     {
       "name": "Tomahawk",
@@ -1232,14 +1369,15 @@
         "chapter": "Chapter 2+",
         "notes": "Can carry up to 4"
       },
-      "communityNotes": "Heavier than throwing knife, more damage but less accurate."
+      "communityNotes": "Heavier than throwing knife, more damage but less accurate.",
+      "image": "images/weapons/tomahawk.webp"
     },
     {
       "name": "Dynamite",
       "category": "Thrown",
       "baseStats": {
-        "damage": 4.0,
-        "range": 2.0,
+        "damage": 4,
+        "range": 2,
         "fireRate": 0,
         "accuracy": 1.5,
         "reload": 0
@@ -1255,13 +1393,14 @@
         "chapter": "Chapter 2+",
         "notes": "Also found throughout world"
       },
-      "communityNotes": "Explosive. Great for groups of enemies and certain missions."
+      "communityNotes": "Explosive. Great for groups of enemies and certain missions.",
+      "image": "images/weapons/dynamite.webp"
     },
     {
       "name": "Fire Bottle",
       "category": "Thrown",
       "baseStats": {
-        "damage": 3.0,
+        "damage": 3,
         "range": 1.8,
         "fireRate": 0,
         "accuracy": 1.5,
@@ -1278,14 +1417,15 @@
         "chapter": "Chapter 2+",
         "notes": "Also craftable"
       },
-      "communityNotes": "Molotov cocktail. Sets area on fire, causing damage over time."
+      "communityNotes": "Molotov cocktail. Sets area on fire, causing damage over time.",
+      "image": "images/weapons/fire_bottle.webp"
     },
     {
       "name": "Lasso",
       "category": "Tool",
       "baseStats": {
         "damage": 0,
-        "range": 2.0,
+        "range": 2,
         "fireRate": 0,
         "accuracy": 2.5,
         "reload": 0
@@ -1301,7 +1441,8 @@
         "chapter": "Chapter 1",
         "notes": "Essential for capturing horses and bounties"
       },
-      "communityNotes": "Non-lethal. Used to capture horses, hogtie enemies, and complete bounty missions."
+      "communityNotes": "Non-lethal. Used to capture horses, hogtie enemies, and complete bounty missions.",
+      "image": "images/weapons/lasso.webp"
     }
   ],
   "categories": [
@@ -1320,22 +1461,32 @@
     "improved_rifling": {
       "name": "Improved Rifling",
       "effect": "Range +10%, Damage falloff +10%",
-      "statBonus": { "range": 0.3 }
+      "statBonus": {
+        "range": 0.3
+      }
     },
     "longer_barrel": {
       "name": "Longer Barrel",
       "effect": "Accuracy increased",
-      "statBonus": { "accuracy": 0.3 }
+      "statBonus": {
+        "accuracy": 0.3
+      }
     },
     "improved_sights": {
       "name": "Improved Iron Sights",
       "effect": "Accuracy increased",
-      "statBonus": { "accuracy": 0.3 }
+      "statBonus": {
+        "accuracy": 0.3
+      }
     },
     "scope": {
       "name": "Scope",
       "effect": "Adds zoom capability, improves long-range accuracy",
-      "variants": ["short", "medium", "long"]
+      "variants": [
+        "short",
+        "medium",
+        "long"
+      ]
     },
     "wrap": {
       "name": "Leather Wrap",
@@ -1345,7 +1496,7 @@
   },
   "statsScale": {
     "min": 0,
-    "max": 4.0,
+    "max": 4,
     "description": "All stats are on a 0-4.0 scale"
   }
 }

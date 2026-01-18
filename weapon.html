@@ -32,6 +32,17 @@
             text-align: center;
         }
 
+        .weapon-hero-image {
+            max-width: 300px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-dark);
+        }
+
         .weapon-hero h1 {
             font-family: 'Chinese Rocks', 'Rye', cursive;
             color: var(--text-cream);
@@ -142,16 +153,27 @@
 
         .stat-bar-container {
             margin-top: 10px;
-            height: 6px;
-            background: var(--bg-elevated);
-            border-radius: 3px;
+            height: 10px;
+            background: var(--bg-dark);
+            border-radius: 5px;
             overflow: hidden;
+            position: relative;
         }
 
-        .stat-bar-fill {
+        .stat-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
             height: 100%;
-            background: linear-gradient(90deg, var(--red-dark), var(--red-primary));
-            border-radius: 3px;
+            background: linear-gradient(90deg, var(--red-dark), var(--gold));
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        .stat-bar-max {
+            background: linear-gradient(90deg, var(--rust), var(--gold));
+            opacity: 0.4;
+            z-index: 1;
         }
 
         .info-section {
@@ -360,6 +382,7 @@
 
             container.innerHTML = `
                 <div class="weapon-hero">
+                    ${weapon.image ? `<img src="${weapon.image}" alt="${weapon.name}" class="weapon-hero-image" onerror="this.style.display='none'">` : ''}
                     <h1>${weapon.name}</h1>
                     <div class="weapon-category">${weapon.category}</div>
                     <div class="weapon-badges">
@@ -447,7 +470,8 @@
 
         function renderStat(name, base, max) {
             const effectiveMax = max ?? base;
-            const percentage = (effectiveMax / 4) * 100; // Stats are on 0-4 scale
+            const basePercentage = (base / 4) * 100; // Stats are on 0-4 scale
+            const maxPercentage = (effectiveMax / 4) * 100;
             const showArrow = max !== null && max !== undefined && base !== max;
 
             return `
@@ -463,7 +487,8 @@
                         `}
                     </div>
                     <div class="stat-bar-container">
-                        <div class="stat-bar-fill" style="width: ${percentage}%"></div>
+                        <div class="stat-bar" style="width: ${basePercentage}%"></div>
+                        <div class="stat-bar stat-bar-max" style="width: ${maxPercentage}%"></div>
                     </div>
                 </div>
             `;
