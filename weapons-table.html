@@ -162,6 +162,59 @@
             text-align: center;
         }
 
+        .header-help {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .help-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 14px;
+            height: 14px;
+            background: var(--border-medium);
+            border-radius: 50%;
+            font-size: 0.65rem;
+            font-family: 'Crimson Text', serif;
+            color: var(--text-muted);
+            cursor: help;
+        }
+
+        .help-icon:hover {
+            background: var(--rust);
+            color: var(--text-cream);
+        }
+
+        .help-tooltip {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-medium);
+            border-radius: 4px;
+            font-family: 'Crimson Text', serif;
+            font-size: 0.85rem;
+            color: var(--text-cream);
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .help-icon:hover + .help-tooltip,
+        .header-help:hover .help-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .no-results {
             text-align: center;
             padding: 40px;
@@ -257,7 +310,9 @@
                     <thead>
                         <tr>
                             <th data-sort="name">Weapon</th>
-                            <th data-sort="dualWield" class="stat-cell">Dual</th>
+                            <th data-sort="dualWield" class="stat-cell">
+                                <span class="header-help">Dual<span class="help-icon">?</span><span class="help-tooltip">Sidearm that can be dual wielded with another sidearm</span></span>
+                            </th>
                             <th data-sort="category">Category</th>
                             <th data-sort="damage" class="stat-cell">Damage</th>
                             <th data-sort="range" class="stat-cell">Range</th>
