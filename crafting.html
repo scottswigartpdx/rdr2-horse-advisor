@@ -288,6 +288,7 @@
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
     <script src="components.js"></script>
+    <script src="utils.js"></script>
 </head>
 <body>
     <div class="container table-container">
@@ -540,46 +541,19 @@
             updateResultsCount(sorted.length);
         }
 
-        function updateSortIndicators() {
-            document.querySelectorAll('.crafting-table th').forEach(th => {
-                th.classList.remove('sorted-asc', 'sorted-desc');
-                if (th.dataset.sort === currentSort.column) {
-                    th.classList.add(currentSort.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
-                }
-            });
-        }
-
         // Event listeners
         document.getElementById('searchInput').addEventListener('input', updateTable);
         document.getElementById('categoryFilter').addEventListener('change', updateTable);
         document.getElementById('locationFilter').addEventListener('change', updateTable);
 
-        document.querySelectorAll('.crafting-table th[data-sort]').forEach(th => {
-            th.addEventListener('click', () => {
-                const column = th.dataset.sort;
-                if (currentSort.column === column) {
-                    currentSort.direction = currentSort.direction === 'desc' ? 'asc' : 'desc';
-                } else {
-                    currentSort.column = column;
-                    const ascFirstColumns = ['name', 'category', 'craftedAt', 'unlock'];
-                    currentSort.direction = ascFirstColumns.includes(column) ? 'asc' : 'desc';
-                }
-                updateSortIndicators();
-                updateTable();
-            });
-        });
+        // Initialize sort and scroll utilities
+        const ascFirstColumns = ['name', 'category', 'craftedAt', 'unlock'];
+        TableUtils.initSortListeners('.crafting-table', currentSort, updateTable, ascFirstColumns);
+        TableUtils.initScrollShadow('tableScrollWrapper');
 
         // Initialize
         loadCrafting().then(() => {
-            updateSortIndicators();
-        });
-
-        // Scroll shadow: hide when scrolled to end
-        const scrollWrapper = document.getElementById('tableScrollWrapper');
-        const outerWrapper = scrollWrapper.parentElement;
-        scrollWrapper.addEventListener('scroll', () => {
-            const isAtEnd = scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 5;
-            outerWrapper.classList.toggle('scrolled-end', isAtEnd);
+            TableUtils.updateSortIndicators('.crafting-table', currentSort);
         });
     </script>
 </body>

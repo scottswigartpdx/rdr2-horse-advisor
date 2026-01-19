@@ -198,6 +198,7 @@
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
     <script src="components.js"></script>
+    <script src="utils.js"></script>
 </head>
 <body>
     <div class="container table-container">
@@ -376,47 +377,17 @@
             updateResultsCount(sorted.length);
         }
 
-        function updateSortIndicators() {
-            document.querySelectorAll('.horse-table th').forEach(th => {
-                th.classList.remove('sorted-asc', 'sorted-desc');
-                if (th.dataset.sort === currentSort.column) {
-                    th.classList.add(currentSort.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
-                }
-            });
-        }
-
         // Event listeners
         document.getElementById('searchInput').addEventListener('input', updateTable);
 
-        document.querySelectorAll('.horse-table th[data-sort]').forEach(th => {
-            th.addEventListener('click', () => {
-                const column = th.dataset.sort;
-                if (currentSort.column === column) {
-                    // Toggle direction
-                    currentSort.direction = currentSort.direction === 'desc' ? 'asc' : 'desc';
-                } else {
-                    currentSort.column = column;
-                    // Price and chapter: ascending first (lower is better)
-                    // Stats: descending first (higher is better)
-                    const ascFirstColumns = ['price', 'chapter', 'breed', 'coat'];
-                    currentSort.direction = ascFirstColumns.includes(column) ? 'asc' : 'desc';
-                }
-                updateSortIndicators();
-                updateTable();
-            });
-        });
+        // Initialize sort and scroll utilities
+        const ascFirstColumns = ['price', 'chapter', 'breed', 'coat'];
+        TableUtils.initSortListeners('.horse-table', currentSort, updateTable, ascFirstColumns);
+        TableUtils.initScrollShadow('tableScrollWrapper');
 
         // Initialize
         loadHorses().then(() => {
-            updateSortIndicators();
-        });
-
-        // Scroll shadow: hide when scrolled to end
-        const scrollWrapper = document.getElementById('tableScrollWrapper');
-        const outerWrapper = scrollWrapper.parentElement;
-        scrollWrapper.addEventListener('scroll', () => {
-            const isAtEnd = scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 5;
-            outerWrapper.classList.toggle('scrolled-end', isAtEnd);
+            TableUtils.updateSortIndicators('.horse-table', currentSort);
         });
     </script>
 </body>

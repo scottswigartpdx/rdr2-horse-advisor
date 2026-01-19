@@ -263,6 +263,7 @@
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
     <script src="components.js"></script>
+    <script src="utils.js"></script>
 </head>
 <body>
     <div class="container table-container">
@@ -385,8 +386,9 @@
                 return `<th data-sort="${sortKey}">${col}</th>`;
             }).join('')}</tr>`;
 
-            // Re-attach sort listeners
+            // Re-attach sort listeners and update indicators
             attachSortListeners();
+            updateSortIndicators();
 
             // Render data
             updateTable();
@@ -600,39 +602,18 @@
                 `Showing ${count} item${count !== 1 ? 's' : ''}`;
         }
 
+        // Sort utilities using TableUtils
+        const ascFirstColumns = [
+            'price', 'name', 'type', 'availability', 'capacity', 'notes', 'details',
+            'stamcore', 'hpcore', 'stamdrain', 'staminadrain'  // drain stats: more negative is better
+        ];
+
         function updateSortIndicators() {
-            document.querySelectorAll('.gear-table th').forEach(th => {
-                th.classList.remove('sorted-asc', 'sorted-desc');
-                if (th.dataset.sort === currentSort.column) {
-                    th.classList.add(currentSort.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
-                }
-            });
+            TableUtils.updateSortIndicators('.gear-table', currentSort);
         }
 
         function attachSortListeners() {
-            document.querySelectorAll('.gear-table th[data-sort]').forEach(th => {
-                th.addEventListener('click', () => {
-                    const column = th.dataset.sort;
-                    if (currentSort.column === column) {
-                        // Toggle direction on second click
-                        currentSort.direction = currentSort.direction === 'desc' ? 'asc' : 'desc';
-                    } else {
-                        currentSort.column = column;
-                        // Determine "best first" direction for each column type
-                        // Drain stats (negative values): ascending puts most negative first (best)
-                        // Positive stats (regen, speed, accel): descending puts highest first (best)
-                        // Price: ascending (cheaper first)
-                        // Text columns: ascending (alphabetical)
-                        const ascFirstColumns = [
-                            'price', 'name', 'type', 'availability', 'capacity', 'notes', 'details',
-                            'stamcore', 'hpcore', 'stamdrain', 'staminadrain'  // drain stats: more negative is better
-                        ];
-                        currentSort.direction = ascFirstColumns.includes(column) ? 'asc' : 'desc';
-                    }
-                    updateSortIndicators();
-                    updateTable();
-                });
-            });
+            TableUtils.initSortListeners('.gear-table', currentSort, updateTable, ascFirstColumns);
         }
 
         // Tab switching
@@ -652,14 +633,7 @@
 
         // Initialize
         loadGear();
-
-        // Scroll shadow: hide when scrolled to end
-        const scrollWrapper = document.getElementById('tableScrollWrapper');
-        const outerWrapper = scrollWrapper.parentElement;
-        scrollWrapper.addEventListener('scroll', () => {
-            const isAtEnd = scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 5;
-            outerWrapper.classList.toggle('scrolled-end', isAtEnd);
-        });
+        TableUtils.initScrollShadow('tableScrollWrapper');
     </script>
 </body>
 </html>

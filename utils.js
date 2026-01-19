@@ -102,3 +102,68 @@ window.Auth = {
 // Also export individual functions for pages that prefer direct access
 window.getAuthToken = getAuthToken;
 window.signInWithGoogle = signInWithGoogle;
+
+// ========== TABLE UTILITIES ==========
+
+/**
+ * TableUtils - Shared utilities for sortable/filterable tables
+ */
+const TableUtils = {
+    /**
+     * Initialize scroll shadow behavior for horizontal scrolling tables.
+     * Hides the right shadow when scrolled to the end.
+     * @param {string} wrapperId - ID of the scroll wrapper element
+     */
+    initScrollShadow: (wrapperId) => {
+        const scrollWrapper = document.getElementById(wrapperId);
+        if (!scrollWrapper) return;
+
+        const outerWrapper = scrollWrapper.parentElement;
+        scrollWrapper.addEventListener('scroll', () => {
+            const isAtEnd = scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 5;
+            outerWrapper.classList.toggle('scrolled-end', isAtEnd);
+        });
+    },
+
+    /**
+     * Update sort indicator classes on table headers.
+     * @param {string} tableSelector - CSS selector for the table
+     * @param {Object} sortState - { column: string, direction: 'asc'|'desc' }
+     */
+    updateSortIndicators: (tableSelector, sortState) => {
+        document.querySelectorAll(`${tableSelector} th`).forEach(th => {
+            th.classList.remove('sorted-asc', 'sorted-desc');
+            if (th.dataset.sort === sortState.column) {
+                th.classList.add(sortState.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
+            }
+        });
+    },
+
+    /**
+     * Initialize sort click listeners on table headers.
+     * @param {string} tableSelector - CSS selector for the table
+     * @param {Object} sortState - { column: string, direction: 'asc'|'desc' } - will be mutated
+     * @param {Function} onSort - Callback after sort state changes (typically calls updateTable)
+     * @param {Array} [ascFirstColumns=[]] - Columns that should sort ascending first (e.g., price, name)
+     */
+    initSortListeners: (tableSelector, sortState, onSort, ascFirstColumns = []) => {
+        document.querySelectorAll(`${tableSelector} th[data-sort]`).forEach(th => {
+            th.addEventListener('click', () => {
+                const column = th.dataset.sort;
+                if (sortState.column === column) {
+                    // Toggle direction on same column
+                    sortState.direction = sortState.direction === 'desc' ? 'asc' : 'desc';
+                } else {
+                    // New column - determine initial direction
+                    sortState.column = column;
+                    sortState.direction = ascFirstColumns.includes(column) ? 'asc' : 'desc';
+                }
+                TableUtils.updateSortIndicators(tableSelector, sortState);
+                onSort();
+            });
+        });
+    }
+};
+
+// Export TableUtils globally
+window.TableUtils = TableUtils;
