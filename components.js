@@ -104,6 +104,32 @@ const Components = {
     },
 
     /**
+     * Section nav component
+     * Navigation grid for hub pages with revolver pointer icons.
+     * @param {Object} props
+     * @param {Array} props.items - Array of {href, label} objects
+     */
+    sectionNav: (props = {}) => {
+        const items = props.items || [];
+        const itemsHtml = items.map(item => `
+                                <a href="${item.href}" class="section-nav-item">
+                                    <span class="revolver-pointer">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 8h12l4 4-4 4H4V8z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="section-text">${item.label}</span>
+                                </a>`).join('');
+
+        return `
+                        <nav class="section-nav">
+                            <div class="section-nav-inner">
+                                ${itemsHtml}
+                            </div>
+                        </nav>`;
+    },
+
+    /**
      * Sign-in modal component
      * Displays Google OAuth sign-in prompt. Requires app.js for showSignInModal/closeSignInModal.
      */
