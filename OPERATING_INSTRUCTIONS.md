@@ -248,15 +248,30 @@ Weapon Card (in chat):
 
 ### Starting the Server
 
-```bash
-# The server should already be running on port 3000
-lsof -i :3000
+**IMPORTANT:** This app has Vercel serverless functions (`/api/chat.js`) that power the AI features (Horse Chooser, Loadout Builder, AI chat). You must use the correct server depending on what you're testing:
 
-# If not running, start it
-node server.js
-# or
+#### For Full Functionality (AI features work)
+```bash
+# Use Vercel CLI to run the full app with API routes
+vercel dev --listen 3000
+
+# If you don't have Vercel CLI installed:
+npm i -g vercel
+```
+
+#### For Static-Only Testing (CSS, layout, no AI)
+```bash
+# Simple HTTP server - API routes will return 405 errors
 npx http-server -p 3000
 ```
+
+#### Check What's Running
+```bash
+# Check if port is in use
+lsof -i :3000
+```
+
+**Note:** If you see "Failed to execute 'json' on 'Response': Unexpected end of JSON input" errors, you're likely running `http-server` instead of `vercel dev`.
 
 ### Validating Data Files
 
