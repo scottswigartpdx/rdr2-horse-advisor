@@ -409,6 +409,39 @@
             margin-bottom: 15px;
         }
 
+        /* Scrollable table wrapper */
+        .table-outer-wrapper {
+            position: relative;
+        }
+
+        .table-scroll-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Fade shadow on right edge to indicate more content */
+        .table-outer-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            background: linear-gradient(to right, transparent, var(--bg-card));
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .table-outer-wrapper.has-overflow::after {
+            opacity: 1;
+        }
+
+        .table-outer-wrapper.scrolled-end::after {
+            opacity: 0;
+        }
+
         @media (max-width: 600px) {
             .weapon-hero h1 {
                 font-size: 1.8rem;
@@ -424,6 +457,10 @@
 
             .info-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .data-table {
+                min-width: 500px;
             }
         }
     </style>
@@ -573,21 +610,25 @@
                 ${hasAmmo ? `
                 <div class="ammo-section">
                     <h2>Available Ammo Types</h2>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Ammo</th>
-                                <th class="col-stat">Damage</th>
-                                <th class="col-stat">Range</th>
-                                <th class="col-stat">Accuracy</th>
-                                <th class="col-flag"><span style="white-space: nowrap;">Crafted <span class="info-bubble">?<span class="tooltip">Must be crafted at a campfire</span></span></span></th>
-                                <th class="col-flag"><span style="white-space: nowrap;">Limited <span class="info-bubble">?<span class="tooltip">You can only carry a small amount of this ammo at a time</span></span></span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${renderAmmoTypes(weapon.availableAmmo, ammoTypes)}
-                        </tbody>
-                    </table>
+                    <div class="table-outer-wrapper">
+                        <div class="table-scroll-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ammo</th>
+                                        <th class="col-stat">Damage</th>
+                                        <th class="col-stat">Range</th>
+                                        <th class="col-stat">Accuracy</th>
+                                        <th class="col-flag"><span style="white-space: nowrap;">Crafted <span class="info-bubble">?<span class="tooltip">Must be crafted at a campfire</span></span></span></th>
+                                        <th class="col-flag"><span style="white-space: nowrap;">Limited <span class="info-bubble">?<span class="tooltip">You can only carry a small amount of this ammo at a time</span></span></span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${renderAmmoTypes(weapon.availableAmmo, ammoTypes)}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 ` : ''}
 
@@ -601,6 +642,9 @@
                     <div class="community-note">${weapon.communityNotes || 'No community notes available.'}</div>
                 </div>
             `;
+
+            // Setup scrollable tables after render
+            setupScrollableTables();
         }
 
         function renderAmmoTypes(availableAmmo, ammoTypes) {
@@ -726,6 +770,29 @@
                     <a href="weapons.html" class="back-link" style="margin-top: 20px;">&larr; Back to All Weapons</a>
                 </div>
             `;
+        }
+
+        function setupScrollableTables() {
+            document.querySelectorAll('.table-outer-wrapper').forEach(wrapper => {
+                const scrollWrapper = wrapper.querySelector('.table-scroll-wrapper');
+                if (!scrollWrapper) return;
+
+                const checkOverflow = () => {
+                    const hasOverflow = scrollWrapper.scrollWidth > scrollWrapper.clientWidth;
+                    wrapper.classList.toggle('has-overflow', hasOverflow);
+
+                    if (hasOverflow) {
+                        const atEnd = scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 5;
+                        wrapper.classList.toggle('scrolled-end', atEnd);
+                    }
+                };
+
+                scrollWrapper.addEventListener('scroll', checkOverflow);
+                window.addEventListener('resize', checkOverflow);
+
+                // Initial check
+                setTimeout(checkOverflow, 0);
+            });
         }
 
         loadWeapon();
