@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting Recipes - RDR2 Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        .table-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* .back-link styles moved to components.css */
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .controls-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-container {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        /* .search-input styles moved to components.css */
+
+        .filter-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            padding: 12px 16px;
+            font-size: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            color: var(--text-cream);
+            font-family: 'Crimson Text', serif;
+            cursor: pointer;
+            min-width: 150px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--rust);
+        }
+
+        /* .results-count styles moved to components.css */
+
+        .crafting-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .crafting-table th {
+            background: var(--bg-elevated);
+            color: var(--rust);
+            font-family: 'Rye', cursive;
+            font-size: 0.85rem;
+            padding: 12px 10px;
+            text-align: left;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            border-bottom: 2px solid var(--border-medium);
+        }
+
+        .crafting-table th:hover {
+            background: var(--bg-dark);
+            color: var(--red-primary);
+        }
+
+        .crafting-table th.sorted-asc::after {
+            content: ' ▲';
+            font-size: 0.7rem;
+        }
+
+        .crafting-table th.sorted-desc::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+        }
+
+        .crafting-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-cream);
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        .crafting-table tr:hover {
+            background: var(--bg-elevated);
+        }
+
+        .crafting-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: var(--text-cream);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: var(--bg-dark);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .category-badge.cat-ammo { border-left: 3px solid #e74c3c; }
+        .category-badge.cat-arrow { border-left: 3px solid #e67e22; }
+        .category-badge.cat-throwable { border-left: 3px solid #f39c12; }
+        .category-badge.cat-tonic { border-left: 3px solid #2ecc71; }
+        .category-badge.cat-horse-care { border-left: 3px solid #3498db; }
+        .category-badge.cat-bait { border-left: 3px solid #9b59b6; }
+        .category-badge.cat-satchel { border-left: 3px solid #1abc9c; }
+        .category-badge.cat-trinket { border-left: 3px solid #f1c40f; }
+        .category-badge.cat-talisman { border-left: 3px solid #e91e63; }
+        .category-badge.cat-clothing { border-left: 3px solid #795548; }
+        .category-badge.cat-horse { border-left: 3px solid #607d8b; }
+
+        .location-badge {
+            display: inline-block;
+            background: var(--bg-dark);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .ingredients-list li {
+            margin-bottom: 3px;
+            color: var(--text-muted);
+        }
+
+        .ingredients-list .qty {
+            color: var(--rust);
+            font-weight: 600;
+        }
+
+        .benefit-text {
+            font-size: 0.9rem;
+            color: var(--text-cream);
+            font-style: italic;
+        }
+
+        .unlock-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .price-cell {
+            color: var(--text-cream);
+            white-space: nowrap;
+        }
+
+        .garment-set {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+
+        .info-note {
+            background: var(--bg-card);
+            border-left: 4px solid var(--rust);
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .info-note strong {
+            color: var(--text-cream);
+        }
+
+        @media (max-width: 1000px) {
+            .crafting-table {
+                font-size: 0.85rem;
+            }
+
+            .crafting-table th,
+            .crafting-table td {
+                padding: 8px 6px;
+            }
+
+            .table-outer-wrapper {
+                position: relative;
+            }
+
+            .table-scroll-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .table-outer-wrapper::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 30px;
+                background: linear-gradient(to right, transparent, var(--bg-dark));
+                pointer-events: none;
+                z-index: 10;
+                opacity: 1;
+                transition: opacity 0.2s;
+            }
+
+            .table-outer-wrapper.scrolled-end::after {
+                opacity: 0;
+            }
+
+            .crafting-table {
+                min-width: 1000px;
+                border-collapse: separate;
+                border-spacing: 0;
+                overflow: visible;
+                border-radius: 0;
+            }
+
+            .crafting-table th:first-child,
+            .crafting-table td:first-child {
+                position: sticky;
+                left: 0;
+                z-index: 2;
+                background: var(--bg-elevated);
+            }
+
+            .crafting-table td:first-child {
+                background: var(--bg-card);
+            }
+
+            .crafting-table tr:hover td:first-child {
+                background: var(--bg-elevated);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .controls-container {
+                flex-direction: column;
+            }
+
+            .filter-container {
+                width: 100%;
+            }
+
+            .filter-select {
+                flex: 1;
+            }
+        }
+    </style>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+    <div class="container table-container">
+        <header>
+            <a href="/" class="back-link">&larr; Back to RDR2 Companion</a>
+            <h1>Crafting Recipes</h1>
+            <p class="subtitle">All craftable items, ingredients, and benefits</p>
+        </header>
+
+        <main>
+            <div class="info-note">
+                <strong>Tip:</strong> Search for an ingredient (like "ginseng") to find everything you can craft with it, or search for an item name to find what you need.
+            </div>
+
+            <div class="controls-container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search items, ingredients, benefits..." autofocus>
+                </div>
+                <div class="filter-container">
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="">All Categories</option>
+                    </select>
+                    <select id="locationFilter" class="filter-select">
+                        <option value="">All Locations</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="resultsCount" class="results-count"></div>
+
+            <div class="table-outer-wrapper">
+                <div class="table-scroll-wrapper" id="tableScrollWrapper">
+                    <table class="crafting-table" id="craftingTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name">Item</th>
+                            <th data-sort="category">Category</th>
+                            <th data-sort="craftedAt">Location</th>
+                            <th data-sort="ingredients">Ingredients</th>
+                            <th data-sort="benefit">Benefit</th>
+                            <th data-sort="price">Price</th>
+                            <th data-sort="unlock">Unlock</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="7" class="no-results">Loading recipes...</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Data sourced from the RDR2 community. Not affiliated with Rockstar Games.</p>
+        </footer>
+    </div>
+
+    <script>
+        let craftingData = [];
+        let craftLocations = {};
+        let currentSort = { column: 'name', direction: 'asc' };
+
+        async function loadCrafting() {
+            try {
+                const response = await fetch('crafting.json');
+                const data = await response.json();
+                craftingData = data.craftingRecipes;
+                craftLocations = data.craftLocations;
+
+                populateFilters();
+                renderTable(craftingData);
+                updateResultsCount(craftingData.length);
+            } catch (error) {
+                console.error('Failed to load crafting data:', error);
+                document.getElementById('tableBody').innerHTML =
+                    '<tr><td colspan="7" class="no-results">Failed to load crafting data</td></tr>';
+            }
+        }
+
+        function populateFilters() {
+            // Category filter
+            const categories = [...new Set(craftingData.map(r => r.category))].sort();
+            const categorySelect = document.getElementById('categoryFilter');
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = cat;
+                categorySelect.appendChild(option);
+            });
+
+            // Location filter
+            const locations = [...new Set(craftingData.map(r => r.craftedAt))].sort();
+            const locationSelect = document.getElementById('locationFilter');
+            locations.forEach(loc => {
+                const option = document.createElement('option');
+                option.value = loc;
+                option.textContent = loc;
+                locationSelect.appendChild(option);
+            });
+        }
+
+        function getCategoryClass(category) {
+            return 'cat-' + category.toLowerCase().replace(/\s+/g, '-');
+        }
+
+        function formatIngredients(ingredients) {
+            if (!ingredients || ingredients.length === 0) return '-';
+            return '<ul class="ingredients-list">' +
+                ingredients.map(ing =>
+                    `<li><span class="qty">${ing.qty}x</span> ${ing.item}</li>`
+                ).join('') +
+                '</ul>';
+        }
+
+        function renderTable(recipes) {
+            const tbody = document.getElementById('tableBody');
+
+            if (recipes.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" class="no-results">No recipes match your search</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = recipes.map(recipe => {
+                const garmentInfo = recipe.garmentSet && recipe.garmentSet !== '-'
+                    ? `<div class="garment-set">${recipe.garmentSet}</div>`
+                    : '';
+
+                const subcatInfo = recipe.subcategory
+                    ? ` <span style="color: var(--text-muted); font-size: 0.85rem;">(${recipe.subcategory})</span>`
+                    : '';
+
+                return `
+                <tr>
+                    <td>
+                        <div class="item-name">${recipe.name}${subcatInfo}</div>
+                        ${garmentInfo}
+                    </td>
+                    <td><span class="category-badge ${getCategoryClass(recipe.category)}">${recipe.category}</span></td>
+                    <td><span class="location-badge">${recipe.craftedAt}</span></td>
+                    <td>${formatIngredients(recipe.ingredients)}</td>
+                    <td class="benefit-text">${recipe.benefit || '-'}</td>
+                    <td class="price-cell">${recipe.price ? '$' + recipe.price.toFixed(2) : '-'}</td>
+                    <td class="unlock-text">${recipe.unlock || '-'}</td>
+                </tr>
+            `}).join('');
+        }
+
+        function updateResultsCount(count) {
+            document.getElementById('resultsCount').textContent =
+                `Showing ${count} recipe${count !== 1 ? 's' : ''}`;
+        }
+
+        function sortRecipes(recipes, column, direction) {
+            return [...recipes].sort((a, b) => {
+                let valA, valB;
+
+                switch (column) {
+                    case 'name':
+                        valA = a.name.toLowerCase();
+                        valB = b.name.toLowerCase();
+                        break;
+                    case 'category':
+                        valA = a.category.toLowerCase();
+                        valB = b.category.toLowerCase();
+                        break;
+                    case 'craftedAt':
+                        valA = a.craftedAt.toLowerCase();
+                        valB = b.craftedAt.toLowerCase();
+                        break;
+                    case 'ingredients':
+                        // Sort by number of ingredients
+                        valA = a.ingredients ? a.ingredients.length : 0;
+                        valB = b.ingredients ? b.ingredients.length : 0;
+                        break;
+                    case 'benefit':
+                        valA = (a.benefit || '').toLowerCase();
+                        valB = (b.benefit || '').toLowerCase();
+                        break;
+                    case 'price':
+                        valA = a.price || 0;
+                        valB = b.price || 0;
+                        break;
+                    case 'unlock':
+                        // '-' should sort last
+                        valA = a.unlock === '-' ? 'zzz' : (a.unlock || '').toLowerCase();
+                        valB = b.unlock === '-' ? 'zzz' : (b.unlock || '').toLowerCase();
+                        break;
+                    default:
+                        return 0;
+                }
+
+                if (valA < valB) return direction === 'asc' ? -1 : 1;
+                if (valA > valB) return direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+        }
+
+        function filterRecipes(recipes, query, category, location) {
+            return recipes.filter(recipe => {
+                // Category filter
+                if (category && recipe.category !== category) return false;
+
+                // Location filter
+                if (location && recipe.craftedAt !== location) return false;
+
+                // Text search
+                if (query) {
+                    const lowerQuery = query.toLowerCase();
+
+                    // Search in name
+                    if (recipe.name.toLowerCase().includes(lowerQuery)) return true;
+
+                    // Search in category
+                    if (recipe.category.toLowerCase().includes(lowerQuery)) return true;
+
+                    // Search in craftedAt
+                    if (recipe.craftedAt.toLowerCase().includes(lowerQuery)) return true;
+
+                    // Search in benefit
+                    if (recipe.benefit && recipe.benefit.toLowerCase().includes(lowerQuery)) return true;
+
+                    // Search in unlock
+                    if (recipe.unlock && recipe.unlock.toLowerCase().includes(lowerQuery)) return true;
+
+                    // Search in garment set
+                    if (recipe.garmentSet && recipe.garmentSet.toLowerCase().includes(lowerQuery)) return true;
+
+                    // Search in subcategory
+                    if (recipe.subcategory && recipe.subcategory.toLowerCase().includes(lowerQuery)) return true;
+
+                    // Search in ingredients
+                    if (recipe.ingredients) {
+                        const ingredientMatch = recipe.ingredients.some(ing =>
+                            ing.item.toLowerCase().includes(lowerQuery)
+                        );
+                        if (ingredientMatch) return true;
+                    }
+
+                    return false;
+                }
+
+                return true;
+            });
+        }
+
+        function updateTable() {
+            const query = document.getElementById('searchInput').value;
+            const category = document.getElementById('categoryFilter').value;
+            const location = document.getElementById('locationFilter').value;
+
+            let filtered = filterRecipes(craftingData, query, category, location);
+            let sorted = sortRecipes(filtered, currentSort.column, currentSort.direction);
+            renderTable(sorted);
+            updateResultsCount(sorted.length);
+        }
+
+        function updateSortIndicators() {
+            document.querySelectorAll('.crafting-table th').forEach(th => {
+                th.classList.remove('sorted-asc', 'sorted-desc');
+                if (th.dataset.sort === currentSort.column) {
+                    th.classList.add(currentSort.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
+                }
+            });
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', updateTable);
+        document.getElementById('categoryFilter').addEventListener('change', updateTable);
+        document.getElementById('locationFilter').addEventListener('change', updateTable);
+
+        document.querySelectorAll('.crafting-table th[data-sort]').forEach(th => {
+            th.addEventListener('click', () => {
+                const column = th.dataset.sort;
+                if (currentSort.column === column) {
+                    currentSort.direction = currentSort.direction === 'desc' ? 'asc' : 'desc';
+                } else {
+                    currentSort.column = column;
+                    const ascFirstColumns = ['name', 'category', 'craftedAt', 'unlock'];
+                    currentSort.direction = ascFirstColumns.includes(column) ? 'asc' : 'desc';
+                }
+                updateSortIndicators();
+                updateTable();
+            });
+        });
+
+        // Initialize
+        loadCrafting().then(() => {
+            updateSortIndicators();
+        });
+
+        // Scroll shadow: hide when scrolled to end
+        const scrollWrapper = document.getElementById('tableScrollWrapper');
+        const outerWrapper = scrollWrapper.parentElement;
+        scrollWrapper.addEventListener('scroll', () => {
+            const isAtEnd = scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 5;
+            outerWrapper.classList.toggle('scrolled-end', isAtEnd);
+        });
+    </script>
+</body>
+</html>
