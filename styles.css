@@ -161,6 +161,12 @@ header h1 a:hover {
     white-space: nowrap;
 }
 
+/* Hide mobile-only auth elements on desktop */
+.user-avatar,
+.user-dropdown {
+    display: none;
+}
+
 /* ========== SIGN IN MODAL ========== */
 .modal-overlay {
     position: fixed;
@@ -2285,6 +2291,102 @@ header {
 
 /* Extra small mobile (320px) */
 @media (max-width: 360px) {
+    /* Compact auth: avatar in top-right with dropdown */
+    header {
+        position: relative;
+    }
+
+    .auth-container {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        margin: 0;
+    }
+
+    /* Hide desktop elements on mobile */
+    #userEmail,
+    .auth-btn-signout,
+    .user-info::before {
+        display: none;
+    }
+
+    .user-info {
+        position: relative;
+        opacity: 1;
+    }
+
+    /* Avatar button */
+    .user-avatar {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #1b1b1b;
+        border: 1px solid var(--border-subtle);
+        font-size: 16px;
+        cursor: pointer;
+        transition: border-color 0.2s;
+    }
+
+    .user-avatar:hover,
+    .user-avatar:focus {
+        border-color: var(--gold);
+    }
+
+    /* Dropdown menu */
+    .user-dropdown {
+        display: none;
+        position: fixed;
+        top: 52px;
+        right: 8px;
+        background-color: #0a0a0a;
+        border: 1px solid var(--border-medium);
+        border-radius: 6px;
+        padding: 8px 10px;
+        width: 160px;
+        box-shadow: 0 4px 16px rgba(0,0,0,1);
+        z-index: 9999;
+        isolation: isolate;
+    }
+
+    .user-dropdown.open {
+        display: block;
+    }
+
+    .user-dropdown-email {
+        display: block;
+        padding: 6px 0;
+        font-size: 0.72rem;
+        color: #888;
+        border-bottom: 1px solid var(--border-subtle);
+        margin-bottom: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .user-dropdown button {
+        display: block;
+        width: 100%;
+        padding: 8px 12px;
+        background: none;
+        border: none;
+        color: var(--rust);
+        font-size: 0.85rem;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .user-dropdown button:hover {
+        background: #252525;
+    }
+
+    .subtitle {
+        margin-top: 6px;
+    }
+
     /* Force grid track to shrink instead of fixed pixel width */
     .hero-panel-inner {
         padding: 12px;

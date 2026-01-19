@@ -45,7 +45,12 @@
                     </button>
                     <div id="userInfo" class="user-info" style="display: none;">
                         <span id="userEmail"></span>
-                        <button class="auth-btn auth-btn-small" onclick="signOut()">Sign out</button>
+                        <button class="auth-btn auth-btn-small auth-btn-signout" onclick="signOut()">Sign out</button>
+                        <button class="user-avatar" onclick="toggleUserMenu()" aria-label="User menu">👤</button>
+                        <div class="user-dropdown">
+                            <span class="user-dropdown-email"></span>
+                            <button onclick="signOut()">Sign out</button>
+                        </div>
                     </div>
                 </div>
             </div>

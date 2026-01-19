@@ -157,6 +157,7 @@ function updateAuthUI(user) {
     const loginBtn = document.getElementById('loginBtn');
     const userInfo = document.getElementById('userInfo');
     const userEmail = document.getElementById('userEmail');
+    const dropdownEmail = document.querySelector('.user-dropdown-email');
     const inputContainer = document.querySelector('.input-container');
 
     if (user) {
@@ -164,12 +165,14 @@ function updateAuthUI(user) {
         loginBtn.style.display = 'none';
         userInfo.style.display = 'flex';
         userEmail.textContent = user.email;
+        if (dropdownEmail) dropdownEmail.textContent = user.email;
         if (inputContainer) inputContainer.style.display = 'flex';
     } else {
         // User is logged out
         loginBtn.style.display = 'block';
         userInfo.style.display = 'none';
         userEmail.textContent = '';
+        if (dropdownEmail) dropdownEmail.textContent = '';
         // Optionally hide chat input when not logged in
         // if (inputContainer) inputContainer.style.display = 'none';
     }
@@ -192,12 +195,33 @@ async function signInWithGoogle() {
 
 // Sign out
 async function signOut() {
+    // Close dropdown if open
+    const dropdown = document.querySelector('.user-dropdown');
+    if (dropdown) dropdown.classList.remove('open');
+
     const { error } = await supabaseClient.auth.signOut();
     if (error) {
         console.error('Sign out error:', error);
     }
     conversationHistory = [];
 }
+
+// Toggle user menu dropdown (mobile)
+function toggleUserMenu() {
+    const dropdown = document.querySelector('.user-dropdown');
+    if (dropdown) {
+        dropdown.classList.toggle('open');
+    }
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    const dropdown = document.querySelector('.user-dropdown');
+    const avatar = document.querySelector('.user-avatar');
+    if (dropdown && avatar && !dropdown.contains(e.target) && !avatar.contains(e.target)) {
+        dropdown.classList.remove('open');
+    }
+});
 
 // Get current auth token for API calls
 async function getAuthToken() {
