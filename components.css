@@ -63,6 +63,8 @@
     border-radius: 6px;
     color: var(--text-cream);
     font-family: 'Crimson Text', serif;
+    height: 48px;
+    box-sizing: border-box;
 }
 
 .search-input:focus {
