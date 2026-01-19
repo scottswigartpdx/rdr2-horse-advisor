@@ -48,6 +48,115 @@ node chat-with-gpt.js \
 
 ---
 
+## Troubleshooting UI Issues with ChatGPT
+
+When you encounter visual bugs (overflow, alignment, etc.), collaborate with ChatGPT using this workflow. **Do not attempt to analyze screenshots yourself** - ChatGPT is better at visual analysis.
+
+### Step 1: Send Screenshot + Source Files
+
+Always include both the screenshot AND the relevant source files (CSS, HTML):
+
+```bash
+node chat-with-gpt.js \
+  --prompt "The nav buttons are overflowing to the right at 320px width. What CSS fix is needed?" \
+  --images screenshots/mobile-issue.png \
+  --files styles.css index.html
+```
+
+### Step 2: If Issue Persists, Ask What Diagnostics ChatGPT Needs
+
+When ChatGPT's suggested fix doesn't work, ask what diagnostic information would help:
+
+```bash
+node chat-with-gpt.js \
+  --conversation-id <id> \
+  --prompt "The fix didn't work. I have Chrome DevTools access. What diagnostics should I collect? I can get computed styles, measure element widths, run JavaScript, etc."
+```
+
+### Step 3: Collect Diagnostics via Chrome DevTools
+
+Use the chrome-devtools MCP to run JavaScript and collect the data ChatGPT requested. Example diagnostic script:
+
+```javascript
+// Run via mcp__chrome-devtools__evaluate_script
+() => {
+  // Find elements overflowing the viewport
+  const overflowEls = [...document.querySelectorAll('*')].filter(el => {
+    const r = el.getBoundingClientRect();
+    return r.right > window.innerWidth + 1;
+  }).map(el => ({
+    tag: el.tagName,
+    class: el.className,
+    width: el.getBoundingClientRect().width,
+    right: el.getBoundingClientRect().right
+  }));
+
+  // Get widths of specific elements
+  const selectors = ['.hero-panel', '.hero-panel-inner', '.section-nav'];
+  const widths = selectors.map(sel => {
+    const el = document.querySelector(sel);
+    const r = el?.getBoundingClientRect();
+    return {
+      sel,
+      width: r?.width,
+      padding: el ? getComputedStyle(el).padding : null
+    };
+  });
+
+  // Check body overflow
+  const overflow = {
+    bodyScrollWidth: document.body.scrollWidth,
+    windowInnerWidth: window.innerWidth
+  };
+
+  // Get computed styles for key elements
+  const el = document.querySelector('.hero-panel-inner');
+  const computed = el ? {
+    width: getComputedStyle(el).width,
+    gridTemplateColumns: getComputedStyle(el).gridTemplateColumns,
+    boxSizing: getComputedStyle(el).boxSizing
+  } : null;
+
+  return { overflowEls, widths, overflow, computed };
+}
+```
+
+### Step 4: Send Diagnostics Back to ChatGPT
+
+```bash
+node chat-with-gpt.js \
+  --conversation-id <id> \
+  --prompt "Here are the diagnostics:
+
+  **Widths:**
+  - .hero-panel-inner: width=285px, gridTemplateColumns='308px' <-- FIXED VALUE!
+
+  **Overflow:**
+  - bodyScrollWidth: 341, windowInnerWidth: 320
+
+  What CSS fix is needed?"
+```
+
+### Step 5: Apply Fix and Verify
+
+After applying ChatGPT's fix, take a new screenshot and verify:
+
+```bash
+node chat-with-gpt.js \
+  --conversation-id <id> \
+  --prompt "Here's the result after applying the fix. Is the issue resolved?" \
+  --images screenshots/mobile-after-fix.png
+```
+
+### Key Insights
+
+- **CSS Grid gotcha**: Grid items default to `min-width: auto`, preventing shrinking. Fix with `min-width: 0`.
+- **Fixed grid columns**: `grid-template-columns` with pixel values won't shrink. Use `minmax(0, 1fr)` instead.
+- **Box-sizing**: Always use `box-sizing: border-box` on constrained elements.
+- **Viewport diagnostics**: Compare `bodyScrollWidth` vs `windowInnerWidth` to confirm overflow exists.
+
+---
+
 ## Pre-Merge Checklist
 
 Before merging to main, verify:

@@ -907,4 +907,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initAuth();
     loadHorseData();
     loadLoadingMessages();
+
+    // Shorten placeholder text on small mobile screens
+    if (window.innerWidth <= 360) {
+        const queryInput = document.getElementById('queryInput');
+        if (queryInput) {
+            queryInput.placeholder = 'Ask about RDR2...';
+        }
+    }
 });

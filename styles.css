@@ -2095,10 +2095,65 @@ header {
 
 /* ========== MOBILE LAYOUT FIXES ========== */
 @media (max-width: 600px) {
+    /* 1. Auth bar: move into flow, soften appearance */
+    .auth-container {
+        position: static;
+        justify-content: center;
+        margin: 6px 0 0;
+    }
+
+    .user-info {
+        font-size: 0.75rem;
+        opacity: 0.7;
+    }
+
+    .auth-btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
+    #userEmail {
+        max-width: 120px;
+    }
+
+    /* 2. Header: shrink logo and subtitle */
+    header {
+        padding: 16px 12px 14px;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
+
+    /* Make back link more button-like on mobile */
+    .subtitle a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border: 1px solid var(--border-subtle);
+        border-radius: 4px;
+        background: #151515;
+        color: var(--text-cream) !important;
+        font-size: 0.85rem;
+    }
+
+    .header-top {
+        margin-top: 6px;
+        margin-bottom: 8px;
+    }
+
     /* Stack hero panel vertically on mobile */
     .hero-panel-inner {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
+        padding: 16px;
+        gap: 16px;
     }
 
     /* Reset nav to not span rows */
@@ -2107,12 +2162,40 @@ header {
         grid-column: 1;
     }
 
-    /* Nav items horizontal on mobile */
+    /* 3. Nav items: full-width stacked buttons */
+    .section-nav {
+        align-items: stretch;
+        width: 100%;
+        padding: 20px 12px;
+        box-sizing: border-box;
+    }
+
+    .section-nav-inner {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
     .hero-panel .section-nav-inner {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: stretch;
         gap: 8px;
+        padding: 12px;
+    }
+
+    .section-nav-item {
+        padding: 12px 14px;
+        border: 1px solid var(--border-subtle);
+        border-radius: 4px;
+        background: #151515;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .section-nav-item .section-text {
+        font-size: 1.05rem;
+        letter-spacing: 0.5px;
     }
 
     /* Input spans full width */
@@ -2134,12 +2217,162 @@ header {
         text-align: center;
     }
 
-    /* Single column example queries */
+    .hero-panel .welcome-message h2 {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+    }
+
+    .hero-panel .welcome-message h3 {
+        font-size: 0.9rem;
+        margin: 12px 0 10px;
+        color: #9f988c;
+    }
+
+    /* 4. Example queries: tighten typography, show only 3 */
     .hero-panel .example-queries {
         grid-template-columns: 1fr;
+        gap: 8px;
     }
 
     .hero-panel .example-queries li {
         text-align: center;
+        font-size: 0.82rem;
+        line-height: 1.3;
+        padding: 10px 12px;
+        box-shadow: none;
+    }
+
+    .hero-panel .example-queries li:nth-child(n+4) {
+        display: none;
+    }
+
+    /* 5. Input area: breathing room, larger tap targets */
+    .input-container {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    #queryInput {
+        font-size: 1rem;
+        min-height: 48px;
+        padding: 12px 14px;
+    }
+
+    #queryInput::placeholder {
+        font-style: normal;
+        color: #9f988c;
+    }
+
+    #sendBtn, #newChatBtn {
+        width: 48px;
+        min-height: 48px;
+    }
+
+    /* 6. Reduce visual noise: remove shadows/borders */
+    .hero-panel-inner,
+    .chat-container,
+    .input-container {
+        box-shadow: none;
+        border-color: #2a2a2a;
+    }
+
+    /* 7. Tap feedback for list items */
+    .hero-panel .example-queries li:active {
+        transform: scale(0.98);
+        border-color: var(--gold);
+    }
+}
+
+/* Extra small mobile (320px) */
+@media (max-width: 360px) {
+    /* Force grid track to shrink instead of fixed pixel width */
+    .hero-panel-inner {
+        padding: 12px;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Clamp nav column to the grid track */
+    .hero-panel-nav,
+    .hero-panel-welcome,
+    .section-nav,
+    .section-nav-inner {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        justify-self: stretch;
+    }
+
+    /* Constrain nav to viewport width */
+    .hero-panel .section-nav,
+    .hero-panel .section-nav-inner {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-panel .section-nav-inner {
+        padding: 8px;
+    }
+
+    /* Ensure nav items don't overflow */
+    .section-nav-item {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 14px;
+        box-sizing: border-box;
+    }
+
+    /* Constrain example query buttons */
+    .hero-panel .example-queries {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0 4px;
+    }
+
+    .hero-panel .example-queries li {
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 0.78rem;
+        padding: 8px 10px;
+    }
+
+    /* Constrain input container */
+    .input-container {
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .input-wrapper {
+        max-width: 100%;
+        gap: 6px;
+    }
+
+    /* Smaller input text for mobile */
+    #queryInput {
+        font-size: 0.85rem;
+        padding: 10px;
+        min-height: 40px;
+    }
+
+    #queryInput::placeholder {
+        font-size: 0.85rem;
+        letter-spacing: 0;
+    }
+
+    /* Smaller buttons for mobile */
+    #sendBtn, #newChatBtn {
+        width: 36px;
+        min-width: 36px;
+        min-height: 36px;
+        flex-shrink: 0;
+    }
+
+    #sendBtn svg,
+    #newChatBtn svg {
+        width: 16px;
+        height: 16px;
     }
 }
