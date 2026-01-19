@@ -412,6 +412,7 @@
     </style>
     <!-- Supabase Auth -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="utils.js"></script>
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -438,29 +439,7 @@
     </div>
 
     <script>
-        // Supabase Auth
-        const SUPABASE_URL = 'https://vejhtrzmesjpxlonwhig.supabase.co';
-        const SUPABASE_ANON_KEY = 'sb_publishable_QYHw3yzSd61GgQj3Izb3ng_zkfT_IZv';
-        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-            auth: {
-                detectSessionInUrl: true,
-                persistSession: true,
-                autoRefreshToken: true,
-                flowType: 'pkce'
-            }
-        });
-
-        async function getAuthToken() {
-            const { data: { session } } = await supabaseClient.auth.getSession();
-            return session?.access_token || null;
-        }
-
-        async function signInWithGoogle() {
-            await supabaseClient.auth.signInWithOAuth({
-                provider: 'google',
-                options: { redirectTo: window.location.href }
-            });
-        }
+        // Auth functions provided by utils.js (getAuthToken, signInWithGoogle)
 
         let weaponData = null;
         let currentQuestion = 0;
