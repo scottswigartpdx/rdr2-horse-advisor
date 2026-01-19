@@ -21,6 +21,35 @@ const Components = {
     },
 
     /**
+     * Header component (simple variant)
+     * For detail/list pages with back-link and optional title/subtitle.
+     * @param {Object} props
+     * @param {string} props.backHref - Back link destination
+     * @param {string} props.backText - Back link text
+     * @param {string} [props.title] - Page title (optional for dynamic pages)
+     * @param {string} [props.subtitle] - Page subtitle
+     * @param {string} [props.titleHref] - Make title a link (for admin page)
+     */
+    header: (props = {}) => {
+        const backLink = Components.backLink({ href: props.backHref, text: props.backText });
+        let titleHtml = '';
+        if (props.title) {
+            if (props.titleHref) {
+                titleHtml = `<h1><a href="${props.titleHref}">${props.title}</a></h1>`;
+            } else {
+                titleHtml = `<h1>${props.title}</h1>`;
+            }
+        }
+        const subtitleHtml = props.subtitle ? `<p class="subtitle">${props.subtitle}</p>` : '';
+        return `
+        <header>
+            ${backLink}
+            ${titleHtml}
+            ${subtitleHtml}
+        </header>`;
+    },
+
+    /**
      * Sign-in modal component
      * Displays Google OAuth sign-in prompt. Requires app.js for showSignInModal/closeSignInModal.
      */
