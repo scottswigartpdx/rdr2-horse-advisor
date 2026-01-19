@@ -661,6 +661,10 @@ Incremental approach - each phase is independently deployable and testable.
 - [Vanilla JS component pattern](https://dev.to/megazear7/the-vanilla-javascript-component-pattern-37la)
 - [Variants pattern](https://swizec.com/blog/variants-a-quick-tip-for-better-react-components/)
 
+## Known Issues (Must Fix Before Complete)
+
+- [ ] **Admin API 500 error**: `/api/admin/stats` returns 500 "Failed to fetch stats" - needs investigation and fix before refactor is considered done
+
 ## Success Criteria
 
 - [ ] All 13 HTML pages use component system

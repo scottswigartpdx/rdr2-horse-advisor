@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="components.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="utils.js"></script>
+    <script src="components.js"></script>
     <style>
         .stats-container {
             max-width: 900px;
@@ -97,9 +98,7 @@
             </div>
         </main>
 
-        <footer>
-            <p>Admin access only</p>
-        </footer>
+        <div data-component="footer" data-props='{"text": "Admin access only"}'></div>
     </div>
 
     <script>

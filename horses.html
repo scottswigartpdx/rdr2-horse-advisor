@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
+    <script src="components.js"></script>
 </head>
 <body>
     <!-- Sign In Modal -->
@@ -133,9 +134,7 @@
             <div class="chat-container" id="chatContainer"></div>
         </main>
 
-        <footer>
-            <p>Data sourced from the RDR2 community. Not affiliated with Rockstar Games.</p>
-        </footer>
+        <div data-component="footer"></div>
     </div>
 
     <script src="horses.json" type="application/json" id="horseData"></script>
