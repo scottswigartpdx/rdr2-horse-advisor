@@ -1,4 +1,19 @@
-# RDR2 Companion - Operating Instructions
+# RDR2 Companion - AI Workflow
+
+## Claude + ChatGPT Collaboration Model
+
+**Why two AIs?** Claude and ChatGPT have complementary strengths:
+
+| Capability | Claude | ChatGPT |
+|------------|--------|---------|
+| Screenshot/UI analysis | ❌ Limited | ✅ Excellent |
+| Chrome DevTools automation | ✅ Full access | ❌ None |
+| Code editing | ✅ Direct | ❌ Suggestions only |
+| Collecting diagnostics | ✅ Can run JS, measure elements | ❌ Cannot |
+
+**The workflow**: ChatGPT analyzes visuals and suggests fixes. Claude drives Chrome to collect screenshots, run diagnostics, and implement changes. They work as a team.
+
+---
 
 ## Communicating with ChatGPT for Design Review
 
@@ -50,7 +65,7 @@ node chat-with-gpt.js \
 
 ## Troubleshooting UI Issues with ChatGPT
 
-When you encounter visual bugs (overflow, alignment, etc.), collaborate with ChatGPT using this workflow. **Do not attempt to analyze screenshots yourself** - ChatGPT is better at visual analysis.
+When you encounter visual bugs (overflow, alignment, etc.), collaborate with ChatGPT using this workflow. **Claude should not attempt to analyze screenshots directly** - ChatGPT is better at visual analysis. Instead, Claude collects the data ChatGPT needs.
 
 ### Step 1: Send Screenshot + Source Files
 
@@ -65,17 +80,17 @@ node chat-with-gpt.js \
 
 ### Step 2: If Issue Persists, Ask What Diagnostics ChatGPT Needs
 
-When ChatGPT's suggested fix doesn't work, ask what diagnostic information would help:
+When ChatGPT's suggested fix doesn't work, ask what diagnostic information would help. **This is key** - ChatGPT can't access Chrome, but Claude can. Ask ChatGPT to specify exactly what measurements, computed styles, or DOM info it needs:
 
 ```bash
 node chat-with-gpt.js \
   --conversation-id <id> \
-  --prompt "The fix didn't work. I have Chrome DevTools access. What diagnostics should I collect? I can get computed styles, measure element widths, run JavaScript, etc."
+  --prompt "The fix didn't work. I have Chrome DevTools access via Claude. What specific diagnostics should Claude collect? Claude can: run JavaScript, get computed styles, measure element dimensions, find overflow sources, inspect the DOM, etc. Be specific about what you need."
 ```
 
-### Step 3: Collect Diagnostics via Chrome DevTools
+### Step 3: Claude Collects Diagnostics via Chrome DevTools
 
-Use the chrome-devtools MCP to run JavaScript and collect the data ChatGPT requested. Example diagnostic script:
+Claude uses the chrome-devtools MCP to run JavaScript and collect exactly what ChatGPT requested. Example diagnostic script:
 
 ```javascript
 // Run via mcp__chrome-devtools__evaluate_script
@@ -126,7 +141,7 @@ Use the chrome-devtools MCP to run JavaScript and collect the data ChatGPT reque
 ```bash
 node chat-with-gpt.js \
   --conversation-id <id> \
-  --prompt "Here are the diagnostics:
+  --prompt "Here are the diagnostics Claude collected:
 
   **Widths:**
   - .hero-panel-inner: width=285px, gridTemplateColumns='308px' <-- FIXED VALUE!
@@ -139,7 +154,7 @@ node chat-with-gpt.js \
 
 ### Step 5: Apply Fix and Verify
 
-After applying ChatGPT's fix, take a new screenshot and verify:
+After Claude applies ChatGPT's fix, take a new screenshot and verify:
 
 ```bash
 node chat-with-gpt.js \
@@ -172,9 +187,9 @@ Before merging to main, verify:
 - [ ] Check visual consistency across pages
 
 ### 3. Mobile Testing
-- [ ] Test at 375px width (iPhone SE)
-- [ ] Test at 390px width (iPhone 12/13/14)
-- [ ] Test at 428px width (iPhone 14 Plus)
+- [ ] Test at 325px width (small phones)
+- [ ] Test at 375px width (standard phones)
+- [ ] Test at 1024px width (tablets/desktop)
 - [ ] Navigation usable on touch
 - [ ] Text readable without zooming
 - [ ] Buttons/links have adequate tap targets (44px min)
@@ -210,11 +225,9 @@ Before merging to main, verify:
 
 | Width | Device |
 |-------|--------|
-| 375px | iPhone SE, older iPhones |
-| 390px | iPhone 12/13/14 |
-| 428px | iPhone 14 Plus |
-| 768px | iPad portrait |
-| 1024px | iPad landscape |
+| 325px | Small phones |
+| 375px | Standard phones |
+| 1024px | Tablets/desktop |
 
 ### Mobile Testing Checklist
 
@@ -248,21 +261,12 @@ Weapon Card (in chat):
 
 ### Starting the Server
 
-**IMPORTANT:** This app has Vercel serverless functions (`/api/chat.js`) that power the AI features (Horse Chooser, Loadout Builder, AI chat). You must use the correct server depending on what you're testing:
-
-#### For Full Functionality (AI features work)
 ```bash
-# Use Vercel CLI to run the full app with API routes
+# Always use Vercel CLI - it's free and runs the full app including API routes
 vercel dev --listen 3000
 
 # If you don't have Vercel CLI installed:
 npm i -g vercel
-```
-
-#### For Static-Only Testing (CSS, layout, no AI)
-```bash
-# Simple HTTP server - API routes will return 405 errors
-npx http-server -p 3000
 ```
 
 #### Check What's Running
@@ -270,8 +274,6 @@ npx http-server -p 3000
 # Check if port is in use
 lsof -i :3000
 ```
-
-**Note:** If you see "Failed to execute 'json' on 'Response': Unexpected end of JSON input" errors, you're likely running `http-server` instead of `vercel dev`.
 
 ### Validating Data Files
 
