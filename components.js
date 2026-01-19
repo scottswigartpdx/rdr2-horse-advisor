@@ -9,6 +9,18 @@
 const Components = {
 
     /**
+     * Back-link component
+     * @param {Object} props
+     * @param {string} props.href - Link destination
+     * @param {string} props.text - Link text (without arrow)
+     * @param {string} [props.style] - Optional inline styles
+     */
+    backLink: (props = {}) => {
+        const style = props.style ? ` style="${props.style}"` : '';
+        return `<a href="${props.href}" class="back-link"${style}>&larr; ${props.text}</a>`;
+    },
+
+    /**
      * Footer component
      * @param {Object} props
      * @param {string} [props.text] - Custom footer text (defaults to standard disclaimer)
