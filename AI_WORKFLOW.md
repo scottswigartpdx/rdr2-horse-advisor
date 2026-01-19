@@ -257,6 +257,88 @@ Weapon Card (in chat):
 
 ---
 
+## Component System
+
+The app uses a lightweight JavaScript component system for shared UI elements. Components are defined in `components.js` and utilities in `utils.js`.
+
+### Available Components
+
+| Component | Usage | Props |
+|-----------|-------|-------|
+| `header` | Page header with title | `{ backHref, backText, title }` |
+| `headerFull` | Hub page header with auth UI | `{ title, subtitle, titleHref }` |
+| `footer` | Standard footer disclaimer | None |
+| `signInModal` | Google OAuth modal | None |
+| `authContainer` | Login/user dropdown | None (internal) |
+| `backLink` | Navigation link | `{ href, text }` |
+| `sectionNav` | Hub page navigation grid | `{ items: [{href, label}] }` |
+
+### Using Components
+
+**Above-fold components** (no FOUC) - use `document.write`:
+```html
+<head>
+  <script src="components.js"></script>
+</head>
+<body>
+  <script>document.write(Components.header({backHref: "horses.html", backText: "Back to Horses", title: "Horse Gear"}))</script>
+```
+
+**Below-fold components** - use `data-component` attribute:
+```html
+<div data-component="footer"></div>
+```
+
+### Table Utilities
+
+`utils.js` provides shared table functionality via `TableUtils`:
+
+```javascript
+// Initialize sortable table headers
+const ascFirstColumns = ['price', 'name'];  // Columns that sort asc first
+TableUtils.initSortListeners('.my-table', currentSort, updateTable, ascFirstColumns);
+
+// Update sort indicator arrows
+TableUtils.updateSortIndicators('.my-table', currentSort);
+
+// Initialize mobile scroll shadow
+TableUtils.initScrollShadow('tableScrollWrapper');
+```
+
+### Auth Utilities
+
+`utils.js` provides centralized Supabase auth via `window.Auth`:
+
+```javascript
+// Get current user
+const user = await Auth.getCurrentUser();
+
+// Get auth token for API calls
+const token = await Auth.getAuthToken();
+
+// Sign in/out
+await Auth.signInWithGoogle();
+await Auth.signOut();
+
+// Listen for auth changes
+Auth.onAuthStateChange((event, session) => { ... });
+```
+
+### Adding New Components
+
+1. Add component function to `components.js`:
+   ```javascript
+   myComponent: (props = {}) => {
+     return `<div class="my-component">${props.content}</div>`;
+   }
+   ```
+
+2. Add styles to `components.css`
+
+3. Use in HTML with `document.write` (above-fold) or `data-component` (below-fold)
+
+---
+
 ## Local Development
 
 ### Starting the Server
