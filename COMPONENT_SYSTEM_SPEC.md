@@ -665,6 +665,13 @@ Incremental approach - each phase is independently deployable and testable.
 
 - [ ] **Admin API 500 error**: `/api/admin/stats` returns 500 "Failed to fetch stats" - needs investigation and fix before refactor is considered done
 
+### Styling Inconsistencies (Address in Phase 10)
+- [ ] Back link alignment varies - centered on detail pages vs different style on hub pages
+- [ ] Crafting page tip banner width doesn't align with table width
+- [ ] Filter dropdowns and search input heights inconsistent on crafting page
+- [ ] Admin error state lacks card styling like other pages
+- [ ] Minor padding/alignment variations between hub page cards and sidebars
+
 ## Success Criteria
 
 - [ ] All 13 HTML pages use component system
