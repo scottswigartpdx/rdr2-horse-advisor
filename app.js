@@ -594,8 +594,8 @@ function renderWeaponCard(name) {
                     return `<span class="mod">${sign}${value} ${statName}</span>`;
                 }).join('');
             const tags = [];
-            if (ammo.crafted) tags.push('<span class="tag">C</span>');
-            if (ammo.limitedCapacity) tags.push('<span class="tag tag--limited">L</span>');
+            if (ammo.crafted) tags.push('<span class="tag" title="Crafted - must be crafted, not purchased">C</span>');
+            if (ammo.limitedCapacity) tags.push('<span class="tag tag--limited" title="Limited capacity - can only carry a small amount">L</span>');
             const tagHtml = tags.join('');
             return `<span class="weapon-card-chip">${ammo.name}${tagHtml}${modList}</span>`;
         }).filter(Boolean).join('');
