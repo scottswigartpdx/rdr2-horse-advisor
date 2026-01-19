@@ -42,7 +42,7 @@ const Components = {
         }
         const subtitleHtml = props.subtitle ? `<p class="subtitle">${props.subtitle}</p>` : '';
         return `
-        <header>
+        <header class="header-simple">
             ${backLink}
             ${titleHtml}
             ${subtitleHtml}
@@ -79,26 +79,27 @@ const Components = {
      * @param {string} props.title - Page title (h1 text)
      * @param {string} [props.titleHref="/"] - Title link destination
      * @param {string} [props.subtitle] - Plain subtitle text (mutually exclusive with backHref)
-     * @param {string} [props.backHref] - Back link destination (subtitle becomes back link)
+     * @param {string} [props.backHref] - Back link destination (appears above title)
      * @param {string} [props.backText] - Back link text (required if backHref set)
      */
     headerFull: (props = {}) => {
         const titleHref = props.titleHref || '/';
         const authContainer = Components.authContainer();
 
-        let subtitleHtml = '';
-        if (props.backHref) {
-            subtitleHtml = `<p class="subtitle"><a href="${props.backHref}" style="color: inherit; text-decoration: none;">&larr; ${props.backText}</a></p>`;
-        } else if (props.subtitle) {
-            subtitleHtml = `<p class="subtitle">${props.subtitle}</p>`;
-        }
+        // Back link appears above title (consistent with simple header)
+        const backLinkHtml = props.backHref
+            ? Components.backLink({ href: props.backHref, text: props.backText })
+            : '';
+
+        const subtitleHtml = props.subtitle
+            ? `<p class="subtitle">${props.subtitle}</p>`
+            : '';
 
         return `
-        <header>
-            <div class="header-top">
-                <h1><a href="${titleHref}">${props.title}</a></h1>
-                ${authContainer}
-            </div>
+        <header class="header-full">
+            ${authContainer}
+            ${backLinkHtml}
+            <h1><a href="${titleHref}">${props.title}</a></h1>
             ${subtitleHtml}
         </header>`;
     },

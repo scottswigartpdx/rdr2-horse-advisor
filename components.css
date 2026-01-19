@@ -12,16 +12,41 @@
    ========================================================================== */
 
 .back-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     color: var(--rust);
     text-decoration: none;
-    margin-bottom: 20px;
-    font-size: 1rem;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
 }
 
 .back-link:hover {
     color: var(--red-primary);
     text-decoration: underline;
+}
+
+/* ==========================================================================
+   Header Full (Hub pages with auth)
+   Positions auth container in top-right, back link left-aligned above title
+   ========================================================================== */
+
+.header-full {
+    position: relative;
+    text-align: center;
+}
+
+.header-full .auth-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.header-full .back-link,
+.header-simple .back-link {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
 }
 
 /* ==========================================================================
