@@ -21,23 +21,8 @@
             display: flex;
             gap: 8px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
             justify-content: center;
-        }
-
-        /* Mobile: horizontal scroll instead of wrap */
-        @media (max-width: 480px) {
-            .tabs {
-                justify-content: flex-start;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 8px;
-            }
-            .tabs::-webkit-scrollbar {
-                display: none;
-            }
-            .tab-btn {
-                flex-shrink: 0;
-            }
         }
 
         .tab-btn {
