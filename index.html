@@ -20,27 +20,7 @@
     <!-- Sign In Modal -->
     <div data-component="signInModal"></div>
     <div class="container">
-        <header>
-            <div class="header-top">
-                <h1><a href="/">RDR2 Companion</a></h1>
-                <div class="auth-container" id="authContainer">
-                    <button id="loginBtn" class="auth-btn" onclick="signInWithGoogle()" style="display: none;">
-                        Sign in with Google
-                    </button>
-                    <div id="userInfo" class="user-info" style="display: none;">
-                        <span id="userEmail"></span>
-                        <button class="auth-btn auth-btn-small auth-btn-signout" onclick="signOut()">Sign out</button>
-                        <button class="user-avatar" onclick="toggleUserMenu()" aria-label="User menu">👤</button>
-                        <div class="user-dropdown">
-                            <span class="user-dropdown-email"></span>
-                            <button onclick="signOut()">Sign out</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <p class="subtitle">Your guide to Red Dead Redemption 2</p>
-
-        </header>
+        <script>document.write(Components.headerFull({title: "RDR2 Companion", subtitle: "Your guide to Red Dead Redemption 2"}))</script>
 
         <main>
             <section class="hero-panel">

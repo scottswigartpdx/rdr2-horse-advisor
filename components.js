@@ -50,6 +50,60 @@ const Components = {
     },
 
     /**
+     * Auth container component (internal)
+     * Login button and user dropdown for hub pages.
+     * Requires app.js for signInWithGoogle, signOut, toggleUserMenu.
+     */
+    authContainer: () => {
+        return `
+            <div class="auth-container" id="authContainer">
+                <button id="loginBtn" class="auth-btn" onclick="signInWithGoogle()" style="display: none;">
+                    Sign in with Google
+                </button>
+                <div id="userInfo" class="user-info" style="display: none;">
+                    <span id="userEmail"></span>
+                    <button class="auth-btn auth-btn-small auth-btn-signout" onclick="signOut()">Sign out</button>
+                    <button class="user-avatar" onclick="toggleUserMenu()" aria-label="User menu">👤</button>
+                    <div class="user-dropdown">
+                        <span class="user-dropdown-email"></span>
+                        <button onclick="signOut()">Sign out</button>
+                    </div>
+                </div>
+            </div>`;
+    },
+
+    /**
+     * Header component (full variant)
+     * For hub pages with title, auth UI, and optional subtitle/back-link.
+     * @param {Object} props
+     * @param {string} props.title - Page title (h1 text)
+     * @param {string} [props.titleHref="/"] - Title link destination
+     * @param {string} [props.subtitle] - Plain subtitle text (mutually exclusive with backHref)
+     * @param {string} [props.backHref] - Back link destination (subtitle becomes back link)
+     * @param {string} [props.backText] - Back link text (required if backHref set)
+     */
+    headerFull: (props = {}) => {
+        const titleHref = props.titleHref || '/';
+        const authContainer = Components.authContainer();
+
+        let subtitleHtml = '';
+        if (props.backHref) {
+            subtitleHtml = `<p class="subtitle"><a href="${props.backHref}" style="color: inherit; text-decoration: none;">&larr; ${props.backText}</a></p>`;
+        } else if (props.subtitle) {
+            subtitleHtml = `<p class="subtitle">${props.subtitle}</p>`;
+        }
+
+        return `
+        <header>
+            <div class="header-top">
+                <h1><a href="${titleHref}">${props.title}</a></h1>
+                ${authContainer}
+            </div>
+            ${subtitleHtml}
+        </header>`;
+    },
+
+    /**
      * Sign-in modal component
      * Displays Google OAuth sign-in prompt. Requires app.js for showSignInModal/closeSignInModal.
      */
