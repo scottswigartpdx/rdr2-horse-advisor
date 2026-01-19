@@ -19,11 +19,17 @@
     text-decoration: none;
     margin-bottom: 12px;
     font-size: 0.95rem;
+    min-height: 44px;
+    padding: 8px 0;
 }
 
 .back-link:hover {
     color: var(--red-primary);
     text-decoration: underline;
+}
+
+.back-link:active {
+    opacity: 0.7;
 }
 
 /* ==========================================================================
