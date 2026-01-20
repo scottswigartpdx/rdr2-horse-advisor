@@ -248,9 +248,9 @@
     </div>
 
     <script>
-        // Use var for horseData to allow redeclaration (app.js also declares it)
-        var horseData = [];
-        var currentSort = { column: 'breed', direction: 'asc' };
+        // Use local variable to avoid collision with app.js global horseData
+        let tableHorseData = [];
+        let currentSort = { column: 'breed', direction: 'asc' };
 
         // Helper to get first acquisition (handles both array and object)
         function getAcquisition(horse) {
@@ -261,9 +261,9 @@
             try {
                 const response = await fetch('horses.json');
                 const data = await response.json();
-                horseData = data.horses;
-                renderTable(horseData);
-                updateResultsCount(horseData.length);
+                tableHorseData = data.horses;
+                renderTable(tableHorseData);
+                updateResultsCount(tableHorseData.length);
             } catch (error) {
                 console.error('Failed to load horses:', error);
                 document.getElementById('tableBody').innerHTML =
@@ -378,7 +378,7 @@
 
         function updateTable() {
             const query = document.getElementById('searchInput').value;
-            let filtered = filterHorses(horseData, query);
+            let filtered = filterHorses(tableHorseData, query);
             let sorted = sortHorses(filtered, currentSort.column, currentSort.direction);
             renderTable(sorted);
             updateResultsCount(sorted.length);
