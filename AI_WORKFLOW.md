@@ -413,6 +413,132 @@ The app is deployed via Vercel. Pushing to main triggers automatic deployment.
 
 ---
 
+## Debugging Environments
+
+There are four ways to test and debug the app, each with different capabilities:
+
+| Environment | Best For | Claude Can Control | Real Mobile Testing |
+|-------------|----------|-------------------|---------------------|
+| Localhost Web | Quick iteration, DevTools | ✅ Full control | ❌ Emulation only |
+| Localhost Mobile Emulation | Layout testing | ⚠️ Limited (can't resize below ~500px) | ❌ Emulation only |
+| Debug Branch on Vercel | Real device testing | ✅ Deploy & alias | ✅ Yes |
+| Production | Final verification | ✅ Can view | ✅ Yes |
+
+### Localhost Web
+
+```bash
+# Start dev server (always use Vercel CLI for full functionality)
+vercel dev --listen 3000
+```
+
+Claude can control Chrome via DevTools MCP: navigate, click, run JavaScript, take screenshots.
+
+### Localhost Mobile Emulation
+
+The user must manually enable mobile emulation in Chrome DevTools:
+1. Open DevTools (F12 or Cmd+Option+I)
+2. Click device toggle icon (or Cmd+Shift+M)
+3. Select device preset or set custom dimensions
+
+**Limitation:** Claude cannot programmatically resize the viewport below ~500px due to browser constraints. Claude can navigate and inspect but cannot control the viewport size.
+
+### Debug Branch on Vercel (Real Device Testing)
+
+When you need to test on an actual mobile device (not emulation), deploy a debug branch to Vercel with a short alias:
+
+```bash
+# 1. Create debug branch
+git checkout -b dbg
+
+# 2. Add debug code (e.g., overflow detector, console logging)
+# Edit files as needed...
+
+# 3. Commit and push
+git add -A
+git commit -m "Add debug code (temporary)"
+git push -u origin dbg
+
+# 4. Wait for Vercel to deploy (~15 seconds), then list deployments
+npx vercel ls
+
+# 5. Create a short alias for easy mobile typing
+npx vercel alias <deployment-url> rdr2-dbg.vercel.app
+
+# Example:
+npx vercel alias https://rdr2-horse-advisor-abc123-scott-swigarts-projects.vercel.app rdr2-dbg.vercel.app
+```
+
+**Testing on mobile device:**
+- Navigate to `https://rdr2-dbg.vercel.app` on your phone
+- If using auth, add the debug URL to Supabase's allowed redirect URLs
+
+**After each code change:**
+```bash
+git add -A && git commit -m "Debug update" && git push
+# Wait ~15 seconds for deploy
+npx vercel ls  # Get new deployment URL
+npx vercel alias <new-deployment-url> rdr2-dbg.vercel.app
+```
+
+**Cleanup when done:**
+```bash
+# Remove alias
+npx vercel alias rm rdr2-dbg.vercel.app --yes
+
+# Delete branch
+git checkout main
+git branch -D dbg
+git push origin --delete dbg
+```
+
+### Example: Overflow Debugging Script
+
+Add this to `app.js` temporarily to detect elements causing horizontal overflow:
+
+```javascript
+// DEBUG: Overflow detector - remove after debugging
+if (window.innerWidth <= 600) {
+    const panel = document.createElement('div');
+    panel.id = 'debug-panel';
+    panel.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,0.95);color:#0f0;font-family:monospace;font-size:11px;padding:8px;z-index:99999;max-height:35vh;overflow:auto;';
+    document.body.appendChild(panel);
+
+    window.checkOverflow = () => {
+        const vw = document.documentElement.clientWidth;
+        const docScroll = document.documentElement.scrollWidth;
+        const bodyScroll = document.body.scrollWidth;
+        let results = [];
+        document.querySelectorAll('*').forEach(el => {
+            el.style.outline = '';
+            if (el.offsetWidth > vw) {
+                el.style.outline = '3px solid red';
+                const name = el.tagName + (el.className ? '.' + el.className.split(' ')[0] : '');
+                results.push(name + ': ' + el.offsetWidth + 'px (+' + (el.offsetWidth - vw) + ')');
+            }
+        });
+        const scrollInfo = (docScroll > vw ? ' docScroll:' + docScroll : '') +
+            (bodyScroll > vw ? ' bodyScroll:' + bodyScroll : '');
+        panel.innerHTML = '<b>VP:</b> ' + vw + ' | <b>El:</b> ' + results.length + scrollInfo +
+            (results.length ? '<br><span style="color:red">' + results.join('<br>') + '</span>' : ' ✓');
+    };
+
+    const obs = new MutationObserver(() => setTimeout(checkOverflow, 100));
+    obs.observe(document.body, { childList: true, subtree: true });
+    checkOverflow();
+}
+```
+
+### Common Mobile Issues
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| iOS auto-zoom on input focus | `font-size < 16px` on input | Use `font-size: 16px` minimum |
+| Horizontal scroll/overflow | Element wider than viewport | Add `overflow-wrap: break-word`, `min-width: 0` on flex children |
+| Content wider than screen | `width: 100vw` (includes scrollbar) | Use `width: 100%` instead |
+| Tables overflow | Fixed-width tables | Add `overflow-x: auto` to table or wrapper |
+
+---
+
 ## Troubleshooting
 
 ### Browser resizing limitations
