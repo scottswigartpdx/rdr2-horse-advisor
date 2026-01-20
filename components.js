@@ -29,6 +29,7 @@ const Components = {
      * @param {string} [props.title] - Page title (optional for dynamic pages)
      * @param {string} [props.subtitle] - Page subtitle
      * @param {string} [props.titleHref] - Make title a link (for admin page)
+     * @param {boolean} [props.showAuth] - Show auth container (avatar)
      */
     header: (props = {}) => {
         const backLink = Components.backLink({ href: props.backHref, text: props.backText });
@@ -41,8 +42,12 @@ const Components = {
             }
         }
         const subtitleHtml = props.subtitle ? `<p class="subtitle">${props.subtitle}</p>` : '';
+        const authHtml = props.showAuth ? Components.authContainer() : '';
+        // Use header-full class if showing auth for proper positioning
+        const headerClass = props.showAuth ? 'header-full' : 'header-simple';
         return `
-        <header class="header-simple">
+        <header class="${headerClass}">
+            ${authHtml}
             ${backLink}
             ${titleHtml}
             ${subtitleHtml}

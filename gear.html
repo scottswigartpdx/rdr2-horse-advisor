@@ -267,11 +267,13 @@
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
     <script src="components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="utils.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <div class="container table-container">
-        <script>document.write(Components.header({backHref: "horses.html", backText: "Back to Horses", title: "Horse Gear"}))</script>
+        <script>document.write(Components.header({backHref: "horses.html", backText: "Back to Horses", title: "Horse Gear", showAuth: true}))</script>
 
         <main>
             <div class="tabs">
@@ -308,9 +310,10 @@
     </div>
 
     <script>
-        let gearData = null;
-        let currentTab = 'saddles';
-        let currentSort = { column: 'name', direction: 'asc' };
+        // Use var for gearData to allow redeclaration (app.js also declares it)
+        var gearData = null;
+        var currentTab = 'saddles';
+        var currentSort = { column: 'name', direction: 'asc' };
 
         async function loadGear() {
             try {

@@ -202,11 +202,13 @@
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
     <script src="components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="utils.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <div class="container table-container">
-        <script>document.write(Components.header({backHref: "horses.html", backText: "Back to Horses", title: "All Horses"}))</script>
+        <script>document.write(Components.header({backHref: "horses.html", backText: "Back to Horses", title: "All Horses", showAuth: true}))</script>
 
         <main>
             <div class="search-container">
@@ -246,8 +248,9 @@
     </div>
 
     <script>
-        let horseData = [];
-        let currentSort = { column: 'breed', direction: 'asc' };
+        // Use var for horseData to allow redeclaration (app.js also declares it)
+        var horseData = [];
+        var currentSort = { column: 'breed', direction: 'asc' };
 
         // Helper to get first acquisition (handles both array and object)
         function getAcquisition(horse) {

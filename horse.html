@@ -132,20 +132,32 @@
         .stat-bar-container {
             margin-top: 10px;
             height: 10px;
-            background: var(--bg-dark);
+            background: rgba(0, 0, 0, 0.4);
             border-radius: 5px;
             overflow: hidden;
             position: relative;
         }
 
+        .stat-bar-container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.18),
+                inset 0 -1px 0 rgba(0,0,0,0.28);
+            pointer-events: none;
+            z-index: 10;
+        }
+
         .stat-bar {
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
+            inset: 0;
+            display: block;
             background: linear-gradient(90deg, var(--red-dark), var(--gold));
-            border-radius: 5px;
+            border-radius: 0;
             z-index: 2;
+            margin: 0;
         }
 
         .stat-bar-max {
@@ -259,6 +271,16 @@
 
             .info-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-box {
+                padding: 12px;
             }
         }
     </style>

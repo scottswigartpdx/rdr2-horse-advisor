@@ -233,10 +233,13 @@
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
     <script src="components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <div class="container gear-guide-container">
-        <script>document.write(Components.header({backHref: "weapons.html", backText: "Back to Weapons", title: "Weapon Gear Guide", subtitle: "Bandoliers, Holsters, Gun Belts & Equipment Sets"}))</script>
+        <script>document.write(Components.header({backHref: "weapons.html", backText: "Back to Weapons", title: "Weapon Gear Guide", subtitle: "Bandoliers, Holsters, Gun Belts & Equipment Sets", showAuth: true}))</script>
 
         <main>
             <div class="info-section">

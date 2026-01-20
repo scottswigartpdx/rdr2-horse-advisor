@@ -144,20 +144,32 @@
         .stat-bar-container {
             margin-top: 10px;
             height: 10px;
-            background: var(--bg-dark);
+            background: rgba(0, 0, 0, 0.4);
             border-radius: 5px;
             overflow: hidden;
             position: relative;
         }
 
+        .stat-bar-container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.18),
+                inset 0 -1px 0 rgba(0,0,0,0.28);
+            pointer-events: none;
+            z-index: 10;
+        }
+
         .stat-bar {
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
+            inset: 0;
+            display: block;
             background: linear-gradient(90deg, var(--red-dark), var(--gold));
-            border-radius: 5px;
+            border-radius: 0;
             z-index: 2;
+            margin: 0;
         }
 
         .stat-bar-max {
@@ -222,6 +234,28 @@
             font-size: 1rem;
             margin-bottom: 12px;
             font-weight: 600;
+        }
+
+        /* Upgrades & Ammo tables: compact with horizontal scroll if needed */
+        .upgrades-section,
+        .ammo-section {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .upgrades-section .data-table {
+            min-width: 260px;
+            font-size: 0.85rem;
+        }
+
+        .upgrades-section .data-table th,
+        .upgrades-section .data-table td {
+            padding: 8px 8px;
+        }
+
+        .upgrades-section .data-table th.col-stat {
+            width: 55px;
+            text-align: center;
         }
 
         .data-table {

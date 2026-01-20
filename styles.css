@@ -1893,6 +1893,13 @@ header::after {
     opacity: 0.8;
 }
 
+/* Hide header separator on mobile (conflicts with flexbox reordering) */
+@media (max-width: 600px) {
+    header::after {
+        display: none;
+    }
+}
+
 /* ========== HERO PANEL QUICK FIXES ========== */
 
 /* Hide empty chat container */
@@ -2191,12 +2198,34 @@ header {
 
     .section-nav-item {
         padding: 12px 14px;
-        border: 1px solid var(--border-subtle);
+        padding-right: 40px; /* room for chevron */
+        border: 1px solid #3b342c;
         border-radius: 4px;
-        background: #151515;
+        background: #1f1f1f;
         justify-content: center;
         width: 100%;
         box-sizing: border-box;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+        position: relative;
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    /* Chevron indicator */
+    .section-nav-item::after {
+        content: "›";
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #bda98f;
+        font-size: 24px;
+        font-weight: 300;
+    }
+
+    /* Tap feedback */
+    .section-nav-item:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
 
     .section-nav-item .section-text {
@@ -2282,15 +2311,54 @@ header {
         border-color: #2a2a2a;
     }
 
-    /* 7. Tap feedback for list items */
+    /* 7. Chat padding reduction for mobile */
+    .chat-container {
+        padding: 12px 10px;
+    }
+
+    .message {
+        padding: 12px 14px;
+        margin: 8px 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .message.assistant {
+        padding: 12px 14px;
+        line-height: 1.6;
+    }
+
+    .message.assistant h3 {
+        padding: 8px 10px;
+    }
+
+    .message.assistant ul {
+        margin: 8px 0;
+    }
+
+    .message.assistant li {
+        padding-left: 14px;
+    }
+
+    .horse-card {
+        padding: 14px;
+        margin: 12px 0;
+    }
+
+    .horse-card-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* 8. Tap feedback for list items */
     .hero-panel .example-queries li:active {
         transform: scale(0.98);
         border-color: var(--gold);
     }
 }
 
-/* Extra small mobile (320px) */
-@media (max-width: 360px) {
+/* Mobile auth: avatar dropdown (phones) */
+@media (max-width: 600px) {
     /* Compact auth: avatar in top-right with dropdown */
     header {
         position: relative;
@@ -2315,17 +2383,17 @@ header {
         opacity: 1;
     }
 
-    /* Avatar button */
+    /* Avatar button - 44px for touch targets */
     .user-avatar {
         display: flex;
-        width: 32px;
-        height: 32px;
+        width: 44px;
+        height: 44px;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
         background: #1b1b1b;
         border: 1px solid var(--border-subtle);
-        font-size: 16px;
+        font-size: 20px;
         cursor: pointer;
         transition: border-color 0.2s;
     }
@@ -2339,13 +2407,13 @@ header {
     .user-dropdown {
         display: none;
         position: fixed;
-        top: 52px;
+        top: 60px;
         right: 8px;
         background-color: #0a0a0a;
         border: 1px solid var(--border-medium);
         border-radius: 6px;
         padding: 8px 10px;
-        width: 160px;
+        width: 180px;
         box-shadow: 0 4px 16px rgba(0,0,0,1);
         z-index: 9999;
         isolation: isolate;
@@ -2358,7 +2426,7 @@ header {
     .user-dropdown-email {
         display: block;
         padding: 6px 0;
-        font-size: 0.72rem;
+        font-size: 0.75rem;
         color: #888;
         border-bottom: 1px solid var(--border-subtle);
         margin-bottom: 4px;
@@ -2370,13 +2438,14 @@ header {
     .user-dropdown button {
         display: block;
         width: 100%;
-        padding: 8px 12px;
+        padding: 10px 12px;
         background: none;
         border: none;
         color: var(--rust);
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         text-align: left;
         cursor: pointer;
+        min-height: 44px;
     }
 
     .user-dropdown button:hover {
@@ -2452,23 +2521,23 @@ header {
         gap: 6px;
     }
 
-    /* Smaller input text for mobile */
+    /* Mobile input - 44px min for touch targets */
     #queryInput {
-        font-size: 0.85rem;
-        padding: 10px;
-        min-height: 40px;
+        font-size: 14px;
+        padding: 12px 14px;
+        min-height: 44px;
     }
 
     #queryInput::placeholder {
-        font-size: 0.85rem;
+        font-size: 14px;
         letter-spacing: 0;
     }
 
-    /* Smaller buttons for mobile */
+    /* Mobile buttons - 44px min for touch targets */
     #sendBtn, #newChatBtn {
-        width: 36px;
-        min-width: 36px;
-        min-height: 36px;
+        width: 44px;
+        min-width: 44px;
+        min-height: 44px;
         flex-shrink: 0;
     }
 

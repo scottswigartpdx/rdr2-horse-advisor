@@ -415,6 +415,11 @@ The app is deployed via Vercel. Pushing to main triggers automatic deployment.
 
 ## Troubleshooting
 
+### Browser resizing limitations
+When Chrome is in mobile/device emulation mode, the `resize_page` MCP tool cannot resize the viewport programmatically. The browser window has constraints that prevent resizing below certain widths (~500px minimum).
+
+**Solution:** Ask the user to manually resize the browser or toggle device emulation mode in DevTools. Do not silently move on to a different resolution - always confirm with the user first.
+
 ### Server not responding
 ```bash
 # Check if port is in use

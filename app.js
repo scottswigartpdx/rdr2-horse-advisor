@@ -95,17 +95,8 @@ const PendingAction = {
 };
 
 // ========== SUPABASE AUTH ==========
-const SUPABASE_URL = 'https://vejhtrzmesjpxlonwhig.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_QYHw3yzSd61GgQj3Izb3ng_zkfT_IZv';
-
-const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-    auth: {
-        detectSessionInUrl: true,
-        persistSession: true,
-        autoRefreshToken: true,
-        flowType: 'pkce'
-    }
-});
+// Use singleton from utils.js to avoid duplicate client creation
+const supabaseClient = typeof getSupabaseClient === 'function' ? getSupabaseClient() : null;
 
 let currentUser = null;
 
@@ -248,10 +239,11 @@ document.addEventListener('click', (e) => {
 });
 
 // ========== APP DATA ==========
-let horseData = null;
-let gearData = null;
-let weaponData = null;
-let conversationHistory = [];
+// Use var to allow redeclaration on pages with their own data variables
+var horseData = horseData || null;
+var gearData = gearData || null;
+var weaponData = weaponData || null;
+var conversationHistory = conversationHistory || [];
 
 // Loading messages system
 let loadingMessages = ['Searching the frontier...'];
