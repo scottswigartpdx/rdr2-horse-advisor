@@ -135,7 +135,7 @@
       "name": "LeMat Revolver",
       "category": "Revolver",
       "baseStats": {
-        "damage": 2.0,
+        "damage": 2.5,
         "range": 2.0,
         "fireRate": 2.4,
         "accuracy": 2.4,
@@ -219,7 +219,7 @@
       "category": "Revolver",
       "variant": "Cattleman Revolver",
       "baseStats": {
-        "damage": 2.8,
+        "damage": 1.6,
         "range": 2.5,
         "fireRate": 3.0,
         "accuracy": 2.8,
@@ -251,7 +251,7 @@
       "category": "Revolver",
       "variant": "Cattleman Revolver",
       "baseStats": {
-        "damage": 2.7,
+        "damage": 1.7,
         "range": 2.6,
         "fireRate": 3.0,
         "accuracy": 2.8,
@@ -283,7 +283,7 @@
       "category": "Revolver",
       "variant": "Schofield Revolver",
       "baseStats": {
-        "damage": 1.9,
+        "damage": 1.8,
         "range": 2.0,
         "fireRate": 2.8,
         "accuracy": 3.0,
@@ -690,14 +690,14 @@
       "name": "Litchfield Repeater",
       "category": "Repeater",
       "baseStats": {
-        "damage": 2.8,
+        "damage": 2.6,
         "range": 2.8,
         "fireRate": 2.2,
         "accuracy": 2.7,
         "reload": 3.0
       },
       "maxStats": {
-        "damage": 2.8,
+        "damage": 2.6,
         "range": 3.2,
         "fireRate": 2.0,
         "accuracy": 3.3,
@@ -852,7 +852,7 @@
       "name": "Bolt Action Rifle",
       "category": "Rifle",
       "baseStats": {
-        "damage": 2.9,
+        "damage": 3.0,
         "range": 3.0,
         "fireRate": 1.5,
         "accuracy": 3.2,
@@ -893,7 +893,7 @@
       "name": "Rolling Block Rifle",
       "category": "Sniper Rifle",
       "baseStats": {
-        "damage": 3.5,
+        "damage": 3.4,
         "range": 3.5,
         "fireRate": 1.2,
         "accuracy": 3.4,
@@ -934,7 +934,7 @@
       "category": "Sniper Rifle",
       "variant": "Rolling Block Rifle",
       "baseStats": {
-        "damage": 3.5,
+        "damage": 3.4,
         "range": 3.5,
         "fireRate": 1.2,
         "accuracy": 3.6,
@@ -965,7 +965,7 @@
       "name": "Carcano Rifle",
       "category": "Sniper Rifle",
       "baseStats": {
-        "damage": 3.1,
+        "damage": 3.0,
         "range": 3.3,
         "fireRate": 1.5,
         "accuracy": 3.2,
@@ -1005,14 +1005,14 @@
       "name": "Elephant Rifle",
       "category": "Rifle",
       "baseStats": {
-        "damage": 4.0,
+        "damage": 3.6,
         "range": 2.0,
         "fireRate": 1.0,
         "accuracy": 2.0,
         "reload": 1.5
       },
       "maxStats": {
-        "damage": 4.0,
+        "damage": 3.6,
         "range": 2.5,
         "fireRate": 1.0,
         "accuracy": 2.5,
@@ -1045,14 +1045,14 @@
       "name": "Double-Barreled Shotgun",
       "category": "Shotgun",
       "baseStats": {
-        "damage": 2.8,
+        "damage": 2.7,
         "range": 1.5,
         "fireRate": 2.5,
         "accuracy": 1.8,
         "reload": 2.0
       },
       "maxStats": {
-        "damage": 2.8,
+        "damage": 2.7,
         "range": 2.0,
         "fireRate": 2.5,
         "accuracy": 2.4,
@@ -1085,7 +1085,7 @@
       "category": "Shotgun",
       "variant": "Double-Barreled Shotgun",
       "baseStats": {
-        "damage": 2.8,
+        "damage": 2.7,
         "range": 1.2,
         "fireRate": 2.5,
         "accuracy": 1.5,
@@ -1115,7 +1115,7 @@
       "name": "Sawed-Off Shotgun",
       "category": "Shotgun",
       "baseStats": {
-        "damage": 2.8,
+        "damage": 2.7,
         "range": 1.2,
         "fireRate": 2.3,
         "accuracy": 2.0,
@@ -1193,14 +1193,14 @@
       "name": "Semi-Auto Shotgun",
       "category": "Shotgun",
       "baseStats": {
-        "damage": 2.2,
+        "damage": 2.4,
         "range": 1.2,
         "fireRate": 2.5,
         "accuracy": 2.5,
         "reload": 1.2
       },
       "maxStats": {
-        "damage": 2.2,
+        "damage": 2.4,
         "range": 2.0,
         "fireRate": 2.3,
         "accuracy": 3.0,
@@ -1232,7 +1232,7 @@
       "name": "Repeating Shotgun",
       "category": "Shotgun",
       "baseStats": {
-        "damage": 2.5,
+        "damage": 2.4,
         "range": 1.5,
         "fireRate": 2.0,
         "accuracy": 2.2,
@@ -1271,14 +1271,14 @@
       "name": "Bow",
       "category": "Bow",
       "baseStats": {
-        "damage": 2.3,
+        "damage": 2.8,
         "range": 2.3,
         "fireRate": 1.7,
         "accuracy": 2.8,
         "reload": 1.7
       },
       "maxStats": {
-        "damage": 2.3,
+        "damage": 2.8,
         "range": 2.3,
         "fireRate": 1.7,
         "accuracy": 2.8,
@@ -1309,7 +1309,7 @@
       "name": "Hunting Knife",
       "category": "Melee",
       "baseStats": {
-        "damage": 1.5,
+        "damage": 2.0,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1333,7 +1333,7 @@
       "name": "Machete",
       "category": "Melee",
       "baseStats": {
-        "damage": 2,
+        "damage": 2.2,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1365,7 +1365,7 @@
       "name": "Hatchet",
       "category": "Melee",
       "baseStats": {
-        "damage": 1.8,
+        "damage": 3.1,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1389,7 +1389,7 @@
       "name": "Cleaver",
       "category": "Melee",
       "baseStats": {
-        "damage": 1.9,
+        "damage": 2.4,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1413,7 +1413,7 @@
       "name": "Broken Pirate Sword",
       "category": "Melee",
       "baseStats": {
-        "damage": 1.7,
+        "damage": 2.2,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1437,7 +1437,7 @@
       "name": "Civil War Knife",
       "category": "Melee",
       "baseStats": {
-        "damage": 1.6,
+        "damage": 2.0,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1461,7 +1461,7 @@
       "name": "Ornate Dagger",
       "category": "Melee",
       "baseStats": {
-        "damage": 1.8,
+        "damage": 2.0,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1485,7 +1485,7 @@
       "name": "Jawbone Knife",
       "category": "Melee",
       "baseStats": {
-        "damage": 1.7,
+        "damage": 2.0,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1509,7 +1509,7 @@
       "name": "Viking Hatchet",
       "category": "Melee",
       "baseStats": {
-        "damage": 1.9,
+        "damage": 2.4,
         "range": 0,
         "fireRate": 0,
         "accuracy": 0,
@@ -1533,7 +1533,7 @@
       "name": "Ancient Tomahawk",
       "category": "Thrown",
       "baseStats": {
-        "damage": 2.5,
+        "damage": 2.3,
         "range": 1.5,
         "fireRate": 0,
         "accuracy": 2,
@@ -1557,7 +1557,7 @@
       "name": "Throwing Knife",
       "category": "Thrown",
       "baseStats": {
-        "damage": 1.8,
+        "damage": 2.0,
         "range": 1.5,
         "fireRate": 0,
         "accuracy": 2.5,
@@ -1581,7 +1581,7 @@
       "name": "Tomahawk",
       "category": "Thrown",
       "baseStats": {
-        "damage": 2.2,
+        "damage": 2.4,
         "range": 1.3,
         "fireRate": 0,
         "accuracy": 1.8,
@@ -1605,7 +1605,7 @@
       "name": "Dynamite",
       "category": "Thrown",
       "baseStats": {
-        "damage": 4,
+        "damage": 3.6,
         "range": 2,
         "fireRate": 0,
         "accuracy": 1.5,
@@ -1629,7 +1629,7 @@
       "name": "Fire Bottle",
       "category": "Thrown",
       "baseStats": {
-        "damage": 3,
+        "damage": 2.8,
         "range": 1.8,
         "fireRate": 0,
         "accuracy": 1.5,
@@ -1653,7 +1653,7 @@
       "name": "Lasso",
       "category": "Tool",
       "baseStats": {
-        "damage": 0,
+        "damage": 0.4,
         "range": 2,
         "fireRate": 0,
         "accuracy": 2.5,
@@ -1672,6 +1672,294 @@
       },
       "communityNotes": "Non-lethal. Used to capture horses, hogtie enemies, and complete bounty missions.",
       "image": "images/weapons/lasso.webp"
+    },
+    {
+      "name": "John's Cattleman Revolver",
+      "category": "Revolver",
+      "variant": "Cattleman Revolver",
+      "baseStats": {
+        "damage": 1.7,
+        "range": 2.0,
+        "fireRate": 3.0,
+        "accuracy": 2.8,
+        "reload": 2.8
+      },
+      "maxStats": null,
+      "ammoCapacity": 6,
+      "price": null,
+      "canDualWield": true,
+      "upgrades": [],
+      "acquisition": {
+        "method": "story",
+        "location": "Automatically equipped",
+        "chapter": "Epilogue",
+        "notes": "John Marston's starting revolver in the Epilogue"
+      },
+      "communityNotes": "John's personal Cattleman Revolver. Same stats as standard Cattleman.",
+      "image": "images/weapons/johns_cattleman_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
+    },
+    {
+      "name": "Lowry's Revolver",
+      "category": "Revolver",
+      "variant": "Double-Action Revolver",
+      "baseStats": {
+        "damage": 2.1,
+        "range": 2.0,
+        "fireRate": 3.2,
+        "accuracy": 2.0,
+        "reload": 2.8
+      },
+      "maxStats": null,
+      "ammoCapacity": 6,
+      "price": null,
+      "canDualWield": true,
+      "upgrades": [],
+      "acquisition": {
+        "method": "found",
+        "location": "Serial Killer basement, Lucky's Cabin",
+        "chapter": "Chapter 2+",
+        "notes": "Complete the serial killer mystery. Also unlockable in GTA Online."
+      },
+      "communityNotes": "Unique revolver from the serial killer side quest. Higher damage than standard Double-Action.",
+      "image": "images/weapons/lowrys_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
+    },
+    {
+      "name": "High Roller Double-Action Revolver",
+      "category": "Revolver",
+      "variant": "Double-Action Revolver",
+      "baseStats": {
+        "damage": 1.5,
+        "range": 2.0,
+        "fireRate": 3.2,
+        "accuracy": 2.0,
+        "reload": 2.8
+      },
+      "maxStats": null,
+      "ammoCapacity": 6,
+      "price": null,
+      "canDualWield": true,
+      "upgrades": [],
+      "acquisition": {
+        "method": "found",
+        "location": "Limpany lockbox or Blackwater stagecoach robbery",
+        "chapter": "Varies",
+        "notes": "Rare spawn in select locations"
+      },
+      "communityNotes": "Ornate Double-Action variant with pearl grip. Same stats as standard Double-Action.",
+      "image": "images/weapons/high_roller_revolver.webp",
+      "availableAmmo": [
+        "revolver_regular",
+        "revolver_high_velocity",
+        "revolver_split_point",
+        "revolver_express",
+        "revolver_explosive"
+      ]
+    },
+    {
+      "name": "Antler Knife",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 2.0,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "found",
+        "location": "Hanging Dog Ranch, Big Valley",
+        "chapter": "Chapter 2+",
+        "notes": "Found on a table in the main building"
+      },
+      "communityNotes": "Unique knife with antler handle. Same damage as Hunting Knife.",
+      "image": "images/weapons/antler_knife.webp"
+    },
+    {
+      "name": "John's Knife",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 2.0,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "story",
+        "location": "Automatically equipped",
+        "chapter": "Epilogue",
+        "notes": "John Marston's personal knife"
+      },
+      "communityNotes": "John's personal knife for the Epilogue. Functions same as Hunting Knife.",
+      "image": "images/weapons/johns_knife.webp"
+    },
+    {
+      "name": "Hunter Hatchet",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 2.5,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "found",
+        "location": "Window Rock, northwest of Fort Wallace",
+        "chapter": "Chapter 2+",
+        "notes": "Embedded in a tree stump near the rock formation"
+      },
+      "communityNotes": "Unique hatchet variant. Can be thrown.",
+      "image": "images/weapons/hunter_hatchet.webp"
+    },
+    {
+      "name": "Rusted Hunter Hatchet",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 2.4,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "found",
+        "location": "Near O'Creagh's Run",
+        "chapter": "Chapter 2+",
+        "notes": "Found in the wilderness"
+      },
+      "communityNotes": "Weathered variant of the Hunter Hatchet. Can be thrown.",
+      "image": "images/weapons/rusted_hunter_hatchet.webp"
+    },
+    {
+      "name": "Double Bit Hatchet",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 2.4,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "found",
+        "location": "Moonstone Pond, Roanoke Ridge",
+        "chapter": "Chapter 2+",
+        "notes": "Embedded in a tree stump near the water"
+      },
+      "communityNotes": "Two-bladed hatchet variant. Can be thrown.",
+      "image": "images/weapons/double_bit_hatchet.webp"
+    },
+    {
+      "name": "Rusted Double Bit Hatchet",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 2.4,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "found",
+        "location": "Van Horn Trading Post area",
+        "chapter": "Chapter 2+",
+        "notes": "Found in the wilderness"
+      },
+      "communityNotes": "Weathered two-bladed hatchet. Can be thrown.",
+      "image": "images/weapons/rusted_double_bit_hatchet.webp"
+    },
+    {
+      "name": "Hewing Hatchet",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 2.4,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "found",
+        "location": "Sawmill north of Strawberry",
+        "chapter": "Chapter 2+",
+        "notes": "Found near logging equipment"
+      },
+      "communityNotes": "Woodworking hatchet with flat blade. Can be thrown.",
+      "image": "images/weapons/hewing_hatchet.webp"
+    },
+    {
+      "name": "Stone Hatchet",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 2.5,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "special",
+        "location": "GTA Online / Treasure Hunt",
+        "chapter": "Any",
+        "notes": "Unlocked via GTA Online Treasure Hunt or found at specific locations"
+      },
+      "communityNotes": "Primitive stone hatchet. Triggers a rampage ability in GTA Online.",
+      "image": "images/weapons/stone_hatchet.webp"
     }
   ],
   "categories": [
