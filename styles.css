@@ -2287,9 +2287,9 @@ header {
 
     .hero-panel .example-queries li {
         text-align: center;
-        font-size: 0.82rem;
-        line-height: 1.3;
-        padding: 10px 12px;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        padding: 12px 14px;
         box-shadow: none;
     }
 
@@ -2528,8 +2528,8 @@ header {
     .hero-panel .example-queries li {
         max-width: 100%;
         box-sizing: border-box;
-        font-size: 0.78rem;
-        padding: 8px 10px;
+        font-size: 0.95rem;
+        padding: 12px 14px;
     }
 
     /* Constrain input container */
