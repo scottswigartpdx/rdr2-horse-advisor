@@ -931,36 +931,4 @@ document.addEventListener('DOMContentLoaded', () => {
             queryInput.placeholder = 'Ask about RDR2...';
         }
     }
-
-    // DEBUG: Overflow detector - remove after debugging
-    if (window.innerWidth <= 600) {
-        const panel = document.createElement('div');
-        panel.id = 'debug-panel';
-        panel.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,0.95);color:#0f0;font-family:monospace;font-size:11px;padding:8px;z-index:99999;max-height:35vh;overflow:auto;';
-        panel.innerHTML = '<div><b>Overflow Detector</b></div>';
-        document.body.appendChild(panel);
-
-        window.checkOverflow = () => {
-            const vw = document.documentElement.clientWidth;
-            const docScroll = document.documentElement.scrollWidth;
-            const bodyScroll = document.body.scrollWidth;
-            let results = [];
-            document.querySelectorAll('*').forEach(el => {
-                el.style.outline = '';
-                if (el.offsetWidth > vw) {
-                    el.style.outline = '3px solid red';
-                    const name = el.tagName + (el.className ? '.' + el.className.split(' ')[0] : '');
-                    results.push(name + ': ' + el.offsetWidth + 'px (+' + (el.offsetWidth - vw) + ')');
-                }
-            });
-            const scrollInfo = (docScroll > vw ? '<span style="color:orange">docScroll:' + docScroll + '</span>' : '') +
-                (bodyScroll > vw ? ' <span style="color:orange">bodyScroll:' + bodyScroll + '</span>' : '');
-            panel.innerHTML = '<b>VP:</b> ' + vw + ' | <b>El:</b> ' + results.length + scrollInfo +
-                (results.length ? '<br><span style="color:red">' + results.join('<br>') + '</span>' : ' ✓');
-        };
-
-        const obs = new MutationObserver(() => setTimeout(checkOverflow, 100));
-        obs.observe(document.body, { childList: true, subtree: true });
-        checkOverflow();
-    }
 });
