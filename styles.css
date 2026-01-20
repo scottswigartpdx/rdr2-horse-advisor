@@ -2545,15 +2545,15 @@ header {
         gap: 6px;
     }
 
-    /* Mobile input - 44px min for touch targets */
+    /* Mobile input - 44px min for touch targets, 16px font prevents iOS zoom */
     #queryInput {
-        font-size: 14px;
+        font-size: 16px;
         padding: 12px 14px;
         min-height: 44px;
     }
 
     #queryInput::placeholder {
-        font-size: 14px;
+        font-size: 16px;
         letter-spacing: 0;
     }
 
