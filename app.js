@@ -942,6 +942,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.checkOverflow = () => {
             const vw = document.documentElement.clientWidth;
+            const docScroll = document.documentElement.scrollWidth;
+            const bodyScroll = document.body.scrollWidth;
             let results = [];
             document.querySelectorAll('*').forEach(el => {
                 el.style.outline = '';
@@ -951,7 +953,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     results.push(name + ': ' + el.offsetWidth + 'px (+' + (el.offsetWidth - vw) + ')');
                 }
             });
-            panel.innerHTML = '<b>VP:</b> ' + vw + 'px | <b>Over:</b> ' + results.length +
+            const scrollInfo = (docScroll > vw ? '<span style="color:orange">docScroll:' + docScroll + '</span>' : '') +
+                (bodyScroll > vw ? ' <span style="color:orange">bodyScroll:' + bodyScroll + '</span>' : '');
+            panel.innerHTML = '<b>VP:</b> ' + vw + ' | <b>El:</b> ' + results.length + scrollInfo +
                 (results.length ? '<br><span style="color:red">' + results.join('<br>') + '</span>' : ' ✓');
         };
 
