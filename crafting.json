@@ -1,0 +1,1860 @@
+{
+  "craftingRecipes": [
+    {
+      "name": "Split Point Cartridge",
+      "category": "Ammo",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Regular Cartridge", "qty": 1 }
+      ],
+      "benefit": "+0.2 Damage, +0.5 Accuracy, reduced Dead Eye drain",
+      "unlock": "-"
+    },
+    {
+      "name": "Explosive Cartridge",
+      "category": "Ammo",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Express Cartridge", "qty": 1 },
+        { "item": "Animal Fat", "qty": 1 }
+      ],
+      "benefit": "+1 Damage, explosive on impact",
+      "unlock": "Pamphlet from Fence"
+    },
+    {
+      "name": "Incendiary Buckshot",
+      "category": "Ammo",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Regular Buckshot", "qty": 1 },
+        { "item": "Moonshine", "qty": 1 }
+      ],
+      "benefit": "Sets target on fire",
+      "unlock": "Pamphlet at Copperhead Landing"
+    },
+    {
+      "name": "Explosive Slug",
+      "category": "Ammo",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Regular Slug", "qty": 1 },
+        { "item": "Animal Fat", "qty": 1 }
+      ],
+      "benefit": "Explosive on impact",
+      "unlock": "Pamphlet near Rattlesnake Hollow"
+    },
+    {
+      "name": "Improved Arrow",
+      "category": "Arrow",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Arrow", "qty": 1 },
+        { "item": "Flight Feather", "qty": 1 }
+      ],
+      "benefit": "Increased damage and accuracy",
+      "unlock": "-"
+    },
+    {
+      "name": "Small Game Arrow",
+      "category": "Arrow",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Arrow", "qty": 1 },
+        { "item": "Shotgun Shell", "qty": 1 },
+        { "item": "Flight Feather", "qty": 1 }
+      ],
+      "benefit": "Perfect pelts from small animals",
+      "unlock": "-"
+    },
+    {
+      "name": "Fire Arrow",
+      "category": "Arrow",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Arrow", "qty": 1 },
+        { "item": "Animal Fat", "qty": 1 },
+        { "item": "Flight Feather", "qty": 1 }
+      ],
+      "benefit": "Sets target on fire",
+      "unlock": "-"
+    },
+    {
+      "name": "Poison Arrow",
+      "category": "Arrow",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Arrow", "qty": 1 },
+        { "item": "Oleander Sage", "qty": 1 },
+        { "item": "Flight Feather", "qty": 1 }
+      ],
+      "benefit": "Poisons target, damage over time",
+      "unlock": "Pamphlet at Bacchus Station"
+    },
+    {
+      "name": "Dynamite Arrow",
+      "category": "Arrow",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Arrow", "qty": 1 },
+        { "item": "Dynamite", "qty": 1 },
+        { "item": "Flight Feather", "qty": 1 }
+      ],
+      "benefit": "Explosive on impact",
+      "unlock": "Pamphlet at Wapiti Reservation"
+    },
+    {
+      "name": "Fire Bottle",
+      "category": "Throwable",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Alcohol (Gin/Rum/Brandy/Bourbon)", "qty": 1 },
+        { "item": "Animal Fat", "qty": 1 }
+      ],
+      "benefit": "Area fire damage",
+      "unlock": "-"
+    },
+    {
+      "name": "Volatile Fire Bottle",
+      "category": "Throwable",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Moonshine", "qty": 1 },
+        { "item": "Animal Fat", "qty": 1 }
+      ],
+      "benefit": "Enhanced fire damage, larger spread",
+      "unlock": "After 'Pouring Forth Oil' mission"
+    },
+    {
+      "name": "Volatile Dynamite",
+      "category": "Throwable",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Dynamite", "qty": 1 },
+        { "item": "Animal Fat", "qty": 1 },
+        { "item": "High Velocity Cartridge", "qty": 1 }
+      ],
+      "benefit": "Larger explosion radius",
+      "unlock": "Pamphlet at Hani's Bethel"
+    },
+    {
+      "name": "Improved Tomahawk",
+      "category": "Throwable",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Tomahawk", "qty": 1 },
+        { "item": "Eagle Feather", "qty": 1 }
+      ],
+      "benefit": "Increased damage",
+      "unlock": "-"
+    },
+    {
+      "name": "Homing Tomahawk",
+      "category": "Throwable",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Tomahawk", "qty": 1 },
+        { "item": "Owl Feather", "qty": 1 }
+      ],
+      "benefit": "Tracks toward target",
+      "unlock": "Pamphlet at Moonstone Pond"
+    },
+    {
+      "name": "Improved Throwing Knife",
+      "category": "Throwable",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Throwing Knife", "qty": 1 },
+        { "item": "Eagle Feather", "qty": 1 }
+      ],
+      "benefit": "Increased damage and accuracy",
+      "unlock": "-"
+    },
+    {
+      "name": "Poison Throwing Knife",
+      "category": "Throwable",
+      "craftedAt": "Field",
+      "ingredients": [
+        { "item": "Throwing Knife", "qty": 1 },
+        { "item": "Oleander Sage", "qty": 1 }
+      ],
+      "benefit": "Poisons target, damage over time",
+      "unlock": "Pamphlet in Saint Denis shack"
+    },
+    {
+      "name": "Potent Health Cure",
+      "category": "Tonic",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Ginseng", "qty": 1 },
+        { "item": "Yarrow", "qty": 1 }
+      ],
+      "benefit": "Fully restores Health, moderately fortifies",
+      "unlock": "-"
+    },
+    {
+      "name": "Special Health Cure",
+      "category": "Tonic",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Ginseng", "qty": 2 },
+        { "item": "Yarrow", "qty": 2 },
+        { "item": "English Mace", "qty": 2 }
+      ],
+      "benefit": "Fully restores and fortifies Health",
+      "unlock": "After 'American Distillation' mission"
+    },
+    {
+      "name": "Potent Snake Oil",
+      "category": "Tonic",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Indian Tobacco", "qty": 1 }
+      ],
+      "benefit": "Fully restores Dead Eye",
+      "unlock": "-"
+    },
+    {
+      "name": "Special Snake Oil",
+      "category": "Tonic",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Indian Tobacco", "qty": 2 },
+        { "item": "Prairie Poppy", "qty": 2 }
+      ],
+      "benefit": "Fully restores and fortifies Dead Eye",
+      "unlock": "After 'American Distillation' mission"
+    },
+    {
+      "name": "Potent Bitters",
+      "category": "Tonic",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Sage", "qty": 1 },
+        { "item": "Burdock Root", "qty": 1 }
+      ],
+      "benefit": "Fully restores Stamina, moderately fortifies",
+      "unlock": "-"
+    },
+    {
+      "name": "Special Bitters",
+      "category": "Tonic",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Sage", "qty": 2 },
+        { "item": "Burdock Root", "qty": 2 },
+        { "item": "Violet Snowdrop", "qty": 2 }
+      ],
+      "benefit": "Fully restores and fortifies Stamina",
+      "unlock": "After 'American Distillation' mission"
+    },
+    {
+      "name": "Potent Miracle Tonic",
+      "category": "Tonic",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Currant", "qty": 3 },
+        { "item": "Yarrow", "qty": 3 },
+        { "item": "Burdock Root", "qty": 2 }
+      ],
+      "benefit": "Fully restores Health, Stamina, and Dead Eye",
+      "unlock": "-"
+    },
+    {
+      "name": "Special Miracle Tonic",
+      "category": "Tonic",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Currant", "qty": 6 },
+        { "item": "Yarrow", "qty": 6 },
+        { "item": "Burdock Root", "qty": 4 }
+      ],
+      "benefit": "Fully restores and fortifies Health, Stamina, and Dead Eye",
+      "unlock": "After 'A Short Walk in a Pretty Town' mission"
+    },
+    {
+      "name": "Potent Horse Medicine",
+      "category": "Horse Care",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Ginseng", "qty": 1 },
+        { "item": "Common Bulrush", "qty": 1 }
+      ],
+      "benefit": "Restores horse Health",
+      "unlock": "-"
+    },
+    {
+      "name": "Special Horse Medicine",
+      "category": "Horse Care",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Ginseng", "qty": 2 },
+        { "item": "Common Bulrush", "qty": 2 },
+        { "item": "Wild Carrot", "qty": 2 }
+      ],
+      "benefit": "Fully restores and fortifies horse Health",
+      "unlock": "After 'Pouring Forth Oil' mission"
+    },
+    {
+      "name": "Potent Horse Stimulant",
+      "category": "Horse Care",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Sage", "qty": 1 },
+        { "item": "Common Bulrush", "qty": 1 }
+      ],
+      "benefit": "Restores horse Stamina",
+      "unlock": "-"
+    },
+    {
+      "name": "Special Horse Stimulant",
+      "category": "Horse Care",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Sage", "qty": 2 },
+        { "item": "Common Bulrush", "qty": 2 },
+        { "item": "Wild Carrot", "qty": 2 }
+      ],
+      "benefit": "Fully restores and fortifies horse Stamina",
+      "unlock": "After 'Pouring Forth Oil' mission"
+    },
+    {
+      "name": "Special Horse Reviver",
+      "category": "Horse Care",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Ginseng", "qty": 2 },
+        { "item": "Wild Carrot", "qty": 2 },
+        { "item": "Parasol Mushroom", "qty": 2 }
+      ],
+      "benefit": "Revives critically injured horse",
+      "unlock": "After 'American Distillation' mission"
+    },
+    {
+      "name": "Horse Meal",
+      "category": "Horse Care",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Hay", "qty": 3 },
+        { "item": "Beet", "qty": 3 },
+        { "item": "Currant", "qty": 3 }
+      ],
+      "benefit": "Restores horse Health and Stamina cores",
+      "unlock": "After 'Pouring Forth Oil' mission"
+    },
+    {
+      "name": "Horse Ointment",
+      "category": "Horse Care",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Sage", "qty": 1 },
+        { "item": "Common Bulrush", "qty": 1 },
+        { "item": "Yarrow", "qty": 1 }
+      ],
+      "benefit": "Cleans horse, restores minor Health",
+      "unlock": "-"
+    },
+    {
+      "name": "Predator Bait",
+      "category": "Bait",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Gritty Fish Meat", "qty": 1 },
+        { "item": "Blackberry", "qty": 1 }
+      ],
+      "benefit": "Attracts predator animals",
+      "unlock": "-"
+    },
+    {
+      "name": "Potent Predator Bait",
+      "category": "Bait",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Gritty Fish Meat", "qty": 2 },
+        { "item": "Blackberry", "qty": 2 }
+      ],
+      "benefit": "Strongly attracts predator animals",
+      "unlock": "After 'Exit Pursued by a Bruised Ego' mission"
+    },
+    {
+      "name": "Herbivore Bait",
+      "category": "Bait",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Vanilla Flower", "qty": 1 },
+        { "item": "Corn", "qty": 1 }
+      ],
+      "benefit": "Attracts herbivore animals",
+      "unlock": "-"
+    },
+    {
+      "name": "Potent Herbivore Bait",
+      "category": "Bait",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Vanilla Flower", "qty": 2 },
+        { "item": "Corn", "qty": 2 }
+      ],
+      "benefit": "Strongly attracts herbivore animals",
+      "unlock": "After 'Exit Pursued by a Bruised Ego' mission"
+    },
+    {
+      "name": "Cover Scent Lotion",
+      "category": "Bait",
+      "craftedAt": "Campfire",
+      "ingredients": [
+        { "item": "Scent Gland", "qty": 1 }
+      ],
+      "benefit": "Masks your scent from animals",
+      "unlock": "-"
+    },
+    {
+      "name": "Tonics Satchel",
+      "category": "Satchel",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        { "item": "Deer Pelt", "qty": 1 },
+        { "item": "Elk Pelt", "qty": 1 },
+        { "item": "Buck Pelt", "qty": 1 }
+      ],
+      "benefit": "Carry up to 10 tonics of each type",
+      "unlock": "Upgrade medicine wagon twice"
+    },
+    {
+      "name": "Ingredients Satchel",
+      "category": "Satchel",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        { "item": "Deer Pelt", "qty": 1 },
+        { "item": "Badger Pelt", "qty": 1 },
+        { "item": "Squirrel Carcass", "qty": 1 }
+      ],
+      "benefit": "Carry up to 20 ingredients of each type",
+      "unlock": "Donate 5 carcasses to Pearson"
+    },
+    {
+      "name": "Kit Satchel",
+      "category": "Satchel",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        { "item": "Deer Pelt", "qty": 1 },
+        { "item": "Elk Pelt", "qty": 1 },
+        { "item": "Panther Pelt", "qty": 1 }
+      ],
+      "benefit": "Carry up to 10 kit items of each type",
+      "unlock": "Donate 3 valuables to camp box"
+    },
+    {
+      "name": "Provisions Satchel",
+      "category": "Satchel",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        { "item": "Deer Pelt", "qty": 1 },
+        { "item": "Bison Pelt", "qty": 1 },
+        { "item": "Raccoon Pelt", "qty": 1 }
+      ],
+      "benefit": "Carry up to 10 provisions of each type",
+      "unlock": "Upgrade provisions wagon twice"
+    },
+    {
+      "name": "Materials Satchel",
+      "category": "Satchel",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        { "item": "Deer Pelt", "qty": 1 },
+        { "item": "Boar Pelt", "qty": 1 },
+        { "item": "Iguana Skin", "qty": 1 }
+      ],
+      "benefit": "Carry up to 10 materials of each type",
+      "unlock": "Craft 3 items at Scout Fire"
+    },
+    {
+      "name": "Valuables Satchel",
+      "category": "Satchel",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        { "item": "Deer Pelt", "qty": 1 },
+        { "item": "Beaver Pelt", "qty": 1 },
+        { "item": "Rabbit Pelt", "qty": 1 }
+      ],
+      "benefit": "Carry up to 20 valuables of each type",
+      "unlock": "Donate $50 to camp box"
+    },
+    {
+      "name": "Legend of the East Satchel",
+      "category": "Satchel",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        { "item": "Deer Pelt", "qty": 1 },
+        { "item": "Cougar Pelt", "qty": 1 },
+        { "item": "Wolf Pelt", "qty": 1 }
+      ],
+      "benefit": "Carry 99 of almost every item",
+      "unlock": "Craft all other satchels"
+    },
+    {
+      "name": "Buck Antler Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 18.25,
+      "ingredients": [
+        { "item": "Legendary Buck Antler", "qty": 1 }
+      ],
+      "benefit": "Higher chance of perfect pelts even with wrong weapon",
+      "unlock": "-"
+    },
+    {
+      "name": "Elk Antler Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 22.75,
+      "ingredients": [
+        { "item": "Legendary Elk Antler", "qty": 1 }
+      ],
+      "benefit": "Increases value of looted cash by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Ram Horn Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 19.50,
+      "ingredients": [
+        { "item": "Legendary Ram Horn", "qty": 1 }
+      ],
+      "benefit": "Decreases weapon degradation by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Coyote Fang Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 16.50,
+      "ingredients": [
+        { "item": "Legendary Coyote Fang", "qty": 1 }
+      ],
+      "benefit": "Increases Dead Eye XP gain by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Fox Claw Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 17.25,
+      "ingredients": [
+        { "item": "Legendary Fox Claw", "qty": 1 }
+      ],
+      "benefit": "Increases Eagle Eye duration by 5 seconds",
+      "unlock": "-"
+    },
+    {
+      "name": "Beaver Tooth Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 18.25,
+      "ingredients": [
+        { "item": "Legendary Beaver Tooth", "qty": 1 }
+      ],
+      "benefit": "Slows degradation of all weapons by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Boar Tusk Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 15.75,
+      "ingredients": [
+        { "item": "Legendary Boar Tusk", "qty": 1 }
+      ],
+      "benefit": "Decreases horse Health and Stamina drain by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Bison Horn Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 16.75,
+      "ingredients": [
+        { "item": "Legendary Tatanka Bison Horn", "qty": 1 }
+      ],
+      "benefit": "Increases melee damage resistance by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Cougar Fang Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 21.50,
+      "ingredients": [
+        { "item": "Legendary Cougar Fang", "qty": 1 }
+      ],
+      "benefit": "Increases Stamina XP gain by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Panther Eye Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 23.75,
+      "ingredients": [
+        { "item": "Legendary Panther Eye", "qty": 1 }
+      ],
+      "benefit": "Decreases Dead Eye drain by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Wolf Heart Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 20.25,
+      "ingredients": [
+        { "item": "Legendary Wolf Heart", "qty": 1 }
+      ],
+      "benefit": "Doubles drunk duration (consume 2x alcohol before negative effects)",
+      "unlock": "-"
+    },
+    {
+      "name": "Bear Claw Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 24.50,
+      "ingredients": [
+        { "item": "Legendary Bear Claw", "qty": 1 }
+      ],
+      "benefit": "Increases Health XP gain by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Pronghorn Horn Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 24.50,
+      "ingredients": [
+        { "item": "Legendary Pronghorn Horn", "qty": 1 }
+      ],
+      "benefit": "Money from selling coaches increased by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Lion Paw Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 19.75,
+      "ingredients": [
+        { "item": "Lion Paw", "qty": 1 }
+      ],
+      "benefit": "Increases Stamina XP gain by 10%",
+      "unlock": "Complete 'He's British, Of Course' stranger mission"
+    },
+    {
+      "name": "Alligator Tooth Talisman",
+      "category": "Talisman",
+      "craftedAt": "Fence",
+      "price": 35.00,
+      "ingredients": [
+        { "item": "Legendary Alligator Tooth", "qty": 1 },
+        { "item": "Gold Jointed Bracelet", "qty": 1 },
+        { "item": "Vintage Civil War Handcuffs", "qty": 1 }
+      ],
+      "benefit": "Decreases Dead Eye core drain by 10%",
+      "unlock": "Complete 'That's Murfree Country' mission"
+    },
+    {
+      "name": "Bison Horn Talisman",
+      "category": "Talisman",
+      "craftedAt": "Fence",
+      "price": 42.00,
+      "ingredients": [
+        { "item": "Legendary Tatanka Bison Horn", "qty": 1 },
+        { "item": "Silver Earring", "qty": 1 },
+        { "item": "Abalone Shell Fragment", "qty": 1 }
+      ],
+      "benefit": "Decreases Stamina core drain by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Boar Tusk Talisman",
+      "category": "Talisman",
+      "craftedAt": "Fence",
+      "price": 34.75,
+      "ingredients": [
+        { "item": "Legendary Boar Tusk", "qty": 1 },
+        { "item": "Cobalt Petrified Wood", "qty": 1 },
+        { "item": "Gold Earring", "qty": 1 }
+      ],
+      "benefit": "Decreases horse Health and Stamina core drain by 10%",
+      "unlock": "-"
+    },
+    {
+      "name": "Raven Claw Talisman",
+      "category": "Talisman",
+      "craftedAt": "Fence",
+      "price": 29.00,
+      "ingredients": [
+        { "item": "Old Brass Compass", "qty": 1 }
+      ],
+      "benefit": "Decreases all weapon degradation by 20%",
+      "unlock": "Complete all 10 Rock Carving locations"
+    },
+    {
+      "name": "Owl Feather Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 18.00,
+      "ingredients": [
+        { "item": "Legendary Tatanka Bison Horn", "qty": 1 },
+        { "item": "Hawk Feather", "qty": 1 },
+        { "item": "Owl Feather", "qty": 1 }
+      ],
+      "benefit": "Loot more ammo from bodies",
+      "unlock": "-"
+    },
+    {
+      "name": "Crow Beak Trinket",
+      "category": "Trinket",
+      "craftedAt": "Fence",
+      "price": 22.00,
+      "ingredients": [
+        { "item": "Crow Beak", "qty": 1 }
+      ],
+      "benefit": "Increases all looted ammo by 10%",
+      "unlock": "Found via Elemental Trail treasure hunt"
+    },
+
+    {
+      "name": "Legendary Bear Head Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Bear Hunter",
+      "craftedAt": "Trapper",
+      "price": 40.00,
+      "ingredients": [
+        { "item": "Legendary Bear Pelt", "qty": 1 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Bear Coat",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Bear Hunter",
+      "craftedAt": "Trapper",
+      "price": 28.00,
+      "ingredients": [
+        { "item": "Legendary Bear Pelt", "qty": 1 },
+        { "item": "Perfect Bison Pelt", "qty": 1 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Bear Roper",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Bear Hunter",
+      "craftedAt": "Trapper",
+      "price": 34.00,
+      "ingredients": [
+        { "item": "Legendary Bear Pelt", "qty": 1 },
+        { "item": "Perfect Bull Hide", "qty": 1 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Boar Riding Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Bear Hunter",
+      "craftedAt": "Trapper",
+      "price": 15.00,
+      "ingredients": [
+        { "item": "Perfect Boar Pelt", "qty": 1 },
+        { "item": "Perfect Rabbit Pelt", "qty": 2 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Raccoon Mountain Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Trophy Buck",
+      "craftedAt": "Trapper",
+      "price": 21.00,
+      "ingredients": [
+        { "item": "Perfect Beaver Pelt", "qty": 1 },
+        { "item": "Perfect Raccoon Pelt", "qty": 1 },
+        { "item": "Hawk Feather", "qty": 2 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Buck Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Trophy Buck",
+      "craftedAt": "Trapper",
+      "price": 26.00,
+      "ingredients": [
+        { "item": "Legendary Buck Pelt", "qty": 1 },
+        { "item": "Perfect Ram Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Fox Moccasins",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Trophy Buck",
+      "craftedAt": "Trapper",
+      "price": 40.00,
+      "ingredients": [
+        { "item": "Legendary Fox Pelt", "qty": 1 },
+        { "item": "Perfect Elk Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Buck & Fox Range Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Trophy Buck",
+      "craftedAt": "Trapper",
+      "price": 28.00,
+      "ingredients": [
+        { "item": "Legendary Buck Pelt", "qty": 1 },
+        { "item": "Legendary Fox Pelt", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Legendary Beaver Flop Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Dreamcatcher",
+      "craftedAt": "Trapper",
+      "price": 22.00,
+      "ingredients": [
+        { "item": "Legendary Beaver Pelt", "qty": 1 },
+        { "item": "Legendary Boar Pelt", "qty": 1 },
+        { "item": "Cardinal Feather", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Bison Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Dreamcatcher",
+      "craftedAt": "Trapper",
+      "price": 30.00,
+      "ingredients": [
+        { "item": "Legendary Tatanka Bison Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Bison Batwing Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Dreamcatcher",
+      "craftedAt": "Trapper",
+      "price": 32.00,
+      "ingredients": [
+        { "item": "Legendary Tatanka Bison Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Boar & Bison Fowlers",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Dreamcatcher",
+      "craftedAt": "Trapper",
+      "price": 37.00,
+      "ingredients": [
+        { "item": "Legendary Boar Pelt", "qty": 1 },
+        { "item": "Legendary Tatanka Bison Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Beaver Cavalry Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Dreamcatcher",
+      "craftedAt": "Trapper",
+      "price": 18.00,
+      "ingredients": [
+        { "item": "Legendary Beaver Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Legendary Cougar Flop Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Beast of Prey",
+      "craftedAt": "Trapper",
+      "price": 19.00,
+      "ingredients": [
+        { "item": "Legendary Cougar Pelt", "qty": 1 },
+        { "item": "Turkey Feather", "qty": 2 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Cougar & Wolf Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Beast of Prey",
+      "craftedAt": "Trapper",
+      "price": 42.00,
+      "ingredients": [
+        { "item": "Legendary Cougar Pelt", "qty": 1 },
+        { "item": "Legendary Wolf Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Wolf Batwing Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Beast of Prey",
+      "craftedAt": "Trapper",
+      "price": 34.00,
+      "ingredients": [
+        { "item": "Legendary Wolf Pelt", "qty": 1 },
+        { "item": "Perfect Goat Hide", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Bull Fowler Boots",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Beast of Prey",
+      "craftedAt": "Trapper",
+      "price": 29.00,
+      "ingredients": [
+        { "item": "Perfect Boar Pelt", "qty": 1 },
+        { "item": "Perfect Bull Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Cougar Riding Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Beast of Prey",
+      "craftedAt": "Trapper",
+      "price": 20.00,
+      "ingredients": [
+        { "item": "Legendary Cougar Pelt", "qty": 1 },
+        { "item": "Perfect Boar Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Legendary Coyote Mountain Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Huntsman",
+      "craftedAt": "Trapper",
+      "price": 23.00,
+      "ingredients": [
+        { "item": "Legendary Coyote Pelt", "qty": 1 },
+        { "item": "Eagle Feather", "qty": 2 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Pronghorn Coat",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Huntsman",
+      "craftedAt": "Trapper",
+      "price": 35.00,
+      "ingredients": [
+        { "item": "Legendary Pronghorn Hide", "qty": 1 },
+        { "item": "Perfect Moose Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Coyote Half Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Huntsman",
+      "craftedAt": "Trapper",
+      "price": 20.00,
+      "ingredients": [
+        { "item": "Legendary Coyote Pelt", "qty": 1 },
+        { "item": "Perfect Fox Pelt", "qty": 2 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Workman's Pride Boots",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Huntsman",
+      "craftedAt": "Trapper",
+      "price": 28.00,
+      "ingredients": [
+        { "item": "Perfect Cow Hide", "qty": 1 },
+        { "item": "Perfect Goat Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Pronghorn Range Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Huntsman",
+      "craftedAt": "Trapper",
+      "price": 17.00,
+      "ingredients": [
+        { "item": "Legendary Pronghorn Hide", "qty": 1 },
+        { "item": "Perfect Muskrat Pelt", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Legendary Alligator Gambler's Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Death Roll",
+      "craftedAt": "Trapper",
+      "price": 22.00,
+      "ingredients": [
+        { "item": "Legendary Alligator Skin", "qty": 1 },
+        { "item": "Perfect Snake Skin", "qty": 2 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Panther Cloak",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Death Roll",
+      "craftedAt": "Trapper",
+      "price": 45.00,
+      "ingredients": [
+        { "item": "Legendary Panther Pelt", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Alligator Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Death Roll",
+      "craftedAt": "Trapper",
+      "price": 35.00,
+      "ingredients": [
+        { "item": "Legendary Alligator Skin", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Alligator Fowlers",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Death Roll",
+      "craftedAt": "Trapper",
+      "price": 35.00,
+      "ingredients": [
+        { "item": "Legendary Alligator Skin", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Panther Range Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Death Roll",
+      "craftedAt": "Trapper",
+      "price": 30.00,
+      "ingredients": [
+        { "item": "Legendary Panther Pelt", "qty": 1 },
+        { "item": "Perfect Gila Monster Skin", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Legendary Ram Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Stalker",
+      "craftedAt": "Trapper",
+      "price": 17.00,
+      "ingredients": [
+        { "item": "Legendary Ram Hide", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Moose Hunting Jacket",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Stalker",
+      "craftedAt": "Trapper",
+      "price": 24.00,
+      "ingredients": [
+        { "item": "Legendary Moose Pelt", "qty": 1 },
+        { "item": "Perfect Wolf Pelt", "qty": 1 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Ram Batwing Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Stalker",
+      "craftedAt": "Trapper",
+      "price": 33.00,
+      "ingredients": [
+        { "item": "Legendary Ram Hide", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Moose Moccasins",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Stalker",
+      "craftedAt": "Trapper",
+      "price": 22.00,
+      "ingredients": [
+        { "item": "Legendary Moose Pelt", "qty": 1 },
+        { "item": "Perfect Cow Hide", "qty": 1 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Ram Rifleman Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Stalker",
+      "craftedAt": "Trapper",
+      "price": 12.00,
+      "ingredients": [
+        { "item": "Legendary Ram Hide", "qty": 1 },
+        { "item": "Perfect Boar Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Legendary White Bison Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Ghost Bison",
+      "craftedAt": "Trapper",
+      "price": 45.00,
+      "ingredients": [
+        { "item": "Legendary White Bison Pelt", "qty": 1 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary White Bison Coat",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Ghost Bison",
+      "craftedAt": "Trapper",
+      "price": 29.00,
+      "ingredients": [
+        { "item": "Legendary White Bison Pelt", "qty": 1 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Elk Half Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Ghost Bison",
+      "craftedAt": "Trapper",
+      "price": 16.00,
+      "ingredients": [
+        { "item": "Legendary Elk Pelt", "qty": 1 },
+        { "item": "Perfect Sheep Hide", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Elk Moccasins",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Ghost Bison",
+      "craftedAt": "Trapper",
+      "price": 30.00,
+      "ingredients": [
+        { "item": "Legendary Elk Pelt", "qty": 1 },
+        { "item": "Perfect Goat Hide", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Legendary Elk Range Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Ghost Bison",
+      "craftedAt": "Trapper",
+      "price": 13.00,
+      "ingredients": [
+        { "item": "Legendary Elk Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Ram Sombrero",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Rattler",
+      "craftedAt": "Trapper",
+      "price": 10.00,
+      "ingredients": [
+        { "item": "Perfect Ram Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Outdoorsmen Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Rattler",
+      "craftedAt": "Trapper",
+      "price": 22.00,
+      "ingredients": [
+        { "item": "Perfect Pronghorn Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Javelina Half Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Rattler",
+      "craftedAt": "Trapper",
+      "price": 18.00,
+      "ingredients": [
+        { "item": "Perfect Collared Peccary Pig Pelt", "qty": 1 },
+        { "item": "Perfect Snake Skin", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Iguana Range Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Rattler",
+      "craftedAt": "Trapper",
+      "price": 27.00,
+      "ingredients": [
+        { "item": "Perfect Collared Peccary Pig Pelt", "qty": 1 },
+        { "item": "Perfect Iguana Skin", "qty": 2 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Goat Flop Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Wrangler",
+      "craftedAt": "Trapper",
+      "price": 12.00,
+      "ingredients": [
+        { "item": "Perfect Goat Hide", "qty": 1 },
+        { "item": "Perfect Pronghorn Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Trapper's Cloak",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Wrangler",
+      "craftedAt": "Trapper",
+      "price": 32.00,
+      "ingredients": [
+        { "item": "Perfect Sheep Hide", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "No-Man's Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Wrangler",
+      "craftedAt": "Trapper",
+      "price": 27.00,
+      "ingredients": [
+        { "item": "Perfect Goat Hide", "qty": 1 },
+        { "item": "Perfect Panther Pelt", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Two Toned Moccasins",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Wrangler",
+      "craftedAt": "Trapper",
+      "price": 15.00,
+      "ingredients": [
+        { "item": "Perfect Buck Pelt", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Moose Range Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Wrangler",
+      "craftedAt": "Trapper",
+      "price": 22.00,
+      "ingredients": [
+        { "item": "Perfect Moose Pelt", "qty": 1 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Elk Flop Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Bronco Buster",
+      "craftedAt": "Trapper",
+      "price": 12.00,
+      "ingredients": [
+        { "item": "Perfect Elk Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Coyote Scout Jacket",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Bronco Buster",
+      "craftedAt": "Trapper",
+      "price": 20.00,
+      "ingredients": [
+        { "item": "Perfect Coyote Pelt", "qty": 1 },
+        { "item": "Perfect Ox Hide", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Huntsman Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Bronco Buster",
+      "craftedAt": "Trapper",
+      "price": 25.00,
+      "ingredients": [
+        { "item": "Perfect Deer Pelt", "qty": 1 },
+        { "item": "Perfect Sheep Hide", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Boar Fringed Shotgun Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Bronco Buster",
+      "craftedAt": "Trapper",
+      "price": 25.00,
+      "ingredients": [
+        { "item": "Perfect Boar Pelt", "qty": 2 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Pigskin Rifleman Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Bronco Buster",
+      "craftedAt": "Trapper",
+      "price": 8.00,
+      "ingredients": [
+        { "item": "Perfect Pig Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Muskrat Cavalry Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Marauder",
+      "craftedAt": "Trapper",
+      "price": 15.00,
+      "ingredients": [
+        { "item": "Perfect Muskrat Pelt", "qty": 1 },
+        { "item": "Perfect Rabbit Pelt", "qty": 4 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Principal Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Marauder",
+      "craftedAt": "Trapper",
+      "price": 18.00,
+      "ingredients": [
+        { "item": "Perfect Cow Hide", "qty": 1 },
+        { "item": "Perfect Deer Pelt", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Bull Fringed Shotgun Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Marauder",
+      "craftedAt": "Trapper",
+      "price": 18.00,
+      "ingredients": [
+        { "item": "Perfect Bull Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Snake Skin Cavalry Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Marauder",
+      "craftedAt": "Trapper",
+      "price": 26.00,
+      "ingredients": [
+        { "item": "Perfect Boar Pelt", "qty": 1 },
+        { "item": "Perfect Snake Skin", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Plantation Slouch Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Bounty Hunter",
+      "craftedAt": "Trapper",
+      "price": 15.00,
+      "ingredients": [
+        { "item": "Perfect Bison Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Beaver Hunting Jacket",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Bounty Hunter",
+      "craftedAt": "Trapper",
+      "price": 21.00,
+      "ingredients": [
+        { "item": "Perfect Beaver Pelt", "qty": 2 },
+        { "item": "Perfect Cow Hide", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Sheepskin Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Bounty Hunter",
+      "craftedAt": "Trapper",
+      "price": 20.00,
+      "ingredients": [
+        { "item": "Perfect Sheep Hide", "qty": 2 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Pronghorn Half Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Bounty Hunter",
+      "craftedAt": "Trapper",
+      "price": 7.00,
+      "ingredients": [
+        { "item": "Perfect Pronghorn Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Buck Riding Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Bounty Hunter",
+      "craftedAt": "Trapper",
+      "price": 5.00,
+      "ingredients": [
+        { "item": "Perfect Buck Pelt", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Beaver Drifter Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Desperado",
+      "craftedAt": "Trapper",
+      "price": 20.00,
+      "ingredients": [
+        { "item": "Perfect Beaver Pelt", "qty": 2 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Wolf Coat",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Desperado",
+      "craftedAt": "Trapper",
+      "price": 25.00,
+      "ingredients": [
+        { "item": "Perfect Ram Hide", "qty": 1 },
+        { "item": "Perfect Wolf Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Billy Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Desperado",
+      "craftedAt": "Trapper",
+      "price": 32.00,
+      "ingredients": [
+        { "item": "Perfect Armadillo Skin", "qty": 2 },
+        { "item": "Perfect Goat Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Boar & Bull Fowler Boots",
+      "category": "Clothing",
+      "subcategory": "Boots",
+      "garmentSet": "The Desperado",
+      "craftedAt": "Trapper",
+      "price": 31.00,
+      "ingredients": [
+        { "item": "Perfect Boar Pelt", "qty": 1 },
+        { "item": "Perfect Ox Hide", "qty": 1 }
+      ],
+      "benefit": "Average temperature protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Winter Cavalry Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Desperado",
+      "craftedAt": "Trapper",
+      "price": 25.00,
+      "ingredients": [
+        { "item": "Perfect Muskrat Pelt", "qty": 2 },
+        { "item": "Perfect Rabbit Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Coyote Gambler's Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Night Wrangler",
+      "craftedAt": "Trapper",
+      "price": 16.00,
+      "ingredients": [
+        { "item": "Perfect Coyote Pelt", "qty": 2 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Cougar Cutaway Coat",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Night Wrangler",
+      "craftedAt": "Trapper",
+      "price": 39.00,
+      "ingredients": [
+        { "item": "Perfect Black Bear Pelt", "qty": 1 },
+        { "item": "Perfect Cougar Pelt", "qty": 2 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Wilderness Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Night Wrangler",
+      "craftedAt": "Trapper",
+      "price": 28.00,
+      "ingredients": [
+        { "item": "Perfect Panther Pelt", "qty": 1 },
+        { "item": "Perfect Wolf Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Moose Half Chaps",
+      "category": "Clothing",
+      "subcategory": "Chaps",
+      "garmentSet": "The Night Wrangler",
+      "craftedAt": "Trapper",
+      "price": 10.00,
+      "ingredients": [
+        { "item": "Perfect Moose Pelt", "qty": 1 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Badger Rifleman Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Night Wrangler",
+      "craftedAt": "Trapper",
+      "price": 10.00,
+      "ingredients": [
+        { "item": "Perfect Badger Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Grenadier Hat",
+      "category": "Clothing",
+      "subcategory": "Hat",
+      "garmentSet": "The Mountain Man",
+      "craftedAt": "Trapper",
+      "price": 24.00,
+      "ingredients": [
+        { "item": "Perfect Beaver Pelt", "qty": 1 },
+        { "item": "Perfect Muskrat Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Ram Shotgun Coat",
+      "category": "Clothing",
+      "subcategory": "Coat",
+      "garmentSet": "The Mountain Man",
+      "craftedAt": "Trapper",
+      "price": 45.00,
+      "ingredients": [
+        { "item": "Perfect Ram Hide", "qty": 2 }
+      ],
+      "benefit": "Excellent cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Country Vest",
+      "category": "Clothing",
+      "subcategory": "Vest",
+      "garmentSet": "The Mountain Man",
+      "craftedAt": "Trapper",
+      "price": 25.00,
+      "ingredients": [
+        { "item": "Perfect Beaver Pelt", "qty": 1 },
+        { "item": "Perfect Buck Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+    {
+      "name": "Elk Riding Gloves",
+      "category": "Clothing",
+      "subcategory": "Gloves",
+      "garmentSet": "The Mountain Man",
+      "craftedAt": "Trapper",
+      "price": 12.00,
+      "ingredients": [
+        { "item": "Perfect Elk Pelt", "qty": 1 }
+      ],
+      "benefit": "Good cold protection",
+      "unlock": "-"
+    },
+
+    {
+      "name": "Bear Dakota Saddle",
+      "category": "Horse",
+      "subcategory": "Saddle",
+      "garmentSet": "-",
+      "craftedAt": "Trapper",
+      "price": 58.00,
+      "ingredients": [
+        { "item": "Perfect Bear Pelt", "qty": 1 }
+      ],
+      "benefit": "Stamina core drain rate -20%",
+      "unlock": "-"
+    },
+    {
+      "name": "Beaver Roping Saddle",
+      "category": "Horse",
+      "subcategory": "Saddle",
+      "garmentSet": "-",
+      "craftedAt": "Trapper",
+      "price": 52.00,
+      "ingredients": [
+        { "item": "Perfect Beaver Pelt", "qty": 2 }
+      ],
+      "benefit": "Stamina core drain rate -18%",
+      "unlock": "-"
+    },
+    {
+      "name": "Cougar McClelland Saddle",
+      "category": "Horse",
+      "subcategory": "Saddle",
+      "garmentSet": "-",
+      "craftedAt": "Trapper",
+      "price": 67.00,
+      "ingredients": [
+        { "item": "Perfect Cougar Pelt", "qty": 1 }
+      ],
+      "benefit": "Stamina core drain rate -22%, Health core drain rate -20%",
+      "unlock": "-"
+    },
+    {
+      "name": "Panther Trail Saddle",
+      "category": "Horse",
+      "subcategory": "Saddle",
+      "garmentSet": "-",
+      "craftedAt": "Trapper",
+      "price": 62.00,
+      "ingredients": [
+        { "item": "Perfect Panther Pelt", "qty": 1 }
+      ],
+      "benefit": "Stamina core drain rate -22%, Health core drain rate -20%",
+      "unlock": "-"
+    },
+    {
+      "name": "Snake Bulldogger Saddle",
+      "category": "Horse",
+      "subcategory": "Saddle",
+      "garmentSet": "-",
+      "craftedAt": "Trapper",
+      "price": 48.00,
+      "ingredients": [
+        { "item": "Perfect Snake Skin", "qty": 5 }
+      ],
+      "benefit": "Stamina core drain rate -16%",
+      "unlock": "-"
+    },
+    {
+      "name": "Alligator Ranch Cutter Saddle",
+      "category": "Horse",
+      "subcategory": "Saddle",
+      "garmentSet": "-",
+      "craftedAt": "Trapper",
+      "price": 54.00,
+      "ingredients": [
+        { "item": "Perfect Alligator Skin", "qty": 2 }
+      ],
+      "benefit": "Stamina core drain rate -18%",
+      "unlock": "-"
+    },
+    {
+      "name": "Boar Mother Hubbard Saddle",
+      "category": "Horse",
+      "subcategory": "Saddle",
+      "garmentSet": "-",
+      "craftedAt": "Trapper",
+      "price": 42.00,
+      "ingredients": [
+        { "item": "Perfect Boar Pelt", "qty": 2 }
+      ],
+      "benefit": "Stamina core drain rate -14%",
+      "unlock": "-"
+    }
+  ],
+
+  "craftLocations": {
+    "Field": "Craft anywhere from item wheel",
+    "Campfire": "Requires campfire (wilderness or camp)",
+    "Pearson": "Camp butcher - requires Leather Working Tools ($225). All pelts must be perfect.",
+    "Trapper": "Trapper locations - all pelts must be perfect quality",
+    "Fence": "Fence locations (Saint Denis, Rhodes, Emerald Ranch, Van Horn)"
+  }
+}
