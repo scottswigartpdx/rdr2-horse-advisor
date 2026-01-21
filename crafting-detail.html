@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting Detail - RDR2 Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        .detail-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .item-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .item-name {
+            font-family: 'Rye', cursive;
+            font-size: 1.8rem;
+            color: var(--rust);
+            margin: 0 0 10px 0;
+        }
+
+        .item-category {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .detail-section {
+            margin-bottom: 25px;
+        }
+
+        .detail-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-family: 'Rye', cursive;
+            font-size: 0.9rem;
+            color: var(--rust);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ingredients-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ingredients-list li:last-child {
+            border-bottom: none;
+        }
+
+        .ingredient-name {
+            color: var(--text-cream);
+        }
+
+        .ingredient-qty {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .benefit-text {
+            color: var(--text-cream);
+            line-height: 1.6;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .meta-item {
+            background: var(--bg-elevated);
+            padding: 12px 15px;
+            border-radius: 6px;
+        }
+
+        .meta-label {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .meta-value {
+            color: var(--text-cream);
+            font-size: 1rem;
+        }
+
+        .price-value {
+            color: var(--rust);
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            color: var(--rust);
+        }
+
+        .not-found {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .not-found h2 {
+            color: var(--rust);
+            margin-bottom: 10px;
+        }
+
+        .set-link {
+            color: var(--rust);
+            text-decoration: none;
+        }
+
+        .set-link:hover {
+            text-decoration: underline;
+        }
+
+        .other-items {
+            margin-top: 10px;
+        }
+
+        .other-items-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .other-item-link {
+            background: var(--bg-dark);
+            color: var(--text-cream);
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .other-item-link:hover {
+            background: var(--rust);
+        }
+
+        .unlock-text {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+    </style>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container detail-container">
+        <script>document.write(Components.header({backHref: "/", backText: "Back to RDR2 Companion", title: "Crafting Detail", subtitle: "", showAuth: true}))</script>
+
+        <main>
+            <a href="javascript:history.back()" class="back-link">&larr; Back</a>
+            <div id="itemDetail">
+                <div class="item-card">
+                    <p style="color: var(--text-muted);">Loading...</p>
+                </div>
+            </div>
+        </main>
+
+        <div data-component="footer"></div>
+    </div>
+
+    <script>
+        async function loadItemDetail() {
+            const params = new URLSearchParams(window.location.search);
+            const itemName = params.get('item');
+
+            if (!itemName) {
+                showNotFound('No item specified');
+                return;
+            }
+
+            try {
+                const response = await fetch('crafting.json');
+                const data = await response.json();
+
+                const item = data.craftingRecipes.find(r =>
+                    r.name.toLowerCase() === itemName.toLowerCase()
+                );
+
+                if (!item) {
+                    showNotFound(`Item "${itemName}" not found`);
+                    return;
+                }
+
+                // Find other items in the same garment set
+                let setItems = [];
+                if (item.garmentSet && item.garmentSet !== '-') {
+                    setItems = data.craftingRecipes.filter(r =>
+                        r.garmentSet === item.garmentSet && r.name !== item.name
+                    );
+                }
+
+                renderItem(item, setItems);
+                document.title = `${item.name} - RDR2 Companion`;
+
+            } catch (error) {
+                console.error('Failed to load crafting data:', error);
+                showNotFound('Failed to load data');
+            }
+        }
+
+        function showNotFound(message) {
+            document.getElementById('itemDetail').innerHTML = `
+                <div class="not-found">
+                    <h2>Not Found</h2>
+                    <p>${message}</p>
+                    <p><a href="crafting.html" style="color: var(--rust);">Browse all crafting recipes</a></p>
+                </div>
+            `;
+        }
+
+        function renderItem(item, setItems) {
+            const container = document.getElementById('itemDetail');
+
+            // Build category string
+            let categoryParts = [item.category];
+            if (item.subcategory) categoryParts.push(item.subcategory);
+            const categoryStr = categoryParts.join(' / ');
+
+            // Build ingredients HTML
+            let ingredientsHtml = '';
+            if (item.ingredients && item.ingredients.length > 0) {
+                ingredientsHtml = `
+                    <div class="detail-section">
+                        <div class="section-title">Ingredients</div>
+                        <ul class="ingredients-list">
+                            ${item.ingredients.map(ing => `
+                                <li>
+                                    <span class="ingredient-name">${ing.item}</span>
+                                    <span class="ingredient-qty">x${ing.qty}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Build benefit HTML
+            let benefitHtml = '';
+            if (item.benefit && item.benefit !== '-') {
+                benefitHtml = `
+                    <div class="detail-section">
+                        <div class="section-title">Benefit</div>
+                        <p class="benefit-text">${item.benefit}</p>
+                    </div>
+                `;
+            }
+
+            // Build unlock requirement HTML
+            let unlockHtml = '';
+            if (item.unlock && item.unlock !== '-') {
+                unlockHtml = `
+                    <div class="detail-section">
+                        <div class="section-title">Unlock Requirement</div>
+                        <p class="unlock-text">${item.unlock}</p>
+                    </div>
+                `;
+            }
+
+            // Build set items HTML
+            let setHtml = '';
+            if (item.garmentSet && item.garmentSet !== '-') {
+                setHtml = `
+                    <div class="detail-section">
+                        <div class="section-title">Garment Set</div>
+                        <p class="meta-value">${item.garmentSet}</p>
+                        ${setItems.length > 0 ? `
+                            <div class="other-items">
+                                <span class="meta-label">Other items in this set:</span>
+                                <div class="other-items-list">
+                                    ${setItems.map(s => `
+                                        <a href="crafting-detail.html?item=${encodeURIComponent(s.name)}" class="other-item-link">${s.name}</a>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            // Build meta grid
+            let metaItems = [];
+            metaItems.push(`
+                <div class="meta-item">
+                    <div class="meta-label">Crafted At</div>
+                    <div class="meta-value">${item.craftedAt}</div>
+                </div>
+            `);
+
+            if (item.price) {
+                metaItems.push(`
+                    <div class="meta-item">
+                        <div class="meta-label">Price</div>
+                        <div class="meta-value price-value">$${item.price.toFixed(2)}</div>
+                    </div>
+                `);
+            }
+
+            container.innerHTML = `
+                <div class="item-card">
+                    <h1 class="item-name">${item.name}</h1>
+                    <p class="item-category">${categoryStr}</p>
+
+                    <div class="meta-grid">
+                        ${metaItems.join('')}
+                    </div>
+                </div>
+
+                ${ingredientsHtml ? `<div class="item-card">${ingredientsHtml}</div>` : ''}
+                ${benefitHtml ? `<div class="item-card">${benefitHtml}</div>` : ''}
+                ${unlockHtml ? `<div class="item-card">${unlockHtml}</div>` : ''}
+                ${setHtml ? `<div class="item-card">${setHtml}</div>` : ''}
+            `;
+        }
+
+        // Initialize
+        loadItemDetail();
+    </script>
+</body>
+</html>

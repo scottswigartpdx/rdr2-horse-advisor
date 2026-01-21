@@ -183,6 +183,16 @@
             font-size: 0.85rem;
         }
 
+        .unlock-link {
+            color: var(--text-cream);
+            text-decoration: none;
+        }
+
+        .unlock-link:hover {
+            color: var(--rust);
+            text-decoration: underline;
+        }
+
         .no-results {
             text-align: center;
             padding: 40px;
@@ -417,7 +427,10 @@
 
             let html = '<ul class="unlocks-list">';
             for (const [cat, items] of Object.entries(byCategory)) {
-                html += `<li><span class="category">${cat}:</span> ${items.join(', ')}</li>`;
+                const links = items.map(name =>
+                    `<a href="crafting-detail.html?item=${encodeURIComponent(name)}" class="unlock-link">${name}</a>`
+                ).join(', ');
+                html += `<li><span class="category">${cat}:</span> ${links}</li>`;
             }
             html += '</ul>';
             return html;
