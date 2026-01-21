@@ -1,0 +1,33 @@
+{
+  "source": "google-sheets-community",
+  "url": "https://docs.google.com/spreadsheets/d/1ozRMZ9I9zUyC9dY_m_Frem784RLT5TSXD-OOgF2G5yA/edit",
+  "note": "Community-compiled data. Stats on 0-100 scale. Values tabulated via image editor from in-game screenshots.",
+  "weapons": [
+    {"class": "Revolver", "name": "Cattleman Revolver", "damage": 42, "range": 50, "fireRate": 75, "accuracy": 67, "reload": 67, "capacity": 6},
+    {"class": "Revolver", "name": "Flaco's Revolver", "damage": 42, "range": 50, "fireRate": 75, "accuracy": 67, "reload": 67, "capacity": 6},
+    {"class": "Revolver", "name": "Granger's Revolver", "damage": 42, "range": 50, "fireRate": 75, "accuracy": 67, "reload": 67, "capacity": 6},
+    {"class": "Revolver", "name": "Double-Action Revolver", "damage": 38, "range": 50, "fireRate": 82, "accuracy": 50, "reload": 70, "capacity": 6},
+    {"class": "Revolver", "name": "Algernon's Revolver", "damage": 38, "range": 50, "fireRate": 82, "accuracy": 50, "reload": 70, "capacity": 6},
+    {"class": "Revolver", "name": "Micah's Revolver", "damage": 38, "range": 50, "fireRate": 82, "accuracy": 50, "reload": 70, "capacity": 6},
+    {"class": "Revolver", "name": "Schofield Revolver", "damage": 46, "range": 50, "fireRate": 70, "accuracy": 70, "reload": 63, "capacity": 6},
+    {"class": "Revolver", "name": "Calloway's Revolver", "damage": 46, "range": 50, "fireRate": 70, "accuracy": 70, "reload": 63, "capacity": 6},
+    {"class": "Revolver", "name": "Otis Miller's Revolver", "damage": 46, "range": 50, "fireRate": 70, "accuracy": 70, "reload": 63, "capacity": 6},
+    {"class": "Pistol", "name": "Volcanic Pistol", "damage": 57, "range": 50, "fireRate": 50, "accuracy": 72, "reload": 60, "capacity": 8},
+    {"class": "Pistol", "name": "Semi-Automatic Pistol", "damage": 33, "range": 50, "fireRate": 85, "accuracy": 65, "reload": 80, "capacity": 7},
+    {"class": "Pistol", "name": "Mauser Pistol", "damage": 36, "range": 50, "fireRate": 80, "accuracy": 62, "reload": 75, "capacity": 10},
+    {"class": "Pistol", "name": "Midnight's Pistol", "damage": 36, "range": 50, "fireRate": 80, "accuracy": 62, "reload": 75, "capacity": 10},
+    {"class": "Shotgun", "name": "Double-Barreled Shotgun", "damage": 65, "range": 35, "fireRate": 64, "accuracy": 30, "reload": 40, "capacity": 2},
+    {"class": "Shotgun", "name": "Rare Shotgun", "damage": 65, "range": 35, "fireRate": 64, "accuracy": 30, "reload": 40, "capacity": 2},
+    {"class": "Shotgun", "name": "Sawed-Off Shotgun", "damage": 65, "range": 31, "fireRate": 64, "accuracy": 25, "reload": 49, "capacity": 2},
+    {"class": "Shotgun", "name": "Pump-Action Shotgun", "damage": 57, "range": 35, "fireRate": 50, "accuracy": 40, "reload": 61, "capacity": 5},
+    {"class": "Shotgun", "name": "Semi-Automatic Shotgun", "damage": 60, "range": 35, "fireRate": 64, "accuracy": 34, "reload": 63, "capacity": 5},
+    {"class": "Shotgun", "name": "Repeating Shotgun", "damage": 54, "range": 35, "fireRate": 48, "accuracy": 37, "reload": 58, "capacity": 6},
+    {"class": "Repeater", "name": "Carbine Repeater", "damage": 60, "range": 65, "fireRate": 53, "accuracy": 73, "reload": 73, "capacity": 7},
+    {"class": "Repeater", "name": "Lancaster Repeater", "damage": 55, "range": 65, "fireRate": 59, "accuracy": 76, "reload": 70, "capacity": 14},
+    {"class": "Repeater", "name": "Litchfield Repeater", "damage": 65, "range": 65, "fireRate": 50, "accuracy": 68, "reload": 65, "capacity": 16},
+    {"class": "Rifle", "name": "Varmint Rifle", "damage": 40, "range": 65, "fireRate": 65, "accuracy": 80, "reload": 68, "capacity": 14},
+    {"class": "Rifle", "name": "Springfield Rifle", "damage": 80, "range": 75, "fireRate": 31, "accuracy": 78, "reload": 43, "capacity": 1},
+    {"class": "Rifle", "name": "Bolt Action Rifle", "damage": 78, "range": 75, "fireRate": 38, "accuracy": 82, "reload": 55, "capacity": 5}
+  ],
+  "key_finding": "Flaco's and Granger's Revolvers have IDENTICAL stats to Cattleman Revolver (Damage: 42)"
+}

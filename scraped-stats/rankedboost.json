@@ -1,0 +1,246 @@
+{
+  "source": "rankedboost",
+  "url": "https://rankedboost.com/red-dead-redemption-2/best-weapons/",
+  "weapons": [
+    {
+      "name": "Bolt Action Rifle",
+      "damage": 3.2
+    },
+    {
+      "name": "Carbine Repeater",
+      "damage": 2.2
+    },
+    {
+      "name": "Lancaster Repeater",
+      "damage": 2.5
+    },
+    {
+      "name": "Litchfield Repeater",
+      "damage": 2.2
+    },
+    {
+      "name": "Springfield Rifle",
+      "damage": 3.2
+    },
+    {
+      "name": "Varmint Rifle",
+      "damage": 1.5
+    },
+    {
+      "name": "Carcano Rifle",
+      "damage": 3
+    },
+    {
+      "name": "Rare Rolling Block Rifle",
+      "damage": 3.5
+    },
+    {
+      "name": "Rolling Block Rifle",
+      "damage": 3.5
+    },
+    {
+      "name": "Double-Barrel Shotgun",
+      "damage": 2.5
+    },
+    {
+      "name": "Pump Action Shotgun",
+      "damage": 2.2
+    },
+    {
+      "name": "Rare Shotgun",
+      "damage": 2.5
+    },
+    {
+      "name": "Repeating Shotgun",
+      "damage": 2.2
+    },
+    {
+      "name": "Sawed-Off Shotgun",
+      "damage": 2.5
+    },
+    {
+      "name": "Semi-Auto Shotgun",
+      "damage": 2.5
+    },
+    {
+      "name": "Algernon’s Revolver",
+      "damage": 1.5
+    },
+    {
+      "name": "Calloway’s Revolver",
+      "damage": 1.8
+    },
+    {
+      "name": "Cattleman Revolver",
+      "damage": 1.8
+    },
+    {
+      "name": "Double Action Revolver",
+      "damage": 1.5
+    },
+    {
+      "name": "Flaco’s Revolver",
+      "damage": 1.8
+    },
+    {
+      "name": "Granger’s Revolver",
+      "damage": 1.8
+    },
+    {
+      "name": "High Roller Double-Action Revolver",
+      "damage": 1.5
+    },
+    {
+      "name": "John’s Cattleman Revolver",
+      "damage": null
+    },
+    {
+      "name": "Mauser Pistol",
+      "damage": 1.5
+    },
+    {
+      "name": "Micah’s Revolver",
+      "damage": 1.5
+    },
+    {
+      "name": "Midnights Pistol",
+      "damage": 1.5
+    },
+    {
+      "name": "Otis Millers Revolver",
+      "damage": 1.8
+    },
+    {
+      "name": "Schofield Revolver",
+      "damage": 1.8
+    },
+    {
+      "name": "Semi-Automatic Pistol",
+      "damage": 1.2
+    },
+    {
+      "name": "Volcanic Pistol",
+      "damage": 2.2
+    },
+    {
+      "name": "Antler Knife",
+      "damage": 2
+    },
+    {
+      "name": "Broken Pirate Sword",
+      "damage": 2.2
+    },
+    {
+      "name": "Civil War Knife",
+      "damage": 2
+    },
+    {
+      "name": "Cleaver",
+      "damage": 2.5
+    },
+    {
+      "name": "Double Bit Hatchet",
+      "damage": 2.5
+    },
+    {
+      "name": "Hatchet",
+      "damage": 2.5
+    },
+    {
+      "name": "Hewing Hatchet",
+      "damage": 2.5
+    },
+    {
+      "name": "Hunter Hatchet",
+      "damage": 2.5
+    },
+    {
+      "name": "Hunting Knife",
+      "damage": 2
+    },
+    {
+      "name": "Jawbone Knife",
+      "damage": 2
+    },
+    {
+      "name": "John’s Knife",
+      "damage": null
+    },
+    {
+      "name": "Machete",
+      "damage": 2.2
+    },
+    {
+      "name": "Ornate Dagger",
+      "damage": null
+    },
+    {
+      "name": "Rusted Double Bit Hatchet",
+      "damage": 2.5
+    },
+    {
+      "name": "Rusted Hunter Hatchet",
+      "damage": 2.5
+    },
+    {
+      "name": "Stone Hatchet",
+      "damage": 2.5
+    },
+    {
+      "name": "Unarmed",
+      "damage": 1.2
+    },
+    {
+      "name": "Viking Hatchet",
+      "damage": 2.5
+    },
+    {
+      "name": "Wide-Blade Knife",
+      "damage": 2
+    },
+    {
+      "name": "Ancient Tomahawk",
+      "damage": 2.2
+    },
+    {
+      "name": "Improved Throwing Knife",
+      "damage": null
+    },
+    {
+      "name": "Improved Tomahawk",
+      "damage": null
+    },
+    {
+      "name": "Poison Throwing Knife",
+      "damage": null
+    },
+    {
+      "name": "Throwing Knife",
+      "damage": 2
+    },
+    {
+      "name": "Tomahawk",
+      "damage": 2.2
+    },
+    {
+      "name": "Bow",
+      "damage": 3.2
+    },
+    {
+      "name": "Fire Bottles",
+      "damage": 2.8
+    },
+    {
+      "name": "Volatile Fire Bottle",
+      "damage": null
+    },
+    {
+      "name": "Dynamite",
+      "damage": 3.5
+    },
+    {
+      "name": "Volatile Dynamite",
+      "damage": null
+    }
+  ]
+}

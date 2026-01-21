@@ -1,0 +1,465 @@
+{
+  "source": "gamewith",
+  "url": "https://gamewith.net/red-dead-redemption2/article/show/1154",
+  "weapons": [
+    {
+      "name": "CATTLEMAN REVOLVER",
+      "damage": 1.7,
+      "damageMax": 4.02,
+      "range": 2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.8
+    },
+    {
+      "name": "DOUBLE-ACTION REVOLVER",
+      "damage": 1.5,
+      "damageMax": 4.02,
+      "range": 2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.8
+    },
+    {
+      "name": "SCHOFIELD REVOLVER",
+      "damage": 1.8,
+      "damageMax": 4.02,
+      "range": 2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.5
+    },
+    {
+      "name": "FLACO'S REVOLVER",
+      "damage": 1.4,
+      "damageMax": 4.02,
+      "range": 2.2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.6
+    },
+    {
+      "name": "GRANGER'S REVOLVER",
+      "damage": 1.7,
+      "damageMax": 4.02,
+      "range": 2.3,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 3.1
+    },
+    {
+      "name": "OTIS MILLER'S REVOLVER",
+      "damage": 1.9,
+      "damageMax": 4.02,
+      "range": 2.1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.5
+    },
+    {
+      "name": "JOHN'S CATTLEMAN REVOLVER",
+      "damage": 1.7,
+      "damageMax": 4.02,
+      "range": 2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.5
+    },
+    {
+      "name": "MICAH'S REVOLVER",
+      "damage": 1.7,
+      "damageMax": 4.03,
+      "range": 2.2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 3.2
+    },
+    {
+      "name": "ALGERNON'S REVOLVER",
+      "damage": 1.5,
+      "damageMax": 4.02,
+      "range": 2.1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.9
+    },
+    {
+      "name": "CALLOWAY'S REVOLVER",
+      "damage": 1.8,
+      "damageMax": 4.02,
+      "range": 2.2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.9
+    },
+    {
+      "name": "LEMAT REVOLVER (ONLINE)",
+      "damage": 2,
+      "damageMax": 4.03,
+      "range": 2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.2
+    },
+    {
+      "name": "VOLCANIC PISTOL",
+      "damage": 2.3,
+      "damageMax": 4.03,
+      "range": 2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.3
+    },
+    {
+      "name": "SEMI-AUTOMATIC PISTOL",
+      "damage": 1.3,
+      "damageMax": 4.02,
+      "range": 2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 3.1
+    },
+    {
+      "name": "MAUSER PISTOL",
+      "damage": 1.5,
+      "damageMax": 4.02,
+      "range": 2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 3
+    },
+    {
+      "name": "MIDNIGHT'S PISTOL",
+      "damage": 1.3,
+      "damageMax": 4.02,
+      "range": 2,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 3
+    },
+    {
+      "name": "CARBINE REPEATER",
+      "damage": 2.3,
+      "damageMax": 4.03,
+      "range": 2.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 3
+    },
+    {
+      "name": "LANCASTER REPEATER",
+      "damage": 2.1,
+      "damageMax": 4.03,
+      "range": 2.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.8
+    },
+    {
+      "name": "LITCHFIELD REPEATER",
+      "damage": 2.5,
+      "damageMax": 4.03,
+      "range": 2.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.5
+    },
+    {
+      "name": "EVANS REPEATER (ONLINE)",
+      "damage": 2,
+      "damageMax": 4.03,
+      "range": 2.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.4
+    },
+    {
+      "name": "VARMINT RIFLE",
+      "damage": 1.5,
+      "damageMax": 4.01,
+      "range": 2.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.8
+    },
+    {
+      "name": "SPRINGFIELD RIFLE",
+      "damage": 3.2,
+      "damageMax": 4.04,
+      "range": 3,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 1.8
+    },
+    {
+      "name": "BOLT ACTION RIFLE",
+      "damage": 2.8,
+      "damageMax": 4.03,
+      "range": 3,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.2
+    },
+    {
+      "name": "ROLLING BLOCK RIFLE",
+      "damage": 3.3,
+      "damageMax": 4.04,
+      "range": 3.3,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 1.5
+    },
+    {
+      "name": "CARCANO RIFLE",
+      "damage": 3,
+      "damageMax": 4.04,
+      "range": 3.3,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.8
+    },
+    {
+      "name": "RARE ROLLING BLOCK RIFLE",
+      "damage": 3.3,
+      "damageMax": 4.04,
+      "range": 3.1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 1.5
+    },
+    {
+      "name": "DOUBLE-BARRELED SHOTGUN",
+      "damage": 2.5,
+      "damageMax": 4.03,
+      "range": 1.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2
+    },
+    {
+      "name": "SAWED-OFF SHOTGUN",
+      "damage": 2.8,
+      "damageMax": 4.03,
+      "range": 1.3,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2
+    },
+    {
+      "name": "PUMP-ACTION SHOTGUN",
+      "damage": 2.5,
+      "damageMax": 4.03,
+      "range": 1.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.5
+    },
+    {
+      "name": "SEMI-AUTO SHOTGUN",
+      "damage": 2.3,
+      "damageMax": 4.03,
+      "range": 1.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.3
+    },
+    {
+      "name": "REPEATING SHOTGUN",
+      "damage": 2.5,
+      "damageMax": 4.03,
+      "range": 1.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 2.5
+    },
+    {
+      "name": "RARE SHOTGUN",
+      "damage": 2.7,
+      "damageMax": 4.03,
+      "range": 1.4,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 1.8
+    },
+    {
+      "name": "BOW",
+      "damage": 2.3,
+      "damageMax": 4.02,
+      "range": 1.7,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 1.8
+    },
+    {
+      "name": "LASSO",
+      "damage": 0.5,
+      "damageMax": 4,
+      "range": 0.8,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "FIRE BOTTLE",
+      "damage": 2.8,
+      "damageMax": 4.02,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "DYNAMITE",
+      "damage": 3.6,
+      "damageMax": 4.03,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "TOMAHAWK",
+      "damage": 2.5,
+      "damageMax": 4.02,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "THROWING KNIFE",
+      "damage": 2,
+      "damageMax": 4.02,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "ANCIENT TOMAHAWK",
+      "damage": 2.3,
+      "damageMax": 4.02,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "DOUBLE BIT HATCHET",
+      "damage": 2.3,
+      "damageMax": 4.02,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "RUSTED DOUBLE BIT HATCHET",
+      "damage": 2.3,
+      "damageMax": 4.02,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "RUSTED HUNTER HATCHET",
+      "damage": 2.3,
+      "damageMax": 4.02,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "HEWING HATCHET",
+      "damage": 2.3,
+      "damageMax": 4.02,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "VIKING HATCHET",
+      "damage": 2.3,
+      "damageMax": 4.02,
+      "range": 1,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "FIST",
+      "damage": 1.3,
+      "damageMax": 4.01,
+      "range": 0.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "HUNTING KNIFE",
+      "damage": 2,
+      "damageMax": 4.02,
+      "range": 0.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "JOHN'S KNIFE",
+      "damage": 2,
+      "damageMax": 4.02,
+      "range": 0.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "BROKEN PIRATE SWORD",
+      "damage": 2.1,
+      "damageMax": 4.02,
+      "range": 0.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "WIDE BLADE KNIFE",
+      "damage": 2,
+      "damageMax": 4.02,
+      "range": 0.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "CIVIL WAR KNIFE",
+      "damage": 2,
+      "damageMax": 4.02,
+      "range": 0.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "ANTLER KNIFE",
+      "damage": 2,
+      "damageMax": 4.02,
+      "range": 0.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    },
+    {
+      "name": "ORNATE DAGGER",
+      "damage": 2,
+      "damageMax": 4.02,
+      "range": 0.5,
+      "fireRate": null,
+      "accuracy": null,
+      "reload": 4
+    }
+  ]
+}

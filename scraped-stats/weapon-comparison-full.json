@@ -1,0 +1,359 @@
+{
+  "summary": {
+    "total": 49,
+    "wrong": 9,
+    "check": 5,
+    "ok": 35,
+    "notFound": 0
+  },
+  "wrong": [
+    {
+      "name": "Hatchet",
+      "ourDamage": 1.8,
+      "extDamage": 3.1,
+      "diff": -1.3,
+      "diffPercent": -42
+    },
+    {
+      "name": "Flaco's Revolver",
+      "ourDamage": 2.8,
+      "extDamage": 1.6,
+      "diff": 1.2,
+      "diffPercent": 75
+    },
+    {
+      "name": "Granger's Revolver",
+      "ourDamage": 2.7,
+      "extDamage": 1.7,
+      "diff": 1,
+      "diffPercent": 59
+    },
+    {
+      "name": "LeMat Revolver",
+      "ourDamage": 2,
+      "extDamage": 2.5,
+      "diff": -0.5,
+      "diffPercent": -20
+    },
+    {
+      "name": "Bow",
+      "ourDamage": 2.3,
+      "extDamage": 2.8,
+      "diff": -0.5,
+      "diffPercent": -18
+    },
+    {
+      "name": "Hunting Knife",
+      "ourDamage": 1.5,
+      "extDamage": 2,
+      "diff": -0.5,
+      "diffPercent": -25
+    },
+    {
+      "name": "Cleaver",
+      "ourDamage": 1.9,
+      "extDamage": 2.4,
+      "diff": -0.5,
+      "diffPercent": -21
+    },
+    {
+      "name": "Broken Pirate Sword",
+      "ourDamage": 1.7,
+      "extDamage": 2.2,
+      "diff": -0.5,
+      "diffPercent": -23
+    },
+    {
+      "name": "Viking Hatchet",
+      "ourDamage": 1.9,
+      "extDamage": 2.4,
+      "diff": -0.5,
+      "diffPercent": -21
+    }
+  ],
+  "check": [
+    {
+      "name": "Elephant Rifle",
+      "ourDamage": 4,
+      "extDamage": 3.6,
+      "diff": 0.4,
+      "diffPercent": 11
+    },
+    {
+      "name": "Civil War Knife",
+      "ourDamage": 1.6,
+      "extDamage": 2,
+      "diff": -0.4,
+      "diffPercent": -20
+    },
+    {
+      "name": "Dynamite",
+      "ourDamage": 4,
+      "extDamage": 3.6,
+      "diff": 0.4,
+      "diffPercent": 11
+    },
+    {
+      "name": "Lasso",
+      "ourDamage": 0,
+      "extDamage": 0.4,
+      "diff": -0.4,
+      "diffPercent": -100
+    },
+    {
+      "name": "Jawbone Knife",
+      "ourDamage": 1.7,
+      "extDamage": 2,
+      "diff": -0.3,
+      "diffPercent": -15
+    }
+  ],
+  "ok": [
+    {
+      "name": "Litchfield Repeater",
+      "ourDamage": 2.8,
+      "extDamage": 2.6,
+      "diff": 0.2,
+      "diffPercent": 8
+    },
+    {
+      "name": "Semi-Auto Shotgun",
+      "ourDamage": 2.2,
+      "extDamage": 2.4,
+      "diff": -0.2,
+      "diffPercent": -8
+    },
+    {
+      "name": "Machete",
+      "ourDamage": 2,
+      "extDamage": 2.2,
+      "diff": -0.2,
+      "diffPercent": -9
+    },
+    {
+      "name": "Ornate Dagger",
+      "ourDamage": 1.8,
+      "extDamage": 2,
+      "diff": -0.2,
+      "diffPercent": -10
+    },
+    {
+      "name": "Ancient Tomahawk",
+      "ourDamage": 2.5,
+      "extDamage": 2.3,
+      "diff": 0.2,
+      "diffPercent": 9
+    },
+    {
+      "name": "Throwing Knife",
+      "ourDamage": 1.8,
+      "extDamage": 2,
+      "diff": -0.2,
+      "diffPercent": -10
+    },
+    {
+      "name": "Tomahawk",
+      "ourDamage": 2.2,
+      "extDamage": 2.4,
+      "diff": -0.2,
+      "diffPercent": -8
+    },
+    {
+      "name": "Fire Bottle",
+      "ourDamage": 3,
+      "extDamage": 2.8,
+      "diff": 0.2,
+      "diffPercent": 7
+    },
+    {
+      "name": "Calloway's Revolver",
+      "ourDamage": 1.9,
+      "extDamage": 1.8,
+      "diff": 0.1,
+      "diffPercent": 6
+    },
+    {
+      "name": "Bolt Action Rifle",
+      "ourDamage": 2.9,
+      "extDamage": 3,
+      "diff": -0.1,
+      "diffPercent": -3
+    },
+    {
+      "name": "Rolling Block Rifle",
+      "ourDamage": 3.5,
+      "extDamage": 3.4,
+      "diff": 0.1,
+      "diffPercent": 3
+    },
+    {
+      "name": "Rare Rolling Block Rifle",
+      "ourDamage": 3.5,
+      "extDamage": 3.4,
+      "diff": 0.1,
+      "diffPercent": 3
+    },
+    {
+      "name": "Carcano Rifle",
+      "ourDamage": 3.1,
+      "extDamage": 3,
+      "diff": 0.1,
+      "diffPercent": 3
+    },
+    {
+      "name": "Double-Barreled Shotgun",
+      "ourDamage": 2.8,
+      "extDamage": 2.7,
+      "diff": 0.1,
+      "diffPercent": 4
+    },
+    {
+      "name": "Rare Shotgun",
+      "ourDamage": 2.8,
+      "extDamage": 2.7,
+      "diff": 0.1,
+      "diffPercent": 4
+    },
+    {
+      "name": "Sawed-Off Shotgun",
+      "ourDamage": 2.8,
+      "extDamage": 2.7,
+      "diff": 0.1,
+      "diffPercent": 4
+    },
+    {
+      "name": "Repeating Shotgun",
+      "ourDamage": 2.5,
+      "extDamage": 2.4,
+      "diff": 0.1,
+      "diffPercent": 4
+    },
+    {
+      "name": "Cattleman Revolver",
+      "ourDamage": 1.7,
+      "extDamage": 1.7,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Double-Action Revolver",
+      "ourDamage": 1.5,
+      "extDamage": 1.5,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Schofield Revolver",
+      "ourDamage": 1.9,
+      "extDamage": 1.9,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Navy Revolver",
+      "ourDamage": 2.1,
+      "extDamage": 2.1,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Otis Miller's Revolver",
+      "ourDamage": 1.9,
+      "extDamage": 1.9,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Algernon's Revolver",
+      "ourDamage": 1.5,
+      "extDamage": 1.5,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Micah's Revolver",
+      "ourDamage": 1.7,
+      "extDamage": 1.7,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Volcanic Pistol",
+      "ourDamage": 2.2,
+      "extDamage": 2.2,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Semi-Automatic Pistol",
+      "ourDamage": 1.2,
+      "extDamage": 1.2,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Mauser Pistol",
+      "ourDamage": 1.4,
+      "extDamage": 1.4,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "M1899 Pistol",
+      "ourDamage": 1.5,
+      "extDamage": 1.5,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Midnight's Pistol",
+      "ourDamage": 1.4,
+      "extDamage": 1.4,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Carbine Repeater",
+      "ourDamage": 2.4,
+      "extDamage": 2.4,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Lancaster Repeater",
+      "ourDamage": 2.2,
+      "extDamage": 2.2,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Evans Repeater",
+      "ourDamage": 2,
+      "extDamage": 2,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Varmint Rifle",
+      "ourDamage": 1.6,
+      "extDamage": 1.6,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Springfield Rifle",
+      "ourDamage": 3.2,
+      "extDamage": 3.2,
+      "diff": 0,
+      "diffPercent": 0
+    },
+    {
+      "name": "Pump-Action Shotgun",
+      "ourDamage": 2.5,
+      "extDamage": 2.5,
+      "diff": 0,
+      "diffPercent": 0
+    }
+  ],
+  "notFound": []
+}

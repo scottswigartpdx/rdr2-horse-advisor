@@ -1,0 +1,1851 @@
+{
+  "summary": {
+    "ourHorses": 54,
+    "matched": 45,
+    "notFound": 9,
+    "exactMatch": 1,
+    "smallDiff": 30,
+    "largeDiff": 14,
+    "sources": [
+      "Fandom",
+      "RankedBoost",
+      "NKB Gaming"
+    ]
+  },
+  "discrepancies": [
+    {
+      "breed": "Arabian",
+      "coat": "Red Chestnut",
+      "our": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "external": {
+        "health": 5.5,
+        "stamina": 7,
+        "speed": 5,
+        "acceleration": 4.5
+      },
+      "diffs": {
+        "health": -1.5,
+        "stamina": -3,
+        "speed": 1,
+        "acceleration": 1.5
+      },
+      "sourceCount": 2,
+      "sources": {
+        "fandom": {
+          "health": 4,
+          "stamina": 5,
+          "speed": 5,
+          "acceleration": 4
+        },
+        "nkbgaming": {
+          "health": 7,
+          "stamina": 9,
+          "speed": 5,
+          "acceleration": 5
+        }
+      }
+    },
+    {
+      "breed": "Thoroughbred",
+      "coat": "Blood Bay",
+      "our": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "external": {
+        "health": 3.3,
+        "stamina": 3.3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -0.3,
+        "stamina": -0.3,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 4,
+          "stamina": 4,
+          "speed": 4,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Appaloosa",
+      "coat": "Brown Leopard",
+      "our": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 6,
+        "stamina": 7,
+        "speed": 4,
+        "acceleration": 3.3
+      },
+      "diffs": {
+        "health": -2,
+        "stamina": -3,
+        "speed": 1,
+        "acceleration": -0.3
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 5,
+          "stamina": 6,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 5,
+          "stamina": 6,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 8,
+          "stamina": 9,
+          "speed": 4,
+          "acceleration": 4
+        }
+      }
+    },
+    {
+      "breed": "Morgan",
+      "coat": "Palomino",
+      "our": {
+        "health": 2,
+        "stamina": 2,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 3.5,
+        "stamina": 5,
+        "speed": 3.5,
+        "acceleration": 2
+      },
+      "diffs": {
+        "health": -1.5,
+        "stamina": -3,
+        "speed": -0.5,
+        "acceleration": 1
+      },
+      "sourceCount": 2,
+      "sources": {
+        "rankedboost": {
+          "health": 2,
+          "stamina": 3,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "nkbgaming": {
+          "health": 5,
+          "stamina": 7,
+          "speed": 4,
+          "acceleration": 2
+        }
+      }
+    },
+    {
+      "breed": "Ardennes",
+      "coat": "Bay Roan",
+      "our": {
+        "health": 8,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 5.3,
+        "stamina": 4.3,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": 2.7,
+        "stamina": -0.3,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 5,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 5,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Tennessee Walker",
+      "coat": "Dapple Bay",
+      "our": {
+        "health": 2,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 4.5,
+        "stamina": 4.5,
+        "speed": 2,
+        "acceleration": 2
+      },
+      "diffs": {
+        "health": -2.5,
+        "stamina": -1.5,
+        "speed": 2,
+        "acceleration": 1
+      },
+      "sourceCount": 2,
+      "sources": {
+        "rankedboost": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 2,
+          "acceleration": 2
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 2,
+          "acceleration": 2
+        }
+      }
+    },
+    {
+      "breed": "American Paint",
+      "coat": "Grey Overo",
+      "our": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 5.3,
+        "stamina": 5.3,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "diffs": {
+        "health": -2.3,
+        "stamina": -1.3,
+        "speed": 0,
+        "acceleration": -1
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 5,
+          "stamina": 5,
+          "speed": 4,
+          "acceleration": 4
+        },
+        "rankedboost": {
+          "health": 5,
+          "stamina": 5,
+          "speed": 4,
+          "acceleration": 4
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 4,
+          "acceleration": 4
+        }
+      }
+    },
+    {
+      "breed": "Morgan",
+      "coat": "Bay",
+      "our": {
+        "health": 2,
+        "stamina": 2,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 3,
+        "stamina": 4.3,
+        "speed": 3.3,
+        "acceleration": 2
+      },
+      "diffs": {
+        "health": -1,
+        "stamina": -2.3,
+        "speed": -0.3,
+        "acceleration": 1
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 2,
+          "stamina": 3,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "rankedboost": {
+          "health": 2,
+          "stamina": 3,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "nkbgaming": {
+          "health": 5,
+          "stamina": 7,
+          "speed": 4,
+          "acceleration": 2
+        }
+      }
+    },
+    {
+      "breed": "Arabian",
+      "coat": "Warped Brindle",
+      "our": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "external": {
+        "health": 5,
+        "stamina": 7,
+        "speed": 6,
+        "acceleration": 4
+      },
+      "diffs": {
+        "health": 0,
+        "stamina": -2,
+        "speed": 0,
+        "acceleration": 2
+      },
+      "sourceCount": 2,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 5,
+          "speed": 6,
+          "acceleration": 4
+        },
+        "nkbgaming": {
+          "health": 7,
+          "stamina": 9,
+          "speed": 6,
+          "acceleration": 4
+        }
+      }
+    },
+    {
+      "breed": "Nokota",
+      "coat": "Blue Roan",
+      "our": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "external": {
+        "health": 3.3,
+        "stamina": 3.3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -0.3,
+        "stamina": -0.3,
+        "speed": 2,
+        "acceleration": 2
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 4,
+          "stamina": 4,
+          "speed": 4,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Dutch Warmblood",
+      "coat": "Cremello Gold (Buell)",
+      "our": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 6.5,
+        "stamina": 6.5,
+        "speed": 5,
+        "acceleration": 5
+      },
+      "diffs": {
+        "health": -0.5,
+        "stamina": -0.5,
+        "speed": -1,
+        "acceleration": -2
+      },
+      "sourceCount": 2,
+      "sources": {
+        "fandom": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 5,
+          "acceleration": 5
+        },
+        "nkbgaming": {
+          "health": 7,
+          "stamina": 7,
+          "speed": 5,
+          "acceleration": 5
+        }
+      }
+    },
+    {
+      "breed": "Appaloosa",
+      "coat": "Blanket",
+      "our": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": 0,
+        "stamina": -1,
+        "speed": 2,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 7,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Appaloosa",
+      "coat": "Few-Spotted",
+      "our": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 4.5,
+        "stamina": 6,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -0.5,
+        "stamina": -2,
+        "speed": 2,
+        "acceleration": 0
+      },
+      "sourceCount": 2,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 7,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Belgian Draft",
+      "coat": "Blonde Chestnut",
+      "our": {
+        "health": 6,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "external": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": 2,
+        "stamina": 0,
+        "speed": 0,
+        "acceleration": -1
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Andalusian",
+      "coat": "Dark Bay",
+      "our": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "external": {
+        "health": 5.3,
+        "stamina": 4.3,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": 1.7,
+        "stamina": 0.7,
+        "speed": 1,
+        "acceleration": 1
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 5,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 5,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Turkoman",
+      "coat": "Dark Bay",
+      "our": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "external": {
+        "health": 8.5,
+        "stamina": 6.5,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "diffs": {
+        "health": -1.5,
+        "stamina": -1.5,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 2,
+      "sources": {
+        "fandom": {
+          "health": 7,
+          "stamina": 5,
+          "speed": 6,
+          "acceleration": 5
+        },
+        "nkbgaming": {
+          "health": 10,
+          "stamina": 8,
+          "speed": 6,
+          "acceleration": 5
+        }
+      }
+    },
+    {
+      "breed": "Missouri Fox Trotter",
+      "coat": "Silver Dapple Pinto",
+      "our": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "external": {
+        "health": 6.5,
+        "stamina": 7.5,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "diffs": {
+        "health": -1.5,
+        "stamina": -1.5,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 2,
+      "sources": {
+        "rankedboost": {
+          "health": 5,
+          "stamina": 6,
+          "speed": 7,
+          "acceleration": 5
+        },
+        "nkbgaming": {
+          "health": 8,
+          "stamina": 9,
+          "speed": 7,
+          "acceleration": 5
+        }
+      }
+    },
+    {
+      "breed": "Kentucky Saddler",
+      "coat": "Grey",
+      "our": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 4.5,
+        "stamina": 3.5,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "diffs": {
+        "health": -1.5,
+        "stamina": -0.5,
+        "speed": 1,
+        "acceleration": 1
+      },
+      "sourceCount": 2,
+      "sources": {
+        "rankedboost": {
+          "health": 3,
+          "stamina": 2,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 2
+        }
+      }
+    },
+    {
+      "breed": "Belgian Draft",
+      "coat": "Mealy Chestnut",
+      "our": {
+        "health": 6,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "external": {
+        "health": 4.5,
+        "stamina": 4.5,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": 1.5,
+        "stamina": -0.5,
+        "speed": 0,
+        "acceleration": -1
+      },
+      "sourceCount": 2,
+      "sources": {
+        "rankedboost": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Ardennes",
+      "coat": "Strawberry Roan",
+      "our": {
+        "health": 8,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 7.3,
+        "stamina": 5.3,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": 0.7,
+        "stamina": -1.3,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 7,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 7,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 8,
+          "stamina": 6,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Mustang",
+      "coat": "Tiger Striped Bay",
+      "our": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 5.3,
+        "stamina": 5.3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -1.3,
+        "stamina": -1.3,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 5,
+          "stamina": 5,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 5,
+          "stamina": 5,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 4,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "American Paint",
+      "coat": "Splashed White",
+      "our": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 3.3,
+        "stamina": 5.3,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -0.3,
+        "stamina": -1.3,
+        "speed": 1,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 4,
+          "stamina": 6,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Arabian",
+      "coat": "White",
+      "our": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "external": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "diffs": {
+        "health": -1,
+        "stamina": -1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 5,
+          "stamina": 5,
+          "speed": 6,
+          "acceleration": 6
+        },
+        "rankedboost": {
+          "health": 5,
+          "stamina": 5,
+          "speed": 6,
+          "acceleration": 6
+        },
+        "nkbgaming": {
+          "health": 8,
+          "stamina": 8,
+          "speed": 6,
+          "acceleration": 6
+        }
+      }
+    },
+    {
+      "breed": "Arabian",
+      "coat": "Black",
+      "our": {
+        "health": 6,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "external": {
+        "health": 7,
+        "stamina": 7,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "diffs": {
+        "health": -1,
+        "stamina": -1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 6,
+          "acceleration": 6
+        },
+        "rankedboost": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 6,
+          "acceleration": 6
+        },
+        "nkbgaming": {
+          "health": 9,
+          "stamina": 9,
+          "speed": 6,
+          "acceleration": 6
+        }
+      }
+    },
+    {
+      "breed": "Arabian",
+      "coat": "Rose Grey Bay",
+      "our": {
+        "health": 7,
+        "stamina": 7,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "external": {
+        "health": 8,
+        "stamina": 8,
+        "speed": 6,
+        "acceleration": 6
+      },
+      "diffs": {
+        "health": -1,
+        "stamina": -1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 7,
+          "stamina": 7,
+          "speed": 6,
+          "acceleration": 6
+        },
+        "rankedboost": {
+          "health": 7,
+          "stamina": 7,
+          "speed": 6,
+          "acceleration": 6
+        },
+        "nkbgaming": {
+          "health": 10,
+          "stamina": 10,
+          "speed": 6,
+          "acceleration": 6
+        }
+      }
+    },
+    {
+      "breed": "Turkoman",
+      "coat": "Gold",
+      "our": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "external": {
+        "health": 8,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "diffs": {
+        "health": -1,
+        "stamina": -1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 7,
+          "stamina": 5,
+          "speed": 6,
+          "acceleration": 5
+        },
+        "rankedboost": {
+          "health": 7,
+          "stamina": 5,
+          "speed": 6,
+          "acceleration": 5
+        },
+        "nkbgaming": {
+          "health": 10,
+          "stamina": 8,
+          "speed": 6,
+          "acceleration": 5
+        }
+      }
+    },
+    {
+      "breed": "Turkoman",
+      "coat": "Silver",
+      "our": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "external": {
+        "health": 8,
+        "stamina": 6,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "diffs": {
+        "health": -1,
+        "stamina": -1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 7,
+          "stamina": 5,
+          "speed": 6,
+          "acceleration": 5
+        },
+        "rankedboost": {
+          "health": 7,
+          "stamina": 5,
+          "speed": 6,
+          "acceleration": 5
+        },
+        "nkbgaming": {
+          "health": 10,
+          "stamina": 8,
+          "speed": 6,
+          "acceleration": 5
+        }
+      }
+    },
+    {
+      "breed": "Missouri Fox Trotter",
+      "coat": "Amber Champagne",
+      "our": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "external": {
+        "health": 6,
+        "stamina": 7,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "diffs": {
+        "health": -1,
+        "stamina": -1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 5,
+          "stamina": 6,
+          "speed": 7,
+          "acceleration": 5
+        },
+        "rankedboost": {
+          "health": 5,
+          "stamina": 6,
+          "speed": 7,
+          "acceleration": 5
+        },
+        "nkbgaming": {
+          "health": 8,
+          "stamina": 9,
+          "speed": 7,
+          "acceleration": 5
+        }
+      }
+    },
+    {
+      "breed": "Thoroughbred",
+      "coat": "Brindle",
+      "our": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "external": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "diffs": {
+        "health": -1,
+        "stamina": -1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 7,
+          "acceleration": 5
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 7,
+          "acceleration": 5
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 7,
+          "acceleration": 5
+        }
+      }
+    },
+    {
+      "breed": "Andalusian",
+      "coat": "Perlino",
+      "our": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "external": {
+        "health": 7.5,
+        "stamina": 5.5,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -0.5,
+        "stamina": -0.5,
+        "speed": 1,
+        "acceleration": 1
+      },
+      "sourceCount": 2,
+      "sources": {
+        "fandom": {
+          "health": 7,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 8,
+          "stamina": 6,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Andalusian",
+      "coat": "Rose Grey",
+      "our": {
+        "health": 7,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "external": {
+        "health": 7.5,
+        "stamina": 5.5,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -0.5,
+        "stamina": -0.5,
+        "speed": 1,
+        "acceleration": 1
+      },
+      "sourceCount": 2,
+      "sources": {
+        "rankedboost": {
+          "health": 7,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 8,
+          "stamina": 6,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Dutch Warmblood",
+      "coat": "Seal Brown",
+      "our": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 4.3,
+        "stamina": 5.3,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": 0.7,
+        "stamina": 0.7,
+        "speed": 1,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 4,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 4,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 5,
+          "stamina": 6,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Dutch Warmblood",
+      "coat": "Sooty Buckskin",
+      "our": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 4.5,
+        "stamina": 5.5,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -0.5,
+        "stamina": -0.5,
+        "speed": 1,
+        "acceleration": 0
+      },
+      "sourceCount": 2,
+      "sources": {
+        "rankedboost": {
+          "health": 4,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 5,
+          "stamina": 6,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Hungarian Halfbred",
+      "coat": "Dapple Dark Grey",
+      "our": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 5.3,
+        "stamina": 4.3,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -0.3,
+        "stamina": 0.7,
+        "speed": 1,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 5,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 5,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Hungarian Halfbred",
+      "coat": "Piebald Tobiano",
+      "our": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 5,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": 0,
+        "stamina": 1,
+        "speed": 1,
+        "acceleration": 0
+      },
+      "sourceCount": 1,
+      "sources": {
+        "nkbgaming": {
+          "health": 5,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Mustang",
+      "coat": "Grullo Dun",
+      "our": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 4.5,
+        "stamina": 4.5,
+        "speed": 3,
+        "acceleration": 2.5
+      },
+      "diffs": {
+        "health": -0.5,
+        "stamina": -0.5,
+        "speed": 1,
+        "acceleration": 0.5
+      },
+      "sourceCount": 2,
+      "sources": {
+        "rankedboost": {
+          "health": 4,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 5,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 2
+        }
+      }
+    },
+    {
+      "breed": "Mustang",
+      "coat": "Wild Bay",
+      "our": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 4.3,
+        "stamina": 4.3,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "diffs": {
+        "health": -0.3,
+        "stamina": -0.3,
+        "speed": 1,
+        "acceleration": 1
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 4,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "rankedboost": {
+          "health": 4,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "nkbgaming": {
+          "health": 5,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 2
+        }
+      }
+    },
+    {
+      "breed": "American Standardbred",
+      "coat": "Palomino Dapple",
+      "our": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "external": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "diffs": {
+        "health": 0,
+        "stamina": 1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 5,
+          "acceleration": 4
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 5,
+          "acceleration": 4
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 5,
+          "acceleration": 4
+        }
+      }
+    },
+    {
+      "breed": "American Standardbred",
+      "coat": "Black",
+      "our": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "external": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": 0,
+        "stamina": 1,
+        "speed": 1,
+        "acceleration": 1
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 6,
+          "speed": 4,
+          "acceleration": 3
+        }
+      }
+    },
+    {
+      "breed": "Kentucky Saddler",
+      "coat": "Black",
+      "our": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 4,
+        "stamina": 3,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "diffs": {
+        "health": -1,
+        "stamina": 0,
+        "speed": 1,
+        "acceleration": 1
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 2,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 2,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 5,
+          "speed": 3,
+          "acceleration": 2
+        }
+      }
+    },
+    {
+      "breed": "Shire",
+      "coat": "Raven Black",
+      "our": {
+        "health": 5,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "external": {
+        "health": 5,
+        "stamina": 5,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "diffs": {
+        "health": 0,
+        "stamina": -1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 4,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "rankedboost": {
+          "health": 4,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "nkbgaming": {
+          "health": 7,
+          "stamina": 7,
+          "speed": 3,
+          "acceleration": 2
+        }
+      }
+    },
+    {
+      "breed": "Suffolk Punch",
+      "coat": "Sorrel",
+      "our": {
+        "health": 5,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "external": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "diffs": {
+        "health": 1,
+        "stamina": -1,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 4,
+          "speed": 3,
+          "acceleration": 2
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 7,
+          "speed": 3,
+          "acceleration": 2
+        }
+      }
+    },
+    {
+      "breed": "Nokota",
+      "coat": "Reverse Dapple Roan",
+      "our": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "external": {
+        "health": 3.3,
+        "stamina": 3.3,
+        "speed": 7,
+        "acceleration": 5
+      },
+      "diffs": {
+        "health": -0.3,
+        "stamina": -0.3,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 7,
+          "acceleration": 5
+        },
+        "rankedboost": {
+          "health": 3,
+          "stamina": 3,
+          "speed": 7,
+          "acceleration": 5
+        },
+        "nkbgaming": {
+          "health": 4,
+          "stamina": 4,
+          "speed": 7,
+          "acceleration": 5
+        }
+      }
+    },
+    {
+      "breed": "Dutch Warmblood",
+      "coat": "Chocolate Roan",
+      "our": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "external": {
+        "health": 5.3,
+        "stamina": 6.3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "diffs": {
+        "health": -0.3,
+        "stamina": -0.3,
+        "speed": 0,
+        "acceleration": 0
+      },
+      "sourceCount": 3,
+      "sources": {
+        "fandom": {
+          "health": 5,
+          "stamina": 6,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "rankedboost": {
+          "health": 5,
+          "stamina": 6,
+          "speed": 4,
+          "acceleration": 3
+        },
+        "nkbgaming": {
+          "health": 6,
+          "stamina": 7,
+          "speed": 4,
+          "acceleration": 3
+        }
+      }
+    }
+  ],
+  "notFound": [
+    {
+      "breed": "Thoroughbred",
+      "coat": "Dappled Black"
+    },
+    {
+      "breed": "Nokota",
+      "coat": "Wild"
+    },
+    {
+      "breed": "Ardennes",
+      "coat": "Iron Grey"
+    },
+    {
+      "breed": "Hungarian Halfbred",
+      "coat": "Wild"
+    },
+    {
+      "breed": "American Standardbred",
+      "coat": "Wild"
+    },
+    {
+      "breed": "American Paint",
+      "coat": "Wild"
+    },
+    {
+      "breed": "Kentucky Saddler",
+      "coat": "Wild"
+    },
+    {
+      "breed": "Morgan",
+      "coat": "Wild"
+    },
+    {
+      "breed": "Tennessee Walker",
+      "coat": "Wild"
+    }
+  ]
+}

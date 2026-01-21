@@ -1,0 +1,1586 @@
+[
+  {
+    "weapon": "Algernon's Revolver",
+    "damage": {
+      "fandom": 1.5,
+      "gamewith": 1.5,
+      "rankedboost": null,
+      "gtabase": 1.5,
+      "gamerevolution": null,
+      "googlesheets": 1.5,
+      "github": 1.5,
+      "average": 1.5,
+      "min": 1.5,
+      "max": 1.5,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Algernon’s Revolver",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.5,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.5,
+      "min": 1.5,
+      "max": 1.5,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Ancient Tomahawk",
+    "damage": {
+      "fandom": 2.4,
+      "gamewith": 2.3,
+      "rankedboost": 2.2,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.3,
+      "min": 2.2,
+      "max": 2.4,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Antler Knife",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2,
+      "rankedboost": 2,
+      "gtabase": 2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Bolas",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 0.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 0.4,
+      "min": 0.4,
+      "max": 0.4,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Bolt Action Rifle",
+    "damage": {
+      "fandom": 2.9,
+      "gamewith": 2.8,
+      "rankedboost": 3.2,
+      "gtabase": null,
+      "gamerevolution": 3.2,
+      "googlesheets": 3.1,
+      "github": 2.9,
+      "average": 3,
+      "min": 2.8,
+      "max": 3.2,
+      "spread": 0.4
+    }
+  },
+  {
+    "weapon": "Bolt-Action Rifle",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.9,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.9,
+      "min": 2.9,
+      "max": 2.9,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Bow",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2.3,
+      "rankedboost": 3.2,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.8,
+      "min": 2.3,
+      "max": 3.2,
+      "spread": 0.9
+    }
+  },
+  {
+    "weapon": "Bow and Arrows",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.4,
+      "max": 2.4,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Broken Pirate Sword",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2.1,
+      "rankedboost": 2.2,
+      "gtabase": 2.2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.2,
+      "min": 2.1,
+      "max": 2.2,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Calloway's Revolver",
+    "damage": {
+      "fandom": 1.9,
+      "gamewith": 1.8,
+      "rankedboost": null,
+      "gtabase": 1.8,
+      "gamerevolution": null,
+      "googlesheets": 1.8,
+      "github": 1.9,
+      "average": 1.8,
+      "min": 1.8,
+      "max": 1.9,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Calloway’s Revolver",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.8,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.8,
+      "min": 1.8,
+      "max": 1.8,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Carbine Repeater",
+    "damage": {
+      "fandom": 2.4,
+      "gamewith": 2.3,
+      "rankedboost": 2.2,
+      "gtabase": 2.4,
+      "gamerevolution": 2.4,
+      "googlesheets": 2.4,
+      "github": 2.4,
+      "average": 2.4,
+      "min": 2.2,
+      "max": 2.4,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Carcano Rifle",
+    "damage": {
+      "fandom": 3.1,
+      "gamewith": 3,
+      "rankedboost": 3,
+      "gtabase": 3,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": 3.1,
+      "average": 3,
+      "min": 3,
+      "max": 3.1,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Cattleman Revolver",
+    "damage": {
+      "fandom": 1.7,
+      "gamewith": 1.7,
+      "rankedboost": 1.8,
+      "gtabase": 1.7,
+      "gamerevolution": 1.8,
+      "googlesheets": 1.7,
+      "github": 1.7,
+      "average": 1.7,
+      "min": 1.7,
+      "max": 1.8,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Civil War Knife",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2,
+      "rankedboost": 2,
+      "gtabase": 2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Cleaver",
+    "damage": {
+      "fandom": 2.4,
+      "gamewith": null,
+      "rankedboost": 2.5,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.4,
+      "max": 2.5,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Double Action Revolver",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.5,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.5,
+      "min": 1.5,
+      "max": 1.5,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Double Bit Hatchet",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2.3,
+      "rankedboost": 2.5,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.3,
+      "max": 2.5,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Double-Action Revolver",
+    "damage": {
+      "fandom": 1.5,
+      "gamewith": 1.5,
+      "rankedboost": null,
+      "gtabase": 1.5,
+      "gamerevolution": 1.2,
+      "googlesheets": 1.5,
+      "github": 1.5,
+      "average": 1.5,
+      "min": 1.2,
+      "max": 1.5,
+      "spread": 0.3
+    }
+  },
+  {
+    "weapon": "Double-Barrel Shotgun",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 2.5,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.5,
+      "min": 2.5,
+      "max": 2.5,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Double-Barreled Shotgun",
+    "damage": {
+      "fandom": 2.8,
+      "gamewith": 2.5,
+      "rankedboost": null,
+      "gtabase": 2.6,
+      "gamerevolution": 2.8,
+      "googlesheets": 2.6,
+      "github": 2.8,
+      "average": 2.7,
+      "min": 2.5,
+      "max": 2.8,
+      "spread": 0.3
+    }
+  },
+  {
+    "weapon": "Dynamite",
+    "damage": {
+      "fandom": 3.6,
+      "gamewith": 3.6,
+      "rankedboost": 3.5,
+      "gtabase": 3.6,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 3.6,
+      "min": 3.5,
+      "max": 3.6,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Dynamite (Volatile)",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 4,
+      "min": 4,
+      "max": 4,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Elephant Rifle",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 3.6,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 3.6,
+      "min": 3.6,
+      "max": 3.6,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Evans Repeater",
+    "damage": {
+      "fandom": 2,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "EVANS REPEATER (ONLINE)",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Fire Bottle",
+    "damage": {
+      "fandom": 2.8,
+      "gamewith": 2.8,
+      "rankedboost": null,
+      "gtabase": 2.8,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.8,
+      "min": 2.8,
+      "max": 2.8,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Fire Bottle (Volatile)",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 3.3,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 3.3,
+      "min": 3.3,
+      "max": 3.3,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Fire Bottles",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 2.8,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.8,
+      "min": 2.8,
+      "max": 2.8,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "FIST",
+    "damage": {
+      "fandom": null,
+      "gamewith": 1.3,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.3,
+      "min": 1.3,
+      "max": 1.3,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Flaco's Revolver",
+    "damage": {
+      "fandom": 1.7,
+      "gamewith": 1.4,
+      "rankedboost": null,
+      "gtabase": 1.7,
+      "gamerevolution": null,
+      "googlesheets": 1.7,
+      "github": 1.7,
+      "average": 1.6,
+      "min": 1.4,
+      "max": 1.7,
+      "spread": 0.3
+    }
+  },
+  {
+    "weapon": "Flaco’s Revolver",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.8,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.8,
+      "min": 1.8,
+      "max": 1.8,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Granger's Revolver",
+    "damage": {
+      "fandom": 1.7,
+      "gamewith": 1.7,
+      "rankedboost": null,
+      "gtabase": 1.7,
+      "gamerevolution": null,
+      "googlesheets": 1.7,
+      "github": 1.7,
+      "average": 1.7,
+      "min": 1.7,
+      "max": 1.7,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Granger’s Revolver",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.8,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.8,
+      "min": 1.8,
+      "max": 1.8,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Hammer",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 1.6,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.6,
+      "min": 1.6,
+      "max": 1.6,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Hatchet",
+    "damage": {
+      "fandom": 4.3,
+      "gamewith": null,
+      "rankedboost": 2.5,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 3.1,
+      "min": 2.4,
+      "max": 4.3,
+      "spread": 1.9
+    }
+  },
+  {
+    "weapon": "Hewing Hatchet",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2.3,
+      "rankedboost": 2.5,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.3,
+      "max": 2.5,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "High Roller Double-Action Revolver",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.5,
+      "gtabase": 1.5,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.5,
+      "min": 1.5,
+      "max": 1.5,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Hunter Hatchet",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 2.5,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.5,
+      "min": 2.4,
+      "max": 2.5,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Hunting Knife",
+    "damage": {
+      "fandom": 2,
+      "gamewith": 2,
+      "rankedboost": 2,
+      "gtabase": 2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Improved Bow & Arrows",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.4,
+      "max": 2.4,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Improved Throwing Knife",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": null,
+      "min": null,
+      "max": null,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Improved Tomahawk",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": null,
+      "min": null,
+      "max": null,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Jawbone Knife",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 2,
+      "gtabase": 2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "John's Cattleman Revolver",
+    "damage": {
+      "fandom": 1.7,
+      "gamewith": 1.7,
+      "rankedboost": null,
+      "gtabase": 1.7,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": 1.7,
+      "average": 1.7,
+      "min": 1.7,
+      "max": 1.7,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "John's Knife",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2,
+      "rankedboost": null,
+      "gtabase": 2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "John’s Cattleman Revolver",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": null,
+      "min": null,
+      "max": null,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "John’s Knife",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": null,
+      "min": null,
+      "max": null,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Lancaster Repeater",
+    "damage": {
+      "fandom": 2.2,
+      "gamewith": 2.1,
+      "rankedboost": 2.5,
+      "gtabase": 2.2,
+      "gamerevolution": 2.2,
+      "googlesheets": 2.2,
+      "github": 2.2,
+      "average": 2.2,
+      "min": 2.1,
+      "max": 2.5,
+      "spread": 0.4
+    }
+  },
+  {
+    "weapon": "Lasso",
+    "damage": {
+      "fandom": 0.4,
+      "gamewith": 0.5,
+      "rankedboost": null,
+      "gtabase": 0.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 0.4,
+      "min": 0.4,
+      "max": 0.5,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "LeMat Revolver",
+    "damage": {
+      "fandom": 3,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.5,
+      "min": 2,
+      "max": 3,
+      "spread": 1
+    }
+  },
+  {
+    "weapon": "LEMAT REVOLVER (ONLINE)",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Litchfield Repeater",
+    "damage": {
+      "fandom": 2.8,
+      "gamewith": 2.5,
+      "rankedboost": 2.2,
+      "gtabase": 2.6,
+      "gamerevolution": 2.8,
+      "googlesheets": 2.6,
+      "github": 2.8,
+      "average": 2.6,
+      "min": 2.2,
+      "max": 2.8,
+      "spread": 0.6
+    }
+  },
+  {
+    "weapon": "Lowry's Revolver",
+    "damage": {
+      "fandom": 2.1,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.1,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.1,
+      "min": 2.1,
+      "max": 2.1,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "M1899 Pistol",
+    "damage": {
+      "fandom": 1.5,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 1.5,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": 1.5,
+      "average": 1.5,
+      "min": 1.5,
+      "max": 1.5,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Machete",
+    "damage": {
+      "fandom": 2.2,
+      "gamewith": null,
+      "rankedboost": 2.2,
+      "gtabase": 2.2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.2,
+      "min": 2.2,
+      "max": 2.2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Mauser Pistol",
+    "damage": {
+      "fandom": 1.4,
+      "gamewith": 1.5,
+      "rankedboost": 1.5,
+      "gtabase": 1.4,
+      "gamerevolution": 1.4,
+      "googlesheets": 1.4,
+      "github": 1.4,
+      "average": 1.4,
+      "min": 1.4,
+      "max": 1.5,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Micah's Revolver",
+    "damage": {
+      "fandom": 1.7,
+      "gamewith": 1.7,
+      "rankedboost": null,
+      "gtabase": 1.7,
+      "gamerevolution": null,
+      "googlesheets": 1.5,
+      "github": 1.7,
+      "average": 1.7,
+      "min": 1.5,
+      "max": 1.7,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Micah’s Revolver",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.5,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.5,
+      "min": 1.5,
+      "max": 1.5,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Midnight's Pistol",
+    "damage": {
+      "fandom": 1.4,
+      "gamewith": 1.3,
+      "rankedboost": null,
+      "gtabase": 1.4,
+      "gamerevolution": null,
+      "googlesheets": 1.4,
+      "github": 1.4,
+      "average": 1.4,
+      "min": 1.3,
+      "max": 1.4,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Midnights Pistol",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.5,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.5,
+      "min": 1.5,
+      "max": 1.5,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Navy Revolver",
+    "damage": {
+      "fandom": 2.1,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.1,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.1,
+      "min": 2.1,
+      "max": 2.1,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Ornate Dagger",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2,
+      "rankedboost": null,
+      "gtabase": 2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Otis Miller's Revolver",
+    "damage": {
+      "fandom": 1.9,
+      "gamewith": 1.9,
+      "rankedboost": null,
+      "gtabase": 1.8,
+      "gamerevolution": null,
+      "googlesheets": 1.8,
+      "github": 1.9,
+      "average": 1.9,
+      "min": 1.8,
+      "max": 1.9,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Otis Millers Revolver",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.8,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.8,
+      "min": 1.8,
+      "max": 1.8,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Poison Throwing Knife",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": null,
+      "min": null,
+      "max": null,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Pump Action Shotgun",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 2.2,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.3,
+      "min": 2.2,
+      "max": 2.4,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Pump-Action Shotgun",
+    "damage": {
+      "fandom": 2.5,
+      "gamewith": 2.5,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": 2.8,
+      "googlesheets": 2.3,
+      "github": 2.5,
+      "average": 2.5,
+      "min": 2.3,
+      "max": 2.8,
+      "spread": 0.5
+    }
+  },
+  {
+    "weapon": "Rare Rolling Block Rifle",
+    "damage": {
+      "fandom": 3.5,
+      "gamewith": 3.3,
+      "rankedboost": 3.5,
+      "gtabase": 3.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": 3.5,
+      "average": 3.4,
+      "min": 3.3,
+      "max": 3.5,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Rare Shotgun",
+    "damage": {
+      "fandom": 2.8,
+      "gamewith": 2.7,
+      "rankedboost": 2.5,
+      "gtabase": 2.6,
+      "gamerevolution": null,
+      "googlesheets": 2.6,
+      "github": 2.8,
+      "average": 2.7,
+      "min": 2.5,
+      "max": 2.8,
+      "spread": 0.3
+    }
+  },
+  {
+    "weapon": "Reinforced Lasso",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 0.7,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 0.7,
+      "min": 0.7,
+      "max": 0.7,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Repeating Shotgun",
+    "damage": {
+      "fandom": 2.5,
+      "gamewith": 2.5,
+      "rankedboost": 2.2,
+      "gtabase": 2.4,
+      "gamerevolution": 2.8,
+      "googlesheets": 2.2,
+      "github": 2.5,
+      "average": 2.4,
+      "min": 2.2,
+      "max": 2.8,
+      "spread": 0.6
+    }
+  },
+  {
+    "weapon": "Rolling Block Rifle",
+    "damage": {
+      "fandom": 3.5,
+      "gamewith": 3.3,
+      "rankedboost": 3.5,
+      "gtabase": 3.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": 3.5,
+      "average": 3.4,
+      "min": 3.3,
+      "max": 3.5,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Rusted Double Bit Hatchet",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2.3,
+      "rankedboost": 2.5,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.3,
+      "max": 2.5,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Rusted Hunter Hatchet",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2.3,
+      "rankedboost": 2.5,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.3,
+      "max": 2.5,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Sawed-Off Shotgun",
+    "damage": {
+      "fandom": 2.8,
+      "gamewith": 2.8,
+      "rankedboost": 2.5,
+      "gtabase": 2.6,
+      "gamerevolution": 2.8,
+      "googlesheets": 2.6,
+      "github": 2.8,
+      "average": 2.7,
+      "min": 2.5,
+      "max": 2.8,
+      "spread": 0.3
+    }
+  },
+  {
+    "weapon": "Schofield Revolver",
+    "damage": {
+      "fandom": 1.9,
+      "gamewith": 1.8,
+      "rankedboost": 1.8,
+      "gtabase": 1.8,
+      "gamerevolution": 2,
+      "googlesheets": 1.8,
+      "github": 1.9,
+      "average": 1.9,
+      "min": 1.8,
+      "max": 2,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Semi Automatic Pistol",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 1.3,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.3,
+      "min": 1.3,
+      "max": 1.3,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Semi-Auto Shotgun",
+    "damage": {
+      "fandom": 2.2,
+      "gamewith": 2.3,
+      "rankedboost": 2.5,
+      "gtabase": 2.3,
+      "gamerevolution": 2.6,
+      "googlesheets": null,
+      "github": 2.2,
+      "average": 2.4,
+      "min": 2.2,
+      "max": 2.6,
+      "spread": 0.4
+    }
+  },
+  {
+    "weapon": "Semi-Automatic Pistol",
+    "damage": {
+      "fandom": 1.2,
+      "gamewith": 1.3,
+      "rankedboost": 1.2,
+      "gtabase": null,
+      "gamerevolution": 1.2,
+      "googlesheets": 1.3,
+      "github": 1.2,
+      "average": 1.2,
+      "min": 1.2,
+      "max": 1.3,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Semi-Automatic Shotgun",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": 2.4,
+      "github": null,
+      "average": 2.4,
+      "min": 2.4,
+      "max": 2.4,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Springfield Rifle",
+    "damage": {
+      "fandom": 3.2,
+      "gamewith": 3.2,
+      "rankedboost": 3.2,
+      "gtabase": 3.2,
+      "gamerevolution": 3.4,
+      "googlesheets": 3.2,
+      "github": 3.2,
+      "average": 3.2,
+      "min": 3.2,
+      "max": 3.4,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Stone Hatchet",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 2.5,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.5,
+      "min": 2.4,
+      "max": 2.5,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Throwing Knife",
+    "damage": {
+      "fandom": 2,
+      "gamewith": 2,
+      "rankedboost": 2,
+      "gtabase": 2,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Throwing Knife (Improved)",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.4,
+      "max": 2.4,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Throwing Knife (Poison)",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.4,
+      "max": 2.4,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Tomahawk",
+    "damage": {
+      "fandom": 2.4,
+      "gamewith": 2.5,
+      "rankedboost": 2.2,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.2,
+      "max": 2.5,
+      "spread": 0.3
+    }
+  },
+  {
+    "weapon": "Tomahawk (Homing)",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.9,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.9,
+      "min": 2.9,
+      "max": 2.9,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Tomahawk (Improved)",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.9,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.9,
+      "min": 2.9,
+      "max": 2.9,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Toxic Moonshine Bottle",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.4,
+      "max": 2.4,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Unarmed",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 1.2,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 1.2,
+      "min": 1.2,
+      "max": 1.2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Varmint Rifle",
+    "damage": {
+      "fandom": 1.6,
+      "gamewith": 1.5,
+      "rankedboost": 1.5,
+      "gtabase": 1.6,
+      "gamerevolution": 1.6,
+      "googlesheets": 1.6,
+      "github": 1.6,
+      "average": 1.6,
+      "min": 1.5,
+      "max": 1.6,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "Viking Hatchet",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2.3,
+      "rankedboost": 2.5,
+      "gtabase": 2.4,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2.4,
+      "min": 2.3,
+      "max": 2.5,
+      "spread": 0.2
+    }
+  },
+  {
+    "weapon": "Volatile Dynamite",
+    "damage": {
+      "fandom": 4,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 4,
+      "min": 4,
+      "max": 4,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Volatile Fire Bottle",
+    "damage": {
+      "fandom": 3.3,
+      "gamewith": null,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 3.3,
+      "min": 3.3,
+      "max": 3.3,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Volcanic Pistol",
+    "damage": {
+      "fandom": 2.2,
+      "gamewith": 2.3,
+      "rankedboost": 2.2,
+      "gtabase": 2.2,
+      "gamerevolution": 2.2,
+      "googlesheets": 2.3,
+      "github": 2.2,
+      "average": 2.2,
+      "min": 2.2,
+      "max": 2.3,
+      "spread": 0.1
+    }
+  },
+  {
+    "weapon": "WIDE BLADE KNIFE",
+    "damage": {
+      "fandom": null,
+      "gamewith": 2,
+      "rankedboost": null,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  },
+  {
+    "weapon": "Wide-Blade Knife",
+    "damage": {
+      "fandom": null,
+      "gamewith": null,
+      "rankedboost": 2,
+      "gtabase": null,
+      "gamerevolution": null,
+      "googlesheets": null,
+      "github": null,
+      "average": 2,
+      "min": 2,
+      "max": 2,
+      "spread": null
+    }
+  }
+]

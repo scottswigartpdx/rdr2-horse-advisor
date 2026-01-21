@@ -1,0 +1,25 @@
+{
+  "source": "gamerevolution",
+  "url": "https://www.gamerevolution.com/guides/448073-red-dead-redemption-2-weapons-list-gun-stats-locations",
+  "note": "Stats on 1-10 scale. Flaco's and Granger's listed as Cattleman variants with no separate stats.",
+  "weapons": [
+    {"name": "Volcanic Pistol", "damage": "5.5/10", "range": "4/10", "fireRate": "4/10", "reload": "6/10", "accuracy": "8/10"},
+    {"name": "Semi-Automatic Pistol", "damage": "3/10", "range": "4/10", "fireRate": "9/10", "reload": "8.5/10", "accuracy": "7/10"},
+    {"name": "Mauser Pistol", "damage": "3.5/10", "range": "4/10", "fireRate": "8.5/10", "reload": "8/10", "accuracy": "6/10"},
+    {"name": "Carbine Repeater", "damage": "6/10", "range": "7/10", "fireRate": "5.25/10", "reload": "8/10", "accuracy": "8/10"},
+    {"name": "Lancaster Repeater", "damage": "5.5/10", "range": "7/10", "fireRate": "5.5/10", "reload": "7.5/10", "accuracy": "8.25/10"},
+    {"name": "Litchfield Repeater", "damage": "7/10", "range": "7/10", "fireRate": "5/10", "reload": "7/10", "accuracy": "7/10"},
+    {"name": "Varmint Rifle", "damage": "4/10", "range": "7/10", "fireRate": "7/10", "reload": "7/10", "accuracy": "8.5/10"},
+    {"name": "Springfield Rifle", "damage": "8.5/10", "range": "8/10", "fireRate": "3/10", "reload": "4.5/10", "accuracy": "8.25/10"},
+    {"name": "Bolt Action Rifle", "damage": "8/10", "range": "8/10", "fireRate": "4/10", "reload": "5.25/10", "accuracy": "8.5/10"},
+    {"name": "Sawed-Off Shotgun", "damage": "7/10", "range": "2.5/10", "fireRate": "5.5/10", "reload": "5/10", "accuracy": "2.5/10"},
+    {"name": "Double-Barreled Shotgun", "damage": "7/10", "range": "3/10", "fireRate": "5.5/10", "reload": "4.5/10", "accuracy": "3/10"},
+    {"name": "Pump-Action Shotgun", "damage": "7/10", "range": "3/10", "fireRate": "5/10", "reload": "6/10", "accuracy": "3.5/10"},
+    {"name": "Semi-Auto Shotgun", "damage": "6.5/10", "range": "3/10", "fireRate": "5.5/10", "reload": "5.5/10", "accuracy": "3.5/10"},
+    {"name": "Repeating Shotgun", "damage": "7/10", "range": "3/10", "fireRate": "5/10", "reload": "7/10", "accuracy": "3/10"},
+    {"name": "Cattleman Revolver", "damage": "4.5/10", "range": "5/10", "fireRate": "8/10", "reload": "7/10", "accuracy": "7/10"},
+    {"name": "Double-Action Revolver", "damage": "3/10", "range": "5/10", "fireRate": "8.5/10", "reload": "8/10", "accuracy": "4/10"},
+    {"name": "Schofield Revolver", "damage": "5/10", "range": "5/10", "fireRate": "7.5/10", "reload": "6/10", "accuracy": "7.5/10"}
+  ],
+  "variants_note": "Flaco's Revolver and Granger's Revolver are listed as Cattleman variants - cosmetic only, same base stats"
+}
