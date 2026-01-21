@@ -1,0 +1,4375 @@
+{
+  "metadata": {
+    "sources": [
+      "https://www.gtabase.com/red-dead-redemption-2/animals/",
+      "https://www.ign.com/wikis/red-dead-redemption-2/Animals",
+      "https://reddead.fandom.com/wiki/Animals",
+      "https://reddead.fandom.com/wiki/Hunting"
+    ],
+    "scraped_date": "2026-01-20",
+    "total_species": 80,
+    "total_subspecies": 178,
+    "legendary_animals": 16,
+    "legendary_fish": 15,
+    "craftingCrossRef": true,
+    "fish_species": 15
+  },
+  "sizeWeaponMap": {
+    "Small": {
+      "weapon": "Bow with Small Game Arrows",
+      "alt_weapon": "Varmint Rifle (some)",
+      "examples": [
+        "Bat",
+        "Squirrel",
+        "Rat",
+        "Chipmunk",
+        "Small birds",
+        "Crab",
+        "Crayfish"
+      ]
+    },
+    "Moderate": {
+      "weapon": "Varmint Rifle",
+      "alt_weapon": null,
+      "examples": [
+        "Rabbit",
+        "Badger",
+        "Raccoon",
+        "Skunk",
+        "Muskrat",
+        "Armadillo",
+        "Medium birds"
+      ]
+    },
+    "Medium": {
+      "weapon": "Repeater with Regular Ammo",
+      "alt_weapon": "Bow with Regular Arrows",
+      "examples": [
+        "Coyote",
+        "Fox",
+        "Beaver",
+        "Pig",
+        "Sheep",
+        "Goat"
+      ]
+    },
+    "Large": {
+      "weapon": "Rifle with Regular Ammo",
+      "alt_weapon": "Bow with Poison Arrows",
+      "examples": [
+        "Deer",
+        "Buck",
+        "Boar",
+        "Cougar",
+        "Panther",
+        "Wolf",
+        "Pronghorn"
+      ]
+    },
+    "Massive": {
+      "weapon": "Rifle",
+      "alt_weapon": "Bow with Improved Arrows",
+      "examples": [
+        "Bear",
+        "Moose",
+        "Elk",
+        "Bison",
+        "Bull",
+        "Alligator"
+      ]
+    }
+  },
+  "animals": [
+    {
+      "name": "Alligator Snapping Turtle",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Bayou Nwa",
+        "Swamps"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Alpine Goat",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Farms",
+        "Mountains"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Wolf Batwing Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Workman's Pride Boots",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Elk Moccasins",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Goat Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "No-Man's Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Billy Vest",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Alligator",
+      "size": "Massive",
+      "weapon": "Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Alligator Ranch Cutter Saddle",
+          "category": "Horse",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Alligator (small)",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Alligator Ranch Cutter Saddle",
+          "category": "Horse",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Badger",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Various grasslands"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Ingredients Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Badger Rifleman Gloves",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Bison",
+      "size": "Massive",
+      "weapon": "Rifle",
+      "locations": [
+        "Great Plains",
+        "Heartlands"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Provisions Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Bear Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Plantation Slouch Hat",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Black Bear",
+      "size": "Massive",
+      "weapon": "Rifle",
+      "locations": [
+        "Roanoke Ridge",
+        "Tall Trees",
+        "Big Valley"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Bear Dakota Saddle",
+          "category": "Horse",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Bullfrog",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Bayou Nwa",
+        "Swamps"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "American Crow",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Throughout map"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "American Domestic Cat",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Towns and settlements"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "American Gray Fox",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Scarlett Meadows",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Muskrat",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Rivers and wetlands"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Pronghorn Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Muskrat Cavalry Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Winter Cavalry Gloves",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Grenadier Hat",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Pronghorn Buck",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Heartlands",
+        "New Austin"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Outdoorsmen Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Goat Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Pronghorn Half Chaps",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Field",
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Pronghorn Doe",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Heartland Overflow",
+        "New Hanover"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": []
+    },
+    {
+      "name": "American Raccoon",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Lemoyne",
+        "West Elizabeth",
+        "New Hanover"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Red Fox",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Various forests"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Coyote Half Chaps",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "American Red Squirrel",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests throughout"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Ingredients Satchel",
+          "category": "Satchel",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson"
+      ]
+    },
+    {
+      "name": "American Robin",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "American Tree Sparrow",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Grizzlies",
+        "Ambarino"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "American White Pelican",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Coastlines",
+        "Lakes"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Field"
+      ]
+    },
+    {
+      "name": "Angus Bull",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Heartland Overflow",
+        "Emerald Ranch"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Angus Ox",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Emerald Ranch",
+        "Heartland Overflow"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Baja California Pronghorn Buck",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Cholla Springs",
+        "New Austin"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field",
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Baja California Pronghorn Doe",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Cholla Springs",
+        "New Austin"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": []
+    },
+    {
+      "name": "Bald Eagle",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Mountains",
+        "Rivers"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Improved Tomahawk",
+          "category": "Throwable",
+          "qty": 1
+        },
+        {
+          "name": "Improved Throwing Knife",
+          "category": "Throwable",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Coyote Mountain Hat",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Field",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Baltimore Oriole",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Band-tailed Pigeon",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Tall Trees",
+        "Big Valley"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Banded Gila Monster",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "New Austin desert"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Panther Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Berkshire Pig",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Farms"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Pigskin Rifleman Gloves",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Big China Pig",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Farms",
+        "Rhodes"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Black Rat",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Towns",
+        "Barns"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Black Squirrel",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Roanoke Ridge",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson"
+      ]
+    },
+    {
+      "name": "Black-Tailed Jackrabbit",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Throughout map"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Valuables Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Boar Riding Gloves",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Muskrat Cavalry Hat",
+          "category": "Clothing",
+          "qty": 4
+        },
+        {
+          "name": "Winter Cavalry Gloves",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Black-tailed Rattlesnake",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "New Austin",
+        "Gaptooth Ridge"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": []
+    },
+    {
+      "name": "Blue Jay",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests throughout"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Blue-and-yellow Macaw",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Bluegill",
+      "size": "Small",
+      "weapon": "Bread, Corn, Cheese",
+      "locations": [
+        "Rivers",
+        "Lakes throughout"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Brown Pelican",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Coastline",
+        "Van Horn"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field"
+      ]
+    },
+    {
+      "name": "Brown Rat",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Saint Denis",
+        "Van Horn",
+        "Annesburg"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Bullhead Catfish",
+      "size": "Medium",
+      "weapon": "Corn, Cheese, Swamp Lure",
+      "locations": [
+        "Swamps",
+        "Bayou Nwa"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "California Condor",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Gaptooth Ridge",
+        "New Austin"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "California Horned Owl",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "New Austin",
+        "Tall Trees"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "California Quail",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Grasslands"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "California Valley Coyote",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Various grasslands",
+        "New Austin"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Coyote Scout Jacket",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Coyote Gambler's Hat",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Californian Condor",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "New Austin",
+        "Desert areas"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Canada Goose",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Lakes and ponds"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Carolina Parakeet",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Cedar Waxwing",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Chain Pickerel",
+      "size": "Medium",
+      "weapon": "Bread, Lake Lure",
+      "locations": [
+        "Rivers",
+        "Lakes"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Channel Catfish",
+      "size": "Large",
+      "weapon": "Corn, Cheese, Swamp Lure",
+      "locations": [
+        "Rivers",
+        "Swamps"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Chinese Ring-necked Pheasant",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Bluewater Marsh",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Coastal Horned Owl",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Roanoke Ridge",
+        "Bluewater Marsh"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Collared Peccary",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "New Austin"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Javelina Half Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Iguana Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Common Loon",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Lakes"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Cottonmouth Snake",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Cougar",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Roanoke Ridge",
+        "Big Valley",
+        "Tall Trees"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legend of the East Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Cougar Cutaway Coat",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Cougar McClelland Saddle",
+          "category": "Horse",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Cuban Land Crab",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Desert Bighorn Ram",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Gaptooth Ridge",
+        "New Austin"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Desert Bighorn Sheep",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Gaptooth Ridge",
+        "New Austin"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Desert Iguana",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "New Austin desert"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Materials Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Iguana Range Gloves",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Devon Bull",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Heartland Overflow",
+        "Emerald Ranch"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Devon Ox",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Emerald Ranch",
+        "Heartland Overflow"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Diamondback Rattlesnake",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "New Austin",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Diamondback Snake",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "New Austin",
+        "Hennigan's Stead"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Dominique Chicken",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Farms"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Dominique Rooster",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Farms",
+        "Valentine"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Double-crested Cormorant",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Flat Iron Lake"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field"
+      ]
+    },
+    {
+      "name": "Eastern Turkey Vulture",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Lemoyne",
+        "New Hanover"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Eastern Wild Turkey",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Forests",
+        "Heartlands"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Cougar Flop Hat",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Eurasian Tree Sparrow",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Saint Denis",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Fer-de-Lance Snake",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Ferruginous Hawk",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "New Austin",
+        "Cholla Springs"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Florida Cracker Cow",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Scarlett Meadows",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Florida Panther",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Stillwater Creek",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Golden Crowned Sparrow",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Big Valley",
+        "West Elizabeth"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Golden Eagle",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Grizzlies",
+        "Ambarino",
+        "New Austin"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Gray Wolf",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Grizzlies",
+        "Tall Trees",
+        "Big Valley"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legend of the East Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Moose Hunting Jacket",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Wolf Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Wilderness Vest",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Great Blue Heron",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Wetlands"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Great Green Macaw",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Great Horned Owl",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Throughout (night)"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Homing Tomahawk",
+          "category": "Throwable",
+          "qty": 1
+        },
+        {
+          "name": "Owl Feather Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Field",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Greater Prairie Chicken",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Hennigan's Stead",
+        "New Austin"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Green Iguana",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Green Sea Turtle",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": []
+    },
+    {
+      "name": "Grizzly Bear",
+      "size": "Massive",
+      "weapon": "Rifle",
+      "locations": [
+        "Grizzlies",
+        "Tall Trees",
+        "Big Valley"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Bear Dakota Saddle",
+          "category": "Horse",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Hereford Bull",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Heartland Overflow",
+        "Emerald Ranch"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Herring Gull",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Coastlines",
+        "Saint Denis"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Hooded Oriole",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Scarlett Meadows",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Java Chicken",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Farms",
+        "Rhodes"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Java Rooster",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Farms",
+        "Rhodes"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Lake Sturgeon",
+      "size": "Large",
+      "weapon": "River Lure, Lake Lure",
+      "locations": [
+        "Large lakes",
+        "Rivers"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Largemouth Bass",
+      "size": "Large",
+      "weapon": "Crayfish, Lake Lure",
+      "locations": [
+        "Lakes",
+        "Rivers"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Laughing Gull",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Saint Denis",
+        "Coastline"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Legendary Beaver",
+      "size": "Medium",
+      "weapon": "Any",
+      "locations": [
+        "Elysian Pool area"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Valuables Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Raccoon Mountain Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Beaver Hunting Jacket",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Beaver Drifter Hat",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Grenadier Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Country Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Beaver Roping Saddle",
+          "category": "Horse",
+          "qty": 2
+        },
+        {
+          "name": "Legendary Beaver Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Beaver Cavalry Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Beaver Tooth Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Bharati Grizzly Bear",
+      "size": "Massive",
+      "weapon": "Any",
+      "locations": [
+        "Grizzlies East"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Bear Dakota Saddle",
+          "category": "Horse",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Bear Head Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Bear Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Bear Roper",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Bear Claw Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Bighorn Ram",
+      "size": "Large",
+      "weapon": "Any",
+      "locations": [
+        "Grizzlies West"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Legendary Buck Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Ram Sombrero",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Wolf Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Ram Shotgun Coat",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Bluegill",
+      "size": "Small",
+      "weapon": "Lake Lure",
+      "locations": [
+        "Gill Landing (Flat Iron Lake)"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Boar",
+      "size": "Large",
+      "weapon": "Any",
+      "locations": [
+        "Bluewater Marsh"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Materials Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Boar Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Bull Fowler Boots",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Cougar Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Ram Rifleman Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Boar Fringed Shotgun Chaps",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Snake Skin Cavalry Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Boar & Bull Fowler Boots",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Boar Mother Hubbard Saddle",
+          "category": "Horse",
+          "qty": 2
+        },
+        {
+          "name": "Legendary Beaver Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Boar & Bison Fowlers",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Boar Tusk Trinket",
+          "category": "Trinket",
+          "qty": 1
+        },
+        {
+          "name": "Boar Tusk Talisman",
+          "category": "Talisman",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Trapper",
+        "Fence"
+      ]
+    },
+    {
+      "name": "Legendary Buck",
+      "size": "Large",
+      "weapon": "Any",
+      "locations": [
+        "Big Valley"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Tonics Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Two Toned Moccasins",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Buck Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Country Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Buck Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Buck & Fox Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Buck Antler Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Field",
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Bull Gator",
+      "size": "Massive",
+      "weapon": "Any",
+      "locations": [
+        "Bayou Nwa"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Alligator Ranch Cutter Saddle",
+          "category": "Horse",
+          "qty": 2
+        },
+        {
+          "name": "Legendary Alligator Gambler's Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Alligator Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Alligator Fowlers",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Alligator Tooth Talisman",
+          "category": "Talisman",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Bullgator",
+      "size": "Massive",
+      "weapon": "Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh"
+      ],
+      "legendary": true,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Bullhead Catfish",
+      "size": "Large",
+      "weapon": "Swamp Lure",
+      "locations": [
+        "Sisika Penitentiary"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Chain Pickerel",
+      "size": "Large",
+      "weapon": "Lake Lure",
+      "locations": [
+        "Stillwater Creek"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Channel Catfish",
+      "size": "Large",
+      "weapon": "Special Spinner",
+      "locations": [
+        "San Luis River"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "notes": "Uncatchable in story mode",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Cougar",
+      "size": "Large",
+      "weapon": "Any",
+      "locations": [
+        "Gaptooth Ridge"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Legend of the East Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Cougar Cutaway Coat",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Cougar McClelland Saddle",
+          "category": "Horse",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Cougar Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Cougar & Wolf Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Cougar Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Cougar Fang Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Coyote",
+      "size": "Medium",
+      "weapon": "Any",
+      "locations": [
+        "Scarlett Meadows"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Coyote Scout Jacket",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Coyote Gambler's Hat",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Legendary Coyote Mountain Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Coyote Half Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Coyote Fang Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Elk",
+      "size": "Massive",
+      "weapon": "Any",
+      "locations": [
+        "Cumberland Forest"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Tonics Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Kit Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Fox Moccasins",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Elk Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Elk Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Elk Half Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Elk Moccasins",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Elk Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Elk Antler Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Fox",
+      "size": "Medium",
+      "weapon": "Any",
+      "locations": [
+        "Mattock Pond area"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Legendary Coyote Half Chaps",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Legendary Fox Moccasins",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Buck & Fox Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Fox Claw Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Giaguaro Panther",
+      "size": "Large",
+      "weapon": "Any",
+      "locations": [
+        "Braithwaite Manor area"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Kit Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "No-Man's Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Wilderness Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Panther Trail Saddle",
+          "category": "Horse",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Panther Cloak",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Panther Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Panther Eye Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Lake Sturgeon",
+      "size": "Large",
+      "weapon": "Lake Lure",
+      "locations": [
+        "Saint Denis"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Largemouth Bass",
+      "size": "Large",
+      "weapon": "Lake Lure",
+      "locations": [
+        "San Luis River"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Longnose Gar",
+      "size": "Large",
+      "weapon": "Swamp Lure",
+      "locations": [
+        "Lagras"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Moose",
+      "size": "Massive",
+      "weapon": "Any",
+      "locations": [
+        "Roanoke Ridge"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Legendary Pronghorn Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Moose Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Moose Half Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Moose Hunting Jacket",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Moose Moccasins",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Muskie",
+      "size": "Large",
+      "weapon": "Lake Lure",
+      "locations": [
+        "Van Horn Trading Post"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Northern Pike",
+      "size": "Large",
+      "weapon": "Lake Lure",
+      "locations": [
+        "Lake Isabella"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Perch",
+      "size": "Medium",
+      "weapon": "River Lure",
+      "locations": [
+        "Elysian Pool"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Pronghorn",
+      "size": "Large",
+      "weapon": "Any",
+      "locations": [
+        "Rio Bravo"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Outdoorsmen Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Goat Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Pronghorn Half Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Pronghorn Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Pronghorn Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Pronghorn Horn Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Redfin Pickerel",
+      "size": "Large",
+      "weapon": "River Lure",
+      "locations": [
+        "Braithwaite Manor"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Rock Bass",
+      "size": "Large",
+      "weapon": "River Lure",
+      "locations": [
+        "Aurora Basin (Tall Trees)"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Smallmouth Bass",
+      "size": "Large",
+      "weapon": "River Lure",
+      "locations": [
+        "Owanjila Lake"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Sockeye Salmon",
+      "size": "Large",
+      "weapon": "River Lure",
+      "locations": [
+        "Lake Isabella"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Steelhead Trout",
+      "size": "Large",
+      "weapon": "River Lure",
+      "locations": [
+        "Willard's Rest (Roanoke Ridge)"
+      ],
+      "legendary": true,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Legendary Tatanka Bison",
+      "size": "Massive",
+      "weapon": "Any",
+      "locations": [
+        "New Austin"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Provisions Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Bear Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Plantation Slouch Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Bison Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Bison Batwing Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Boar & Bison Fowlers",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Bison Horn Trinket",
+          "category": "Trinket",
+          "qty": 1
+        },
+        {
+          "name": "Bison Horn Talisman",
+          "category": "Talisman",
+          "qty": 1
+        },
+        {
+          "name": "Owl Feather Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary White Bison",
+      "size": "Massive",
+      "weapon": "Any",
+      "locations": [
+        "Lake Isabella"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Provisions Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Bear Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Plantation Slouch Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary White Bison Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary White Bison Coat",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Legendary Wolf",
+      "size": "Large",
+      "weapon": "Any",
+      "locations": [
+        "Cotorra Springs area"
+      ],
+      "legendary": true,
+      "unlocks": [
+        {
+          "name": "Legend of the East Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Moose Hunting Jacket",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Wolf Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Wilderness Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Cougar & Wolf Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Wolf Batwing Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Wolf Heart Trinket",
+          "category": "Trinket",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Leghorn Chicken",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Farms",
+        "Valentine"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Leghorn Rooster",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Farms",
+        "Valentine"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Little Brown Bat",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Caves",
+        "Night time various"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Little Egret",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Longnose Gar",
+      "size": "Large",
+      "weapon": "Swamp Lure",
+      "locations": [
+        "Swamps",
+        "Bayou Nwa"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Mallard Duck",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Lakes and ponds"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Masai Lion",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Emerald Ranch (escaped)"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Fence"
+      ]
+    },
+    {
+      "name": "Merino Sheep",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Farms"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Elk Half Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Trapper's Cloak",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Huntsman Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Sheepskin Vest",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Midland Water Snake",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Mule",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Farms",
+        "New Austin"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Muskie",
+      "size": "Large",
+      "weapon": "Lake Lure",
+      "locations": [
+        "Lakes"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Neotropic Cormorant",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "San Luis River"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field"
+      ]
+    },
+    {
+      "name": "Nine-banded Armadillo",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "New Austin",
+        "Cholla Springs",
+        "Gaptooth Ridge"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "North American Beaver",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Rivers and streams",
+        "Van Horn area"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Valuables Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Raccoon Mountain Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Beaver Hunting Jacket",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Beaver Drifter Hat",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Grenadier Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Country Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Beaver Roping Saddle",
+          "category": "Horse",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "North American Raccoon",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Forests throughout"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Provisions Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Raccoon Mountain Hat",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Northern Cardinal",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests throughout"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Beaver Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Northern Copperhead",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Roanoke Ridge",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": []
+    },
+    {
+      "name": "Northern Pike",
+      "size": "Large",
+      "weapon": "River Lure, Lake Lure",
+      "locations": [
+        "Rivers",
+        "Lakes"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Northern Water Snake",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Roanoke Ridge",
+        "West Elizabeth"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Old Spot Pig",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Farms",
+        "Valentine"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Pacific Loon",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "O'Creagh's Run",
+        "Grizzlies"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Panther",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Lemoyne forests",
+        "Bayou Nwa"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Kit Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "No-Man's Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Wilderness Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Panther Trail Saddle",
+          "category": "Horse",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Pekin Duck",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Farms",
+        "Flat Iron Lake"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Perch",
+      "size": "Small",
+      "weapon": "Bread, Corn, Cheese",
+      "locations": [
+        "Rivers",
+        "Lakes throughout"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Pileated Woodpecker",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Rainbow Boa",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson",
+        "Trapper",
+        "Fence"
+      ]
+    },
+    {
+      "name": "Red Boa",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson",
+        "Trapper",
+        "Fence"
+      ]
+    },
+    {
+      "name": "Red Swamp Crayfish",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Bayou Nwa",
+        "Swamps"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Red-bellied Woodpecker",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Lemoyne",
+        "Bayou Nwa"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Red-footed Booby",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field"
+      ]
+    },
+    {
+      "name": "Red-tailed Hawk",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Throughout map"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Owl Feather Trinket",
+          "category": "Trinket",
+          "qty": 1
+        },
+        {
+          "name": "Raccoon Mountain Hat",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Field",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Reddish Egret",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Wetlands"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Redfin Pickerel",
+      "size": "Medium",
+      "weapon": "Bread, River Lure",
+      "locations": [
+        "Streams",
+        "Rivers"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Ring-billed Gull",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Flat Iron Lake",
+        "Coastline"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Ring-necked Pheasant",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Forests",
+        "Heartlands"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Rio Grande Wild Turkey",
+      "size": "Medium",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "New Austin",
+        "Hennigan's Stead"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Rock Bass",
+      "size": "Medium",
+      "weapon": "Crayfish, River Lure",
+      "locations": [
+        "Rivers",
+        "Streams"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Rock Pigeon",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Towns and cities"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Rocky Mountain Bighorn Ram",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Grizzlies",
+        "Ambarino"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Rocky Mountain Bighorn Sheep",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Grizzlies",
+        "Ambarino"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Rocky Mountain Bull Elk",
+      "size": "Massive",
+      "weapon": "Rifle",
+      "locations": [
+        "Cumberland Forest",
+        "Big Valley"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Tonics Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Kit Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Fox Moccasins",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Elk Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Elk Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Rocky Mountain Cow Elk",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Cumberland Forest",
+        "Big Valley"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Tonics Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Kit Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Fox Moccasins",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Elk Flop Hat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Elk Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Roseate Spoonbill",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Rough-legged Hawk",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Grizzlies",
+        "Ambarino"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Sandhill Crane",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field"
+      ]
+    },
+    {
+      "name": "Scarlet Macaw",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Scarlet Tanager Songbird",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Roanoke Ridge",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Sierra Nevada Bighorn Ram",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Grizzlies",
+        "Mountains"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Buck Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Ram Sombrero",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Wolf Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Ram Shotgun Coat",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Sierra Nevada Bighorn Sheep",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Grizzlies",
+        "Mountains"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Elk Half Chaps",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Trapper's Cloak",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Huntsman Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Sheepskin Vest",
+          "category": "Clothing",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Silver Fox",
+      "size": "Medium",
+      "weapon": "Repeater",
+      "locations": [
+        "Grizzlies",
+        "Ambarino"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Smallmouth Bass",
+      "size": "Large",
+      "weapon": "Crayfish, River Lure",
+      "locations": [
+        "Rivers",
+        "Streams"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Snowy Egret",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Sockeye Salmon",
+      "size": "Large",
+      "weapon": "River Lure",
+      "locations": [
+        "Cold rivers",
+        "Grizzlies"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Sonoran Desert Toad",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "New Austin",
+        "Gaptooth Ridge"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": []
+    },
+    {
+      "name": "Sonoran Pronghorn Buck",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Gaptooth Ridge",
+        "New Austin"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field",
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Sonoran Pronghorn Doe",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Gaptooth Ridge",
+        "New Austin"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": []
+    },
+    {
+      "name": "Southern Copperhead",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Lemoyne",
+        "Bayou Nwa"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": []
+    },
+    {
+      "name": "Standard Donkey",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Farms",
+        "New Austin"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Steelhead Trout",
+      "size": "Large",
+      "weapon": "River Lure",
+      "locations": [
+        "Cold rivers",
+        "Mountain streams"
+      ],
+      "legendary": false,
+      "type": "fish",
+      "unlocks": [],
+      "usedBy": [
+        "Cooking"
+      ]
+    },
+    {
+      "name": "Striped Skunk",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Forests",
+        "Grasslands"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Sunglow Boa",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Guarma"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson",
+        "Trapper",
+        "Fence"
+      ]
+    },
+    {
+      "name": "Timber Rattlesnake",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests",
+        "Mountains"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Timber Wolf",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Grizzlies",
+        "Ambarino",
+        "Tall Trees"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Tricolored Heron",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Bayou Nwa",
+        "Bluewater Marsh"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Algernon",
+        "Field"
+      ]
+    },
+    {
+      "name": "Turkey Vulture",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Throughout map"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Virginia Opossum",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Lemoyne",
+        "Forests"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Western Bull Moose",
+      "size": "Massive",
+      "weapon": "Rifle",
+      "locations": [
+        "Roanoke Ridge",
+        "Grizzlies",
+        "Tall Trees"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Legendary Pronghorn Coat",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Moose Range Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Moose Half Chaps",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Western Chipmunk",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests throughout"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Western Gray Squirrel",
+      "size": "Small",
+      "weapon": "Small Game Arrow",
+      "locations": [
+        "Big Valley",
+        "Tall Trees",
+        "West Elizabeth"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson"
+      ]
+    },
+    {
+      "name": "Western Moose",
+      "size": "Massive",
+      "weapon": "Rifle",
+      "locations": [
+        "Grizzlies",
+        "Roanoke Ridge",
+        "Ambarino"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Western Raven",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Throughout map"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Western Tanager Songbird",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Forests"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "Western Toad",
+      "size": "Small",
+      "weapon": "Small Game Arrows",
+      "locations": [
+        "Wetlands",
+        "Rivers"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": []
+    },
+    {
+      "name": "Western Turkey Vulture",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "New Austin",
+        "West Elizabeth"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    },
+    {
+      "name": "White-tailed Buck",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "West Elizabeth",
+        "New Hanover",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Field",
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "White-tailed Deer",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "West Elizabeth",
+        "New Hanover",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Pearson",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Whitetail Buck",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Forests throughout"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Tonics Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Two Toned Moccasins",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Buck Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Country Vest",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Field",
+        "Pearson",
+        "Fence",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Whitetail Deer",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Forests throughout"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Tonics Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Ingredients Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Kit Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Provisions Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Materials Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Valuables Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Legend of the East Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Huntsman Vest",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Principal Vest",
+          "category": "Clothing",
+          "qty": 1
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Trapper"
+      ]
+    },
+    {
+      "name": "Whooping Crane",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "Bayou Nwa",
+        "Wetlands"
+      ],
+      "legendary": false,
+      "unlocks": [],
+      "type": "animal",
+      "usedBy": [
+        "Field"
+      ]
+    },
+    {
+      "name": "Wild Boar",
+      "size": "Large",
+      "weapon": "Rifle",
+      "locations": [
+        "Bluewater Marsh",
+        "Lemoyne"
+      ],
+      "legendary": false,
+      "unlocks": [
+        {
+          "name": "Materials Satchel",
+          "category": "Satchel",
+          "qty": 1
+        },
+        {
+          "name": "Boar Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Bull Fowler Boots",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Cougar Riding Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Legendary Ram Rifleman Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Boar Fringed Shotgun Chaps",
+          "category": "Clothing",
+          "qty": 2
+        },
+        {
+          "name": "Snake Skin Cavalry Gloves",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Boar & Bull Fowler Boots",
+          "category": "Clothing",
+          "qty": 1
+        },
+        {
+          "name": "Boar Mother Hubbard Saddle",
+          "category": "Horse",
+          "qty": 2
+        }
+      ],
+      "type": "animal",
+      "usedBy": [
+        "Pearson",
+        "Trapper",
+        "Fence"
+      ]
+    },
+    {
+      "name": "Yellow-billed Loon",
+      "size": "Moderate",
+      "weapon": "Varmint Rifle",
+      "locations": [
+        "O'Creagh's Run",
+        "Grizzlies"
+      ],
+      "legendary": false,
+      "type": "animal",
+      "unlocks": [],
+      "usedBy": [
+        "Trapper",
+        "Field"
+      ]
+    }
+  ],
+  "fishBaitMap": {
+    "Small": {
+      "bait": "Bread, Corn, Cheese",
+      "examples": [
+        "Bluegill",
+        "Perch"
+      ]
+    },
+    "Medium": {
+      "bait": "Bread, Corn, or Lures",
+      "examples": [
+        "Chain Pickerel",
+        "Rock Bass",
+        "Bullhead Catfish"
+      ]
+    },
+    "Large": {
+      "bait": "Lures (River, Lake, or Swamp)",
+      "examples": [
+        "Largemouth Bass",
+        "Northern Pike",
+        "Salmon",
+        "Trout"
+      ]
+    }
+  }
+}
