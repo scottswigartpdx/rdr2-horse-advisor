@@ -126,20 +126,6 @@
             font-weight: 600;
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .back-link:hover {
-            color: var(--rust);
-        }
-
         .not-found {
             text-align: center;
             padding: 60px 20px;
@@ -202,7 +188,6 @@
         <script>document.write(Components.header({backHref: "/", backText: "Back to RDR2 Companion", title: "Crafting Detail", subtitle: "", showAuth: true}))</script>
 
         <main>
-            <a href="javascript:history.back()" class="back-link">&larr; Back</a>
             <div id="itemDetail">
                 <div class="item-card">
                     <p style="color: var(--text-muted);">Loading...</p>
