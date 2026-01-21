@@ -285,6 +285,7 @@
     <script src="components.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="utils.js"></script>
+    <script src="dataUtils.js"></script>
     <script src="app.js"></script>
 </head>
 <body>
@@ -368,16 +369,26 @@
 
         async function loadAnimals() {
             try {
-                const response = await fetch('animals.json');
-                const data = await response.json();
-                animalsData = data.animals;
+                // Load both animals and crafting data
+                const [animalsResponse, craftingResponse] = await Promise.all([
+                    fetch('animals.json'),
+                    fetch('crafting.json')
+                ]);
+                const animalsJson = await animalsResponse.json();
+                const craftingJson = await craftingResponse.json();
+
+                // Enrich animals with computed usedBy and unlocks
+                animalsData = DataUtils.enrichAnimalsData(
+                    animalsJson.animals,
+                    craftingJson.craftingRecipes
+                );
 
                 renderTable(animalsData);
                 updateResultsCount(animalsData.length);
             } catch (error) {
-                console.error('Failed to load animals data:', error);
+                console.error('Failed to load data:', error);
                 document.getElementById('tableBody').innerHTML =
-                    '<tr><td colspan="5" class="no-results">Failed to load animals data</td></tr>';
+                    '<tr><td colspan="5" class="no-results">Failed to load data</td></tr>';
             }
         }
 
