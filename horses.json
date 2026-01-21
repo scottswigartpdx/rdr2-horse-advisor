@@ -337,14 +337,14 @@
       "baseStats": {
         "health": 3,
         "stamina": 3,
-        "speed": 7,
-        "acceleration": 5
+        "speed": 4,
+        "acceleration": 3
       },
       "maxStats": {
         "health": 4,
         "stamina": 4,
-        "speed": 9,
-        "acceleration": 7
+        "speed": 6,
+        "acceleration": 5
       },
       "handling": "Race",
       "category": "Race",
@@ -427,14 +427,14 @@
       "baseStats": {
         "health": 3,
         "stamina": 3,
-        "speed": 6,
-        "acceleration": 5
+        "speed": 4,
+        "acceleration": 3
       },
       "maxStats": {
         "health": 4,
         "stamina": 4,
-        "speed": 8,
-        "acceleration": 7
+        "speed": 6,
+        "acceleration": 5
       },
       "handling": "Race",
       "category": "Race",
@@ -575,13 +575,13 @@
       "coat": "Bay Roan",
       "image": "images/horses/ardennes_bay_roan.webp",
       "baseStats": {
-        "health": 8,
+        "health": 5,
         "stamina": 4,
         "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 9,
+        "health": 6,
         "stamina": 5,
         "speed": 5,
         "acceleration": 5
@@ -971,15 +971,15 @@
       "coat": "Blanket",
       "image": "images/horses/appaloosa_blanket.webp",
       "baseStats": {
-        "health": 4,
+        "health": 3,
         "stamina": 4,
-        "speed": 5,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 5,
+        "health": 4,
         "stamina": 5,
-        "speed": 7,
+        "speed": 5,
         "acceleration": 5
       },
       "handling": "Standard",
@@ -1157,16 +1157,16 @@
       "coat": "Grey Overo",
       "image": "images/horses/american_paint_grey_overo.webp",
       "baseStats": {
-        "health": 3,
-        "stamina": 4,
+        "health": 5,
+        "stamina": 5,
         "speed": 4,
-        "acceleration": 3
+        "acceleration": 4
       },
       "maxStats": {
-        "health": 4,
-        "stamina": 5,
+        "health": 6,
+        "stamina": 6,
         "speed": 6,
-        "acceleration": 5
+        "acceleration": 6
       },
       "handling": "Standard",
       "category": "Standard",
