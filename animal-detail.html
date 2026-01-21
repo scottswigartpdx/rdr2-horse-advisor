@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Detail - RDR2 Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        .detail-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .item-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .animal-name {
+            font-family: 'Rye', cursive;
+            font-size: 1.8rem;
+            color: var(--rust);
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .legendary-badge {
+            background: var(--red-dark);
+            color: var(--text-cream);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-family: 'Crimson Text', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fish-badge {
+            background: #1e5799;
+            color: var(--text-cream);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-family: 'Crimson Text', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .animal-type {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .detail-section {
+            margin-bottom: 25px;
+        }
+
+        .detail-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-family: 'Rye', cursive;
+            font-size: 0.9rem;
+            color: var(--rust);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .meta-item {
+            background: var(--bg-elevated);
+            padding: 12px 15px;
+            border-radius: 6px;
+        }
+
+        .meta-label {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .meta-value {
+            color: var(--text-cream);
+            font-size: 1rem;
+        }
+
+        .size-badge {
+            display: inline-block;
+            background: var(--bg-dark);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-cream);
+        }
+
+        .size-badge.size-small { border-left: 3px solid #9b59b6; }
+        .size-badge.size-moderate { border-left: 3px solid #3498db; }
+        .size-badge.size-medium { border-left: 3px solid #2ecc71; }
+        .size-badge.size-large { border-left: 3px solid #e67e22; }
+        .size-badge.size-massive { border-left: 3px solid #e74c3c; }
+
+        .locations-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .location-tag {
+            background: var(--bg-elevated);
+            color: var(--text-cream);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .used-by-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .used-by-tag {
+            background: var(--bg-dark);
+            color: var(--text-cream);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--rust);
+        }
+
+        .unlocks-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .unlocks-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .unlocks-list li:last-child {
+            border-bottom: none;
+        }
+
+        .unlock-link {
+            color: var(--text-cream);
+            text-decoration: none;
+        }
+
+        .unlock-link:hover {
+            color: var(--rust);
+            text-decoration: underline;
+        }
+
+        .unlock-meta {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            color: var(--rust);
+        }
+
+        .not-found {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .not-found h2 {
+            color: var(--rust);
+            margin-bottom: 10px;
+        }
+
+        .no-unlocks {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .weapon-value {
+            color: var(--rust);
+            font-weight: 500;
+        }
+    </style>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="utils.js"></script>
+    <script src="dataUtils.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container detail-container">
+        <script>document.write(Components.header({backHref: "/", backText: "Back to RDR2 Companion", title: "Animal Detail", subtitle: "", showAuth: true}))</script>
+
+        <main>
+            <a href="javascript:history.back()" class="back-link">&larr; Back</a>
+            <div id="animalDetail">
+                <div class="item-card">
+                    <p style="color: var(--text-muted);">Loading...</p>
+                </div>
+            </div>
+        </main>
+
+        <div data-component="footer"></div>
+    </div>
+
+    <script>
+        async function loadAnimalDetail() {
+            const params = new URLSearchParams(window.location.search);
+            const animalName = params.get('name');
+
+            if (!animalName) {
+                showNotFound('No animal specified');
+                return;
+            }
+
+            try {
+                // Load both animals and crafting data
+                const [animalsResponse, craftingResponse] = await Promise.all([
+                    fetch('animals.json'),
+                    fetch('crafting.json')
+                ]);
+                const animalsJson = await animalsResponse.json();
+                const craftingJson = await craftingResponse.json();
+
+                // Enrich animals with computed usedBy and unlocks
+                const enrichedAnimals = DataUtils.enrichAnimalsData(
+                    animalsJson.animals,
+                    craftingJson.craftingRecipes
+                );
+
+                const animal = enrichedAnimals.find(a =>
+                    a.name.toLowerCase() === animalName.toLowerCase()
+                );
+
+                if (!animal) {
+                    showNotFound(`Animal "${animalName}" not found`);
+                    return;
+                }
+
+                renderAnimal(animal);
+                document.title = `${animal.name} - RDR2 Companion`;
+
+            } catch (error) {
+                console.error('Failed to load data:', error);
+                showNotFound('Failed to load data');
+            }
+        }
+
+        function showNotFound(message) {
+            document.getElementById('animalDetail').innerHTML = `
+                <div class="not-found">
+                    <h2>Not Found</h2>
+                    <p>${message}</p>
+                    <p><a href="hunting.html" style="color: var(--rust);">Browse all animals</a></p>
+                </div>
+            `;
+        }
+
+        function getSizeClass(size) {
+            return 'size-' + size.toLowerCase();
+        }
+
+        function renderAnimal(animal) {
+            const container = document.getElementById('animalDetail');
+
+            // Badges
+            const legendaryBadge = animal.legendary ? '<span class="legendary-badge">Legendary</span>' : '';
+            const fishBadge = animal.type === 'fish' ? '<span class="fish-badge">Fish</span>' : '';
+
+            // Type string
+            const typeStr = animal.type === 'fish' ? 'Fish' : 'Animal';
+
+            // Weapon/bait display
+            const weaponLabel = animal.type === 'fish' ? 'Bait/Lure' : 'Recommended Weapon';
+            const weaponValue = animal.legendary && animal.type !== 'fish' ? 'Any (Legendary)' : animal.weapon;
+
+            // Locations HTML
+            let locationsHtml = '';
+            if (animal.locations && animal.locations.length > 0) {
+                locationsHtml = `
+                    <div class="detail-section">
+                        <div class="section-title">Locations</div>
+                        <div class="locations-list">
+                            ${animal.locations.map(loc => `<span class="location-tag">${loc}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Used by HTML
+            let usedByHtml = '';
+            if (animal.usedBy && animal.usedBy.length > 0) {
+                usedByHtml = `
+                    <div class="detail-section">
+                        <div class="section-title">Used By</div>
+                        <div class="used-by-list">
+                            ${animal.usedBy.map(u => `<span class="used-by-tag">${u}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Unlocks HTML
+            let unlocksHtml = '';
+            if (animal.unlocks && animal.unlocks.length > 0) {
+                unlocksHtml = `
+                    <div class="detail-section">
+                        <div class="section-title">Crafting Uses</div>
+                        <ul class="unlocks-list">
+                            ${animal.unlocks.map(u => `
+                                <li>
+                                    <a href="crafting-detail.html?item=${encodeURIComponent(u.name)}" class="unlock-link">${u.name}</a>
+                                    <span class="unlock-meta">${u.category} @ ${u.craftedAt}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            } else {
+                unlocksHtml = `
+                    <div class="detail-section">
+                        <div class="section-title">Crafting Uses</div>
+                        <p class="no-unlocks">No crafting uses</p>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = `
+                <div class="item-card">
+                    <h1 class="animal-name">
+                        ${animal.name}
+                        ${legendaryBadge}
+                        ${fishBadge}
+                    </h1>
+                    <p class="animal-type">${typeStr}</p>
+
+                    <div class="meta-grid">
+                        <div class="meta-item">
+                            <div class="meta-label">Size</div>
+                            <div class="meta-value">
+                                <span class="size-badge ${getSizeClass(animal.size)}">${animal.size}</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">${weaponLabel}</div>
+                            <div class="meta-value weapon-value">${weaponValue}</div>
+                        </div>
+                    </div>
+                </div>
+
+                ${locationsHtml ? `<div class="item-card">${locationsHtml}</div>` : ''}
+                ${usedByHtml ? `<div class="item-card">${usedByHtml}</div>` : ''}
+                <div class="item-card">${unlocksHtml}</div>
+            `;
+        }
+
+        // Initialize
+        loadAnimalDetail();
+    </script>
+</body>
+</html>

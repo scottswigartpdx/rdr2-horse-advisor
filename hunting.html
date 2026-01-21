@@ -113,6 +113,15 @@
             color: var(--text-cream);
         }
 
+        .animal-link {
+            text-decoration: none;
+        }
+
+        .animal-link:hover {
+            color: var(--rust);
+            text-decoration: underline;
+        }
+
         .legendary-badge {
             display: inline-block;
             background: var(--red-dark);
@@ -453,7 +462,7 @@
                 return `
                 <tr>
                     <td>
-                        <span class="animal-name">${animal.name}</span>${legendaryBadge}${fishBadge}
+                        <a href="animal-detail.html?name=${encodeURIComponent(animal.name)}" class="animal-name animal-link">${animal.name}</a>${legendaryBadge}${fishBadge}
                     </td>
                     <td><span class="size-badge ${getSizeClass(animal.size)}">${animal.size}</span></td>
                     <td class="weapon-text">${weaponLabel}</td>

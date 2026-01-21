@@ -76,6 +76,16 @@
             color: var(--text-cream);
         }
 
+        .ingredient-link {
+            color: var(--text-cream);
+            text-decoration: none;
+        }
+
+        .ingredient-link:hover {
+            color: var(--rust);
+            text-decoration: underline;
+        }
+
         .ingredient-qty {
             color: var(--text-muted);
             font-size: 0.9rem;
@@ -184,6 +194,7 @@
     <script src="components.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="utils.js"></script>
+    <script src="dataUtils.js"></script>
     <script src="app.js"></script>
 </head>
 <body>
@@ -213,8 +224,13 @@
             }
 
             try {
-                const response = await fetch('crafting.json');
-                const data = await response.json();
+                // Load both crafting and animals data
+                const [craftingResponse, animalsResponse] = await Promise.all([
+                    fetch('crafting.json'),
+                    fetch('animals.json')
+                ]);
+                const data = await craftingResponse.json();
+                const animalsData = await animalsResponse.json();
 
                 const item = data.craftingRecipes.find(r =>
                     r.name.toLowerCase() === itemName.toLowerCase()
@@ -233,11 +249,11 @@
                     );
                 }
 
-                renderItem(item, setItems);
+                renderItem(item, setItems, animalsData.animals);
                 document.title = `${item.name} - RDR2 Companion`;
 
             } catch (error) {
-                console.error('Failed to load crafting data:', error);
+                console.error('Failed to load data:', error);
                 showNotFound('Failed to load data');
             }
         }
@@ -252,7 +268,36 @@
             `;
         }
 
-        function renderItem(item, setItems) {
+        function findMatchingAnimal(ingredientName, animals) {
+            const lower = ingredientName.toLowerCase();
+            // Try to find an animal that matches this ingredient
+            // e.g., "Perfect Panther Pelt" should match "Panther"
+            // "Legendary Bear Claw" should match "Legendary Bharati Grizzly Bear"
+            for (const animal of animals) {
+                const animalLower = animal.name.toLowerCase();
+                const normalized = DataUtils.normalizeAnimalName(animal.name);
+                const words = normalized.split(' ');
+                const baseAnimal = words[words.length - 1];
+
+                // Check if ingredient contains the base animal name
+                if (lower.includes(baseAnimal)) {
+                    // For legendary ingredients, only match legendary animals
+                    if (lower.includes('legendary')) {
+                        if (animal.legendary && lower.includes(baseAnimal)) {
+                            return animal;
+                        }
+                    } else {
+                        // Non-legendary ingredient - prefer non-legendary animal
+                        if (!animal.legendary) {
+                            return animal;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        function renderItem(item, setItems, animals) {
             const container = document.getElementById('itemDetail');
 
             // Build category string
@@ -267,12 +312,17 @@
                     <div class="detail-section">
                         <div class="section-title">Ingredients</div>
                         <ul class="ingredients-list">
-                            ${item.ingredients.map(ing => `
+                            ${item.ingredients.map(ing => {
+                                const matchedAnimal = findMatchingAnimal(ing.item, animals);
+                                const nameHtml = matchedAnimal
+                                    ? `<a href="animal-detail.html?name=${encodeURIComponent(matchedAnimal.name)}" class="ingredient-link">${ing.item}</a>`
+                                    : `<span class="ingredient-name">${ing.item}</span>`;
+                                return `
                                 <li>
-                                    <span class="ingredient-name">${ing.item}</span>
+                                    ${nameHtml}
                                     <span class="ingredient-qty">x${ing.qty}</span>
                                 </li>
-                            `).join('')}
+                            `}).join('')}
                         </ul>
                     </div>
                 `;
