@@ -95,6 +95,28 @@ const DataUtils = {
   },
 
   /**
+   * Check if an ingredient matches an animal
+   */
+  ingredientMatchesAnimal(ingredient, animal, normalized, baseAnimal) {
+    const isLegendaryIngredient = ingredient.includes('legendary');
+
+    // Legendary ingredients should only match legendary animals of that type
+    if (isLegendaryIngredient) {
+      // Only legendary animals can match legendary ingredients
+      if (!animal.legendary) return false;
+      // Must also contain the base animal name
+      return ingredient.includes(baseAnimal);
+    }
+
+    // Non-legendary ingredients: match on base animal or normalized name
+    // e.g., "bear pelt" matches "Grizzly Bear", "bear claw" matches "American Black Bear"
+    if (ingredient.includes(baseAnimal)) return true;
+    if (ingredient.includes(normalized)) return true;
+
+    return false;
+  },
+
+  /**
    * Get usedBy locations for an animal based on crafting recipes
    */
   getUsedBy(animal, ingredientLocationMap) {
@@ -112,9 +134,7 @@ const DataUtils = {
 
     // Check all ingredients for matches
     for (const [ingredient, locations] of Object.entries(ingredientLocationMap)) {
-      if (ingredient.includes(baseAnimal) ||
-          ingredient.includes(normalized) ||
-          (animal.legendary && ingredient.includes('legendary'))) {
+      if (this.ingredientMatchesAnimal(ingredient, animal, normalized, baseAnimal)) {
         locations.forEach(loc => usedBy.add(loc));
       }
     }
@@ -145,9 +165,7 @@ const DataUtils = {
     const seen = new Set();
 
     for (const [ingredient, recipes] of Object.entries(ingredientRecipeMap)) {
-      if (ingredient.includes(baseAnimal) ||
-          ingredient.includes(normalized) ||
-          (animal.legendary && ingredient.includes('legendary'))) {
+      if (this.ingredientMatchesAnimal(ingredient, animal, normalized, baseAnimal)) {
         for (const recipe of recipes) {
           if (!seen.has(recipe.name)) {
             seen.add(recipe.name);
