@@ -108,6 +108,10 @@ const DataUtils = {
       return ingredient.includes(baseAnimal);
     }
 
+    // Legendary animals only drop legendary materials, not regular pelts
+    // So they should NOT match non-legendary ingredients
+    if (animal.legendary) return false;
+
     // Non-legendary ingredients: match on base animal or normalized name
     // e.g., "bear pelt" matches "Grizzly Bear", "bear claw" matches "American Black Bear"
     if (ingredient.includes(baseAnimal)) return true;
