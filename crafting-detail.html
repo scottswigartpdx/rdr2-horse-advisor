@@ -273,17 +273,28 @@
             // Try to find an animal that matches this ingredient
             // e.g., "Perfect Panther Pelt" should match "Panther"
             // "Legendary Bear Claw" should match "Legendary Bharati Grizzly Bear"
+            // "Perfect Pronghorn Hide" should match "American Pronghorn Buck"
+
+            const isLegendaryIngredient = lower.includes('legendary');
+
             for (const animal of animals) {
-                const animalLower = animal.name.toLowerCase();
                 const normalized = DataUtils.normalizeAnimalName(animal.name);
                 const words = normalized.split(' ');
-                const baseAnimal = words[words.length - 1];
 
-                // Check if ingredient contains the base animal name
-                if (lower.includes(baseAnimal)) {
+                // Check all words in the animal name, not just the last one
+                // This handles cases like "pronghorn buck" where "pronghorn" is the key word
+                let matched = false;
+                for (const word of words) {
+                    if (word.length >= 3 && lower.includes(word)) {
+                        matched = true;
+                        break;
+                    }
+                }
+
+                if (matched) {
                     // For legendary ingredients, only match legendary animals
-                    if (lower.includes('legendary')) {
-                        if (animal.legendary && lower.includes(baseAnimal)) {
+                    if (isLegendaryIngredient) {
+                        if (animal.legendary) {
                             return animal;
                         }
                     } else {
