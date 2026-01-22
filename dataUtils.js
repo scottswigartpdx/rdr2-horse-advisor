@@ -66,6 +66,7 @@ const DataUtils = {
       .replace('banded ', '')
       .replace('bharati grizzly ', '')
       .replace('giaguaro ', '')
+      .replace('wild ', '')  // "Wild Boar" -> "boar", "Wild Turkey" -> "turkey"
       .replace('bull gator', 'alligator')
       .replace(/ ?\(.*\)/, '')
       .trim();
@@ -210,6 +211,38 @@ const DataUtils = {
               qty: recipe.qty
             });
           }
+        }
+      }
+    }
+
+    // Animals that provide Animal Fat unlock fat-based recipes
+    if (this.providesAnimalFat(animal.name) && !animal.legendary) {
+      const fatRecipes = ingredientRecipeMap['animal fat'] || [];
+      for (const recipe of fatRecipes) {
+        if (!seen.has(recipe.name)) {
+          seen.add(recipe.name);
+          unlocks.push({
+            name: recipe.name,
+            category: recipe.category,
+            craftedAt: recipe.craftedAt,
+            qty: recipe.qty
+          });
+        }
+      }
+    }
+
+    // Flying birds provide Flight Feathers for arrow crafting
+    if (this.isFlyingBird(animal.name) && !animal.legendary) {
+      const featherRecipes = ingredientRecipeMap['flight feather'] || [];
+      for (const recipe of featherRecipes) {
+        if (!seen.has(recipe.name)) {
+          seen.add(recipe.name);
+          unlocks.push({
+            name: recipe.name,
+            category: recipe.category,
+            craftedAt: recipe.craftedAt,
+            qty: recipe.qty
+          });
         }
       }
     }
