@@ -3,7 +3,7 @@
     {
       "name": "Split Point Cartridge",
       "category": "Ammo",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Regular Cartridge",
@@ -16,7 +16,7 @@
     {
       "name": "Explosive Cartridge",
       "category": "Ammo",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Express Cartridge",
@@ -33,7 +33,7 @@
     {
       "name": "Incendiary Buckshot",
       "category": "Ammo",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Regular Buckshot",
@@ -50,7 +50,7 @@
     {
       "name": "Explosive Slug",
       "category": "Ammo",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Regular Slug",
@@ -67,7 +67,7 @@
     {
       "name": "Improved Arrow",
       "category": "Arrow",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Arrow",
@@ -84,7 +84,7 @@
     {
       "name": "Small Game Arrow",
       "category": "Arrow",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Arrow",
@@ -105,7 +105,7 @@
     {
       "name": "Fire Arrow",
       "category": "Arrow",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Arrow",
@@ -126,7 +126,7 @@
     {
       "name": "Poison Arrow",
       "category": "Arrow",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Arrow",
@@ -147,7 +147,7 @@
     {
       "name": "Dynamite Arrow",
       "category": "Arrow",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Arrow",
@@ -168,7 +168,7 @@
     {
       "name": "Fire Bottle",
       "category": "Throwable",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Alcohol (Gin/Rum/Brandy/Bourbon)",
@@ -185,7 +185,7 @@
     {
       "name": "Volatile Fire Bottle",
       "category": "Throwable",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Moonshine",
@@ -202,7 +202,7 @@
     {
       "name": "Volatile Dynamite",
       "category": "Throwable",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Dynamite",
@@ -223,7 +223,7 @@
     {
       "name": "Improved Tomahawk",
       "category": "Throwable",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Tomahawk",
@@ -240,7 +240,7 @@
     {
       "name": "Homing Tomahawk",
       "category": "Throwable",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Tomahawk",
@@ -257,7 +257,7 @@
     {
       "name": "Improved Throwing Knife",
       "category": "Throwable",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Throwing Knife",
@@ -274,7 +274,7 @@
     {
       "name": "Poison Throwing Knife",
       "category": "Throwable",
-      "craftedAt": "Field",
+      "craftedAt": "Campfire",
       "ingredients": [
         {
           "item": "Throwing Knife",

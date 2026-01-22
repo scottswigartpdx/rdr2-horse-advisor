@@ -7,7 +7,7 @@ const DataUtils = {
   // Exotic birds for Algernon Wasp's stranger mission
   ALGERNON_BIRDS: ['egret', 'heron', 'spoonbill', 'parakeet', 'parrot', 'macaw'],
 
-  // Flying birds that provide Flight Feathers (used for Field crafting arrows)
+  // Flying birds that provide Flight Feathers (used for Campfire crafting arrows)
   FLYING_BIRD_TERMS: [
     'eagle', 'hawk', 'owl', 'crow', 'raven', 'robin', 'cardinal', 'oriole',
     'sparrow', 'songbird', 'woodpecker', 'jay', 'waxwing', 'duck', 'goose',
@@ -18,6 +18,12 @@ const DataUtils = {
 
   // Birds that do NOT provide Flight Feathers
   NO_FLIGHT_FEATHER_PATTERNS: ['wild turkey', 'rooster', 'chicken'],
+
+  // Animals that provide Animal Fat (used for Campfire crafting explosives)
+  ANIMAL_FAT_PROVIDERS: [
+    'bear', 'beaver', 'boar', 'duck', 'goose', 'peccary', 'javelina',
+    'pig', 'pheasant', 'bison'
+  ],
 
   /**
    * Check if an animal is a flying bird that provides flight feathers
@@ -34,6 +40,14 @@ const DataUtils = {
   isAlgernonBird(name) {
     const lower = name.toLowerCase();
     return this.ALGERNON_BIRDS.some(bird => lower.includes(bird));
+  },
+
+  /**
+   * Check if an animal provides Animal Fat
+   */
+  providesAnimalFat(name) {
+    const lower = name.toLowerCase();
+    return this.ANIMAL_FAT_PROVIDERS.some(animal => lower.includes(animal));
   },
 
   /**
@@ -159,9 +173,14 @@ const DataUtils = {
       usedBy.add('Algernon');
     }
 
-    // Flying birds provide Flight Feathers -> Field crafting
+    // Flying birds provide Flight Feathers -> Campfire crafting
     if (this.isFlyingBird(animal.name)) {
-      usedBy.add('Field');
+      usedBy.add('Campfire');
+    }
+
+    // Animals that provide Animal Fat -> Campfire crafting (explosives, fire bottles)
+    if (this.providesAnimalFat(animal.name)) {
+      usedBy.add('Campfire');
     }
 
     return [...usedBy];
