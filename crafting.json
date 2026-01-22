@@ -3014,6 +3014,235 @@
           "qty": 1
         }
       ]
+    },
+    {
+      "name": "Alligator Skull",
+      "category": "Camp Upgrade",
+      "subcategory": "Arthur's Lodging",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Alligator Skin",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for Arthur's lodging"
+    },
+    {
+      "name": "Big Horn Ram Skull",
+      "category": "Camp Upgrade",
+      "subcategory": "Arthur's Lodging",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Ram Carcass",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for Arthur's lodging"
+    },
+    {
+      "name": "Cougar Pelt Covered Chest",
+      "category": "Camp Upgrade",
+      "subcategory": "Arthur's Lodging",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Cougar Pelt",
+          "qty": 2
+        }
+      ],
+      "benefit": "Cosmetic decoration for Arthur's lodging"
+    },
+    {
+      "name": "Boar Skin Table Cover",
+      "category": "Camp Upgrade",
+      "subcategory": "Arthur's Lodging",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Boar Pelt",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for Arthur's lodging"
+    },
+    {
+      "name": "Ox Hide Rug",
+      "category": "Camp Upgrade",
+      "subcategory": "Arthur's Lodging",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Ox Hide",
+          "qty": 2
+        }
+      ],
+      "benefit": "Cosmetic decoration for Arthur's lodging"
+    },
+    {
+      "name": "Boar Skin Rug",
+      "category": "Camp Upgrade",
+      "subcategory": "John's Lodging",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Boar Pelt",
+          "qty": 4
+        }
+      ],
+      "benefit": "Cosmetic decoration for John's lodging"
+    },
+    {
+      "name": "Pronghorn Leather Table Tops",
+      "category": "Camp Upgrade",
+      "subcategory": "Camp Tables",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Pronghorn Hide",
+          "qty": 2
+        }
+      ],
+      "benefit": "Cosmetic decoration for camp tables"
+    },
+    {
+      "name": "Pronghorn Skull",
+      "category": "Camp Upgrade",
+      "subcategory": "Chuckwagon",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Pronghorn Carcass",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for the chuckwagon"
+    },
+    {
+      "name": "Moose Antlers",
+      "category": "Camp Upgrade",
+      "subcategory": "Main Campfire",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Moose Antler",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for the main campfire"
+    },
+    {
+      "name": "Wolf Skull",
+      "category": "Camp Upgrade",
+      "subcategory": "Main Campfire",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Wolf Carcass",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for the main campfire"
+    },
+    {
+      "name": "Snake Skin Banjo Head",
+      "category": "Camp Upgrade",
+      "subcategory": "Main Campfire",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Snake Skin",
+          "qty": 2
+        }
+      ],
+      "benefit": "Cosmetic decoration for the main campfire"
+    },
+    {
+      "name": "Campfire Seat Cover",
+      "category": "Camp Upgrade",
+      "subcategory": "Main Campfire",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Beaver Pelt",
+          "qty": 1
+        },
+        {
+          "item": "Perfect Muskrat Pelt",
+          "qty": 1
+        },
+        {
+          "item": "Perfect Fox Pelt",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for campfire seating"
+    },
+    {
+      "name": "Campfire Log Seat Cover",
+      "category": "Camp Upgrade",
+      "subcategory": "Main Campfire",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Wolf Pelt",
+          "qty": 2
+        }
+      ],
+      "benefit": "Cosmetic decoration for campfire seating"
+    },
+    {
+      "name": "Lean-to Cow Hide Ground Cover",
+      "category": "Camp Upgrade",
+      "subcategory": "Main Campfire",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Cow Hide",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for the lean-to area"
+    },
+    {
+      "name": "Scout Fire Ground Cover",
+      "category": "Camp Upgrade",
+      "subcategory": "Scout Campfire",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Perfect Goat Hide",
+          "qty": 2
+        }
+      ],
+      "benefit": "Cosmetic decoration for the scout campfire"
+    },
+    {
+      "name": "Elk Antlers",
+      "category": "Camp Upgrade",
+      "subcategory": "Scout Campfire",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Elk Antler",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for the scout campfire"
+    },
+    {
+      "name": "Hanging Bones",
+      "category": "Camp Upgrade",
+      "subcategory": "Scout Campfire",
+      "craftedAt": "Pearson",
+      "ingredients": [
+        {
+          "item": "Buck Antler",
+          "qty": 1
+        }
+      ],
+      "benefit": "Cosmetic decoration for the scout campfire"
     }
   ],
   "craftLocations": {

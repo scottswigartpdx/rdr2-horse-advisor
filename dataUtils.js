@@ -99,25 +99,36 @@ const DataUtils = {
    */
   ingredientMatchesAnimal(ingredient, animal, normalized, baseAnimal) {
     const isLegendaryIngredient = ingredient.includes('legendary');
+    const words = normalized.split(' ');
+
+    // Check if any word in the animal name matches the ingredient
+    // Words must be at least 3 chars to avoid false matches (e.g., "ox" in "fox")
+    // Exception: always check the base animal name (last word) regardless of length
+    const anyWordMatches = words.some((word, idx) => {
+      const isBaseAnimal = idx === words.length - 1;
+      if (isBaseAnimal) {
+        // For base animal, require word boundary match to avoid "ox" matching "fox"
+        const regex = new RegExp('\\b' + word + '\\b');
+        return regex.test(ingredient);
+      }
+      return word.length >= 3 && ingredient.includes(word);
+    });
 
     // Legendary ingredients should only match legendary animals of that type
     if (isLegendaryIngredient) {
       // Only legendary animals can match legendary ingredients
       if (!animal.legendary) return false;
-      // Must also contain the base animal name
-      return ingredient.includes(baseAnimal);
+      // Must contain a word from the animal name
+      return anyWordMatches;
     }
 
     // Legendary animals only drop legendary materials, not regular pelts
     // So they should NOT match non-legendary ingredients
     if (animal.legendary) return false;
 
-    // Non-legendary ingredients: match on base animal or normalized name
-    // e.g., "bear pelt" matches "Grizzly Bear", "bear claw" matches "American Black Bear"
-    if (ingredient.includes(baseAnimal)) return true;
-    if (ingredient.includes(normalized)) return true;
-
-    return false;
+    // Non-legendary ingredients: match if any significant word matches
+    // e.g., "pronghorn hide" matches "American Pronghorn Buck" via "pronghorn"
+    return anyWordMatches;
   },
 
   /**

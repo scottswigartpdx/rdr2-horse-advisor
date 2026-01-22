@@ -23,11 +23,6 @@
             align-items: center;
         }
 
-        .search-container {
-            flex: 1;
-            min-width: 250px;
-        }
-
         .filter-container {
             display: flex;
             gap: 10px;
@@ -50,6 +45,109 @@
         .filter-select:focus {
             outline: none;
             border-color: var(--rust);
+        }
+
+        /* Animal dropdown styles */
+        .animal-dropdown {
+            position: relative;
+            min-width: 280px;
+        }
+
+        .animal-dropdown-input {
+            width: 100%;
+            padding: 12px 40px 12px 16px;
+            font-size: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            color: var(--text-cream);
+            font-family: 'Crimson Text', serif;
+            cursor: pointer;
+            box-sizing: border-box;
+            height: 48px;
+        }
+
+        .animal-dropdown-input:focus {
+            outline: none;
+            border-color: var(--rust);
+        }
+
+        .animal-dropdown-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .animal-dropdown-clear {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 4px;
+            line-height: 1;
+            display: none;
+        }
+
+        .animal-dropdown-clear:hover {
+            color: var(--rust);
+        }
+
+        .animal-dropdown.has-selection .animal-dropdown-clear {
+            display: block;
+        }
+
+        .animal-dropdown-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            max-height: 300px;
+            overflow-y: auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-medium);
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            z-index: 100;
+            display: none;
+        }
+
+        .animal-dropdown.open .animal-dropdown-list {
+            display: block;
+        }
+
+        .animal-dropdown.open .animal-dropdown-input {
+            border-radius: 6px 6px 0 0;
+        }
+
+        .animal-dropdown-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            color: var(--text-cream);
+            font-size: 0.95rem;
+        }
+
+        .animal-dropdown-item:hover {
+            background: var(--bg-elevated);
+        }
+
+        .animal-dropdown-item.highlighted {
+            background: var(--bg-elevated);
+        }
+
+        .animal-dropdown-item .legendary-badge,
+        .animal-dropdown-item .fish-badge {
+            margin-left: 8px;
+            font-size: 0.65rem;
+        }
+
+        .animal-dropdown-empty {
+            padding: 15px 16px;
+            color: var(--text-muted);
+            font-style: italic;
+            text-align: center;
         }
 
         .hunting-table {
@@ -290,6 +388,15 @@
                 flex-direction: column;
             }
 
+            .controls-container > .search-input {
+                width: 100%;
+            }
+
+            .animal-dropdown {
+                width: 100%;
+                min-width: unset;
+            }
+
             .filter-container {
                 width: 100%;
             }
@@ -317,8 +424,11 @@
             </div>
 
             <div class="controls-container">
-                <div class="search-container">
-                    <input type="text" id="searchInput" class="search-input" placeholder="Search animals, locations..." autofocus>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search locations, weapons...">
+                <div class="animal-dropdown" id="animalDropdown">
+                    <input type="text" id="animalDropdownInput" class="animal-dropdown-input" placeholder="All Animals" autocomplete="off">
+                    <button type="button" class="animal-dropdown-clear" id="animalDropdownClear">&times;</button>
+                    <div class="animal-dropdown-list" id="animalDropdownList"></div>
                 </div>
                 <div class="filter-container">
                     <select id="sizeFilter" class="filter-select">
@@ -330,7 +440,7 @@
                         <option value="Massive">Massive</option>
                     </select>
                     <select id="legendaryFilter" class="filter-select">
-                        <option value="">All Animals</option>
+                        <option value="">Legendary & Regular</option>
                         <option value="legendary">Legendary Only</option>
                         <option value="regular">Regular Only</option>
                     </select>
@@ -385,6 +495,8 @@
     <script>
         let animalsData = [];
         let currentSort = { column: 'name', direction: 'asc' };
+        let selectedAnimal = null;
+        let highlightedIndex = -1;
 
         async function loadAnimals() {
             try {
@@ -404,11 +516,134 @@
 
                 renderTable(animalsData);
                 updateResultsCount(animalsData.length);
+                initAnimalDropdown();
             } catch (error) {
                 console.error('Failed to load data:', error);
                 document.getElementById('tableBody').innerHTML =
                     '<tr><td colspan="5" class="no-results">Failed to load data</td></tr>';
             }
+        }
+
+        function initAnimalDropdown() {
+            const dropdown = document.getElementById('animalDropdown');
+            const input = document.getElementById('animalDropdownInput');
+            const list = document.getElementById('animalDropdownList');
+            const clearBtn = document.getElementById('animalDropdownClear');
+
+            // Populate dropdown with all animals sorted by name
+            function renderDropdownList(filter = '') {
+                const lowerFilter = filter.toLowerCase();
+                const filtered = animalsData
+                    .filter(a => a.name.toLowerCase().includes(lowerFilter))
+                    .sort((a, b) => a.name.localeCompare(b.name));
+
+                if (filtered.length === 0) {
+                    list.innerHTML = '<div class="animal-dropdown-empty">No animals found</div>';
+                    return;
+                }
+
+                list.innerHTML = filtered.map((animal, idx) => {
+                    const legendaryBadge = animal.legendary ? '<span class="legendary-badge">LEGENDARY</span>' : '';
+                    const fishBadge = animal.type === 'fish' ? '<span class="fish-badge">FISH</span>' : '';
+                    return `<div class="animal-dropdown-item" data-name="${animal.name}" data-index="${idx}">${animal.name}${legendaryBadge}${fishBadge}</div>`;
+                }).join('');
+
+                highlightedIndex = -1;
+            }
+
+            function openDropdown() {
+                dropdown.classList.add('open');
+                renderDropdownList(selectedAnimal ? '' : input.value);
+            }
+
+            function closeDropdown() {
+                dropdown.classList.remove('open');
+                highlightedIndex = -1;
+            }
+
+            function selectAnimal(name) {
+                selectedAnimal = name;
+                input.value = name;
+                dropdown.classList.add('has-selection');
+                closeDropdown();
+                updateTable();
+            }
+
+            function clearSelection() {
+                selectedAnimal = null;
+                input.value = '';
+                dropdown.classList.remove('has-selection');
+                updateTable();
+                input.focus();
+            }
+
+            // Event listeners
+            input.addEventListener('focus', () => {
+                if (selectedAnimal) {
+                    input.value = '';
+                }
+                openDropdown();
+            });
+
+            input.addEventListener('input', () => {
+                selectedAnimal = null;
+                dropdown.classList.remove('has-selection');
+                renderDropdownList(input.value);
+                updateTable();
+            });
+
+            input.addEventListener('blur', (e) => {
+                // Delay to allow click on dropdown item
+                setTimeout(() => {
+                    if (selectedAnimal) {
+                        input.value = selectedAnimal;
+                    }
+                    closeDropdown();
+                }, 150);
+            });
+
+            input.addEventListener('keydown', (e) => {
+                const items = list.querySelectorAll('.animal-dropdown-item');
+                if (items.length === 0) return;
+
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    highlightedIndex = Math.min(highlightedIndex + 1, items.length - 1);
+                    updateHighlight(items);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    highlightedIndex = Math.max(highlightedIndex - 1, 0);
+                    updateHighlight(items);
+                } else if (e.key === 'Enter' && highlightedIndex >= 0) {
+                    e.preventDefault();
+                    const item = items[highlightedIndex];
+                    if (item) selectAnimal(item.dataset.name);
+                } else if (e.key === 'Escape') {
+                    closeDropdown();
+                    input.blur();
+                }
+            });
+
+            function updateHighlight(items) {
+                items.forEach((item, idx) => {
+                    item.classList.toggle('highlighted', idx === highlightedIndex);
+                    if (idx === highlightedIndex) {
+                        item.scrollIntoView({ block: 'nearest' });
+                    }
+                });
+            }
+
+            list.addEventListener('click', (e) => {
+                const item = e.target.closest('.animal-dropdown-item');
+                if (item) {
+                    selectAnimal(item.dataset.name);
+                }
+            });
+
+            clearBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                clearSelection();
+            });
         }
 
         function getSizeClass(size) {
@@ -514,8 +749,11 @@
             });
         }
 
-        function filterAnimals(animals, query, size, legendary, hasUnlocks, type, usedBy) {
+        function filterAnimals(animals, animalName, query, size, legendary, hasUnlocks, type, usedBy) {
             return animals.filter(animal => {
+                // Specific animal filter (from dropdown)
+                if (animalName && animal.name !== animalName) return false;
+
                 // Type filter
                 if (type && animal.type !== type) return false;
 
@@ -532,7 +770,7 @@
                 // UsedBy filter
                 if (usedBy && (!animal.usedBy || !animal.usedBy.includes(usedBy))) return false;
 
-                // Text search
+                // Text search (locations, weapons, etc.)
                 if (query) {
                     const lowerQuery = query.toLowerCase();
 
@@ -546,12 +784,6 @@
 
                     // Search in weapon/bait
                     if (animal.weapon && animal.weapon.toLowerCase().includes(lowerQuery)) return true;
-
-                    // Search in unlocks
-                    if (animal.unlocks && animal.unlocks.some(u =>
-                        u.name.toLowerCase().includes(lowerQuery) ||
-                        u.category.toLowerCase().includes(lowerQuery)
-                    )) return true;
 
                     return false;
                 }
@@ -568,7 +800,7 @@
             const hasUnlocks = document.getElementById('unlocksFilter').value;
             const usedBy = document.getElementById('usedByFilter').value;
 
-            let filtered = filterAnimals(animalsData, query, size, legendary, hasUnlocks, type, usedBy);
+            let filtered = filterAnimals(animalsData, selectedAnimal, query, size, legendary, hasUnlocks, type, usedBy);
             let sorted = sortAnimals(filtered, currentSort.column, currentSort.direction);
             renderTable(sorted);
             updateResultsCount(sorted.length);
