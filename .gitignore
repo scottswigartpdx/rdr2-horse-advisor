@@ -2,3 +2,18 @@
 node_modules
 .vercel
 .env*.local
+
+# Local chat transcripts / IDE artifacts
+.conversations/
+
+# Local screenshots/artifacts
+screenshots/
+
+# One-off scratch notes (dated)
+2026-*.txt
+
+# Local scraped working directories (regeneratable)
+scraped-stats/animals/
+
+# Draft UI experiments
+chat-centric-option-*.html
