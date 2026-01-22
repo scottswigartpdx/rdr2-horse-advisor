@@ -660,21 +660,21 @@
                 return '<span class="no-unlocks">No crafting uses</span>';
             }
 
-            // Group by category
-            const byCategory = {};
+            // Group by craftedAt (Pearson, Trapper, Fence, Field)
+            const byCrafter = {};
             for (const u of unlocks) {
-                if (!byCategory[u.category]) {
-                    byCategory[u.category] = [];
+                if (!byCrafter[u.craftedAt]) {
+                    byCrafter[u.craftedAt] = [];
                 }
-                byCategory[u.category].push(u.name);
+                byCrafter[u.craftedAt].push(u.name);
             }
 
             let html = '<ul class="unlocks-list">';
-            for (const [cat, items] of Object.entries(byCategory)) {
+            for (const [crafter, items] of Object.entries(byCrafter)) {
                 const links = items.map(name =>
                     `<a href="crafting-detail.html?item=${encodeURIComponent(name)}" class="unlock-link">${name}</a>`
                 ).join(', ');
-                html += `<li><span class="category">${cat}:</span> ${links}</li>`;
+                html += `<li><span class="category">${crafter}:</span> ${links}</li>`;
             }
             html += '</ul>';
             return html;
