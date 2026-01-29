@@ -201,9 +201,31 @@
     <script>
         async function loadItemDetail() {
             const params = new URLSearchParams(window.location.search);
-            const itemName = params.get('item');
+            // Normal case: ?item=Foo or ?name=Foo
+            let rawItemName = params.get('item') || params.get('name');
 
-            if (!itemName) {
+            // Defensive fallback: some callers accidentally encode "item=Foo" as the whole query,
+            // resulting in a single key like "item=Foo" and no "item" param.
+            if (rawItemName == null) {
+                const keys = Array.from(params.keys());
+                if (keys.length === 1 && keys[0].includes('=')) {
+                    const [k, ...rest] = keys[0].split('=');
+                    const v = rest.join('=');
+                    if ((k || '').toLowerCase() === 'item' || (k || '').toLowerCase() === 'name') {
+                        rawItemName = v;
+                    }
+                }
+            }
+            const itemName = (rawItemName || '').trim();
+
+            // Back-compat / friendly aliases for renamed items
+            const ALIASES = {
+                'boar tusk trinket': 'boar tusk talisman',
+            };
+            const normalizedQuery = itemName.toLowerCase();
+            const resolvedItemName = (ALIASES[normalizedQuery] || itemName).trim();
+
+            if (!resolvedItemName) {
                 showNotFound('No item specified');
                 return;
             }
@@ -218,11 +240,11 @@
                 const animalsData = await animalsResponse.json();
 
                 const item = data.craftingRecipes.find(r =>
-                    r.name.toLowerCase() === itemName.toLowerCase()
+                    r.name.toLowerCase() === resolvedItemName.toLowerCase()
                 );
 
                 if (!item) {
-                    showNotFound(`Item "${itemName}" not found`);
+                    showNotFound(`Item "${resolvedItemName}" not found`);
                     return;
                 }
 
@@ -309,10 +331,17 @@
                         <div class="section-title">Ingredients</div>
                         <ul class="ingredients-list">
                             ${item.ingredients.map(ing => {
-                                const matchedAnimal = findMatchingAnimal(ing.item, animals);
-                                const nameHtml = matchedAnimal
-                                    ? `<a href="animal-detail.html?name=${encodeURIComponent(matchedAnimal.name)}" class="ingredient-link">${ing.item}</a>`
-                                    : `<span class="ingredient-name">${ing.item}</span>`;
+                                const items = DataUtils.getIngredientItems(ing);
+                                const label = DataUtils.getIngredientLabel(ing);
+                                const nameHtml = items.length
+                                    ? items.map((itemName, idx) => {
+                                        const matchedAnimal = findMatchingAnimal(itemName, animals);
+                                        const chunk = matchedAnimal
+                                            ? `<a href="animal-detail.html?name=${encodeURIComponent(matchedAnimal.name)}" class="ingredient-link">${itemName}</a>`
+                                            : `<span class="ingredient-name">${itemName}</span>`;
+                                        return idx === 0 ? chunk : ` <span class="ingredient-qty">or</span> ${chunk}`;
+                                    }).join('')
+                                    : `<span class="ingredient-name">${label || '-'}</span>`;
                                 return `
                                 <li>
                                     ${nameHtml}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horses - Landing Option B (Chapter-first) | RDR2 Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    .landing-container { max-width: 1100px; margin: 0 auto; }
+
+    .chapter-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin: 14px 0 12px;
+    }
+
+    .chapter-panel h2 {
+      font-family: 'Rye', cursive;
+      color: var(--text-cream);
+      font-size: 1.35rem;
+      margin: 0 0 8px;
+    }
+
+    .chapter-panel p {
+      color: var(--text-muted);
+      margin: 0 0 12px;
+    }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+
+    .chapter-btn {
+      background: #121212;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      color: var(--text-muted);
+      padding: 10px 10px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+      min-height: 44px;
+      font-family: 'Crimson Text', serif;
+      font-size: 0.95rem;
+    }
+
+    .chapter-btn:hover {
+      border-color: var(--gold);
+      color: var(--text-cream);
+      background: rgba(201, 162, 39, 0.08);
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 12px;
+      margin: 12px 0 18px;
+      align-items: start;
+    }
+
+    .flow-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .flow-card h3 {
+      font-family: 'Rye', cursive;
+      color: var(--rust);
+      font-size: 1rem;
+      margin: 0 0 8px;
+    }
+
+    .flow-card ol {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .flow-card ol li { margin: 6px 0; }
+
+    .cta-stack { display: flex; flex-direction: column; gap: 8px; }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-subtle);
+      background: #121212;
+      color: var(--text-muted);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+
+    .cta:hover {
+      border-color: var(--gold);
+      color: var(--text-cream);
+      background: rgba(201, 162, 39, 0.08);
+    }
+
+    .hint {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .chapter-grid { grid-template-columns: repeat(2, 1fr); }
+      .flow-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script src="components.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <!-- Sign In Modal -->
+  <div data-component="signInModal"></div>
+
+  <div class="container landing-container">
+    <script>document.write(Components.header({ backHref: "/", backText: "Back to Home", title: "Horses", subtitle: "Chapter-first landing (prototype)", showAuth: true }))</script>
+
+    <main>
+      <section class="chapter-panel">
+        <h2>Where are you in the story?</h2>
+        <p>Pick your chapter first, then jump to the table and filter/sort by availability.</p>
+        <div class="chapter-grid">
+          <button class="chapter-btn" onclick="goToTableWithHint('Chapter 2')">Chapter 2</button>
+          <button class="chapter-btn" onclick="goToTableWithHint('Chapter 3')">Chapter 3</button>
+          <button class="chapter-btn" onclick="goToTableWithHint('Chapter 4')">Chapter 4</button>
+          <button class="chapter-btn" onclick="goToTableWithHint('Chapter 6')">Chapter 6</button>
+          <button class="chapter-btn" onclick="goToTableWithHint('Epilogue')">Epilogue</button>
+        </div>
+        <div class="hint" id="hint"></div>
+      </section>
+
+      <section class="flow-grid">
+        <div class="flow-card">
+          <h3>Fast workflow (no chat)</h3>
+          <ol>
+            <li>Open <strong>All Horses</strong>.</li>
+            <li>Sort by <strong>Available</strong> (or search your chapter label).</li>
+            <li>Then sort by <strong>Speed</strong>, <strong>Health</strong>, or <strong>Price</strong>.</li>
+          </ol>
+          <div class="hint">This page is intentionally simple—optimized for getting you into the stats fast.</div>
+        </div>
+
+        <div class="cta-stack">
+          <a class="cta" href="table.html">All Horses Table</a>
+          <a class="cta" href="chooser.html">Horse Chooser</a>
+          <a class="cta" href="gear.html">Horse Gear</a>
+        </div>
+      </section>
+    </main>
+
+    <div data-component="footer"></div>
+  </div>
+
+  <script>
+    function goToTableWithHint(label) {
+      const hint = document.getElementById('hint');
+      hint.textContent = `Next: in the table, use search for “${label}” and/or sort the Available column.`;
+      // Prototype behavior: just navigate to the table (no URL-param support yet).
+      window.location.href = 'table.html';
+    }
+  </script>
+</body>
+</html>
+

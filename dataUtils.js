@@ -73,6 +73,112 @@ const DataUtils = {
   },
 
   /**
+   * Expand a recipe ingredient into a list of concrete item names.
+   * Supports either:
+   *  - { item: "Eagle Feather", qty: 2 }
+   *  - { anyOf: ["Eagle Feather", "Hawk Feather"], qty: 2 }
+   */
+  getIngredientItems(ing) {
+    if (!ing) return [];
+    if (Array.isArray(ing.anyOf)) {
+      return ing.anyOf.map(x => String(x).trim()).filter(Boolean);
+    }
+    if (typeof ing.item === 'string' && ing.item.trim()) return [ing.item.trim()];
+    return [];
+  },
+
+  /**
+   * Human-friendly label for an ingredient spec (supports anyOf + match constraints).
+   */
+  getIngredientLabel(ing) {
+    if (!ing) return '';
+    if (typeof ing.label === 'string' && ing.label.trim()) return ing.label.trim();
+    if (Array.isArray(ing.anyOf) && ing.anyOf.length) return ing.anyOf.join(' or ');
+    if (typeof ing.item === 'string' && ing.item.trim()) return ing.item.trim();
+    if (ing.match && (ing.match.all || ing.match.any || ing.match.none)) return 'Any matching item';
+    return '';
+  },
+
+  /**
+   * Normalize a string for ingredient-query matching (lowercase, collapse spaces).
+   */
+  normalizeText(s) {
+    return String(s ?? '')
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim();
+  },
+
+  /**
+   * Return extra query terms that should be considered equivalent for matching.
+   * This makes "ginseng" match Alaskan/American Ginseng, etc.
+   */
+  expandIngredientQueryTerms(query) {
+    const q = this.normalizeText(query);
+    if (!q) return [];
+
+    const out = new Set([q]);
+
+    // Common canonicalization / synonym expansions used across our data
+    const aliasGroups = [
+      ['ginseng', 'alaskan ginseng', 'american ginseng'],
+      ['currant', 'blackcurrant', 'golden currant'],
+      ['sage', 'hummingbird sage', 'desert sage'],
+      ['shotgun shell', 'regular shotgun shell', 'slug shotgun shell'],
+      ['cartridge', 'regular cartridge', 'express cartridge', 'high velocity cartridge'],
+    ];
+
+    for (const group of aliasGroups) {
+      const norms = group.map(x => this.normalizeText(x));
+      if (norms.includes(q)) norms.forEach(x => out.add(x));
+    }
+
+    return [...out];
+  },
+
+  /**
+   * Decide if an ingredient spec matches a query (used for "what can I make with X?").
+   *
+   * Supported ingredient shapes:
+   *  - { item: "Eagle Feather", qty: 2 }
+   *  - { anyOf: ["Eagle Feather", "Hawk Feather"], qty: 2 }
+   *  - { match: { all?: string[], any?: string[], none?: string[] }, label?: string, qty: 1 }
+   */
+  ingredientMatchesQuery(ing, query) {
+    const qTerms = this.expandIngredientQueryTerms(query);
+    if (!qTerms.length) return false;
+
+    // anyOf: match if any option matches
+    if (Array.isArray(ing?.anyOf)) {
+      return ing.anyOf.some(opt => this.ingredientMatchesQuery({ item: opt }, query));
+    }
+
+    // item: substring match against expanded terms
+    if (typeof ing?.item === 'string' && ing.item.trim()) {
+      const hay = this.normalizeText(ing.item);
+      return qTerms.some(q => hay.includes(q));
+    }
+
+    // match: evaluate predicate against the raw query text (plus expanded terms)
+    if (ing?.match) {
+      const all = Array.isArray(ing.match.all) ? ing.match.all.map(this.normalizeText) : [];
+      const any = Array.isArray(ing.match.any) ? ing.match.any.map(this.normalizeText) : [];
+      const none = Array.isArray(ing.match.none) ? ing.match.none.map(this.normalizeText) : [];
+
+      // Evaluate against every expanded query term; if any expanded term satisfies, accept.
+      return qTerms.some(qRaw => {
+        const q = this.normalizeText(qRaw);
+        if (all.length && !all.every(t => q.includes(t))) return false;
+        if (any.length && !any.some(t => q.includes(t))) return false;
+        if (none.length && none.some(t => q.includes(t))) return false;
+        return true;
+      });
+    }
+
+    return false;
+  },
+
+  /**
    * Build a map of ingredient -> crafting locations from recipes
    */
   buildIngredientLocationMap(recipes) {
@@ -80,9 +186,11 @@ const DataUtils = {
     for (const recipe of recipes) {
       if (!recipe.ingredients) continue;
       for (const ing of recipe.ingredients) {
-        const item = ing.item.toLowerCase();
-        if (!map[item]) map[item] = new Set();
-        map[item].add(recipe.craftedAt);
+        for (const itemName of this.getIngredientItems(ing)) {
+          const key = itemName.toLowerCase();
+          if (!map[key]) map[key] = new Set();
+          map[key].add(recipe.craftedAt);
+        }
       }
     }
     return map;
@@ -96,17 +204,28 @@ const DataUtils = {
     for (const recipe of recipes) {
       if (!recipe.ingredients) continue;
       for (const ing of recipe.ingredients) {
-        const item = ing.item.toLowerCase();
-        if (!map[item]) map[item] = [];
-        map[item].push({
-          name: recipe.name,
-          category: recipe.category,
-          craftedAt: recipe.craftedAt,
-          qty: ing.qty
-        });
+        for (const itemName of this.getIngredientItems(ing)) {
+          const key = itemName.toLowerCase();
+          if (!map[key]) map[key] = [];
+          map[key].push({
+            name: recipe.name,
+            category: recipe.category,
+            craftedAt: recipe.craftedAt,
+            qty: ing.qty,
+          });
+        }
       }
     }
     return map;
+  },
+
+  /**
+   * Return true if a recipe uses an ingredient that matches the given query.
+   * (Supports item / anyOf / match.)
+   */
+  recipeUsesIngredientQuery(recipe, query) {
+    if (!recipe?.ingredients?.length) return false;
+    return recipe.ingredients.some(ing => this.ingredientMatchesQuery(ing, query));
   },
 
   /**

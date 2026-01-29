@@ -95,16 +95,16 @@
       "coat": "Warped Brindle",
       "image": "images/horses/arabian_warped_brindle.webp",
       "baseStats": {
-        "health": 5,
+        "health": 3,
         "stamina": 5,
         "speed": 6,
-        "acceleration": 6
+        "acceleration": 4
       },
       "maxStats": {
-        "health": 6,
+        "health": 4,
         "stamina": 6,
         "speed": 8,
-        "acceleration": 8
+        "acceleration": 6
       },
       "handling": "Elite",
       "category": "Superior",
@@ -126,15 +126,15 @@
       "image": "images/horses/arabian_red_chestnut.webp",
       "baseStats": {
         "health": 4,
-        "stamina": 4,
-        "speed": 6,
-        "acceleration": 6
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
       },
       "maxStats": {
         "health": 5,
-        "stamina": 5,
-        "speed": 8,
-        "acceleration": 8
+        "stamina": 6,
+        "speed": 7,
+        "acceleration": 6
       },
       "handling": "Elite",
       "category": "Superior",
@@ -348,17 +348,53 @@
       },
       "handling": "Race",
       "category": "Race",
-      "price": 450,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Valentine Stable",
-          "chapter": "Chapter 3+",
-          "notes": "Racing variant at Valentine"
+          "method": "wild",
+          "location": "New Hanover (The Heartlands; east of Oil Derrick; in the gap between the \"L\" and \"A\" of HEARTLANDS on the map)",
+          "chapter": "Chapter 2+",
+          "notes": "Wild Thoroughbred (per Fandom). High-rate wild-horse hotspot (rdr2.org) is nearby; study to confirm coat."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (NPC travelers / camps / enemy riders)",
+          "chapter": "Chapter 2+",
+          "notes": "This coat is listed as Steal/Wild (Fandom)."
         }
       ],
-      "communityNotes": "Same stats as Brindle. Pick based on coat preference.",
+      "communityNotes": "Lower-stat Thoroughbred variant (wild/steal).",
       "detailUrl": "horse.html?breed=Thoroughbred&coat=Blood%20Bay"
+    },
+    {
+      "breed": "Thoroughbred",
+      "coat": "Dapple Grey",
+      "image": "images/horses/thoroughbred_blood_bay.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "handling": "Race",
+      "category": "Race",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "New Hanover (The Heartlands) / West Elizabeth (Big Valley)",
+          "chapter": "Chapter 2+",
+          "notes": "Wild Thoroughbred variant; study to confirm coat."
+        }
+      ],
+      "communityNotes": "Wild Thoroughbred coat (per Fandom/IGN coat lists). Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Thoroughbred&coat=Dapple%20Grey"
     },
     {
       "breed": "Thoroughbred",
@@ -382,9 +418,9 @@
       "acquisition": [
         {
           "method": "bonus",
-          "location": "Valentine Stable after 'Exit Pursued by a Bruised Ego'",
+          "location": "Valentine Stable",
           "chapter": "Chapter 2+",
-          "notes": "Pre-order/Ultimate Edition bonus horse"
+          "notes": "Special/Ultimate Edition bonus; redeemed for free."
         }
       ],
       "communityNotes": "Free if you have the bonus. Good early speed horse but fragile.",
@@ -438,13 +474,25 @@
       },
       "handling": "Race",
       "category": "Race",
-      "price": 130,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Strawberry Stable",
+          "method": "wild",
+          "location": "New Hanover (central Heartlands)",
           "chapter": "Chapter 2+",
-          "notes": "Budget racing option"
+          "notes": "Wild Nokota region guidance (IGN)."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (near Fort Mercer / north of Armadillo)",
+          "chapter": "Epilogue 1+",
+          "notes": "Additional wild Nokota region guidance (IGN)."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (south of Armadillo; open area in the gap between the \"S\" and \"T\" in NEW AUSTIN on the map)",
+          "chapter": "Epilogue 1+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
         }
       ],
       "communityNotes": "Good value for early game speed. Only $130.",
@@ -452,19 +500,19 @@
     },
     {
       "breed": "Nokota",
-      "coat": "Wild",
+      "coat": "White Roan",
       "image": "images/horses/nokota_blue_roan.webp",
       "baseStats": {
         "health": 3,
         "stamina": 3,
-        "speed": 6,
-        "acceleration": 5
+        "speed": 4,
+        "acceleration": 3
       },
       "maxStats": {
         "health": 4,
         "stamina": 4,
-        "speed": 8,
-        "acceleration": 7
+        "speed": 6,
+        "acceleration": 5
       },
       "handling": "Race",
       "category": "Race",
@@ -472,13 +520,25 @@
       "acquisition": [
         {
           "method": "wild",
-          "location": "South of Armadillo, New Austin",
+          "location": "New Hanover (central Heartlands)",
+          "chapter": "Chapter 2+",
+          "notes": "Wild Nokota region guidance (IGN)."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (near Fort Mercer / north of Armadillo)",
           "chapter": "Epilogue 1+",
-          "notes": "Wild racing horse in late game"
+          "notes": "Additional wild Nokota region guidance (IGN)."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (south of Armadillo; open area in the gap between the \"S\" and \"T\" in NEW AUSTIN on the map)",
+          "chapter": "Epilogue 1+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
         }
       ],
       "communityNotes": "Free racing horse if you're in the epilogue.",
-      "detailUrl": "horse.html?breed=Nokota&coat=Wild"
+      "detailUrl": "horse.html?breed=Nokota&coat=White%20Roan"
     },
     {
       "breed": "Andalusian",
@@ -487,14 +547,14 @@
       "baseStats": {
         "health": 7,
         "stamina": 5,
-        "speed": 4,
-        "acceleration": 4
+        "speed": 3,
+        "acceleration": 3
       },
       "maxStats": {
         "health": 8,
         "stamina": 6,
-        "speed": 6,
-        "acceleration": 6
+        "speed": 5,
+        "acceleration": 5
       },
       "handling": "Standard",
       "category": "War",
@@ -515,20 +575,20 @@
       "coat": "Dark Bay",
       "image": "images/horses/andalusian_dark_bay.webp",
       "baseStats": {
-        "health": 7,
-        "stamina": 5,
-        "speed": 4,
-        "acceleration": 4
+        "health": 5,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 3
       },
       "maxStats": {
-        "health": 8,
-        "stamina": 6,
-        "speed": 6,
-        "acceleration": 6
+        "health": 6,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 5
       },
       "handling": "Standard",
       "category": "War",
-      "price": 440,
+      "price": 150,
       "acquisition": [
         {
           "method": "stable",
@@ -547,14 +607,14 @@
       "baseStats": {
         "health": 7,
         "stamina": 5,
-        "speed": 4,
-        "acceleration": 4
+        "speed": 3,
+        "acceleration": 3
       },
       "maxStats": {
         "health": 8,
         "stamina": 6,
-        "speed": 6,
-        "acceleration": 6
+        "speed": 5,
+        "acceleration": 5
       },
       "handling": "Standard",
       "category": "War",
@@ -563,8 +623,8 @@
         {
           "method": "stable",
           "location": "Van Horn Stable",
-          "chapter": "Chapter 2+",
-          "notes": "Early-available war horse"
+          "chapter": "Chapter 6+",
+          "notes": "Late-game war horse (per Fandom)."
         }
       ],
       "communityNotes": "Players love this for early game combat-focused playstyle.",
@@ -586,15 +646,15 @@
         "speed": 5,
         "acceleration": 5
       },
-      "handling": "Heavy",
+      "handling": "Standard",
       "category": "War",
-      "price": 450,
+      "price": 140,
       "acquisition": [
         {
           "method": "stable",
           "location": "Scarlett Meadows Stable",
-          "chapter": "Chapter 3+",
-          "notes": "Highest base health in the game"
+          "chapter": "Chapter 2+",
+          "notes": "War horse with high health (also obtainable by stealing)."
         }
       ],
       "communityNotes": "Tank build. Very slow but takes a lot of damage. Heavy handling makes tight turns difficult. Some players report it's actually more skittish than Andalusian despite being a 'war' horse.",
@@ -605,26 +665,26 @@
       "coat": "Strawberry Roan",
       "image": "images/horses/ardennes_strawberry_roan.webp",
       "baseStats": {
-        "health": 8,
-        "stamina": 4,
+        "health": 7,
+        "stamina": 5,
         "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 9,
-        "stamina": 5,
+        "health": 8,
+        "stamina": 6,
         "speed": 5,
         "acceleration": 5
       },
-      "handling": "Heavy",
+      "handling": "Standard",
       "category": "War",
       "price": 450,
       "acquisition": [
         {
           "method": "stable",
           "location": "Van Horn Stable",
-          "chapter": "Chapter 2+",
-          "notes": "Tank-like war horse"
+          "chapter": "Chapter 6+",
+          "notes": "Late-game war horse (per Fandom)."
         }
       ],
       "communityNotes": "Same as Bay Roan. Pick based on coat preference.",
@@ -632,33 +692,33 @@
     },
     {
       "breed": "Ardennes",
-      "coat": "Iron Grey",
+      "coat": "Iron Grey Roan",
       "image": "images/horses/ardennes_iron_grey.webp",
       "baseStats": {
-        "health": 8,
-        "stamina": 4,
+        "health": 7,
+        "stamina": 5,
         "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 9,
-        "stamina": 5,
+        "health": 8,
+        "stamina": 6,
         "speed": 5,
         "acceleration": 5
       },
-      "handling": "Heavy",
+      "handling": "Standard",
       "category": "War",
       "price": null,
       "acquisition": [
         {
           "method": "bonus",
-          "location": "Valentine Stable after 'Exit Pursued by a Bruised Ego'",
+          "location": "Valentine Stable",
           "chapter": "Chapter 2+",
-          "notes": "Pre-order/Ultimate Edition bonus war horse"
+          "notes": "Pre-order bonus; redeemed for free."
         }
       ],
       "communityNotes": "Free if you have the bonus. Good for soaking damage early game.",
-      "detailUrl": "horse.html?breed=Ardennes&coat=Iron%20Grey"
+      "detailUrl": "horse.html?breed=Ardennes&coat=Iron%20Grey%20Roan"
     },
     {
       "breed": "Dutch Warmblood",
@@ -683,7 +743,7 @@
         {
           "method": "stable",
           "location": "Valentine Stable",
-          "chapter": "Chapter 3+",
+          "chapter": "Chapter 2+",
           "notes": "Solid work horse with good stamina"
         }
       ],
@@ -695,26 +755,26 @@
       "coat": "Seal Brown",
       "image": "images/horses/dutch_warmblood_seal_brown.webp",
       "baseStats": {
-        "health": 5,
-        "stamina": 6,
-        "speed": 4,
+        "health": 4,
+        "stamina": 5,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 6,
-        "stamina": 7,
-        "speed": 6,
+        "health": 5,
+        "stamina": 6,
+        "speed": 5,
         "acceleration": 5
       },
       "handling": "Standard",
       "category": "Work",
-      "price": 450,
+      "price": 150,
       "acquisition": [
         {
           "method": "stable",
           "location": "Strawberry Stable",
           "chapter": "Chapter 3+",
-          "notes": "Work horse option at Strawberry"
+          "notes": "Work horse option at Strawberry (also obtainable by stealing)."
         }
       ],
       "communityNotes": "Same as Chocolate Roan stats.",
@@ -727,13 +787,13 @@
       "baseStats": {
         "health": 4,
         "stamina": 5,
-        "speed": 4,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
         "health": 5,
         "stamina": 6,
-        "speed": 6,
+        "speed": 5,
         "acceleration": 5
       },
       "handling": "Standard",
@@ -757,14 +817,14 @@
       "baseStats": {
         "health": 6,
         "stamina": 6,
-        "speed": 4,
-        "acceleration": 3
+        "speed": 5,
+        "acceleration": 5
       },
       "maxStats": {
         "health": 7,
         "stamina": 7,
-        "speed": 6,
-        "acceleration": 5
+        "speed": 7,
+        "acceleration": 7
       },
       "handling": "Standard",
       "category": "Work",
@@ -786,18 +846,18 @@
       "image": "images/horses/hungarian_halfbred_dapple_dark_grey.webp",
       "baseStats": {
         "health": 5,
-        "stamina": 5,
-        "speed": 4,
+        "stamina": 4,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
         "health": 6,
-        "stamina": 6,
-        "speed": 6,
+        "stamina": 5,
+        "speed": 5,
         "acceleration": 5
       },
-      "handling": "Heavy",
-      "category": "Work",
+      "handling": "Standard",
+      "category": "War",
       "price": 150,
       "acquisition": [
         {
@@ -815,26 +875,26 @@
       "coat": "Piebald Tobiano",
       "image": "images/horses/hungarian_halfbred_piebald_tobiano.webp",
       "baseStats": {
-        "health": 5,
-        "stamina": 5,
-        "speed": 4,
+        "health": 4,
+        "stamina": 3,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 6,
-        "stamina": 6,
-        "speed": 6,
+        "health": 5,
+        "stamina": 4,
+        "speed": 5,
         "acceleration": 5
       },
-      "handling": "Heavy",
-      "category": "Work",
-      "price": 130,
+      "handling": "Standard",
+      "category": "War",
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Strawberry Stable",
+          "method": "steal",
+          "location": "Lawmen / bounty hunters / missions",
           "chapter": "Chapter 2+",
-          "notes": "Budget work horse at Strawberry"
+          "notes": "Not sold at stables; also given for free after Guarma (per Fandom)."
         }
       ],
       "communityNotes": "Nice spotted coat pattern. Slightly cheaper than Dapple.",
@@ -842,33 +902,39 @@
     },
     {
       "breed": "Hungarian Halfbred",
-      "coat": "Wild",
+      "coat": "Flaxen Chestnut",
       "image": "images/horses/hungarian_halfbred_dapple_dark_grey.webp",
       "baseStats": {
-        "health": 5,
-        "stamina": 5,
-        "speed": 4,
+        "health": 4,
+        "stamina": 3,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 6,
-        "stamina": 6,
-        "speed": 6,
+        "health": 5,
+        "stamina": 4,
+        "speed": 5,
         "acceleration": 5
       },
-      "handling": "Heavy",
-      "category": "Work",
+      "handling": "Standard",
+      "category": "War",
       "price": null,
       "acquisition": [
         {
           "method": "wild",
-          "location": "Southeast of Fort Riggs, near Blackwater",
-          "chapter": "Epilogue 1+",
-          "notes": "Wild work horse in late game area"
+          "location": "West Elizabeth (near Blackwater; open area southeast of Fort Riggs, across/past the river; near a cliff)",
+          "chapter": "Chapter 2+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide). NOTE: This region is dangerous pre-epilogue due to the Blackwater bounty."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (lawmen / bounty hunters / NPC camps)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat is listed as Wild/Steal by sources; steal is the practical route early due to region restrictions."
         }
       ],
       "communityNotes": "Free if you're in the epilogue, but by then you likely have better horses.",
-      "detailUrl": "horse.html?breed=Hungarian%20Halfbred&coat=Wild"
+      "detailUrl": "horse.html?breed=Hungarian%20Halfbred&coat=Flaxen%20Chestnut"
     },
     {
       "breed": "Mustang",
@@ -877,14 +943,14 @@
       "baseStats": {
         "health": 4,
         "stamina": 4,
-        "speed": 4,
-        "acceleration": 3
+        "speed": 3,
+        "acceleration": 2
       },
       "maxStats": {
         "health": 5,
         "stamina": 5,
-        "speed": 6,
-        "acceleration": 5
+        "speed": 5,
+        "acceleration": 4
       },
       "handling": "Standard",
       "category": "Multi",
@@ -892,9 +958,9 @@
       "acquisition": [
         {
           "method": "wild",
-          "location": "The Heartlands, near the dinosaur bones lady location",
+          "location": "New Hanover (The Heartlands; east of Oil Derrick; in the gap between the \"L\" and \"A\" of HEARTLANDS on the map)",
           "chapter": "Chapter 2+",
-          "notes": "Free wild horse"
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide). Study to confirm coat."
         }
       ],
       "communityNotes": "Community reports Mustangs are calm and reliable. Good free early game option. Many players say they handle predators well.",
@@ -907,30 +973,30 @@
       "baseStats": {
         "health": 4,
         "stamina": 4,
-        "speed": 4,
-        "acceleration": 3
+        "speed": 3,
+        "acceleration": 2
       },
       "maxStats": {
         "health": 5,
         "stamina": 5,
-        "speed": 6,
-        "acceleration": 5
+        "speed": 5,
+        "acceleration": 4
       },
       "handling": "Standard",
       "category": "Multi",
-      "price": 130,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Strawberry Stable",
+          "method": "wild",
+          "location": "New Hanover (The Heartlands; east of Oil Derrick; in the gap between the \"L\" and \"A\" of HEARTLANDS on the map)",
           "chapter": "Chapter 2+",
-          "notes": "Affordable multi-purpose horse"
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide). Study to confirm coat."
         },
         {
           "method": "wild",
-          "location": "The Heartlands, near Emerald Ranch",
-          "chapter": "Chapter 2+",
-          "notes": "Also found in the wild"
+          "location": "New Austin (Rio Bravo / Hennigan's Stead open plains)",
+          "chapter": "Epilogue 1+",
+          "notes": "New Austin becomes accessible in the epilogue."
         }
       ],
       "communityNotes": "Budget-friendly and reportedly steady temperament.",
@@ -941,14 +1007,14 @@
       "coat": "Tiger Striped Bay",
       "image": "images/horses/mustang_tiger_striped_bay.webp",
       "baseStats": {
-        "health": 4,
-        "stamina": 4,
+        "health": 5,
+        "stamina": 5,
         "speed": 4,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 5,
-        "stamina": 5,
+        "health": 6,
+        "stamina": 6,
         "speed": 6,
         "acceleration": 5
       },
@@ -958,12 +1024,12 @@
       "acquisition": [
         {
           "method": "wild",
-          "location": "West of Rio del Lobo Rock, New Austin",
+          "location": "New Austin (near Rio del Lobo Rock; east of Fort Mercer)",
           "chapter": "Epilogue 1+",
-          "notes": "RARE unique coat. One-of-a-kind spawn."
+          "notes": "RARE unique coat. One-of-a-kind spawn (IGN/rdr2.org)."
         }
       ],
-      "communityNotes": "Collectors love this unique coat. Same stats as other Mustangs but the rarest coat in the game.",
+      "communityNotes": "Collectors love this unique coat. One of the rarest wild horses in Story Mode.",
       "detailUrl": "horse.html?breed=Mustang&coat=Tiger%20Striped%20Bay"
     },
     {
@@ -984,13 +1050,19 @@
       },
       "handling": "Standard",
       "category": "Multi",
-      "price": 130,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Strawberry Stable",
+          "method": "wild",
+          "location": "Ambarino (near Wapiti Indian Reservation / west of Donner Falls, north of Bacchus Bridge) / West Elizabeth (Cattail Pond / Big Valley)",
           "chapter": "Chapter 2+",
-          "notes": "Decent all-rounder"
+          "notes": "High-rate wild spawn hotspot near Donner Falls/Bacchus Bridge (rdr2.org wild horse locations guide). Study to confirm coat."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (Cholla Springs)",
+          "chapter": "Epilogue 1+",
+          "notes": "Additional herd location in the epilogue."
         }
       ],
       "communityNotes": "Good value. Slightly faster than Mustang. Nothing special but reliable.",
@@ -998,18 +1070,54 @@
     },
     {
       "breed": "Appaloosa",
-      "coat": "Brown Leopard",
-      "image": "images/horses/appaloosa_brown_leopard.webp",
+      "coat": "Leopard Blanket",
+      "image": "images/horses/appaloosa_blanket.webp",
       "baseStats": {
-        "health": 4,
+        "health": 3,
         "stamina": 4,
-        "speed": 5,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 5,
+        "health": 4,
         "stamina": 5,
-        "speed": 7,
+        "speed": 5,
+        "acceleration": 5
+      },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "Ambarino (near Wapiti Indian Reservation / west of Donner Falls, north of Bacchus Bridge) / West Elizabeth (Cattail Pond / Big Valley)",
+          "chapter": "Chapter 2+",
+          "notes": "High-rate wild spawn hotspot near Donner Falls/Bacchus Bridge (rdr2.org wild horse locations guide). Study to confirm coat."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (NPC camps / travelers / lawmen mounts)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
+        }
+      ],
+      "communityNotes": "Appaloosa coat variant present in Story Mode coat lists (per IGN/Fandom). Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Appaloosa&coat=Leopard%20Blanket"
+    },
+    {
+      "breed": "Appaloosa",
+      "coat": "Leopard",
+      "image": "images/horses/appaloosa_brown_leopard.webp",
+      "baseStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 7,
+        "speed": 6,
         "acceleration": 5
       },
       "handling": "Standard",
@@ -1018,28 +1126,58 @@
       "acquisition": [
         {
           "method": "stable",
-          "location": "Saint Denis Stable",
-          "chapter": "Chapter 4+",
-          "notes": "Spotted coat variant"
+          "location": "Van Horn Stable",
+          "chapter": "Chapter 6+",
+          "notes": "Late-game stable horse (per Fandom)."
         }
       ],
-      "communityNotes": "Overpriced for stats. Get the Blanket coat at Strawberry for $130 instead.",
+      "communityNotes": "Late-game Appaloosa available at Van Horn. Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Appaloosa&coat=Leopard"
+    },
+    {
+      "breed": "Appaloosa",
+      "coat": "Brown Leopard",
+      "image": "images/horses/appaloosa_brown_leopard.webp",
+      "baseStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 6,
+        "stamina": 7,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "handling": "Standard",
+      "category": "Multi",
+      "price": 450,
+      "acquisition": [
+        {
+          "method": "stable",
+          "location": "Tumbleweed Stable",
+          "chapter": "Epilogue 1+",
+          "notes": "Epilogue stable horse (per Fandom/IGN)."
+        }
+      ],
+      "communityNotes": "High-stamina Appaloosa variant available in the epilogue.",
       "detailUrl": "horse.html?breed=Appaloosa&coat=Brown%20Leopard"
     },
     {
       "breed": "Appaloosa",
-      "coat": "Few-Spotted",
+      "coat": "Few Spotted",
       "image": "images/horses/appaloosa_few_spotted.webp",
       "baseStats": {
-        "health": 4,
-        "stamina": 4,
-        "speed": 5,
+        "health": 3,
+        "stamina": 5,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
-        "health": 5,
-        "stamina": 5,
-        "speed": 7,
+        "health": 4,
+        "stamina": 6,
+        "speed": 5,
         "acceleration": 5
       },
       "handling": "Standard",
@@ -1048,31 +1186,37 @@
       "acquisition": [
         {
           "method": "wild",
-          "location": "Multiple locations: Cholla Springs, Grizzlies West, New Hanover",
+          "location": "Ambarino (near Wapiti Indian Reservation / west of Donner Falls) / Grizzlies West (north of Cattail Pond) / West Elizabeth (Little Creek River; near Hanging Dog Ranch area) / New Hanover (occasional NPC campsite near the Heartland Oil Fields)",
           "chapter": "Chapter 2+",
-          "notes": "Rare wild spawn with unique spotted pattern"
+          "notes": "Rare Appaloosa variant that spawns among Appaloosa herds; rdr2.org calls out these herd/campsite areas. Study to confirm coat."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (Cholla Springs Appaloosa herds)",
+          "chapter": "Epilogue 1+",
+          "notes": "Additional herd location in the epilogue."
         }
       ],
       "communityNotes": "Hard to find but free. Same stats as purchasable Appaloosas.",
-      "detailUrl": "horse.html?breed=Appaloosa&coat=Few-Spotted"
+      "detailUrl": "horse.html?breed=Appaloosa&coat=Few%20Spotted"
     },
     {
       "breed": "American Standardbred",
       "coat": "Palomino Dapple",
       "image": "images/horses/american_standardbred_palomino_dapple.webp",
       "baseStats": {
-        "health": 4,
-        "stamina": 5,
+        "health": 3,
+        "stamina": 3,
         "speed": 5,
         "acceleration": 4
       },
       "maxStats": {
-        "health": 5,
-        "stamina": 6,
+        "health": 4,
+        "stamina": 4,
         "speed": 7,
         "acceleration": 6
       },
-      "handling": "Standard",
+      "handling": "Race",
       "category": "Race",
       "price": 150,
       "acquisition": [
@@ -1080,13 +1224,13 @@
           "method": "stable",
           "location": "Valentine Stable",
           "chapter": "Chapter 2+",
-          "notes": "Budget racing option"
+          "notes": "Purchasable coat (per Fandom/IGN)."
         },
         {
-          "method": "wild",
-          "location": "Various locations throughout New Hanover",
+          "method": "randomEncounter",
+          "location": "Random encounter (man kicked by his horse)",
           "chapter": "Chapter 2+",
-          "notes": "Can be found in the wild"
+          "notes": "Can be obtained for free during a specific encounter (per Fandom)."
         }
       ],
       "communityNotes": "Good early game racer. Better stamina than Thoroughbred for only $150.",
@@ -1094,63 +1238,105 @@
     },
     {
       "breed": "American Standardbred",
-      "coat": "Black",
-      "image": "images/horses/american_standardbred_black.webp",
+      "coat": "Silver Tail Buckskin",
+      "image": "images/horses/american_standardbred_palomino_dapple.webp",
       "baseStats": {
         "health": 4,
-        "stamina": 5,
+        "stamina": 4,
         "speed": 5,
         "acceleration": 4
       },
       "maxStats": {
         "health": 5,
-        "stamina": 6,
+        "stamina": 5,
         "speed": 7,
         "acceleration": 6
       },
-      "handling": "Standard",
+      "handling": "Race",
       "category": "Race",
-      "price": 150,
+      "price": 400,
       "acquisition": [
         {
           "method": "stable",
           "location": "Tumbleweed Stable",
           "chapter": "Epilogue 1+",
-          "notes": "Racing horse in New Austin"
+          "notes": "Epilogue stable horse (per Fandom)."
         }
       ],
-      "communityNotes": "Same as Palomino. By epilogue you probably have better options.",
-      "detailUrl": "horse.html?breed=American%20Standardbred&coat=Black"
+      "communityNotes": "Epilogue American Standardbred variant sold in Tumbleweed. Image is a placeholder.",
+      "detailUrl": "horse.html?breed=American%20Standardbred&coat=Silver%20Tail%20Buckskin"
     },
     {
       "breed": "American Standardbred",
-      "coat": "Wild",
-      "image": "images/horses/american_standardbred_palomino_dapple.webp",
+      "coat": "Black",
+      "image": "images/horses/american_standardbred_black.webp",
       "baseStats": {
-        "health": 4,
-        "stamina": 5,
-        "speed": 5,
-        "acceleration": 4
+        "health": 3,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
       },
       "maxStats": {
-        "health": 5,
-        "stamina": 6,
-        "speed": 7,
-        "acceleration": 6
+        "health": 4,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 5
       },
-      "handling": "Standard",
+      "handling": "Race",
       "category": "Race",
       "price": null,
       "acquisition": [
         {
           "method": "wild",
-          "location": "North of Valley View, by the river",
+          "location": "New Hanover (north of Valley View; by the river)",
           "chapter": "Chapter 2+",
-          "notes": "Free racing horse in the wild"
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide). Study to confirm coat."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (around Mercer Station)",
+          "chapter": "Epilogue 1+",
+          "notes": "Additional wild spawn area in the epilogue."
+        }
+      ],
+      "communityNotes": "Wild racing horse. Solid early free option if you find one.",
+      "detailUrl": "horse.html?breed=American%20Standardbred&coat=Black"
+    },
+    {
+      "breed": "American Standardbred",
+      "coat": "Buckskin",
+      "image": "images/horses/american_standardbred_palomino_dapple.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 5
+      },
+      "handling": "Race",
+      "category": "Race",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "New Hanover (north of Valley View; by the river)",
+          "chapter": "Chapter 2+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide). Study to confirm coat."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (around Mercer Station)",
+          "chapter": "Epilogue 1+",
+          "notes": "Additional wild spawn area in the epilogue."
         }
       ],
       "communityNotes": "Free decent racer early game. Worth grabbing in Chapter 2.",
-      "detailUrl": "horse.html?breed=American%20Standardbred&coat=Wild"
+      "detailUrl": "horse.html?breed=American%20Standardbred&coat=Buckskin"
     },
     {
       "breed": "American Paint",
@@ -1170,13 +1356,13 @@
       },
       "handling": "Standard",
       "category": "Standard",
-      "price": 130,
+      "price": 425,
       "acquisition": [
         {
           "method": "stable",
-          "location": "Valentine Stable",
-          "chapter": "Chapter 2+",
-          "notes": "Budget standard horse"
+          "location": "Tumbleweed Stable",
+          "chapter": "Epilogue 1+",
+          "notes": "Epilogue stable horse (per Fandom)."
         }
       ],
       "communityNotes": "Below average stats. Better options available for similar price.",
@@ -1188,14 +1374,14 @@
       "image": "images/horses/american_paint_splashed_white.webp",
       "baseStats": {
         "health": 3,
-        "stamina": 4,
-        "speed": 4,
+        "stamina": 5,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
         "health": 4,
-        "stamina": 5,
-        "speed": 6,
+        "stamina": 6,
+        "speed": 5,
         "acceleration": 5
       },
       "handling": "Standard",
@@ -1203,10 +1389,10 @@
       "price": null,
       "acquisition": [
         {
-          "method": "wild",
-          "location": "Random hostile campsites throughout the world",
+          "method": "steal",
+          "location": "NPC camps (rare; not found in wild herds)",
           "chapter": "Chapter 2+",
-          "notes": "RARE. Only spawns at hostile NPC camps. Random chance."
+          "notes": "Typically encountered at camps; steal to acquire."
         }
       ],
       "communityNotes": "Very rare spawn. Collectors hunt this for the unique coat, not the stats.",
@@ -1214,18 +1400,18 @@
     },
     {
       "breed": "American Paint",
-      "coat": "Wild",
+      "coat": "Tobiano",
       "image": "images/horses/american_paint_grey_overo.webp",
       "baseStats": {
         "health": 3,
         "stamina": 4,
-        "speed": 4,
+        "speed": 3,
         "acceleration": 3
       },
       "maxStats": {
         "health": 4,
         "stamina": 5,
-        "speed": 6,
+        "speed": 5,
         "acceleration": 5
       },
       "handling": "Standard",
@@ -1234,13 +1420,55 @@
       "acquisition": [
         {
           "method": "wild",
-          "location": "South of Tumbleweed, New Austin",
+          "location": "Ambarino (near Donner Falls)",
+          "chapter": "Chapter 2+",
+          "notes": "Wild American Paint area (per IGN)."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (south of Tumbleweed; north of the road; near the gap between the \"N\" and \"E\" in NEW AUSTIN on the map)",
           "chapter": "Epilogue 1+",
-          "notes": "Wild paint horse in late game"
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
         }
       ],
-      "communityNotes": "Free but weak. Not worth the trip to New Austin.",
-      "detailUrl": "horse.html?breed=American%20Paint&coat=Wild"
+      "communityNotes": "Wild American Paint coat (IGN).",
+      "detailUrl": "horse.html?breed=American%20Paint&coat=Tobiano"
+    },
+    {
+      "breed": "American Paint",
+      "coat": "Overo",
+      "image": "images/horses/american_paint_grey_overo.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 5
+      },
+      "handling": "Standard",
+      "category": "Standard",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "Ambarino (near Donner Falls)",
+          "chapter": "Chapter 2+",
+          "notes": "Wild American Paint area (per IGN)."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (south of Tumbleweed; north of the road; near the gap between the \"N\" and \"E\" in NEW AUSTIN on the map)",
+          "chapter": "Epilogue 1+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
+        }
+      ],
+      "communityNotes": "Wild American Paint coat (IGN).",
+      "detailUrl": "horse.html?breed=American%20Paint&coat=Overo"
     },
     {
       "breed": "Kentucky Saddler",
@@ -1248,34 +1476,40 @@
       "image": "images/horses/kentucky_saddler_grey.webp",
       "baseStats": {
         "health": 3,
-        "stamina": 3,
-        "speed": 4,
-        "acceleration": 3
+        "stamina": 2,
+        "speed": 3,
+        "acceleration": 2
       },
       "maxStats": {
         "health": 4,
-        "stamina": 4,
-        "speed": 6,
-        "acceleration": 5
+        "stamina": 3,
+        "speed": 5,
+        "acceleration": 4
       },
       "handling": "Standard",
       "category": "Riding",
-      "price": 50,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Valentine Stable",
+          "method": "wild",
+          "location": "Ambarino (Wapiti Indian Reservation / Donner Falls), Grizzlies West (Cattail Pond), West Elizabeth (Little Creek River above Big Valley; Tall Trees; Great Plains), Lemoyne (Braithwaite Manor / outside Rhodes), New Austin (Lake Don Julio)",
           "chapter": "Chapter 2+",
-          "notes": "Cheap starter horse"
+          "notes": "IGN lists these regions as wild search areas for Kentucky Saddler coats."
         },
         {
           "method": "wild",
-          "location": "Big Valley, West Elizabeth",
+          "location": "West Elizabeth (east of Manzanita Post; Tall Trees area)",
+          "chapter": "Epilogue 1+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
           "chapter": "Chapter 2+",
-          "notes": "Wild spawn in various locations"
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
         }
       ],
-      "communityNotes": "Starter-tier horse. Fine for early game if you're broke.",
+      "communityNotes": "Starter-tier horse. Common wild/owned mount; not a reliable stable purchase in Story Mode stable tables.",
       "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Grey"
     },
     {
@@ -1284,45 +1518,15 @@
       "image": "images/horses/kentucky_saddler_black.webp",
       "baseStats": {
         "health": 3,
-        "stamina": 3,
-        "speed": 4,
-        "acceleration": 3
+        "stamina": 2,
+        "speed": 3,
+        "acceleration": 2
       },
       "maxStats": {
         "health": 4,
-        "stamina": 4,
-        "speed": 6,
-        "acceleration": 5
-      },
-      "handling": "Standard",
-      "category": "Riding",
-      "price": 50,
-      "acquisition": [
-        {
-          "method": "stable",
-          "location": "Scarlett Meadows Stable",
-          "chapter": "Chapter 2+",
-          "notes": "Basic riding horse"
-        }
-      ],
-      "communityNotes": "Same as Grey. Pick based on coat.",
-      "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Black"
-    },
-    {
-      "breed": "Kentucky Saddler",
-      "coat": "Wild",
-      "image": "images/horses/kentucky_saddler_grey.webp",
-      "baseStats": {
-        "health": 3,
         "stamina": 3,
-        "speed": 4,
-        "acceleration": 3
-      },
-      "maxStats": {
-        "health": 4,
-        "stamina": 4,
-        "speed": 6,
-        "acceleration": 5
+        "speed": 5,
+        "acceleration": 4
       },
       "handling": "Standard",
       "category": "Riding",
@@ -1330,13 +1534,157 @@
       "acquisition": [
         {
           "method": "wild",
-          "location": "East of Manzanita Post",
+          "location": "Ambarino (Wapiti Indian Reservation / Donner Falls), Grizzlies West (Cattail Pond), West Elizabeth (Little Creek River above Big Valley; Tall Trees; Great Plains), Lemoyne (Braithwaite Manor / outside Rhodes), New Austin (Lake Don Julio)",
+          "chapter": "Chapter 2+",
+          "notes": "IGN lists these regions as wild search areas for Kentucky Saddler coats."
+        },
+        {
+          "method": "wild",
+          "location": "West Elizabeth (east of Manzanita Post; Tall Trees area)",
           "chapter": "Epilogue 1+",
-          "notes": "Wild riding horse"
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
         }
       ],
-      "communityNotes": "Free but not worth seeking out in epilogue.",
-      "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Wild"
+      "communityNotes": "Same as Grey. Common wild/owned horse; not a reliable stable purchase in Story Mode stable tables.",
+      "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Black"
+    },
+    {
+      "breed": "Kentucky Saddler",
+      "coat": "Silver Bay",
+      "image": "images/horses/kentucky_saddler_grey.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 2,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 3,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "Ambarino (Wapiti Indian Reservation / Donner Falls), Grizzlies West (Cattail Pond), West Elizabeth (Little Creek River above Big Valley; Tall Trees; Great Plains), Lemoyne (Braithwaite Manor / outside Rhodes), New Austin (Lake Don Julio)",
+          "chapter": "Chapter 2+",
+          "notes": "IGN lists these regions as wild search areas for Kentucky Saddler coats. Study to confirm coat."
+        },
+        {
+          "method": "wild",
+          "location": "West Elizabeth (east of Manzanita Post; Tall Trees area)",
+          "chapter": "Epilogue 1+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
+        }
+      ],
+      "communityNotes": "Kentucky Saddler coat present in Story Mode coat lists (per IGN/Fandom). Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Silver%20Bay"
+    },
+    {
+      "breed": "Kentucky Saddler",
+      "coat": "Buttermilk Buckskin",
+      "image": "images/horses/kentucky_saddler_grey.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 4,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 6,
+        "acceleration": 4
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "West Elizabeth (Pronghorn Ranch area)",
+          "chapter": "Epilogue 1+",
+          "notes": "Often reported around Pronghorn Ranch (IGN PC-exclusive table). Study to confirm coat."
+        },
+        {
+          "method": "wild",
+          "location": "Ambarino (Wapiti Indian Reservation / Donner Falls), Grizzlies West (Cattail Pond), West Elizabeth (Little Creek River above Big Valley; Tall Trees; Great Plains), Lemoyne (Braithwaite Manor / outside Rhodes), New Austin (Lake Don Julio)",
+          "chapter": "Chapter 2+",
+          "notes": "IGN lists these regions as wild search areas for Kentucky Saddler coats; coat may be uncommon."
+        },
+        {
+          "method": "wild",
+          "location": "West Elizabeth (east of Manzanita Post; Tall Trees area)",
+          "chapter": "Epilogue 1+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
+        }
+      ],
+      "communityNotes": "Kentucky Saddler coat present in Story Mode coat lists (per IGN/Fandom). Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Buttermilk%20Buckskin"
+    },
+    {
+      "breed": "Kentucky Saddler",
+      "coat": "Chestnut Pinto",
+      "image": "images/horses/kentucky_saddler_grey.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 2,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 3,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "Ambarino (Wapiti Indian Reservation / Donner Falls), Grizzlies West (Cattail Pond), West Elizabeth (Little Creek River above Big Valley; Tall Trees; Great Plains), Lemoyne (Braithwaite Manor / outside Rhodes), New Austin (Lake Don Julio)",
+          "chapter": "Chapter 2+",
+          "notes": "IGN lists these regions as wild search areas for Kentucky Saddler coats."
+        },
+        {
+          "method": "wild",
+          "location": "West Elizabeth (east of Manzanita Post; Tall Trees area)",
+          "chapter": "Epilogue 1+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
+        }
+      ],
+      "communityNotes": "This was previously labeled as a generic \"Wild\" coat; Kentucky Saddler coats include Grey/Black/Silver Bay/Chestnut Pinto (IGN).",
+      "detailUrl": "horse.html?breed=Kentucky%20Saddler&coat=Chestnut%20Pinto"
     },
     {
       "breed": "Morgan",
@@ -1344,35 +1692,65 @@
       "image": "images/horses/morgan_bay.webp",
       "baseStats": {
         "health": 2,
-        "stamina": 2,
+        "stamina": 3,
         "speed": 3,
-        "acceleration": 3
+        "acceleration": 2
       },
       "maxStats": {
         "health": 3,
-        "stamina": 3,
+        "stamina": 4,
         "speed": 5,
-        "acceleration": 5
+        "acceleration": 4
       },
       "handling": "Standard",
       "category": "Riding",
-      "price": 15,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Valentine Stable",
-          "chapter": "Chapter 2+",
-          "notes": "Cheapest horse in the game"
-        },
-        {
           "method": "wild",
-          "location": "North of Valentine, Heartlands",
+          "location": "New Hanover (north of Valley View; by the river)",
           "chapter": "Chapter 2+",
-          "notes": "Common wild spawn"
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
         }
       ],
-      "communityNotes": "Bottom tier. Only buy if you literally have $15.",
+      "communityNotes": "Bottom tier. Common wild/owned mount; not a reliable stable purchase in Story Mode stable tables.",
       "detailUrl": "horse.html?breed=Morgan&coat=Bay"
+    },
+    {
+      "breed": "Morgan",
+      "coat": "Bay Roan",
+      "image": "images/horses/morgan_bay.webp",
+      "baseStats": {
+        "health": 2,
+        "stamina": 3,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "New Hanover (Cumberland Forest) / West Elizabeth (Little Creek River; near Riggs Station)",
+          "chapter": "Chapter 2+",
+          "notes": "IGN lists Cumberland Forest + Little Creek River/Riggs Station as wild search areas for Morgan coats. Study to confirm coat."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
+          "chapter": "Chapter 2+",
+          "notes": "IGN lists this coat as 'Owned by others' as well as Wild."
+        }
+      ],
+      "communityNotes": "Morgan coat present in Story Mode coat lists (per IGN/Fandom). Not sold at stables in Story Mode stable inventories.",
+      "detailUrl": "horse.html?breed=Morgan&coat=Bay%20Roan"
     },
     {
       "breed": "Morgan",
@@ -1380,45 +1758,45 @@
       "image": "images/horses/morgan_palomino.webp",
       "baseStats": {
         "health": 2,
-        "stamina": 2,
+        "stamina": 3,
         "speed": 3,
-        "acceleration": 3
+        "acceleration": 2
       },
       "maxStats": {
         "health": 3,
-        "stamina": 3,
+        "stamina": 4,
         "speed": 5,
-        "acceleration": 5
+        "acceleration": 4
       },
       "handling": "Standard",
       "category": "Riding",
-      "price": 55,
+      "price": 15,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Strawberry Stable",
-          "chapter": "Chapter 2+",
-          "notes": "Budget Morgan variant"
+          "method": "mission",
+          "location": "Valentine Stable (during \"Exit Pursued by a Bruised Ego\")",
+          "chapter": "Chapter 2",
+          "notes": "Only time a Morgan can be purchased in Story Mode (per Fandom)."
         }
       ],
-      "communityNotes": "Overpriced for a Morgan. Get the Bay for $15 if you need one.",
+      "communityNotes": "Mission-only purchase at the Valentine stable. Outside of that mission, Morgans are generally obtained wild/owned.",
       "detailUrl": "horse.html?breed=Morgan&coat=Palomino"
     },
     {
       "breed": "Morgan",
-      "coat": "Wild",
+      "coat": "Flaxen Chestnut",
       "image": "images/horses/morgan_bay.webp",
       "baseStats": {
         "health": 2,
-        "stamina": 2,
+        "stamina": 3,
         "speed": 3,
-        "acceleration": 3
+        "acceleration": 2
       },
       "maxStats": {
         "health": 3,
-        "stamina": 3,
+        "stamina": 4,
         "speed": 5,
-        "acceleration": 5
+        "acceleration": 4
       },
       "handling": "Standard",
       "category": "Riding",
@@ -1426,45 +1804,87 @@
       "acquisition": [
         {
           "method": "wild",
-          "location": "North of Valley View, near river",
+          "location": "New Hanover (north of Valley View by the river; Cumberland Forest) / West Elizabeth (Little Creek River; near Riggs Station)",
           "chapter": "Chapter 2+",
-          "notes": "Common wild horse"
+          "notes": "High-rate hotspot north of Valley View (rdr2.org). IGN also lists Cumberland Forest + Little Creek River/Riggs Station."
+        },
+        {
+          "method": "wild",
+          "location": "New Austin (various)",
+          "chapter": "Epilogue 1+",
+          "notes": "Additional wild region listed by IGN."
         }
       ],
       "communityNotes": "Free is the right price. Upgrade ASAP.",
-      "detailUrl": "horse.html?breed=Morgan&coat=Wild"
+      "detailUrl": "horse.html?breed=Morgan&coat=Flaxen%20Chestnut"
+    },
+    {
+      "breed": "Morgan",
+      "coat": "Liver Chestnut",
+      "image": "images/horses/morgan_bay.webp",
+      "baseStats": {
+        "health": 2,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 3,
+        "stamina": 5,
+        "speed": 6,
+        "acceleration": 4
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "West Elizabeth (Pronghorn Ranch area)",
+          "chapter": "Epilogue 1+",
+          "notes": "Often reported around Pronghorn Ranch (IGN PC-exclusive table). Study to confirm coat."
+        },
+        {
+          "method": "steal",
+          "location": "New Hanover / West Elizabeth (ambient/owned horses)",
+          "chapter": "Chapter 2+",
+          "notes": "Can appear as an owned horse; steal to acquire."
+        }
+      ],
+      "communityNotes": "Morgan coat present in Story Mode coat lists (per IGN/Fandom). Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Morgan&coat=Liver%20Chestnut"
     },
     {
       "breed": "Tennessee Walker",
       "coat": "Dapple Bay",
       "image": "images/horses/tennessee_walker_dapple_bay.webp",
       "baseStats": {
-        "health": 2,
+        "health": 3,
         "stamina": 3,
-        "speed": 4,
-        "acceleration": 3
+        "speed": 2,
+        "acceleration": 2
       },
       "maxStats": {
-        "health": 3,
+        "health": 4,
         "stamina": 4,
-        "speed": 6,
-        "acceleration": 5
+        "speed": 4,
+        "acceleration": 4
       },
       "handling": "Standard",
       "category": "Riding",
-      "price": 60,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Scarlett Meadows Stable",
+          "method": "wild",
+          "location": "New Hanover (The Heartlands; east of Oil Derrick; in the gap between the \"L\" and \"A\" of HEARTLANDS on the map)",
           "chapter": "Chapter 2+",
-          "notes": "Budget horse"
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
         },
         {
-          "method": "wild",
-          "location": "Cumberland Forest, near Valentine",
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
           "chapter": "Chapter 2+",
-          "notes": "Common wild spawn"
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
         }
       ],
       "communityNotes": "Community reports this breed is extremely skittish. Bucks frequently near predators and gunfire. Not recommended despite okay speed stats.",
@@ -1472,19 +1892,19 @@
     },
     {
       "breed": "Tennessee Walker",
-      "coat": "Wild",
+      "coat": "Black Rabicano",
       "image": "images/horses/tennessee_walker_dapple_bay.webp",
       "baseStats": {
-        "health": 2,
+        "health": 3,
         "stamina": 3,
-        "speed": 4,
-        "acceleration": 3
+        "speed": 2,
+        "acceleration": 2
       },
       "maxStats": {
-        "health": 3,
+        "health": 4,
         "stamina": 4,
-        "speed": 6,
-        "acceleration": 5
+        "speed": 4,
+        "acceleration": 4
       },
       "handling": "Standard",
       "category": "Riding",
@@ -1492,39 +1912,219 @@
       "acquisition": [
         {
           "method": "wild",
-          "location": "The Heartlands, east of Oil Derrick",
+          "location": "New Hanover (The Heartlands; east of Oil Derrick; in the gap between the \"L\" and \"A\" of HEARTLANDS on the map)",
           "chapter": "Chapter 2+",
-          "notes": "Common wild horse"
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide). Study to confirm coat."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
+        }
+      ],
+      "communityNotes": "Tennessee Walker coat present in Story Mode coat lists (per IGN/Fandom). Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Tennessee%20Walker&coat=Black%20Rabicano"
+    },
+    {
+      "breed": "Tennessee Walker",
+      "coat": "Gold Palomino",
+      "image": "images/horses/tennessee_walker_dapple_bay.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "New Hanover (The Heartlands; east of Oil Derrick; in the gap between the \"L\" and \"A\" of HEARTLANDS on the map)",
+          "chapter": "Chapter 2+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide). Study to confirm coat."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
+        }
+      ],
+      "communityNotes": "Tennessee Walker coat present in Story Mode coat lists (per IGN/Fandom). Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Tennessee%20Walker&coat=Gold%20Palomino"
+    },
+    {
+      "breed": "Tennessee Walker",
+      "coat": "Mahogany Bay",
+      "image": "images/horses/tennessee_walker_dapple_bay.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 2,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "mission",
+          "location": "Arthur's starting horse (story start)",
+          "chapter": "Chapter 1",
+          "notes": "Starting horse coat (per common Story Mode references)."
+        },
+        {
+          "method": "wild",
+          "location": "New Hanover (The Heartlands; east of Oil Derrick; in the gap between the \"L\" and \"A\" of HEARTLANDS on the map)",
+          "chapter": "Chapter 2+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide). Study to confirm coat."
+        }
+      ],
+      "communityNotes": "Iconic early-game Tennessee Walker coat. Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Tennessee%20Walker&coat=Mahogany%20Bay"
+    },
+    {
+      "breed": "Tennessee Walker",
+      "coat": "Red Roan",
+      "image": "images/horses/tennessee_walker_dapple_bay.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 2,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "New Hanover (The Heartlands; east of Oil Derrick; in the gap between the \"L\" and \"A\" of HEARTLANDS on the map)",
+          "chapter": "Chapter 2+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide). Study to confirm coat."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
+        }
+      ],
+      "communityNotes": "Tennessee Walker coat present in Story Mode coat lists (per IGN/Fandom). Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Tennessee%20Walker&coat=Red%20Roan"
+    },
+    {
+      "breed": "Tennessee Walker",
+      "coat": "Flaxen Roan",
+      "image": "images/horses/tennessee_walker_dapple_bay.webp",
+      "baseStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 3,
+        "acceleration": 3
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 6,
+        "speed": 5,
+        "acceleration": 5
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": 150,
+      "acquisition": [
+        {
+          "method": "stable",
+          "location": "Tumbleweed Stable",
+          "chapter": "Epilogue 1+",
+          "notes": "Epilogue stable horse (per Fandom)."
+        }
+      ],
+      "communityNotes": "Epilogue Tennessee Walker variant sold in Tumbleweed. Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Tennessee%20Walker&coat=Flaxen%20Roan"
+    },
+    {
+      "breed": "Tennessee Walker",
+      "coat": "Chestnut",
+      "image": "images/horses/tennessee_walker_dapple_bay.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 3,
+        "speed": 2,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 4,
+        "speed": 4,
+        "acceleration": 4
+      },
+      "handling": "Standard",
+      "category": "Riding",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "wild",
+          "location": "New Hanover (The Heartlands; east of Oil Derrick; in the gap between the \"L\" and \"A\" of HEARTLANDS on the map)",
+          "chapter": "Chapter 2+",
+          "notes": "High-rate wild spawn hotspot (rdr2.org wild horse locations guide)."
+        },
+        {
+          "method": "steal",
+          "location": "Owned by others (towns / camps / travelers)",
+          "chapter": "Chapter 2+",
+          "notes": "Coat table lists this as Steal/Wild (Fandom)."
         }
       ],
       "communityNotes": "Free but widely considered the worst temperament in the game.",
-      "detailUrl": "horse.html?breed=Tennessee%20Walker&coat=Wild"
+      "detailUrl": "horse.html?breed=Tennessee%20Walker&coat=Chestnut"
     },
     {
       "breed": "Shire",
       "coat": "Raven Black",
       "image": "images/horses/shire_raven_black.webp",
       "baseStats": {
-        "health": 5,
+        "health": 4,
         "stamina": 4,
         "speed": 3,
         "acceleration": 2
       },
       "maxStats": {
-        "health": 6,
+        "health": 5,
         "stamina": 5,
         "speed": 5,
         "acceleration": 4
       },
       "handling": "Heavy",
       "category": "Draft",
-      "price": 120,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Valentine Stable",
-          "chapter": "Chapter 2+",
-          "notes": "Large draft horse"
+          "method": "mission",
+          "location": "Valentine Stable (during \"Exit Pursued by a Bruised Ego\")",
+          "chapter": "Chapter 2",
+          "notes": "Unique story horse introduced during the Hosea stables mission; player can keep it instead of selling."
         }
       ],
       "communityNotes": "Big and slow. Heavy handling is clunky. Some players like the imposing size.",
@@ -1535,60 +2135,120 @@
       "coat": "Dark Bay",
       "image": "images/horses/shire_dark_bay.webp",
       "baseStats": {
-        "health": 5,
-        "stamina": 4,
+        "health": 4,
+        "stamina": 3,
         "speed": 3,
         "acceleration": 2
       },
       "maxStats": {
-        "health": 6,
-        "stamina": 5,
+        "health": 5,
+        "stamina": 4,
         "speed": 5,
         "acceleration": 4
       },
       "handling": "Heavy",
       "category": "Draft",
-      "price": 120,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Strawberry Stable",
+          "method": "steal",
+          "location": "Owned by others (wagons / farms / towns)",
           "chapter": "Chapter 2+",
-          "notes": "Draft horse variant"
+          "notes": "Draft horses are typically owned; steal to acquire."
         }
       ],
       "communityNotes": "Same as Raven Black.",
       "detailUrl": "horse.html?breed=Shire&coat=Dark%20Bay"
     },
     {
+      "breed": "Shire",
+      "coat": "Light Grey",
+      "image": "images/horses/shire_dark_bay.webp",
+      "baseStats": {
+        "health": 4,
+        "stamina": 3,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 5,
+        "stamina": 4,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "handling": "Heavy",
+      "category": "Draft",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "steal",
+          "location": "Owned by others (wagons / farms / towns)",
+          "chapter": "Chapter 2+",
+          "notes": "Owned/steal-only coat (per IGN/Fandom)."
+        }
+      ],
+      "communityNotes": "Shire coat present in Story Mode coat lists (per IGN/Fandom). Owned/steal-only. Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Shire&coat=Light%20Grey"
+    },
+    {
       "breed": "Suffolk Punch",
       "coat": "Sorrel",
       "image": "images/horses/suffolk_punch_sorrel.webp",
       "baseStats": {
-        "health": 5,
+        "health": 3,
         "stamina": 4,
         "speed": 3,
         "acceleration": 2
       },
       "maxStats": {
-        "health": 6,
+        "health": 4,
         "stamina": 5,
         "speed": 5,
         "acceleration": 4
       },
       "handling": "Heavy",
       "category": "Draft",
-      "price": 120,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Valentine Stable",
+          "method": "steal",
+          "location": "Owned by others (wagons / farms / towns)",
           "chapter": "Chapter 2+",
-          "notes": "Draft horse option"
+          "notes": "Draft horses are typically owned; steal to acquire."
         }
       ],
       "communityNotes": "Same stats as Shire. Pick based on coat preference.",
       "detailUrl": "horse.html?breed=Suffolk%20Punch&coat=Sorrel"
+    },
+    {
+      "breed": "Suffolk Punch",
+      "coat": "Red Chestnut",
+      "image": "images/horses/suffolk_punch_sorrel.webp",
+      "baseStats": {
+        "health": 3,
+        "stamina": 4,
+        "speed": 3,
+        "acceleration": 2
+      },
+      "maxStats": {
+        "health": 4,
+        "stamina": 5,
+        "speed": 5,
+        "acceleration": 4
+      },
+      "handling": "Heavy",
+      "category": "Draft",
+      "price": null,
+      "acquisition": [
+        {
+          "method": "steal",
+          "location": "Owned by others (wagons / farms / towns)",
+          "chapter": "Chapter 2+",
+          "notes": "Owned/steal-only coat (per IGN/Fandom)."
+        }
+      ],
+      "communityNotes": "Suffolk Punch coat present in Story Mode coat lists (per IGN/Fandom). Owned/steal-only. Image is a placeholder.",
+      "detailUrl": "horse.html?breed=Suffolk%20Punch&coat=Red%20Chestnut"
     },
     {
       "breed": "Belgian Draft",
@@ -1608,13 +2268,13 @@
       },
       "handling": "Heavy",
       "category": "Draft",
-      "price": 120,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Valentine Stable",
+          "method": "steal",
+          "location": "Owned by others (wagons / farms / towns)",
           "chapter": "Chapter 2+",
-          "notes": "Draft horse with extra health"
+          "notes": "Draft horses are typically owned; steal to acquire."
         }
       ],
       "communityNotes": "Best draft horse stats-wise (+1 health over others). Still slow and clunky.",
@@ -1638,13 +2298,13 @@
       },
       "handling": "Heavy",
       "category": "Draft",
-      "price": 120,
+      "price": null,
       "acquisition": [
         {
-          "method": "stable",
-          "location": "Strawberry Stable",
+          "method": "steal",
+          "location": "Owned by others (wagons / farms / towns)",
           "chapter": "Chapter 2+",
-          "notes": "Alternate draft coat"
+          "notes": "Draft horses are typically owned; steal to acquire."
         }
       ],
       "communityNotes": "Same as Blonde Chestnut.",
@@ -1676,19 +2336,19 @@
   "stables": {
     "Valentine": {
       "unlocks": "Chapter 2 (after 'Exit Pursued by a Bruised Ego' mission with Hosea)",
-      "specialties": "Budget horses, Draft horses, early-game options"
+      "specialties": "Early-game purchases: American Standardbred (Palomino Dapple), Hungarian Halfbred (Dapple Dark Grey), Dutch Warmblood (Chocolate Roan). Bonus horses (SUE/POB) are redeemed here."
     },
     "Strawberry": {
       "unlocks": "Chapter 2",
-      "specialties": "Mixed selection, Thoroughbred (Ch.3+), Andalusian, Mustang"
+      "specialties": "Andalusian (Dark Bay). Chapter 3+: Dutch Warmblood (Seal Brown) and Thoroughbred (Brindle)."
     },
     "Scarlett Meadows": {
       "unlocks": "Chapter 2",
-      "specialties": "Missouri Fox Trotter (Ch.4+), Ardennes (Ch.3+), budget options"
+      "specialties": "Ardennes (Bay Roan), Dutch Warmblood (Sooty Buckskin). Chapter 4+: Missouri Fox Trotter (Amber Champagne)."
     },
     "Van Horn": {
       "unlocks": "Chapter 2",
-      "specialties": "Ardennes, Andalusian war horses"
+      "specialties": "Chapter 6+: Andalusian (Rose Grey), Ardennes (Strawberry Roan), Appaloosa (Leopard)."
     },
     "Saint Denis": {
       "unlocks": "Chapter 2 (accessible), best horses available Chapter 4+",
@@ -1700,7 +2360,7 @@
     },
     "Tumbleweed": {
       "unlocks": "Epilogue 1 only",
-      "specialties": "Silver Turkoman, American Standardbred"
+      "specialties": "Epilogue purchases: Tennessee Walker (Flaxen Roan), American Standardbred (Silver Tail Buckskin), American Paint (Grey Overo), Appaloosa (Brown Leopard), Turkoman (Silver)."
     }
   },
   "temperamentControversy": {

@@ -174,47 +174,6 @@
       ]
     },
     {
-      "name": "Navy Revolver",
-      "category": "Revolver",
-      "baseStats": {
-        "damage": 2.1,
-        "range": 2.0,
-        "fireRate": 2.9,
-        "accuracy": 2.9,
-        "reload": 2.0
-      },
-      "maxStats": {
-        "damage": 3.0,
-        "range": 2.8,
-        "fireRate": 2.9,
-        "accuracy": 3.6,
-        "reload": 2.5
-      },
-      "ammoCapacity": 6,
-      "price": 275,
-      "canDualWield": true,
-      "upgrades": [
-        "improved_rifling",
-        "longer_barrel",
-        "improved_sights"
-      ],
-      "acquisition": {
-        "method": "store",
-        "location": "Any Gunsmith",
-        "chapter": "Chapter 2+",
-        "notes": "Originally Red Dead Online exclusive, added to Story Mode"
-      },
-      "communityNotes": "Excellent balance of damage and accuracy. Strong alternative to Schofield.",
-      "image": "images/weapons/navy_revolver.webp",
-      "availableAmmo": [
-        "revolver_regular",
-        "revolver_high_velocity",
-        "revolver_split_point",
-        "revolver_express",
-        "revolver_explosive"
-      ]
-    },
-    {
       "name": "Flaco's Revolver",
       "category": "Revolver",
       "variant": "Cattleman Revolver",
@@ -474,9 +433,9 @@
       ],
       "acquisition": {
         "method": "store",
-        "location": "Any Gunsmith",
+        "location": "Valentine Gunsmith / Saint Denis Gunsmith",
         "chapter": "Chapter 4+",
-        "notes": null
+        "notes": "Available after 'The Joys of Civilization'. Exclusive to Valentine and Saint Denis Gunsmiths."
       },
       "communityNotes": "Fastest firing sidearm. Low damage but magazine fed for quick reloads. Great for Dead Eye spam.",
       "image": "images/weapons/semi_automatic_pistol.webp",
@@ -515,9 +474,9 @@
       ],
       "acquisition": {
         "method": "store",
-        "location": "Any Gunsmith",
+        "location": "Valentine Gunsmith / Saint Denis Gunsmith",
         "chapter": "Chapter 5+",
-        "notes": "Also can be obtained from Angelo Bronte's men in Chapter 4"
+        "notes": "Available after \"That's Murfree Country\". Exclusive to Valentine and Saint Denis Gunsmiths. Also can be obtained from Angelo Bronte's men in Chapter 4."
       },
       "communityNotes": "Slightly more damage than Semi-Auto with 10-round magazine. Best pistol for capacity.",
       "image": "images/weapons/mauser_pistol.webp",
@@ -557,7 +516,7 @@
       "acquisition": {
         "method": "store",
         "location": "Saint Denis Gunsmith",
-        "chapter": "Chapter 4+",
+        "chapter": "Chapter 3+",
         "notes": "Available after 'The Battle of Shady Belle'. Originally PC exclusive."
       },
       "communityNotes": "Modern semi-auto pistol. Balanced stats between Semi-Auto and Mauser.",
@@ -671,10 +630,10 @@
         "scope"
       ],
       "acquisition": {
-        "method": "starting",
-        "location": "Given during story",
-        "chapter": "Chapter 2",
-        "notes": "Obtained automatically during mission"
+        "method": "store",
+        "location": "Any Gunsmith",
+        "chapter": "Chapter 2+",
+        "notes": "Available after 'An American Pastoral Scene'. Supplied during the mission."
       },
       "communityNotes": "Best all-around weapon in the game. Exceptional accuracy with 14-round capacity. Most players' main weapon.",
       "image": "images/weapons/lancaster_repeater.webp",
@@ -713,10 +672,10 @@
         "scope"
       ],
       "acquisition": {
-        "method": "starting",
-        "location": "Given during story",
-        "chapter": "Chapter 6",
-        "notes": "Obtained automatically during mission"
+        "method": "store",
+        "location": "Any Gunsmith",
+        "chapter": "Chapter 6+",
+        "notes": "Available after 'Goodbye, Dear Friend'. Supplied during the mission. Can also be obtained during 'Mrs. Sadie Adler, Widow II'."
       },
       "communityNotes": "Highest damage repeater with 16-round capacity. Less accurate than Lancaster but hits harder.",
       "image": "images/weapons/litchfield_repeater.webp",
@@ -757,8 +716,8 @@
       "acquisition": {
         "method": "store",
         "location": "Any Gunsmith",
-        "chapter": "Chapter 2+",
-        "notes": "Originally PC exclusive, added to all platforms"
+        "chapter": "Chapter 3+",
+        "notes": "Available after 'American Distillation'. Originally PC exclusive, added to all platforms."
       },
       "communityNotes": "Massive 26-round capacity. Lower damage but rarely need to reload. Great for prolonged fights.",
       "image": "images/weapons/evans_repeater.webp",
@@ -1349,7 +1308,7 @@
           "method": "store",
           "location": "Fence",
           "chapter": "Chapter 5+",
-          "notes": null
+          "notes": "Available after 'Dear Uncle Tacitus'."
         },
         {
           "method": "mission",
@@ -1373,14 +1332,14 @@
       },
       "maxStats": null,
       "ammoCapacity": null,
-      "price": 6,
+      "price": 4.25,
       "canDualWield": false,
       "upgrades": [],
       "acquisition": {
         "method": "store",
-        "location": "General Store",
-        "chapter": "Chapter 1+",
-        "notes": "Can also be thrown"
+        "location": "Fence",
+        "chapter": "Chapter 5+",
+        "notes": "Available after 'Dear Uncle Tacitus'. Can also be thrown."
       },
       "communityNotes": "Versatile melee/throwing weapon. Many unique variants found throughout the world.",
       "image": "images/weapons/hatchet.webp"
@@ -1404,7 +1363,7 @@
         "method": "store",
         "location": "Fence",
         "chapter": "Chapter 5+",
-        "notes": null
+        "notes": "Available after 'Dear Uncle Tacitus'. Can also be thrown."
       },
       "communityNotes": "Heavy melee weapon. Brutal but slow.",
       "image": "images/weapons/cleaver.webp"
@@ -1706,38 +1665,6 @@
       ]
     },
     {
-      "name": "Lowry's Revolver",
-      "category": "Revolver",
-      "variant": "Double-Action Revolver",
-      "baseStats": {
-        "damage": 2.1,
-        "range": 2.0,
-        "fireRate": 3.2,
-        "accuracy": 2.0,
-        "reload": 2.8
-      },
-      "maxStats": null,
-      "ammoCapacity": 6,
-      "price": null,
-      "canDualWield": true,
-      "upgrades": [],
-      "acquisition": {
-        "method": "found",
-        "location": "Serial Killer basement, Lucky's Cabin",
-        "chapter": "Chapter 2+",
-        "notes": "Complete the serial killer mystery. Also unlockable in GTA Online."
-      },
-      "communityNotes": "Unique revolver from the serial killer side quest. Higher damage than standard Double-Action.",
-      "image": "images/weapons/lowrys_revolver.webp",
-      "availableAmmo": [
-        "revolver_regular",
-        "revolver_high_velocity",
-        "revolver_split_point",
-        "revolver_express",
-        "revolver_explosive"
-      ]
-    },
-    {
       "name": "High Roller Double-Action Revolver",
       "category": "Revolver",
       "variant": "Double-Action Revolver",
@@ -1750,16 +1677,16 @@
       },
       "maxStats": null,
       "ammoCapacity": 6,
-      "price": null,
+      "price": 81,
       "canDualWield": true,
       "upgrades": [],
       "acquisition": {
-        "method": "found",
-        "location": "Limpany lockbox or Blackwater stagecoach robbery",
-        "chapter": "Varies",
-        "notes": "Rare spawn in select locations"
+        "method": "store",
+        "location": "Fence",
+        "chapter": "Chapter 2+",
+        "notes": "Available once Fences are unlocked. Added to Story Mode post-launch (previously early access/online)."
       },
-      "communityNotes": "Ornate Double-Action variant with pearl grip. Same stats as standard Double-Action.",
+      "communityNotes": "Pre-modded Double-Action variant sold by Fences. High fire rate, low damage.",
       "image": "images/weapons/high_roller_revolver.webp",
       "availableAmmo": [
         "revolver_regular",
@@ -1786,9 +1713,9 @@
       "upgrades": [],
       "acquisition": {
         "method": "found",
-        "location": "Hanging Dog Ranch, Big Valley",
+        "location": "Northwest of Hanging Dog Ranch, Big Valley",
         "chapter": "Chapter 2+",
-        "notes": "Found on a table in the main building"
+        "notes": "Found embedded in a dead bear carcass up the hills"
       },
       "communityNotes": "Unique knife with antler handle. Same damage as Hunting Knife.",
       "image": "images/weapons/antler_knife.webp"
@@ -1858,9 +1785,9 @@
       "upgrades": [],
       "acquisition": {
         "method": "found",
-        "location": "Near O'Creagh's Run",
+        "location": "Between O'Creagh's Run and Elysian Pool",
         "chapter": "Chapter 2+",
-        "notes": "Found in the wilderness"
+        "notes": "Found in a tree stump by a shack"
       },
       "communityNotes": "Weathered variant of the Hunter Hatchet. Can be thrown.",
       "image": "images/weapons/rusted_hunter_hatchet.webp"
@@ -1882,9 +1809,9 @@
       "upgrades": [],
       "acquisition": {
         "method": "found",
-        "location": "Moonstone Pond, Roanoke Ridge",
+        "location": "Near Wallace Station, Big Valley",
         "chapter": "Chapter 2+",
-        "notes": "Embedded in a tree stump near the water"
+        "notes": "Found in a tree stump near Wallace Station"
       },
       "communityNotes": "Two-bladed hatchet variant. Can be thrown.",
       "image": "images/weapons/double_bit_hatchet.webp"
@@ -1906,9 +1833,9 @@
       "upgrades": [],
       "acquisition": {
         "method": "found",
-        "location": "Van Horn Trading Post area",
+        "location": "Annesburg, north of the coal mining facility",
         "chapter": "Chapter 2+",
-        "notes": "Found in the wilderness"
+        "notes": "Found in a tree stump in/near Annesburg"
       },
       "communityNotes": "Weathered two-bladed hatchet. Can be thrown.",
       "image": "images/weapons/rusted_double_bit_hatchet.webp"
@@ -1930,9 +1857,9 @@
       "upgrades": [],
       "acquisition": {
         "method": "found",
-        "location": "Sawmill north of Strawberry",
+        "location": "Moonstone Pond south shore, Grizzlies East",
         "chapter": "Chapter 2+",
-        "notes": "Found near logging equipment"
+        "notes": "Found in a tree stump near an abandoned shack"
       },
       "communityNotes": "Woodworking hatchet with flat blade. Can be thrown.",
       "image": "images/weapons/hewing_hatchet.webp"
@@ -1954,12 +1881,210 @@
       "upgrades": [],
       "acquisition": {
         "method": "special",
-        "location": "GTA Online / Treasure Hunt",
+        "location": "Big Valley, northwest of Strawberry (GTA Online unlock)",
         "chapter": "Any",
-        "notes": "Unlocked via GTA Online Treasure Hunt or found at specific locations"
+        "notes": "Cross-promotion reward. Requires an active GTA Online account and completion of the GTA Online Treasure Hunt, then can be collected at the marked location in RDR2."
       },
       "communityNotes": "Primitive stone hatchet. Triggers a rampage ability in GTA Online.",
       "image": "images/weapons/stone_hatchet.webp"
+    },
+    {
+      "name": "Wide-Blade Knife",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 2.0,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "found",
+        "location": "Beryl's Dream mine (Big Valley), west of Mount Shann",
+        "chapter": "Chapter 2+",
+        "notes": "Found on a corpse deep in the mine. Press the entrance plunger to clear the rocks."
+      },
+      "communityNotes": "Unique knife found in the Beryl's Dream mine.",
+      "image": "images/weapons/hunting_knife.webp"
+    },
+    {
+      "name": "Dynamite (Volatile)",
+      "category": "Thrown",
+      "variant": "Dynamite",
+      "baseStats": {
+        "damage": 4.0,
+        "range": 1.0,
+        "fireRate": 0,
+        "accuracy": 1.0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": 5,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "crafting",
+        "location": "Crafting",
+        "chapter": "Chapter 3+",
+        "notes": "Volatile Dynamite Pamphlet: found at Hani's Bethel (chest under broken wagon) or bought from Fences after 'American Distillation'. Crafted from Dynamite + Animal Fat + any High Velocity Cartridge."
+      },
+      "communityNotes": "Upgraded dynamite with wider blast radius.",
+      "image": "images/weapons/dynamite.webp"
+    },
+    {
+      "name": "Fire Bottle (Volatile)",
+      "category": "Thrown",
+      "variant": "Fire Bottle",
+      "baseStats": {
+        "damage": 3.3,
+        "range": 1.0,
+        "fireRate": 0,
+        "accuracy": 1.0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": 5,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "crafting",
+        "location": "Crafting",
+        "chapter": "Chapter 2+",
+        "notes": "Volatile Fire Bottle Pamphlet: found in a burned forest campsite northwest of Horseshoe Overlook or bought from Fences after 'Pouring Forth Oil'. Crafted from Animal Fat + Moonshine."
+      },
+      "communityNotes": "Upgraded fire bottle with larger fire radius.",
+      "image": "images/weapons/fire_bottle.webp"
+    },
+    {
+      "name": "Throwing Knife (Improved)",
+      "category": "Thrown",
+      "variant": "Throwing Knife",
+      "baseStats": {
+        "damage": 2.4,
+        "range": 1.2,
+        "fireRate": 0,
+        "accuracy": 1.8,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": 8,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "crafting",
+        "location": "Crafting",
+        "chapter": "Chapter 2",
+        "notes": "Improved Throwing Knife Pamphlet is given at the start of Chapter 2. Crafted from Throwing Knife + 2x Eagle Feather or Hawk Feather."
+      },
+      "communityNotes": "Crafted upgrade that hits harder than a regular throwing knife.",
+      "image": "images/weapons/throwing_knife.webp"
+    },
+    {
+      "name": "Throwing Knife (Poison)",
+      "category": "Thrown",
+      "variant": "Throwing Knife",
+      "baseStats": {
+        "damage": 2.4,
+        "range": 1.2,
+        "fireRate": 0,
+        "accuracy": 1.8,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": 8,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "crafting",
+        "location": "Crafting",
+        "chapter": "Chapter 2+",
+        "notes": "Poison Throwing Knife Pamphlet: found under a shack floorboard northeast of Saint Denis or bought from Fences after 'Pouring Forth Oil'. Crafted from Throwing Knife + Oleander Sage."
+      },
+      "communityNotes": "Poisoned throwing knife that deals damage over time.",
+      "image": "images/weapons/throwing_knife.webp"
+    },
+    {
+      "name": "Tomahawk (Improved)",
+      "category": "Thrown",
+      "variant": "Tomahawk",
+      "baseStats": {
+        "damage": 2.9,
+        "range": 1.2,
+        "fireRate": 0,
+        "accuracy": 1.0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": 4,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "crafting",
+        "location": "Crafting",
+        "chapter": "Chapter 2",
+        "notes": "Improved Tomahawk Pamphlet is given at the start of Chapter 2. Crafted from Tomahawk + Eagle Feather or Hawk Feather."
+      },
+      "communityNotes": "Crafted upgrade tomahawk with increased damage.",
+      "image": "images/weapons/tomahawk.webp"
+    },
+    {
+      "name": "Tomahawk (Homing)",
+      "category": "Thrown",
+      "variant": "Tomahawk",
+      "baseStats": {
+        "damage": 2.9,
+        "range": 1.2,
+        "fireRate": 0,
+        "accuracy": 1.4,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": 4,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "crafting",
+        "location": "Crafting",
+        "chapter": "Chapter 2+",
+        "notes": "Homing Tomahawk Pamphlet: found in a chest in the Flattened Cabin south of Moonstone Pond (also sold by Fences after Chapter 2). Crafted from Tomahawk + Owl Feather."
+      },
+      "communityNotes": "Crafted tomahawk variant with improved accuracy.",
+      "image": "images/weapons/tomahawk.webp"
+    },
+    {
+      "name": "Unarmed",
+      "category": "Melee",
+      "baseStats": {
+        "damage": 1.3,
+        "range": 0,
+        "fireRate": 0,
+        "accuracy": 0,
+        "reload": 0
+      },
+      "maxStats": null,
+      "ammoCapacity": null,
+      "price": null,
+      "canDualWield": false,
+      "upgrades": [],
+      "acquisition": {
+        "method": "starting",
+        "location": "Always available",
+        "chapter": "Chapter 1",
+        "notes": "Default unarmed melee attacks"
+      },
+      "communityNotes": "Fists. Always available as a melee option.",
+      "image": null
     }
   ],
   "categories": [
@@ -2011,6 +2136,7 @@
     "max": 4,
     "description": "All stats are on a 0-4.0 scale"
   },
+  "pricingNotes": "Prices listed are base (no honor discount). Honor affects final shop prices.",
   "ammoTypes": {
     "revolver_regular": {
       "name": "Regular",

@@ -6,7 +6,15 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Regular Cartridge",
+          "item": "Hunting Knife",
+          "qty": 1
+        },
+        {
+          "label": "Any regular cartridge (except shotgun)",
+          "match": {
+            "all": ["regular", "cartridge"],
+            "none": ["shotgun"]
+          },
           "qty": 1
         }
       ],
@@ -19,7 +27,11 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Express Cartridge",
+          "label": "Any express cartridge (except shotgun)",
+          "match": {
+            "all": ["express", "cartridge"],
+            "none": ["shotgun"]
+          },
           "qty": 1
         },
         {
@@ -36,7 +48,7 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Regular Buckshot",
+          "item": "Regular Shotgun Shell",
           "qty": 1
         },
         {
@@ -53,7 +65,7 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Regular Slug",
+          "item": "Slug Shotgun Shell",
           "qty": 1
         },
         {
@@ -91,7 +103,7 @@
           "qty": 1
         },
         {
-          "item": "Shotgun Shell",
+          "item": "Regular Shotgun Shell",
           "qty": 1
         },
         {
@@ -171,7 +183,12 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Alcohol (Gin/Rum/Brandy/Bourbon)",
+          "anyOf": [
+            "Gin",
+            "Kentucky Bourbon",
+            "Guarma Rum",
+            "Fine Brandy"
+          ],
           "qty": 1
         },
         {
@@ -230,7 +247,10 @@
           "qty": 1
         },
         {
-          "item": "Eagle Feather",
+          "anyOf": [
+            "Eagle Feather",
+            "Hawk Feather"
+          ],
           "qty": 1
         }
       ],
@@ -264,8 +284,11 @@
           "qty": 1
         },
         {
-          "item": "Eagle Feather",
-          "qty": 1
+          "anyOf": [
+            "Eagle Feather",
+            "Hawk Feather"
+          ],
+          "qty": 2
         }
       ],
       "benefit": "Increased damage and accuracy",
@@ -294,7 +317,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Ginseng",
+          "anyOf": [
+            "Alaskan Ginseng",
+            "American Ginseng"
+          ],
           "qty": 1
         },
         {
@@ -311,7 +337,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Ginseng",
+          "anyOf": [
+            "Alaskan Ginseng",
+            "American Ginseng"
+          ],
           "qty": 2
         },
         {
@@ -319,7 +348,10 @@
           "qty": 2
         },
         {
-          "item": "English Mace",
+          "anyOf": [
+            "English Mace",
+            "Milkweed"
+          ],
           "qty": 2
         }
       ],
@@ -349,7 +381,11 @@
           "qty": 2
         },
         {
-          "item": "Prairie Poppy",
+          "anyOf": [
+            "Blackcurrant",
+            "Golden Currant",
+            "Prairie Poppy"
+          ],
           "qty": 2
         }
       ],
@@ -362,7 +398,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Sage",
+          "anyOf": [
+            "Hummingbird Sage",
+            "Desert Sage"
+          ],
           "qty": 1
         },
         {
@@ -379,7 +418,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Sage",
+          "anyOf": [
+            "Hummingbird Sage",
+            "Desert Sage"
+          ],
           "qty": 2
         },
         {
@@ -387,7 +429,10 @@
           "qty": 2
         },
         {
-          "item": "Violet Snowdrop",
+          "anyOf": [
+            "Violet Snowdrop",
+            "Wild Feverfew"
+          ],
           "qty": 2
         }
       ],
@@ -400,19 +445,25 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Currant",
-          "qty": 3
+          "item": "Indian Tobacco",
+          "qty": 4
         },
         {
-          "item": "Yarrow",
-          "qty": 3
+          "anyOf": [
+            "Alaskan Ginseng",
+            "American Ginseng"
+          ],
+          "qty": 4
         },
         {
-          "item": "Burdock Root",
-          "qty": 2
+          "anyOf": [
+            "Hummingbird Sage",
+            "Desert Sage"
+          ],
+          "qty": 4
         }
       ],
-      "benefit": "Fully restores Health, Stamina, and Dead Eye",
+      "benefit": "Fully restores and fortifies Health, Stamina, and Dead Eye (moderate)",
       "unlock": "-"
     },
     {
@@ -421,7 +472,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Currant",
+          "anyOf": [
+            "Blackcurrant",
+            "Golden Currant"
+          ],
           "qty": 6
         },
         {
@@ -430,7 +484,7 @@
         },
         {
           "item": "Burdock Root",
-          "qty": 4
+          "qty": 6
         }
       ],
       "benefit": "Fully restores and fortifies Health, Stamina, and Dead Eye",
@@ -442,7 +496,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Ginseng",
+          "anyOf": [
+            "Alaskan Ginseng",
+            "American Ginseng"
+          ],
           "qty": 1
         },
         {
@@ -459,7 +516,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Ginseng",
+          "anyOf": [
+            "Alaskan Ginseng",
+            "American Ginseng"
+          ],
           "qty": 2
         },
         {
@@ -480,7 +540,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Sage",
+          "anyOf": [
+            "Hummingbird Sage",
+            "Desert Sage"
+          ],
           "qty": 1
         },
         {
@@ -497,7 +560,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Sage",
+          "anyOf": [
+            "Hummingbird Sage",
+            "Desert Sage"
+          ],
           "qty": 2
         },
         {
@@ -518,7 +584,10 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Ginseng",
+          "anyOf": [
+            "Alaskan Ginseng",
+            "American Ginseng"
+          ],
           "qty": 2
         },
         {
@@ -547,7 +616,10 @@
           "qty": 3
         },
         {
-          "item": "Currant",
+          "anyOf": [
+            "Blackcurrant",
+            "Golden Currant"
+          ],
           "qty": 3
         }
       ],
@@ -581,11 +653,16 @@
       "craftedAt": "Campfire",
       "ingredients": [
         {
-          "item": "Gritty Fish Meat",
+          "item": "Stringy Meat",
           "qty": 1
         },
         {
-          "item": "Blackberry",
+          "anyOf": [
+            "Raspberry",
+            "Evergreen Huckleberry",
+            "Blackberry",
+            "Wintergreen Berry"
+          ],
           "qty": 1
         }
       ],
@@ -599,11 +676,16 @@
       "ingredients": [
         {
           "item": "Gritty Fish Meat",
-          "qty": 2
+          "qty": 1
         },
         {
-          "item": "Blackberry",
-          "qty": 2
+          "anyOf": [
+            "Raspberry",
+            "Evergreen Huckleberry",
+            "Blackberry",
+            "Wintergreen Berry"
+          ],
+          "qty": 1
         }
       ],
       "benefit": "Strongly attracts predator animals",
@@ -612,19 +694,10 @@
     {
       "name": "Herbivore Bait",
       "category": "Bait",
-      "craftedAt": "Campfire",
-      "ingredients": [
-        {
-          "item": "Vanilla Flower",
-          "qty": 1
-        },
-        {
-          "item": "Corn",
-          "qty": 1
-        }
-      ],
+      "craftedAt": "Buy or loot",
+      "ingredients": [],
       "benefit": "Attracts herbivore animals",
-      "unlock": "-"
+      "unlock": "Buy or loot"
     },
     {
       "name": "Potent Herbivore Bait",
@@ -633,11 +706,20 @@
       "ingredients": [
         {
           "item": "Vanilla Flower",
-          "qty": 2
+          "qty": 1
         },
         {
-          "item": "Corn",
-          "qty": 2
+          "item": "Violet Snowdrop",
+          "qty": 1
+        },
+        {
+          "anyOf": [
+            "Chanterelle",
+            "Bay Bolete",
+            "Ram's Head",
+            "Parasol Mushroom"
+          ],
+          "qty": 1
         }
       ],
       "benefit": "Strongly attracts herbivore animals",
@@ -691,7 +773,7 @@
           "qty": 1
         },
         {
-          "item": "Squirrel Carcass",
+          "item": "Squirrel Pelt",
           "qty": 1
         }
       ],
@@ -807,7 +889,7 @@
       "name": "Buck Antler Trinket",
       "category": "Trinket",
       "craftedAt": "Fence",
-      "price": 18.25,
+      "price": 22,
       "ingredients": [
         {
           "item": "Legendary Buck Antler",
@@ -835,7 +917,7 @@
       "name": "Ram Horn Trinket",
       "category": "Trinket",
       "craftedAt": "Fence",
-      "price": 19.5,
+      "price": 17.5,
       "ingredients": [
         {
           "item": "Legendary Ram Horn",
@@ -849,7 +931,7 @@
       "name": "Coyote Fang Trinket",
       "category": "Trinket",
       "craftedAt": "Fence",
-      "price": 16.5,
+      "price": 21.25,
       "ingredients": [
         {
           "item": "Legendary Coyote Fang",
@@ -863,7 +945,7 @@
       "name": "Fox Claw Trinket",
       "category": "Trinket",
       "craftedAt": "Fence",
-      "price": 17.25,
+      "price": 23.5,
       "ingredients": [
         {
           "item": "Legendary Fox Claw",
@@ -888,20 +970,6 @@
       "unlock": "-"
     },
     {
-      "name": "Boar Tusk Trinket",
-      "category": "Trinket",
-      "craftedAt": "Fence",
-      "price": 15.75,
-      "ingredients": [
-        {
-          "item": "Legendary Boar Tusk",
-          "qty": 1
-        }
-      ],
-      "benefit": "Decreases horse Health and Stamina drain by 10%",
-      "unlock": "-"
-    },
-    {
       "name": "Bison Horn Trinket",
       "category": "Trinket",
       "craftedAt": "Fence",
@@ -919,7 +987,7 @@
       "name": "Cougar Fang Trinket",
       "category": "Trinket",
       "craftedAt": "Fence",
-      "price": 21.5,
+      "price": 20.5,
       "ingredients": [
         {
           "item": "Legendary Cougar Fang",
@@ -933,7 +1001,7 @@
       "name": "Panther Eye Trinket",
       "category": "Trinket",
       "craftedAt": "Fence",
-      "price": 23.75,
+      "price": 25,
       "ingredients": [
         {
           "item": "Legendary Panther Eye",
@@ -947,28 +1015,36 @@
       "name": "Wolf Heart Trinket",
       "category": "Trinket",
       "craftedAt": "Fence",
-      "price": 20.25,
+      "price": 16,
       "ingredients": [
         {
           "item": "Legendary Wolf Heart",
           "qty": 1
         }
       ],
-      "benefit": "Doubles drunk duration (consume 2x alcohol before negative effects)",
+      "benefit": "Doubles tolerance to alcohol",
       "unlock": "-"
     },
     {
-      "name": "Bear Claw Trinket",
-      "category": "Trinket",
+      "name": "Bear Claw Talisman",
+      "category": "Talisman",
       "craftedAt": "Fence",
-      "price": 24.5,
+      "price": 34.75,
       "ingredients": [
         {
           "item": "Legendary Bear Claw",
           "qty": 1
+        },
+        {
+          "item": "Silver Chain Bracelet",
+          "qty": 1
+        },
+        {
+          "item": "Quartz Chunk",
+          "qty": 1
         }
       ],
-      "benefit": "Increases Health XP gain by 10%",
+      "benefit": "Decreases Health core drain by 10%",
       "unlock": "-"
     },
     {
@@ -982,7 +1058,7 @@
           "qty": 1
         }
       ],
-      "benefit": "Money from selling coaches increased by 10%",
+      "benefit": "Prevents animal carcasses stored on your horse from rotting",
       "unlock": "-"
     },
     {
@@ -1003,7 +1079,7 @@
       "name": "Alligator Tooth Talisman",
       "category": "Talisman",
       "craftedAt": "Fence",
-      "price": 35,
+      "price": 40,
       "ingredients": [
         {
           "item": "Legendary Alligator Tooth",
@@ -1019,16 +1095,16 @@
         }
       ],
       "benefit": "Decreases Dead Eye core drain by 10%",
-      "unlock": "Complete 'That's Murfree Country' mission"
+      "unlock": "Chapter 6 (Legendary Alligator available)"
     },
     {
       "name": "Bison Horn Talisman",
       "category": "Talisman",
       "craftedAt": "Fence",
-      "price": 42,
+      "price": 38.5,
       "ingredients": [
         {
-          "item": "Legendary Tatanka Bison Horn",
+          "item": "Legendary White Bison Horn",
           "qty": 1
         },
         {
@@ -1047,7 +1123,7 @@
       "name": "Boar Tusk Talisman",
       "category": "Talisman",
       "craftedAt": "Fence",
-      "price": 34.75,
+      "price": 31,
       "ingredients": [
         {
           "item": "Legendary Boar Tusk",
@@ -1082,38 +1158,18 @@
     {
       "name": "Owl Feather Trinket",
       "category": "Trinket",
-      "craftedAt": "Fence",
-      "price": 18,
-      "ingredients": [
-        {
-          "item": "Legendary Tatanka Bison Horn",
-          "qty": 1
-        },
-        {
-          "item": "Hawk Feather",
-          "qty": 1
-        },
-        {
-          "item": "Owl Feather",
-          "qty": 1
-        }
-      ],
-      "benefit": "Loot more ammo from bodies",
-      "unlock": "-"
+      "craftedAt": "Reward",
+      "ingredients": [],
+      "benefit": "Decreases Health, Stamina, and Dead Eye core drain by 15%",
+      "unlock": "Complete 'Archeology for Beginners' without killing any soldiers"
     },
     {
       "name": "Crow Beak Trinket",
       "category": "Trinket",
-      "craftedAt": "Fence",
-      "price": 22,
-      "ingredients": [
-        {
-          "item": "Crow Beak",
-          "qty": 1
-        }
-      ],
+      "craftedAt": "Reward",
+      "ingredients": [],
       "benefit": "Increases all looted ammo by 10%",
-      "unlock": "Found via Elemental Trail treasure hunt"
+      "unlock": "Complete The Elemental Trail treasure hunt (Epilogue)"
     },
     {
       "name": "Legendary Bear Head Hat",
@@ -1144,7 +1200,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Bison Pelt",
+          "item": "Bison Pelt",
           "qty": 1
         }
       ],
@@ -1164,7 +1220,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Bull Hide",
+          "item": "Bull Hide",
           "qty": 1
         }
       ],
@@ -1180,11 +1236,11 @@
       "price": 15,
       "ingredients": [
         {
-          "item": "Perfect Boar Pelt",
+          "item": "Boar Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Rabbit Pelt",
+          "item": "Rabbit Pelt",
           "qty": 2
         }
       ],
@@ -1200,11 +1256,11 @@
       "price": 21,
       "ingredients": [
         {
-          "item": "Perfect Beaver Pelt",
+          "item": "Beaver Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Raccoon Pelt",
+          "item": "Raccoon Pelt",
           "qty": 1
         },
         {
@@ -1228,7 +1284,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Ram Hide",
+          "item": "Ram Hide",
           "qty": 1
         }
       ],
@@ -1248,7 +1304,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Elk Pelt",
+          "item": "Elk Pelt",
           "qty": 1
         }
       ],
@@ -1420,7 +1476,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Goat Hide",
+          "item": "Goat Hide",
           "qty": 1
         }
       ],
@@ -1436,11 +1492,11 @@
       "price": 29,
       "ingredients": [
         {
-          "item": "Perfect Boar Pelt",
+          "item": "Boar Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Bull Hide",
+          "item": "Bull Hide",
           "qty": 1
         }
       ],
@@ -1460,7 +1516,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Boar Pelt",
+          "item": "Boar Pelt",
           "qty": 1
         }
       ],
@@ -1500,7 +1556,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Moose Pelt",
+          "item": "Moose Pelt",
           "qty": 1
         }
       ],
@@ -1520,7 +1576,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Fox Pelt",
+          "item": "Fox Pelt",
           "qty": 2
         }
       ],
@@ -1536,11 +1592,11 @@
       "price": 28,
       "ingredients": [
         {
-          "item": "Perfect Cow Hide",
+          "item": "Cow Hide",
           "qty": 1
         },
         {
-          "item": "Perfect Goat Hide",
+          "item": "Goat Hide",
           "qty": 1
         }
       ],
@@ -1560,7 +1616,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Muskrat Pelt",
+          "item": "Muskrat Pelt",
           "qty": 1
         }
       ],
@@ -1580,7 +1636,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Snake Skin",
+          "item": "Snake Skin",
           "qty": 2
         }
       ],
@@ -1648,7 +1704,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Gila Monster Skin",
+          "item": "Gila Monster Skin",
           "qty": 1
         }
       ],
@@ -1684,7 +1740,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Wolf Pelt",
+          "item": "Wolf Pelt",
           "qty": 1
         }
       ],
@@ -1720,7 +1776,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Cow Hide",
+          "item": "Cow Hide",
           "qty": 1
         }
       ],
@@ -1740,7 +1796,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Boar Pelt",
+          "item": "Boar Pelt",
           "qty": 1
         }
       ],
@@ -1792,7 +1848,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Sheep Hide",
+          "item": "Sheep Hide",
           "qty": 1
         }
       ],
@@ -1812,7 +1868,7 @@
           "qty": 1
         },
         {
-          "item": "Perfect Goat Hide",
+          "item": "Goat Hide",
           "qty": 1
         }
       ],
@@ -1844,7 +1900,7 @@
       "price": 10,
       "ingredients": [
         {
-          "item": "Perfect Ram Hide",
+          "item": "Ram Hide",
           "qty": 1
         }
       ],
@@ -1860,7 +1916,7 @@
       "price": 22,
       "ingredients": [
         {
-          "item": "Perfect Pronghorn Hide",
+          "item": "Pronghorn Hide",
           "qty": 1
         }
       ],
@@ -1876,11 +1932,11 @@
       "price": 18,
       "ingredients": [
         {
-          "item": "Perfect Collared Peccary Pig Pelt",
+          "item": "Collared Peccary Pig Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Snake Skin",
+          "item": "Snake Skin",
           "qty": 1
         }
       ],
@@ -1896,11 +1952,11 @@
       "price": 27,
       "ingredients": [
         {
-          "item": "Perfect Collared Peccary Pig Pelt",
+          "item": "Collared Peccary Pig Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Iguana Skin",
+          "item": "Iguana Skin",
           "qty": 2
         }
       ],
@@ -1916,11 +1972,11 @@
       "price": 12,
       "ingredients": [
         {
-          "item": "Perfect Goat Hide",
+          "item": "Goat Hide",
           "qty": 1
         },
         {
-          "item": "Perfect Pronghorn Hide",
+          "item": "Pronghorn Hide",
           "qty": 1
         }
       ],
@@ -1936,7 +1992,7 @@
       "price": 32,
       "ingredients": [
         {
-          "item": "Perfect Sheep Hide",
+          "item": "Sheep Hide",
           "qty": 1
         }
       ],
@@ -1952,11 +2008,11 @@
       "price": 27,
       "ingredients": [
         {
-          "item": "Perfect Goat Hide",
+          "item": "Goat Hide",
           "qty": 1
         },
         {
-          "item": "Perfect Panther Pelt",
+          "item": "Panther Pelt",
           "qty": 1
         }
       ],
@@ -1972,7 +2028,7 @@
       "price": 15,
       "ingredients": [
         {
-          "item": "Perfect Buck Pelt",
+          "item": "Buck Pelt",
           "qty": 1
         }
       ],
@@ -1988,7 +2044,7 @@
       "price": 22,
       "ingredients": [
         {
-          "item": "Perfect Moose Pelt",
+          "item": "Moose Pelt",
           "qty": 1
         }
       ],
@@ -2004,7 +2060,7 @@
       "price": 12,
       "ingredients": [
         {
-          "item": "Perfect Elk Pelt",
+          "item": "Elk Pelt",
           "qty": 1
         }
       ],
@@ -2020,11 +2076,11 @@
       "price": 20,
       "ingredients": [
         {
-          "item": "Perfect Coyote Pelt",
+          "item": "Coyote Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Ox Hide",
+          "item": "Ox Hide",
           "qty": 1
         }
       ],
@@ -2040,11 +2096,11 @@
       "price": 25,
       "ingredients": [
         {
-          "item": "Perfect Deer Pelt",
+          "item": "Deer Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Sheep Hide",
+          "item": "Sheep Hide",
           "qty": 1
         }
       ],
@@ -2060,7 +2116,7 @@
       "price": 25,
       "ingredients": [
         {
-          "item": "Perfect Boar Pelt",
+          "item": "Boar Pelt",
           "qty": 2
         }
       ],
@@ -2076,7 +2132,7 @@
       "price": 8,
       "ingredients": [
         {
-          "item": "Perfect Pig Hide",
+          "item": "Pig Hide",
           "qty": 1
         }
       ],
@@ -2092,11 +2148,11 @@
       "price": 15,
       "ingredients": [
         {
-          "item": "Perfect Muskrat Pelt",
+          "item": "Muskrat Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Rabbit Pelt",
+          "item": "Rabbit Pelt",
           "qty": 4
         }
       ],
@@ -2112,11 +2168,11 @@
       "price": 18,
       "ingredients": [
         {
-          "item": "Perfect Cow Hide",
+          "item": "Cow Hide",
           "qty": 1
         },
         {
-          "item": "Perfect Deer Pelt",
+          "item": "Deer Pelt",
           "qty": 1
         }
       ],
@@ -2132,7 +2188,7 @@
       "price": 18,
       "ingredients": [
         {
-          "item": "Perfect Bull Hide",
+          "item": "Bull Hide",
           "qty": 1
         }
       ],
@@ -2148,11 +2204,11 @@
       "price": 26,
       "ingredients": [
         {
-          "item": "Perfect Boar Pelt",
+          "item": "Boar Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Snake Skin",
+          "item": "Snake Skin",
           "qty": 1
         }
       ],
@@ -2168,7 +2224,7 @@
       "price": 15,
       "ingredients": [
         {
-          "item": "Perfect Bison Pelt",
+          "item": "Bison Pelt",
           "qty": 1
         }
       ],
@@ -2184,11 +2240,11 @@
       "price": 21,
       "ingredients": [
         {
-          "item": "Perfect Beaver Pelt",
+          "item": "Beaver Pelt",
           "qty": 2
         },
         {
-          "item": "Perfect Cow Hide",
+          "item": "Cow Hide",
           "qty": 1
         }
       ],
@@ -2204,7 +2260,7 @@
       "price": 20,
       "ingredients": [
         {
-          "item": "Perfect Sheep Hide",
+          "item": "Sheep Hide",
           "qty": 2
         }
       ],
@@ -2220,7 +2276,7 @@
       "price": 7,
       "ingredients": [
         {
-          "item": "Perfect Pronghorn Hide",
+          "item": "Pronghorn Hide",
           "qty": 1
         }
       ],
@@ -2236,7 +2292,7 @@
       "price": 5,
       "ingredients": [
         {
-          "item": "Perfect Buck Pelt",
+          "item": "Buck Pelt",
           "qty": 1
         }
       ],
@@ -2252,7 +2308,7 @@
       "price": 20,
       "ingredients": [
         {
-          "item": "Perfect Beaver Pelt",
+          "item": "Beaver Pelt",
           "qty": 2
         }
       ],
@@ -2268,11 +2324,11 @@
       "price": 25,
       "ingredients": [
         {
-          "item": "Perfect Ram Hide",
+          "item": "Ram Hide",
           "qty": 1
         },
         {
-          "item": "Perfect Wolf Pelt",
+          "item": "Wolf Pelt",
           "qty": 1
         }
       ],
@@ -2288,11 +2344,11 @@
       "price": 32,
       "ingredients": [
         {
-          "item": "Perfect Armadillo Skin",
+          "item": "Armadillo Skin",
           "qty": 2
         },
         {
-          "item": "Perfect Goat Hide",
+          "item": "Goat Hide",
           "qty": 1
         }
       ],
@@ -2308,11 +2364,11 @@
       "price": 31,
       "ingredients": [
         {
-          "item": "Perfect Boar Pelt",
+          "item": "Boar Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Ox Hide",
+          "item": "Ox Hide",
           "qty": 1
         }
       ],
@@ -2328,11 +2384,11 @@
       "price": 25,
       "ingredients": [
         {
-          "item": "Perfect Muskrat Pelt",
+          "item": "Muskrat Pelt",
           "qty": 2
         },
         {
-          "item": "Perfect Rabbit Pelt",
+          "item": "Rabbit Pelt",
           "qty": 1
         }
       ],
@@ -2348,7 +2404,7 @@
       "price": 16,
       "ingredients": [
         {
-          "item": "Perfect Coyote Pelt",
+          "item": "Coyote Pelt",
           "qty": 2
         }
       ],
@@ -2364,11 +2420,11 @@
       "price": 39,
       "ingredients": [
         {
-          "item": "Perfect Black Bear Pelt",
+          "item": "Black Bear Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Cougar Pelt",
+          "item": "Cougar Pelt",
           "qty": 2
         }
       ],
@@ -2384,11 +2440,11 @@
       "price": 28,
       "ingredients": [
         {
-          "item": "Perfect Panther Pelt",
+          "item": "Panther Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Wolf Pelt",
+          "item": "Wolf Pelt",
           "qty": 1
         }
       ],
@@ -2404,7 +2460,7 @@
       "price": 10,
       "ingredients": [
         {
-          "item": "Perfect Moose Pelt",
+          "item": "Moose Pelt",
           "qty": 1
         }
       ],
@@ -2420,7 +2476,7 @@
       "price": 10,
       "ingredients": [
         {
-          "item": "Perfect Badger Pelt",
+          "item": "Badger Pelt",
           "qty": 1
         }
       ],
@@ -2436,11 +2492,11 @@
       "price": 24,
       "ingredients": [
         {
-          "item": "Perfect Beaver Pelt",
+          "item": "Beaver Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Muskrat Pelt",
+          "item": "Muskrat Pelt",
           "qty": 1
         }
       ],
@@ -2456,7 +2512,7 @@
       "price": 45,
       "ingredients": [
         {
-          "item": "Perfect Ram Hide",
+          "item": "Ram Hide",
           "qty": 2
         }
       ],
@@ -2472,11 +2528,11 @@
       "price": 25,
       "ingredients": [
         {
-          "item": "Perfect Beaver Pelt",
+          "item": "Beaver Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Buck Pelt",
+          "item": "Buck Pelt",
           "qty": 1
         }
       ],
@@ -2492,7 +2548,7 @@
       "price": 12,
       "ingredients": [
         {
-          "item": "Perfect Elk Pelt",
+          "item": "Elk Pelt",
           "qty": 1
         }
       ],
@@ -2505,10 +2561,10 @@
       "subcategory": "Saddle",
       "garmentSet": "-",
       "craftedAt": "Trapper",
-      "price": 58,
+      "price": 98,
       "ingredients": [
         {
-          "item": "Perfect Bear Pelt",
+          "item": "Bear Pelt",
           "qty": 1
         }
       ],
@@ -2521,11 +2577,11 @@
       "subcategory": "Saddle",
       "garmentSet": "-",
       "craftedAt": "Trapper",
-      "price": 52,
+      "price": 96,
       "ingredients": [
         {
-          "item": "Perfect Beaver Pelt",
-          "qty": 2
+          "item": "Beaver Pelt",
+          "qty": 1
         }
       ],
       "benefit": "Stamina core drain rate -18%",
@@ -2537,10 +2593,10 @@
       "subcategory": "Saddle",
       "garmentSet": "-",
       "craftedAt": "Trapper",
-      "price": 67,
+      "price": 110,
       "ingredients": [
         {
-          "item": "Perfect Cougar Pelt",
+          "item": "Cougar Pelt",
           "qty": 1
         }
       ],
@@ -2553,30 +2609,30 @@
       "subcategory": "Saddle",
       "garmentSet": "-",
       "craftedAt": "Trapper",
-      "price": 62,
+      "price": 102,
       "ingredients": [
         {
-          "item": "Perfect Panther Pelt",
+          "item": "Panther Pelt",
           "qty": 1
         }
       ],
-      "benefit": "Stamina core drain rate -22%, Health core drain rate -20%",
+      "benefit": "Stamina core drain rate -26%, Health core drain rate -20%",
       "unlock": "-"
     },
     {
-      "name": "Snake Bulldogger Saddle",
+      "name": "Rattlesnake Vaquero Saddle",
       "category": "Horse",
       "subcategory": "Saddle",
       "garmentSet": "-",
       "craftedAt": "Trapper",
-      "price": 48,
+      "price": 120,
       "ingredients": [
         {
-          "item": "Perfect Snake Skin",
-          "qty": 5
+          "item": "Snake Skin",
+          "qty": 10
         }
       ],
-      "benefit": "Stamina core drain rate -16%",
+      "benefit": "Stamina core drain rate -24%, Health core drain rate -22%",
       "unlock": "-"
     },
     {
@@ -2585,14 +2641,14 @@
       "subcategory": "Saddle",
       "garmentSet": "-",
       "craftedAt": "Trapper",
-      "price": 54,
+      "price": 107,
       "ingredients": [
         {
-          "item": "Perfect Alligator Skin",
-          "qty": 2
+          "item": "Alligator Skin",
+          "qty": 1
         }
       ],
-      "benefit": "Stamina core drain rate -18%",
+      "benefit": "Stamina core drain rate -20%, Health core drain rate -24%",
       "unlock": "-"
     },
     {
@@ -2601,14 +2657,14 @@
       "subcategory": "Saddle",
       "garmentSet": "-",
       "craftedAt": "Trapper",
-      "price": 42,
+      "price": 90,
       "ingredients": [
         {
-          "item": "Perfect Boar Pelt",
-          "qty": 2
+          "item": "Boar Pelt",
+          "qty": 1
         }
       ],
-      "benefit": "Stamina core drain rate -14%",
+      "benefit": "Stamina core drain rate -20%, Health core drain rate -22%",
       "unlock": "-"
     },
     {
@@ -2728,7 +2784,7 @@
       "craftedAt": "Ledger",
       "ingredients": [],
       "benefit": "Stocks fire bottles and high velocity repeater ammo",
-      "price": 100,
+      "price": 110,
       "unlock": "Some Real Firepower"
     },
     {
@@ -2768,7 +2824,7 @@
       "craftedAt": "Ledger",
       "ingredients": [],
       "benefit": "Adds boat for travel and fishing (Chapter 3+)",
-      "price": 450,
+      "price": 360,
       "unlock": "Chapter 3"
     },
     {
@@ -2776,7 +2832,12 @@
       "category": "Hat",
       "subcategory": "Trapper Hat",
       "craftedAt": "Trapper",
+      "price": 20,
       "ingredients": [
+        {
+          "item": "Deer Pelt",
+          "qty": 1
+        },
         {
           "item": "Raven Feather",
           "qty": 10
@@ -2788,7 +2849,12 @@
       "category": "Hat",
       "subcategory": "Trapper Hat",
       "craftedAt": "Trapper",
+      "price": 18,
       "ingredients": [
+        {
+          "item": "Bison Pelt",
+          "qty": 1
+        },
         {
           "item": "Oriole Feather",
           "qty": 4
@@ -2804,6 +2870,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 13,
       "ingredients": [
         {
           "item": "Condor Feather",
@@ -2824,6 +2891,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 11,
       "ingredients": [
         {
           "item": "Seagull Feather",
@@ -2840,6 +2908,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 10,
       "ingredients": [
         {
           "item": "Pheasant Feather",
@@ -2860,6 +2929,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 11,
       "ingredients": [
         {
           "item": "Blue Jay Feather",
@@ -2880,6 +2950,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 10,
       "ingredients": [
         {
           "item": "Boar Pelt",
@@ -2900,6 +2971,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 11,
       "ingredients": [
         {
           "item": "Chicken Feather",
@@ -2920,6 +2992,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 15,
       "ingredients": [
         {
           "item": "Cardinal Feather",
@@ -2936,6 +3009,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 10,
       "ingredients": [
         {
           "item": "Oriole Feather",
@@ -2952,6 +3026,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 13,
       "ingredients": [
         {
           "item": "Eagle Feather",
@@ -2968,6 +3043,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 15,
       "ingredients": [
         {
           "item": "Rooster Feather",
@@ -2988,6 +3064,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 10,
       "ingredients": [
         {
           "item": "Chicken Feather",
@@ -3004,6 +3081,7 @@
       "category": "Accessory",
       "subcategory": "Hat Accessory",
       "craftedAt": "Trapper",
+      "price": 10,
       "ingredients": [
         {
           "item": "Owl Feather",
@@ -3022,7 +3100,7 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Alligator Skin",
+          "item": "Alligator Skin",
           "qty": 1
         }
       ],
@@ -3048,11 +3126,12 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Cougar Pelt",
+          "item": "Cougar Pelt",
           "qty": 2
         }
       ],
-      "benefit": "Cosmetic decoration for Arthur's lodging"
+      "benefit": "Cosmetic decoration for Arthur's lodging",
+      "unlock": "Leather Working Tools"
     },
     {
       "name": "Boar Skin Table Cover",
@@ -3061,11 +3140,12 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Boar Pelt",
+          "item": "Boar Pelt",
           "qty": 1
         }
       ],
-      "benefit": "Cosmetic decoration for Arthur's lodging"
+      "benefit": "Cosmetic decoration for Arthur's lodging",
+      "unlock": "Leather Working Tools"
     },
     {
       "name": "Ox Hide Rug",
@@ -3074,7 +3154,7 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Ox Hide",
+          "item": "Ox Hide",
           "qty": 2
         }
       ],
@@ -3087,7 +3167,7 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Boar Pelt",
+          "item": "Boar Pelt",
           "qty": 4
         }
       ],
@@ -3100,11 +3180,12 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Pronghorn Hide",
+          "item": "Pronghorn Hide",
           "qty": 2
         }
       ],
-      "benefit": "Cosmetic decoration for camp tables"
+      "benefit": "Cosmetic decoration for camp tables",
+      "unlock": "Leather Working Tools"
     },
     {
       "name": "Pronghorn Skull",
@@ -3152,11 +3233,12 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Snake Skin",
+          "item": "Snake Skin",
           "qty": 2
         }
       ],
-      "benefit": "Cosmetic decoration for the main campfire"
+      "benefit": "Cosmetic decoration for the main campfire",
+      "unlock": "Leather Working Tools"
     },
     {
       "name": "Campfire Seat Cover",
@@ -3165,15 +3247,15 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Beaver Pelt",
+          "item": "Beaver Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Muskrat Pelt",
+          "item": "Muskrat Pelt",
           "qty": 1
         },
         {
-          "item": "Perfect Fox Pelt",
+          "item": "Fox Pelt",
           "qty": 1
         }
       ],
@@ -3186,7 +3268,7 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Wolf Pelt",
+          "item": "Wolf Pelt",
           "qty": 2
         }
       ],
@@ -3199,7 +3281,7 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Cow Hide",
+          "item": "Cow Hide",
           "qty": 1
         }
       ],
@@ -3212,7 +3294,7 @@
       "craftedAt": "Pearson",
       "ingredients": [
         {
-          "item": "Perfect Goat Hide",
+          "item": "Goat Hide",
           "qty": 2
         }
       ],
@@ -3251,6 +3333,7 @@
     "Pearson": "Camp butcher - requires Leather Working Tools ($225). All pelts must be perfect.",
     "Trapper": "Trapper locations - all pelts must be perfect quality",
     "Fence": "Fence locations (Saint Denis, Rhodes, Emerald Ranch, Van Horn)",
+    "Reward": "Obtained as a reward (mission/treasure hunt/etc.), not crafted at a station",
     "Ledger": {
       "description": "Camp ledger behind Dutch's tent",
       "availability": "After completing \"Money Lending and Other Sins\""

@@ -126,6 +126,16 @@
             color: var(--text-cream);
         }
 
+        .item-link {
+            color: var(--text-cream);
+            text-decoration: none;
+        }
+
+        .item-link:hover {
+            color: var(--rust);
+            text-decoration: underline;
+        }
+
         .category-badge {
             display: inline-block;
             background: var(--bg-dark);
@@ -296,6 +306,7 @@
     <script src="components.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="utils.js"></script>
+    <script src="dataUtils.js"></script>
     <script src="app.js"></script>
 </head>
 <body>
@@ -402,7 +413,7 @@
             if (!ingredients || ingredients.length === 0) return '-';
             return '<ul class="ingredients-list">' +
                 ingredients.map(ing =>
-                    `<li><span class="qty">${ing.qty}x</span> ${ing.item}</li>`
+                    `<li><span class="qty">${ing.qty}x</span> ${DataUtils.getIngredientLabel(ing)}</li>`
                 ).join('') +
                 '</ul>';
         }
@@ -427,7 +438,9 @@
                 return `
                 <tr>
                     <td>
-                        <div class="item-name">${recipe.name}${subcatInfo}</div>
+                        <div class="item-name">
+                            <a class="item-link" href="crafting-detail.html?item=${encodeURIComponent(recipe.name)}">${recipe.name}${subcatInfo}</a>
+                        </div>
                         ${garmentInfo}
                     </td>
                     <td><span class="category-badge ${getCategoryClass(recipe.category)}">${recipe.category}</span></td>
@@ -525,9 +538,7 @@
 
                     // Search in ingredients
                     if (recipe.ingredients) {
-                        const ingredientMatch = recipe.ingredients.some(ing =>
-                            ing.item.toLowerCase().includes(lowerQuery)
-                        );
+                        const ingredientMatch = DataUtils.recipeUsesIngredientQuery(recipe, lowerQuery);
                         if (ingredientMatch) return true;
                     }
 

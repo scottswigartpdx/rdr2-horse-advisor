@@ -523,8 +523,20 @@ function renderStirrupsCard(name) {
 function renderWeaponCard(name) {
     if (!weaponData || !weaponData.weapons) return `<em>Weapon not found: ${name}</em>`;
 
+    // Normalize to avoid treating punctuation/case differences as different weapons
+    const weaponKey = (s) => String(s ?? '')
+        .toLowerCase()
+        .replace(/[’]/g, "'")
+        .replace(/'/g, '') // treat apostrophe variants as identical
+        // Keep meaningful parenthetical variants (e.g., "(Volatile)"); strip only "online" tags.
+        .replace(/[()]/g, ' ')
+        .replace(/\bonline\b/g, ' ')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim()
+        .replace(/\s+/g, ' ');
+
     const weapon = weaponData.weapons.find(w =>
-        w.name.toLowerCase() === name.toLowerCase()
+        weaponKey(w.name) === weaponKey(name)
     );
 
     if (!weapon) return `<em>Weapon not found: ${name}</em>`;

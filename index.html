@@ -16,65 +16,264 @@
     <script defer src="/_vercel/insights/script.js"></script>
     <script src="components.js"></script>
     <script src="utils.js"></script>
+    <style>
+        /* Home (Option A): Chat-centric layout */
+        .chat-centric-header {
+            position: relative;
+            text-align: center;
+            padding: 16px 20px;
+            margin-bottom: 0;
+        }
+
+        .chat-centric-header h1 {
+            font-family: 'Chinese Rocks', 'Rye', cursive;
+            font-size: 1.8rem;
+            color: #c12c3a;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+        }
+
+        .chat-centric-header .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Reuse auth container, but position it for this header */
+        .chat-centric-header .auth-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        /* Main layout: single column */
+        .chat-layout {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 auto;
+            padding: 0 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Horizontal navigation below tagline */
+        .horizontal-nav {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .horizontal-nav-item {
+            padding: 6px 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+            background: #121212;
+        }
+
+        .horizontal-nav-item:hover {
+            color: var(--text-cream);
+            border-color: var(--gold);
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        /* Prompt suggestions box (always visible) */
+        .prompt-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 14px 20px 14px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .prompt-box h2 {
+            font-family: 'Rye', cursive;
+            color: var(--text-cream);
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .prompt-box .welcome-hint {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .prompt-box h3 {
+            font-family: 'Rye', cursive;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .prompt-box .example-queries {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .prompt-box .example-queries li {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-left: 3px solid var(--rust);
+            padding: 9px 12px;
+            border-radius: var(--radius);
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.35;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .prompt-box .example-queries li:hover {
+            border-color: var(--gold);
+            border-left-color: var(--gold);
+            color: var(--text-cream);
+            transform: translateY(-1px);
+        }
+
+        /* Chat messages area: appears once there is any content (loading or messages) */
+        .chat-hero {
+            display: none;
+            flex-direction: column;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .chat-hero.has-content {
+            display: flex;
+        }
+
+        .chat-hero .chat-container {
+            padding: 14px 20px 14px;
+            display: flex;
+            flex-direction: column;
+            min-height: auto !important;
+            flex: 0 0 auto;
+        }
+
+        /* Input container (always visible) */
+        .chat-layout > .input-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 12px 16px;
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .chat-layout {
+                padding: 0 12px;
+            }
+
+            .horizontal-nav {
+                flex-wrap: wrap;
+                gap: 6px;
+                margin-bottom: 12px;
+            }
+
+            .horizontal-nav-item {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+
+            .prompt-box .example-queries {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Sign In Modal -->
     <div data-component="signInModal"></div>
     <div class="container">
-        <script>document.write(Components.headerFull({title: "RDR2 Companion", subtitle: "Your guide to Red Dead Redemption 2"}))</script>
+        <header class="chat-centric-header">
+            <script>document.write(Components.authContainer())</script>
+            <h1>RDR2 Companion</h1>
+            <p class="subtitle">Ask. Learn. Ride.</p>
+        </header>
 
-        <main>
-            <section class="hero-panel">
-                <div class="hero-panel-inner">
-                    <div class="hero-panel-nav">
-                        <script>document.write(Components.sectionNav({items: [{href: "horses.html", label: "Horses"}, {href: "weapons.html", label: "Weapons"}, {href: "hunting.html", label: "Hunting"}, {href: "crafting.html", label: "Crafting"}]}))</script>
-                    </div>
+        <nav class="horizontal-nav">
+            <a href="horses.html" class="horizontal-nav-item">Horses</a>
+            <a href="weapons.html" class="horizontal-nav-item">Weapons</a>
+            <a href="hunting.html" class="horizontal-nav-item">Hunting</a>
+            <a href="crafting.html" class="horizontal-nav-item">Crafting</a>
+        </nav>
 
-                    <div class="hero-panel-welcome">
-                        <div class="welcome-message">
-                            <h2>Ask about RDR2...</h2>
-                            <p class="welcome-hint">Horses, weapons, hunting, gear, and more</p>
-                            <h3>Or try one of these:</h3>
-                            <ul class="example-queries">
-                                <li onclick="setQuery(this.textContent)">"What's the fastest horse I can get in Chapter 2?"</li>
-                                <li onclick="setQuery(this.textContent)">"What's the best revolver in the game?"</li>
-                                <li onclick="setQuery(this.textContent)">"Where do I find the White Arabian?"</li>
-                                <li onclick="setQuery(this.textContent)">"What's the best rifle for hunting?"</li>
-                                <li onclick="setQuery(this.textContent)">"What's the best saddle and stirrups combo?"</li>
-                                <li onclick="setQuery(this.textContent)">"Compare Lancaster Repeater vs Litchfield Repeater"</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="input-container hero-input">
-                        <textarea
-                            id="queryInput"
-                            placeholder="Ask about horses, weapons, gear..."
-                            rows="1"
-                            onkeydown="handleKeyDown(event)"
-                        ></textarea>
-                        <button id="sendBtn" onclick="sendQuery()">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                            </svg>
-                        </button>
-                        <button id="newChatBtn" onclick="clearChat()" title="New Chat">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 12a9 9 0 1 0 9-9"/>
-                                <path d="M3 3v6h6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+        <main class="chat-layout">
+            <section class="prompt-box">
+                <h2>Ask about RDR2...</h2>
+                <p class="welcome-hint">Horses, weapons, hunting, gear, and more</p>
+                <h3>Or try one of these:</h3>
+                <ul class="example-queries">
+                    <li onclick="setQuery(this.textContent)">"What's the fastest horse I can get in Chapter 2?"</li>
+                    <li onclick="setQuery(this.textContent)">"What's the best revolver in the game?"</li>
+                    <li onclick="setQuery(this.textContent)">"Where do I find the White Arabian?"</li>
+                    <li onclick="setQuery(this.textContent)">"What's the best rifle for hunting?"</li>
+                    <li onclick="setQuery(this.textContent)">"What's the best saddle and stirrups combo?"</li>
+                    <li onclick="setQuery(this.textContent)">"Compare Lancaster Repeater vs Litchfield Repeater"</li>
+                </ul>
             </section>
 
-            <div class="chat-container" id="chatContainer"></div>
+            <section class="chat-hero" id="chatHero">
+                <div class="chat-container" id="chatContainer"></div>
+            </section>
+
+            <div class="input-container">
+                <textarea
+                    id="queryInput"
+                    placeholder="Ask about horses, weapons, gear..."
+                    rows="1"
+                    onkeydown="handleKeyDown(event)"
+                ></textarea>
+                <button id="sendBtn" onclick="sendQuery()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                </button>
+                <button id="newChatBtn" onclick="clearChat()" title="New Chat">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12a9 9 0 1 0 9-9"/>
+                        <path d="M3 3v6h6"/>
+                    </svg>
+                </button>
+            </div>
         </main>
 
         <div data-component="footer"></div>
     </div>
 
-    <script src="horses.json" type="application/json" id="horseData"></script>
     <script src="app.js"></script>
+    <script>
+        // Show chat area when there is any content (loading or messages)
+        function updateChatVisibility() {
+            const container = document.getElementById('chatContainer');
+            const chatHero = document.getElementById('chatHero');
+            if (!container || !chatHero) return;
+            const hasContent = container.children.length > 0;
+            if (hasContent) chatHero.classList.add('has-content');
+            else chatHero.classList.remove('has-content');
+        }
+
+        // Observe chat container for changes
+        const observer = new MutationObserver(updateChatVisibility);
+        observer.observe(document.getElementById('chatContainer'), { childList: true });
+        updateChatVisibility();
+    </script>
 </body>
 </html>

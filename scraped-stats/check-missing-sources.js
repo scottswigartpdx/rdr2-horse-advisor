@@ -15,12 +15,51 @@ const targets = [
 ];
 
 function norm(s) {
-  return s.toLowerCase().replace(/['']/g, "'").replace(/-/g, ' ').trim();
+  const raw = String(s ?? '')
+    .toLowerCase()
+    .replace(/[’]/g, "'")
+    .replace(/'/g, '') // treat apostrophe variants as identical
+    // Keep meaningful parenthetical variants (e.g., "(Volatile)"); strip only "online" tags.
+    .replace(/[()]/g, ' ')
+    .replace(/\bonline\b/g, ' ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .replace(/\s+/g, ' ');
+
+  const alias = {
+    'volatile dynamite': 'dynamite volatile',
+    'volatile fire bottle': 'fire bottle volatile',
+    'improved throwing knife': 'throwing knife improved',
+    'poison throwing knife': 'throwing knife poison',
+    'improved tomahawk': 'tomahawk improved',
+    'homing tomahawk': 'tomahawk homing',
+    'fire bottles': 'fire bottle',
+    'bow and arrows': 'bow',
+    'fist': 'unarmed',
+    'double barrel shotgun': 'double barreled shotgun',
+    'semi automatic shotgun': 'semi auto shotgun',
+  };
+
+  return alias[raw] || raw;
 }
+
+// Story-only mode: ignore Red Dead Online-only items
+const STORY_ONLY_IGNORE = new Set([
+  norm('navy revolver'),
+  norm("lowry's revolver"),
+  norm('bolas'),
+  norm('reinforced lasso'),
+  norm('toxic moonshine bottle'),
+  norm('hammer'),
+  norm('improved bow'),
+  norm('improved bow and arrows'),
+  norm('improved bow arrows'),
+]);
 
 const seen = new Set();
 
 for (const target of targets) {
+  if (STORY_ONLY_IGNORE.has(norm(target))) continue;
   const matches = normalized.filter(w => {
     const n1 = norm(w.weapon);
     const n2 = norm(target);

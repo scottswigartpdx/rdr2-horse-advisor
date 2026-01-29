@@ -12,7 +12,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Valentine Stable (Chapter 2+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Kneller Mother Hubbard",
@@ -25,7 +25,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Valentine Stable (Chapter 2+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Lumley Ranch Cutter",
@@ -38,7 +38,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Valentine Stable (Chapter 2+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Lumley Ranch Cutter",
@@ -51,7 +51,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Valentine Stable (Chapter 2+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Kneller Dakota",
@@ -64,7 +64,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Strawberry Stable (Chapter 2+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Kneller Dakota",
@@ -77,7 +77,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Strawberry Stable (Chapter 2+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Lumley McClelland",
@@ -90,7 +90,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Strawberry Stable (Chapter 2+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Lumley McClelland",
@@ -103,7 +103,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Strawberry Stable (Chapter 2+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Stenger Roping",
@@ -116,7 +116,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Scarlett Meadows Stable (Chapter 3+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Stenger Roping",
@@ -129,7 +129,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Scarlett Meadows Stable (Chapter 3+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Gerden Vaquero",
@@ -142,7 +142,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Saint Denis Stable (Chapter 4+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Gerden Vaquero",
@@ -155,7 +155,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Saint Denis Stable (Chapter 4+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Gerden Trail",
@@ -168,7 +168,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Saint Denis Stable (Chapter 4+)"
+        "availability": "Stable (Chapter 2+)"
       },
       {
         "name": "Gerden Trail",
@@ -181,7 +181,7 @@
         "speedBonus": 0,
         "accelBonus": 0,
         "customizable": true,
-        "availability": "Saint Denis Stable (Chapter 4+)"
+        "availability": "Stable (Chapter 2+)"
       }
     ],
     "trapper": [
@@ -335,7 +335,7 @@
     },
     {
       "name": "Slim-line Iron",
-      "price": 15.00,
+      "price": 0.00,
       "speedBonus": 0,
       "accelBonus": 0,
       "staminaDrain": -10,
@@ -359,7 +359,7 @@
     },
     {
       "name": "Belled Oxbow",
-      "price": 22.00,
+      "price": 0.00,
       "speedBonus": 1,
       "accelBonus": 1,
       "staminaDrain": -25,
@@ -422,40 +422,80 @@
       "outfitSlots": 3,
       "availability": "All Stables",
       "notes": "Allows storing 3 outfits and more provisions"
-    },
-    {
-      "name": "Collector's Saddlebags",
-      "price": null,
-      "capacity": "Large",
-      "outfitSlots": 5,
-      "availability": "Special/Ultimate Edition only",
-      "notes": "Best saddlebags - 5 outfit slots"
     }
   ],
   "blankets": [
     {
-      "name": "Wool Blanket",
-      "colors": ["Black", "Blue", "Brown", "Gray", "Green", "Red"],
-      "price": 8.00,
+      "name": "Cotorra Blanket",
+      "colors": ["Various colors"],
+      "price": 14.00,
       "availability": "All Stables"
     },
     {
-      "name": "Navajo Blanket",
-      "colors": ["Multi-color patterns"],
+      "name": "Rio Bravo Blanket",
+      "colors": ["Various colors"],
+      "price": 13.25,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Bayou Blanket",
+      "colors": ["Various colors"],
+      "price": 12.50,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Cholla Blanket",
+      "colors": ["Various colors"],
+      "price": 11.00,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Manzanita Blanket",
+      "colors": ["Various colors"],
+      "price": 11.75,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Diablo Blanket",
+      "colors": ["Various colors"],
+      "price": 10.50,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Iron Cloud Blanket",
+      "colors": ["Various colors"],
+      "price": 9.50,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Roanoke Blanket",
+      "colors": ["Various colors"],
       "price": 10.00,
       "availability": "All Stables"
     },
     {
-      "name": "Snake Skin Blanket",
-      "colors": ["Natural"],
-      "price": 12.00,
-      "availability": "Trapper"
+      "name": "Nekoti Rock Blanket",
+      "colors": ["Various colors"],
+      "price": 8.75,
+      "availability": "All Stables"
     },
     {
-      "name": "Gila Monster Blanket",
-      "colors": ["Natural"],
-      "price": 14.00,
-      "availability": "Trapper"
+      "name": "Siltwater Blanket",
+      "colors": ["Various colors"],
+      "price": 8.00,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Millesani Blanket",
+      "colors": ["Various colors"],
+      "price": 13.50,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Owanjila Blanket",
+      "colors": ["Various colors"],
+      "price": 11.25,
+      "availability": "All Stables"
     }
   ],
   "bedrolls": [
@@ -473,57 +513,78 @@
       "name": "Canvas Bedroll",
       "price": 7.00,
       "availability": "All Stables"
-    },
-    {
-      "name": "Cougar Bedroll",
-      "price": null,
-      "cost": "1 Perfect Cougar Pelt",
-      "availability": "Trapper"
-    },
-    {
-      "name": "Bear Bedroll",
-      "price": null,
-      "cost": "1 Perfect Bear Pelt",
-      "availability": "Trapper"
     }
   ],
   "horns": [
     {
-      "name": "Wood Horn",
-      "variants": ["Plain", "Carved", "Painted"],
-      "priceRange": "$3.00 - $8.00",
-      "availability": "All Stables"
-    },
-    {
-      "name": "Steel Horn",
-      "variants": ["Plain", "Engraved"],
-      "priceRange": "$12.00 - $18.00",
-      "availability": "All Stables"
-    },
-    {
-      "name": "Brass Horn",
-      "variants": ["Plain", "Engraved", "Decorated"],
-      "priceRange": "$15.00 - $25.00",
-      "availability": "All Stables"
-    },
-    {
-      "name": "Silver Horn",
-      "variants": ["Plain", "Engraved", "Ornate"],
-      "priceRange": "$45.00 - $75.00",
-      "availability": "All Stables"
-    },
-    {
-      "name": "Gold Horn",
-      "variants": ["Plain", "Engraved", "Ornate"],
-      "priceRange": "$85.00 - $132.50",
-      "availability": "All Stables"
-    },
-    {
-      "name": "Bone Horn",
-      "variants": ["Natural"],
+      "name": "Maple Duck Bill Horn",
       "price": null,
-      "cost": "Various animal bones",
-      "availability": "Trapper"
+      "availability": "All Stables"
+    },
+    {
+      "name": "Pine Dally Horn",
+      "price": 7.50,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Birch Dally Horn",
+      "price": 10.00,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Steel Dally Horn",
+      "price": 12.25,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Brass Eagle Horn",
+      "price": 18.75,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Aspen Duck Bill Horn",
+      "price": 9.00,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Steel Duck Bill Horn",
+      "price": 9.50,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Steel Diablo Horn",
+      "price": 14.25,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Steel Diez Corona Horn",
+      "price": 15.75,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Aspen Thick Neck Horn",
+      "price": 11.75,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Birch Torquemada Horn",
+      "price": 13.50,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Redemption Sindewinder Horn",
+      "price": 15.00,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Maple Torquemada Horn",
+      "price": null,
+      "availability": "All Stables"
+    },
+    {
+      "name": "Birch Wide Belly Horn",
+      "price": 9.75,
+      "availability": "All Stables"
     }
   ],
   "statExplanations": {
@@ -538,7 +599,7 @@
     "bestEarlyGame": {
       "saddle": "Kneller Dakota (Improved)",
       "stirrups": "Hooded",
-      "notes": "Best combination available in Chapter 2 from Strawberry stable"
+      "notes": "Strong early combination once stables unlock (Chapter 2+)"
     },
     "bestOverall": {
       "saddle": "Panther Trail (Trapper)",
@@ -548,7 +609,7 @@
     "bestBudget": {
       "saddle": "Gerden Trail (Improved)",
       "stirrups": "Hooded",
-      "notes": "Good stats, available from Saint Denis in Chapter 4"
+      "notes": "Good value stable saddle once stables unlock (Chapter 2+)"
     }
   }
 }

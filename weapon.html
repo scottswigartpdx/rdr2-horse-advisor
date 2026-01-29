@@ -526,9 +526,19 @@
                 const response = await fetch('weapons.json');
                 const data = await response.json();
 
-                const weapon = data.weapons.find(w =>
-                    w.name.toLowerCase() === name.toLowerCase()
-                );
+                // Normalize to avoid treating punctuation/case differences as different weapons
+                const weaponKey = (s) => String(s ?? '')
+                    .toLowerCase()
+                    .replace(/[’]/g, "'")
+                    .replace(/'/g, '') // treat apostrophe variants as identical
+                    // Keep meaningful parenthetical variants (e.g., "(Volatile)"); strip only "online" tags.
+                    .replace(/[()]/g, ' ')
+                    .replace(/\bonline\b/g, ' ')
+                    .replace(/[^a-z0-9]+/g, ' ')
+                    .trim()
+                    .replace(/\s+/g, ' ');
+
+                const weapon = data.weapons.find(w => weaponKey(w.name) === weaponKey(name));
 
                 console.log('Found weapon:', weapon);
 

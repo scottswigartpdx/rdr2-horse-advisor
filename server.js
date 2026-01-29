@@ -11,7 +11,7 @@ require('dotenv').config();
 const { verifySupabaseToken, checkRateLimit, DAILY_QUERY_LIMIT, SUPABASE_URL } = require('./lib/auth');
 const { createClient } = require('@supabase/supabase-js');
 
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 // Supabase keys from env
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || 'sb_publishable_QYHw3yzSd61GgQj3Izb3ng_zkfT_IZv';
