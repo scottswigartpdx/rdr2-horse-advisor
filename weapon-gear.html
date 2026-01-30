@@ -211,6 +211,11 @@
             color: var(--text-cream);
         }
 
+        .table-scroll-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
         @media (max-width: 600px) {
             .unlock-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -252,32 +257,34 @@
 
             <div class="info-section">
                 <h2>Gunsmith vs Trapper Equipment</h2>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Piece</th>
-                            <th>Gunsmith</th>
-                            <th>Trapper (Challenges)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bandolier</td>
-                            <td class="worse">+50% longarm ammo ($69.50)</td>
-                            <td class="better">+100% longarm ammo</td>
-                        </tr>
-                        <tr>
-                            <td>Gun Belt</td>
-                            <td class="worse">+50% sidearm ammo</td>
-                            <td class="better">+100% sidearm ammo</td>
-                        </tr>
-                        <tr>
-                            <td>Holsters</td>
-                            <td class="worse">Basic</td>
-                            <td class="better">+ Set bonus when complete</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-scroll-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Piece</th>
+                                <th>Gunsmith</th>
+                                <th>Trapper (Challenges)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bandolier</td>
+                                <td class="worse">+50% longarm ammo ($69.50)</td>
+                                <td class="better">+100% longarm ammo</td>
+                            </tr>
+                            <tr>
+                                <td>Gun Belt</td>
+                                <td class="worse">+50% sidearm ammo</td>
+                                <td class="better">+100% sidearm ammo</td>
+                            </tr>
+                            <tr>
+                                <td>Holsters</td>
+                                <td class="worse">Basic</td>
+                                <td class="better">+ Set bonus when complete</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p>The Gunsmith upgrades are available immediately for cash. The Trapper's reinforced equipment requires completing challenges first, but gives double the ammo bonus plus attribute boosts.</p>
             </div>
 
@@ -287,32 +294,34 @@
 
                 <p>When you buy all 4 pieces from the same challenge set, you get a <span class="highlight">permanent attribute bonus</span> (Health, Stamina, or Dead Eye).</p>
 
-                <table class="set-table">
-                    <thead>
-                        <tr>
-                            <th>Attribute</th>
-                            <th>Challenge Sets</th>
-                            <th>Bonus</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="attribute-health">Health</td>
-                            <td>Horseman, Sharpshooter, Weapons Expert</td>
-                            <td>+1 Health bar per set</td>
-                        </tr>
-                        <tr>
-                            <td class="attribute-stamina">Stamina</td>
-                            <td>Bandit, Gambler, Master Hunter</td>
-                            <td>+1 Stamina bar per set</td>
-                        </tr>
-                        <tr>
-                            <td class="attribute-deadeye">Dead Eye</td>
-                            <td>Explorer, Herbalist, Survivalist</td>
-                            <td>+1 Dead Eye bar per set</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-scroll-wrapper">
+                    <table class="set-table">
+                        <thead>
+                            <tr>
+                                <th>Attribute</th>
+                                <th>Challenge Sets</th>
+                                <th>Bonus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="attribute-health">Health</td>
+                                <td>Horseman, Sharpshooter, Weapons Expert</td>
+                                <td>+1 Health bar per set</td>
+                            </tr>
+                            <tr>
+                                <td class="attribute-stamina">Stamina</td>
+                                <td>Bandit, Gambler, Master Hunter</td>
+                                <td>+1 Stamina bar per set</td>
+                            </tr>
+                            <tr>
+                                <td class="attribute-deadeye">Dead Eye</td>
+                                <td>Explorer, Herbalist, Survivalist</td>
+                                <td>+1 Dead Eye bar per set</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h3>How the Bonus Bars Work</h3>
                 <ul>
@@ -385,72 +394,74 @@
 
             <div class="info-section">
                 <h2>Quick Reference</h2>
-                <table class="set-table">
-                    <thead>
-                        <tr>
-                            <th>Challenge</th>
-                            <th>Type</th>
-                            <th>Attribute</th>
-                            <th>Difficulty</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bandit</td>
-                            <td>Outlaw activities</td>
-                            <td class="attribute-stamina">Stamina</td>
-                            <td>Medium</td>
-                        </tr>
-                        <tr>
-                            <td>Explorer</td>
-                            <td>Treasure hunting</td>
-                            <td class="attribute-deadeye">Dead Eye</td>
-                            <td>Easy (with guides)</td>
-                        </tr>
-                        <tr>
-                            <td>Gambler</td>
-                            <td>Card/dice games</td>
-                            <td class="attribute-stamina">Stamina</td>
-                            <td>Frustrating (RNG)</td>
-                        </tr>
-                        <tr>
-                            <td>Herbalist</td>
-                            <td>Plant collection</td>
-                            <td class="attribute-deadeye">Dead Eye</td>
-                            <td>Time-consuming</td>
-                        </tr>
-                        <tr>
-                            <td>Horseman</td>
-                            <td>Riding challenges</td>
-                            <td class="attribute-health">Health</td>
-                            <td>Easy-Medium</td>
-                        </tr>
-                        <tr>
-                            <td>Master Hunter</td>
-                            <td>Hunting challenges</td>
-                            <td class="attribute-stamina">Stamina</td>
-                            <td>Medium</td>
-                        </tr>
-                        <tr>
-                            <td>Sharpshooter</td>
-                            <td>Combat/shooting</td>
-                            <td class="attribute-health">Health</td>
-                            <td>Medium</td>
-                        </tr>
-                        <tr>
-                            <td>Survivalist</td>
-                            <td>Crafting/survival</td>
-                            <td class="attribute-deadeye">Dead Eye</td>
-                            <td>Medium</td>
-                        </tr>
-                        <tr>
-                            <td>Weapons Expert</td>
-                            <td>Kill challenges</td>
-                            <td class="attribute-health">Health</td>
-                            <td>Medium</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-scroll-wrapper">
+                    <table class="set-table">
+                        <thead>
+                            <tr>
+                                <th>Challenge</th>
+                                <th>Type</th>
+                                <th>Attribute</th>
+                                <th>Difficulty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bandit</td>
+                                <td>Outlaw activities</td>
+                                <td class="attribute-stamina">Stamina</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>Explorer</td>
+                                <td>Treasure hunting</td>
+                                <td class="attribute-deadeye">Dead Eye</td>
+                                <td>Easy (with guides)</td>
+                            </tr>
+                            <tr>
+                                <td>Gambler</td>
+                                <td>Card/dice games</td>
+                                <td class="attribute-stamina">Stamina</td>
+                                <td>Frustrating (RNG)</td>
+                            </tr>
+                            <tr>
+                                <td>Herbalist</td>
+                                <td>Plant collection</td>
+                                <td class="attribute-deadeye">Dead Eye</td>
+                                <td>Time-consuming</td>
+                            </tr>
+                            <tr>
+                                <td>Horseman</td>
+                                <td>Riding challenges</td>
+                                <td class="attribute-health">Health</td>
+                                <td>Easy-Medium</td>
+                            </tr>
+                            <tr>
+                                <td>Master Hunter</td>
+                                <td>Hunting challenges</td>
+                                <td class="attribute-stamina">Stamina</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>Sharpshooter</td>
+                                <td>Combat/shooting</td>
+                                <td class="attribute-health">Health</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>Survivalist</td>
+                                <td>Crafting/survival</td>
+                                <td class="attribute-deadeye">Dead Eye</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>Weapons Expert</td>
+                                <td>Kill challenges</td>
+                                <td class="attribute-health">Health</td>
+                                <td>Medium</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </main>
 

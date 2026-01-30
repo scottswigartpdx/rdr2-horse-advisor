@@ -94,6 +94,20 @@ const PendingAction = {
     }
 };
 
+// ========== VISITOR ID ==========
+// Generate a unique visitor ID for anonymous rate limiting
+const VISITOR_ID_KEY = 'rdr2_visitor_id';
+
+function getOrCreateVisitorId() {
+    let visitorId = localStorage.getItem(VISITOR_ID_KEY);
+    if (!visitorId) {
+        // Generate a random ID (UUID-like)
+        visitorId = 'v_' + crypto.randomUUID();
+        localStorage.setItem(VISITOR_ID_KEY, visitorId);
+    }
+    return visitorId;
+}
+
 // ========== SUPABASE AUTH ==========
 // Use singleton from utils.js to avoid duplicate client creation
 const supabaseClient = typeof getSupabaseClient === 'function' ? getSupabaseClient() : null;
@@ -831,13 +845,8 @@ async function sendQuery() {
 
     if (!query) return;
 
-    // Check if user is logged in
-    if (!currentUser) {
-        // Save the pending action so we can continue after sign-in
-        PendingAction.save('chat_query', { query });
-        showSignInModal();
-        return;
-    }
+    // Allow anonymous users - they get 20 free questions
+    // No longer require sign-in upfront
 
     if (!horseData) {
         addMessage('Horse data is still loading. Please try again.', 'error');
@@ -879,13 +888,22 @@ async function sendQuery() {
 // Call API via serverless proxy
 async function callAPI() {
     const token = await getAuthToken();
+    const visitorId = getOrCreateVisitorId();
+
+    // Build headers - send auth token if logged in, otherwise visitor ID
+    const headers = {
+        'Content-Type': 'application/json'
+    };
+
+    if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+    } else {
+        headers['X-Visitor-Id'] = visitorId;
+    }
 
     const response = await fetch('/api/chat', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        },
+        headers,
         body: JSON.stringify({
             system: buildSystemPrompt(),
             messages: conversationHistory
@@ -895,7 +913,21 @@ async function callAPI() {
     if (!response.ok) {
         const error = await response.json();
 
-        // Handle rate limit specifically
+        // Handle anonymous limit reached - prompt to sign in
+        if (error.code === 'ANONYMOUS_LIMIT_REACHED') {
+            // Save current query so user can continue after sign-in
+            const input = document.getElementById('queryInput');
+            const lastQuery = conversationHistory.length > 0
+                ? conversationHistory[conversationHistory.length - 1].content
+                : '';
+            if (lastQuery) {
+                PendingAction.save('chat_query', { query: lastQuery });
+            }
+            showSignInModal();
+            throw new Error(error.message || 'Sign in to continue asking questions!');
+        }
+
+        // Handle rate limit for logged-in users
         if (response.status === 429) {
             throw new Error(error.message || `Daily limit of ${error.limit} queries reached. Try again tomorrow!`);
         }
