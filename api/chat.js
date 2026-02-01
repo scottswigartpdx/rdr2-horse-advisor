@@ -1,8 +1,11 @@
 // Vercel Serverless Function - OpenAI Responses API Proxy
 // Keeps API key secure on server side
 
-const { verifySupabaseToken, checkRateLimit, checkVisitorRateLimit, logQuery, DAILY_QUERY_LIMIT } = require('../lib/auth');
+const { validateConfig, verifySupabaseToken, checkRateLimit, checkVisitorRateLimit, logQuery, DAILY_QUERY_LIMIT } = require('../lib/auth');
 const { runChatAgent } = require('../lib/agentRunner');
+
+// Validate config on cold start - fail fast if misconfigured
+validateConfig();
 
 export default async function handler(req, res) {
     // Only allow POST
@@ -82,8 +85,8 @@ export default async function handler(req, res) {
 
         const outputText = await runChatAgent({ system, messages, model: 'gpt-5.2' });
 
-        // Log the query for analytics (don't await - fire and forget)
-        logQuery({
+        // Log the query for analytics - must succeed (no silent failures)
+        await logQuery({
             visitorId: isAnonymous ? visitorId : null,
             userId: user?.id || null,
             question: userQuestion,

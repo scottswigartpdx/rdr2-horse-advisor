@@ -1,5 +1,28 @@
 # RDR2 Companion - Project Workflow
 
+## No Silent Failures - Critical Principle
+
+**NEVER write code that silently degrades when critical features fail.** If something important (logging, rate limiting, analytics, etc.) can't work due to missing config or API errors, the app should **fail loudly** - throw an error, refuse to start, or return a 500.
+
+Bad pattern (silent fallback):
+```javascript
+if (!apiKey) {
+    console.warn('API key not set - feature disabled');
+    return { success: true };  // Pretends everything is fine
+}
+```
+
+Good pattern (fail fast):
+```javascript
+if (!apiKey) {
+    throw new Error('API key not set - cannot proceed');
+}
+```
+
+**Why this matters:** Silent fallbacks lead to critical features being broken in production for days/weeks without anyone noticing. We discovered rate limiting and query logging were completely disabled in production because the service key was missing - the code just silently continued as if everything was fine.
+
+---
+
 ## Pre-Merge Checklist
 
 Before merging to main, verify:
